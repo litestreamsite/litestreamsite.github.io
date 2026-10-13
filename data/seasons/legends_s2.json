@@ -7,7 +7,7 @@
             "thumbnail": "https://image.tmdb.org/t/p/original/aYThvojZ38abrAqCgeHGsgDD67i.jpg",
             "embed": "https://videoprocessingpipeline.services.lego.com/assets/f427c29e-c828-4fb7-bb6d-0b59109a2885/21307f06-f266-46ac-9a9d-b4180156b166/1080p.mp4",
             "subtitles": [{
-                "url": "",
+                "url": "https://videoprocessingpipeline.services.lego.com/assets/f427c29e-c828-4fb7-bb6d-0b59109a2885/21307f06-f266-46ac-9a9d-b4180156b166/en-us_AID263GL793f971c_NinjgoLegendsDuskfall_E101_TheEndBegins.vtt",
                 "lang": "en",
                 "label": "English",
                 "default": true
@@ -20,7 +20,7 @@
             "thumbnail": "https://image.tmdb.org/t/p/original/4GDEqeH3S7KUXOUN0NXMtKVWAzj.jpg",
             "embed": "https://videoprocessingpipeline.services.lego.com/assets/0d4273fe-9c6f-427b-83bf-038e03e524b1/1dfb9954-3efa-4cff-a950-b418015a4ab5/1080p.mp4",
             "subtitles": [{
-                "url": "",
+                "url": "https://videoprocessingpipeline.services.lego.com/assets/0d4273fe-9c6f-427b-83bf-038e03e524b1/1dfb9954-3efa-4cff-a950-b418015a4ab5/en-us_AID263GLbc055f5c_NinjgoLegendsDuskfall_E102_Terminus.vtt",
                 "lang": "en",
                 "label": "English",
                 "default": true
@@ -33,7 +33,7 @@
             "thumbnail": "https://image.tmdb.org/t/p/original/pf5LDPweGj3qrJ08O8E07x4T2Lq.jpg",
             "embed": "https://videoprocessingpipeline.services.lego.com/assets/323cfc70-c3a0-4aed-aba6-e901bd9e231b/a62b1ace-6030-46e9-91c1-b418015cbdf0/1080p.mp4",
             "subtitles": [{
-                "url": "",
+                "url": "https://videoprocessingpipeline.services.lego.com/assets/323cfc70-c3a0-4aed-aba6-e901bd9e231b/a62b1ace-6030-46e9-91c1-b418015cbdf0/en-us_AID263GL93d25840_NinjgoLegendsDuskfall_E103_Epilogue.vtt",
                 "lang": "en",
                 "label": "English",
                 "default": true
