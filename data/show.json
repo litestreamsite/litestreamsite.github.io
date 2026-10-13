@@ -11,7 +11,7 @@
             "poster": "https://image.tmdb.org/t/p/original/beKgqwruOGmVAvRwRvfuOcXwl2Z.jpg",
             "banner": "https://image.tmdb.org/t/p/original/RUBG86JQ81CV6DMm0RKdGln2Kr.jpg",
             "logo": "https://image.tmdb.org/t/p/original/8W6yO0MAh4Pl7OFIoLoKfwQWIBz.png",
-            "summary": "When the fate of their world, Ninjago, is challenged by great threats, it's up to the ninja: Kai, Jay, Cole, Zane, Lloyd and Nya to save the world.",
+            "summary": "When young warriors are chosen to become ninja, they must master Spinjitzu, protect Ninjago from rising threats, and learn what it means to fight as a team.",
             "seasons": [{
                     "number": 0,
                     "file": "data/seasons/ninjago_s0.json"
@@ -89,7 +89,7 @@
             "poster": "https://cdn1.futuretodayinc.com/files/a8wn4hw/im/iptv/a8/e8/4a6ee375eedd3de888a1c303829aa0c5.jpg",
             "banner": "https://m.media-amazon.com/images/S/pv-target-images/41e464a56541351a70c6c67c0f8b58fbec43829ec36e218be5295293399f987d.jpg",
             "logo": "https://image.tmdb.org/t/p/original/syIS6UQl4UhELTtu1ZWQcMSgR91.png",
-            "summary": "Many legendary realms have suddenly combined into one, but their union is unstable. A Spinjitzu Ninja Master must train a new generation of heroes to help find Elemental Dragons who can save the planet before the forces of evil use the same dragon energy to destroy this new world.",
+            "summary": "After the Merge brings the realms together, new heroes Arin and Sora join the original Ninja to protect their changed world. Ras pursues a plan to reverse the Merge—with consequences for every realm.",
             "seasons": [{
                     "number": 1,
                     "file": "data/seasons/dr_s1.json"
