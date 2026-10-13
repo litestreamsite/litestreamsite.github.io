@@ -289,6 +289,23 @@
                 "number": 1,
                 "file": "data/seasons/decoded_reals1.json"
             }]
+        },
+                {
+            "id": "ninjagoembersandashes",
+            "title": "LEGO Ninjago: Embers and Ashes",
+            "type": "show",
+            "comingSoon": true,
+            "genres": ["Action & Adventure", "Animation", "Fantasy"],
+            "rating": "TV-Y7",
+            "years": "2027",
+            "poster": "",
+            "banner": "https://image.tmdb.org/t/p/original/e9Q0cp3HdExBjtq9YY8nxkQq7mu.jpg",
+            "logo": "",
+            "summary": "A new generation of ninja rises to face the Oni and defend Ninjago from a growing darkness.",
+            "seasons": [{
+                "number": 1,
+                "file": "data/seasons/embersandashes_s1.json"
+            }]
         }
     ]
 }
