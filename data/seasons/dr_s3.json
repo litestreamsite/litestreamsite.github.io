@@ -1,0 +1,264 @@
+{
+    "season": 3,
+    "episodes": [{
+            "number": 1,
+            "title": "The Missing",
+            "description": "Sora copes with Arin's disappearance with help from an unlikely source, while Zane gets a clue to the missing Ninja's location. The Ninja search for their teammate only to encounter a creepy but familiar creature terrorizing the locals. Meanwhile, Nya, Kai and Wyldfyre are on their own search for Jay and spark old grudges. Also, the Forbidden Five reveal the source of their twisted powers.",
+            "thumbnail": "https://image.tmdb.org/t/p/original/h7YXFuy1IVlzMkmQTCWrErVyYvd.jpg",
+            "embed": "https://cdn1.futuretodayinc.com/files/a8wn4hw/vi/22/52/10679886/s10679886.m3u8",
+            "subtitles": [{
+                "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/26/99/4cd1c70c4b1922e022fc05363638e46d.vtt",
+                "lang": "en",
+                "label": "English",
+                "default": true
+            }]
+        },
+        {
+            "number": 2,
+            "title": "The Ultimate Object of Admiration",
+            "description": "Arin nurses Ras back to health as they continue his training, while the Ninja follow their trail. The group must separate, leading Lloyd, Frak, Sora and Riyu through a treacherous cave. A village of friendly Dragonians on the other side guide the Ninja to the forest where Arin was last spotted, but a dangerous foe awaits them.",
+            "thumbnail": "https://image.tmdb.org/t/p/original/qPfHcqKainSkEX596z0CcpZG2TV.jpg",
+            "embed": "https://cdn1.futuretodayinc.com/files/a8wn4hw/vi/89/7a/10679887/s10679887.m3u8",
+            "subtitles": [{
+                "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/f3/a3/b0c304f605575f5f43e3d85bef15c0a7.vtt",
+                "lang": "en",
+                "label": "English",
+                "default": true
+            }]
+        },
+        {
+            "number": 3,
+            "title": "The Spectral Lands",
+            "description": "Ras's injuries grow life-threatening, forcing Arin to make a perilous journey into the Spectral Lands to retrieve a healing elixir. Back in Ninjago, the search for Jay hits a dead end, inspiring Kai to make Jay come to them by playing to his old friend's weakness. Meanwhile, the Forbidden Five reach the source of their power and enter into a corrupt new bargain.",
+            "thumbnail": "https://image.tmdb.org/t/p/original/b9BW62OliwoI9i7SZtWOwrhlxVr.jpg",
+            "embed": "https://cdn1.futuretodayinc.com/files/a8wn4hw/vi/21/cd/10679888/s10679888.m3u8",
+            "subtitles": [{
+                "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/5d/94/7084843908c72059dceece5d758ef512.vtt",
+                "lang": "en",
+                "label": "English",
+                "default": true
+            }]
+        },
+        {
+            "number": 4,
+            "title": "The Great Zane Robbery",
+            "description": "As Lloyd, Sora, Frak and Riyu grow frustrated with their search for Arin, Zane's parallel journey leads him to another Monastery and an old friend. He crosses paths with the thieving Rapton and his freebooters, but both find themselves targets of Nokt and his new army of corrupted Dragonians. Their fight over a Prismatic Blade leads to a shocking sacrifice.",
+            "thumbnail": "https://image.tmdb.org/t/p/original/a2sDerO3ZmlclKrTWVarIrCZGk2.jpg",
+            "embed": "https://www.youtube.com/embed/F1eOEvRIqTs",
+            "subtitles": [{
+                "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/b3/e4/dfa50538bdcd7b2d50845c2a478ddd1c.vtt",
+                "lang": "en",
+                "label": "English",
+                "default": true
+            }]
+        },
+        {
+            "number": 5,
+            "title": "I Alone Can Save Them",
+            "description": "The Forbidden Five's forces attack the City of Temples and draw Nya, Kai and Wyldfyre into the quest for the Prismatic Blades. Meanwhile, Riyu guides Lloyd, Sora and Frak away from Arin and into an encounter with Zarkt and the Demon Dragonians. A surprise arrival turns the tide of battle. Elsewhere, Ras finally leads Arin to his parents.",
+            "thumbnail": "https://image.tmdb.org/t/p/original/3YgSJ8Mp37ipMeeDi8WR2GSf7Qa.jpg",
+            "embed": "https://cdn1.futuretodayinc.com/files/a8wn4hw/vi/22/45/10679890/s10679890.m3u8",
+            "subtitles": [{
+                "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/70/4f/17749581f1e3033befa629a266dad1fd.vtt",
+                "lang": "en",
+                "label": "English",
+                "default": true
+            }]
+        },
+        {
+            "number": 6,
+            "title": "Fallen Wishes",
+            "description": "While the Ninja continue their search for Arin and Jay, Rox attacks new Djinjago to force Arrakore to repair the shattered Prismatic Blade with wish magic. Sora, Riyu and Nya get pulled into the battle to protect the Djinn and stop Rox. Meanwhile, the mystery bounty hunter accepts a job to capture Ras, who continues his mission with Arin to undo the Merge.",
+            "thumbnail": "https://image.tmdb.org/t/p/original/7sbGa3sVhHmP1w9HyySWxzaIaaC.jpg",
+            "embed": "https://cdn1.futuretodayinc.com/files/a8wn4hw/vi/b8/8e/10679891/s10679891.m3u8",
+            "subtitles": [{
+                "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/a0/58/d36169f5fd9fad068623a4f649d4b727.vtt",
+                "lang": "en",
+                "label": "English",
+                "default": true
+            }]
+        },
+        {
+            "number": 7,
+            "title": "Their Draconic Majesty's Request",
+            "description": "Ras and Arin reach the World Forest and are immediately attacked and separated by the mystery bounty hunter. Arin is escorted to the Temple of the Dragon Cores by old allies, where Ras seeks an audience with its spirit. Ras can outrun the bounty hunter but not his past. Meanwhile, the Ninja track the remaining Prismatic Blade as Wyldfyre confronts her fear on a quest to cure Roby.",
+            "thumbnail": "https://image.tmdb.org/t/p/original/gF42ipbD4JFZC03lGZRpWnBxTsl.jpg",
+            "embed": "https://cdn1.futuretodayinc.com/files/a8wn4hw/vi/f6/b5/10679892/s10679892.m3u8",
+            "subtitles": [{
+                "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/da/72/462b4525e88ba6f46f3ef46fb4188536.vtt",
+                "lang": "en",
+                "label": "English",
+                "default": true
+            }]
+        },
+        {
+            "number": 8,
+            "title": "Crashing Together",
+            "description": "The Ninja confront Arin in the World Forest, forcing him to choose between Ras and his former mentor. Drix and the Demon Dragonians arrive, and a fight for the Prismatic Blades splits the team. A flashback to Arin and Sora's first days together in the Crossroads reveals the origins of their friendship and commitment to each other.",
+            "thumbnail": "https://image.tmdb.org/t/p/original/hCLMCZqC0UdjewZWvDlzWqgnWmL.jpg",
+            "embed": "https://cdn1.futuretodayinc.com/files/a8wn4hw/vi/cc/00/10679893/s10679893.m3u8",
+            "subtitles": [{
+                "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/7f/29/289d67ce162ec0a5914fb4f8348393a8.vtt",
+                "lang": "en",
+                "label": "English",
+                "default": true
+            }]
+        },
+        {
+            "number": 9,
+            "title": "Chaos Unchained",
+            "description": "The Ninja attempt to beat Drix to the First Land to prevent the Forbidden Five from using all five Prismatic Blades to release ThunderFang. Arin temporarily joins the Ninja to save Ras, while in the City of Temples, Wyldfyre might have found a drastic cure to Roby's decay. A fight in the Dragonian village will decide the fate of the the Merged Lands.",
+            "thumbnail": "https://image.tmdb.org/t/p/original/l8GBOb8nUgBshJKwu6tpYzQzHRa.jpg",
+            "embed": "https://cdn1.futuretodayinc.com/files/a8wn4hw/vi/e8/7c/10679894/s10679894.m3u8",
+            "subtitles": [{
+                "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/23/e9/63e315c4dddce25dc656e362023ad2ba.vtt",
+                "lang": "en",
+                "label": "English",
+                "default": true
+            }]
+        },
+        {
+            "number": 10,
+            "title": "The Shatter Dragon",
+            "description": "ThunderFang's storm builds across the Merged Lands as the Chaos Dragon smashes his way out of his prison. A last-minute rescue saves the Ninja from the supernatural winds, but their combined heroics are no match for ThunderFang and his army. Nya makes a shocking discovery, and Arin settles an inner conflict... But it may not be enough.",
+            "thumbnail": "https://image.tmdb.org/t/p/original/dfzeZGnjXfH9tg2FSrkHajg1Xb.jpg",
+            "embed": "https://cdn1.futuretodayinc.com/files/a8wn4hw/vi/eb/a9/10679895/s10679895.m3u8",
+            "subtitles": [{
+                "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/43/68/1986f8f1effcca27c7d8fd45b9fdb7df.vtt",
+                "lang": "en",
+                "label": "English",
+                "default": true
+            }]
+        },
+        {
+            "number": 11,
+            "title": "The Hollow Ones",
+            "description": "Arin, Sora and Ras are unexpectedly plunged into mysterious, spectral happenings in Mysterium. Meanwhile, Lloyd enlists Jay for a mission to find Arin's parents. And when the great Dragon Master Egalt passes, his companion Rontu comes to the Monastery with a new purpose.",
+            "thumbnail": "https://image.tmdb.org/t/p/original/gduADRKeCdzpzhED9tNa6XCE5G1.jpg",
+            "embed": "https://cdn1.futuretodayinc.com/files/a8wn4hw/vi/09/cc/10715406/s10715406.m3u8",
+            "subtitles": [{
+                "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/f4/c7/8f14d2e2aa3f8b589664477bf60c2d38.vtt",
+                "lang": "en",
+                "label": "English",
+                "default": true
+            }]
+        },
+        {
+            "number": 12,
+            "title": "Human Resources",
+            "description": "Ras, Arin and Sora find themselves overwhelmed by spectral forces attacking Mysterium. They lead the Sorceress back to her Monastery in hopes that she can provide the key to entering the Underworld... but first they must bipass her magical traps. Meanwhile, Jay guides the Ninja through the Administration with an unconventional plan to reach the Land of Lee.",
+            "thumbnail": "https://image.tmdb.org/t/p/original/twgknjWbSkYbxfN42EAq8MC63qO.jpg",
+            "embed": "https://cdn1.futuretodayinc.com/files/a8wn4hw/vi/f1/00/10715407/s10715407.m3u8",
+            "subtitles": [{
+                "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/19/eb/165b5df32aef69a8af20bab69b4367f2.vtt",
+                "lang": "en",
+                "label": "English",
+                "default": true
+            }]
+        },
+        {
+            "number": 13,
+            "title": "Between You and Lee",
+            "description": "Lloyd, Nya, Jay and Wyldfyre arrive in Lee, where survivors of the Merge are sheltered in an underground community run by the realm's unusual namesake, Lee, but all is not as it seems. Back in Ninjago, Rontu takes Riyu to the Crossroads for training where the dragons get into trouble. Meanwhile, Arin and Sora suspect Ras is keeping a dangerous secret as they journey into the Underworld.",
+            "thumbnail": "https://image.tmdb.org/t/p/original/uAHbNfA5WfOrjygNeePkoWp5wZG.jpg",
+            "embed": "https://cdn1.futuretodayinc.com/files/a8wn4hw/vi/bc/37/10715408/s10715408.m3u8",
+            "subtitles": [{
+                "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/5d/d9/ff0118f230a54f1935cb901d9babdf6e.vtt",
+                "lang": "en",
+                "label": "English",
+                "default": true
+            }]
+        },
+        {
+            "number": 14,
+            "title": "Casket of Bones",
+            "description": "Ras, Arin and Sora face one last trial before entering the Underworld, only to uncover a terrible truth at the Forge of the Forgotten that forces Arin to make a difficult choice. In the Realm of Lee, Jay and Nya discover that Lloyd and Wyldfyre are missing and must work together to find the Ninja and expose Lee's secret. Meanwhile, Lloyd learns a vital clue from the Council of the Source Dragons.",
+            "thumbnail": "https://image.tmdb.org/t/p/original/lWd4xHaY38ESQgCW5XZwiai4JsS.jpg",
+            "embed": "https://cdn1.futuretodayinc.com/files/a8wn4hw/vi/e0/58/10715409/s10715409.m3u8",
+            "subtitles": [{
+                "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/e0/fd/890eb8f56a0309bc332268e21e93073a.vtt",
+                "lang": "en",
+                "label": "English",
+                "default": true
+            }]
+        },
+        {
+            "number": 15,
+            "title": "The Screaming Earth",
+            "description": "Arin and Sora arrive in Lee and discover a shocking secret at his parents' graves. Below, the Ninja reunite to liberate Lee but underestimate its ruler. Meanwhile, just outside Imperium, Cole, Frak and Kai finally unearth the source of the screaming earth - a key to understanding the Merge itself.",
+            "thumbnail": "https://image.tmdb.org/t/p/original/kOPOowOtS6QPEwTdo9wXT1xD0ww.jpg",
+            "embed": "https://cdn1.futuretodayinc.com/files/a8wn4hw/vi/c9/df/10715410/s10715410.m3u8",
+            "subtitles": [{
+                "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/20/92/cd8d23709924f2fbbbae5331d2d5b29c.vtt",
+                "lang": "en",
+                "label": "English",
+                "default": true
+            }]
+        },
+        {
+            "number": 16,
+            "title": "Under the Light of a Mechanical Moon",
+            "description": "The Ninja realize that the Land of Lee is beyond saving for the time being and barely escape the growing army of Hollow Ones with their lives. Now reunited with the others, Arin and Sora share their experience in Mysterium and give the Ninja their next destination. Ras redoubles his efforts after Arin's betrayal, while Cole, Kai and Frak return from their mission to an unpleasant surprise.",
+            "thumbnail": "https://image.tmdb.org/t/p/original/zcyaJxTGniyuSjSz9IwFD55NRgn.jpg",
+            "embed": "https://cdn1.futuretodayinc.com/files/a8wn4hw/vi/cf/45/10715411/s10715411.m3u8",
+            "subtitles": [{
+                "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/dc/29/f8326ef2e3c45f37d8ec1b5d6aef2a34.vtt",
+                "lang": "en",
+                "label": "English",
+                "default": true
+            }]
+        },
+        {
+            "number": 17,
+            "title": "The Vault of Focus",
+            "description": "The Ninja explore the Hollowed City of Temples and are lead to an unlikely source of help. Upon learning of the trials to summon the Arc Dragon of Focus, the Ninja split up in a race against ThunderFang filling the Well of the Lost. Arin and Lloyd gear-up for a treacherous journey back to the Spectral Lands, while Cole, Kai and Frak battle the Spectral Invasion in Imperium.",
+            "thumbnail": "https://image.tmdb.org/t/p/original/4r0KMqOgPWyLOjjrUMmzkyktRGQ.jpg",
+            "embed": "https://cdn1.futuretodayinc.com/files/a8wn4hw/vi/37/db/10715412/s10715412.m3u8",
+            "subtitles": [{
+                "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/a4/45/6cce89f3aa53299e0774df18111c64c3.vtt",
+                "lang": "en",
+                "label": "English",
+                "default": true
+            }]
+        },
+        {
+            "number": 18,
+            "title": "For Whom the Bell Tolls",
+            "description": "Sora and Wyldfyre arrive back in Ninjago where they meet up with Frak, Kai and Cole. The groups split, with Frak joining Sora and Wyldfyre on Zanth to Djinjago. More than one surprise awaits the Ninja in Djinjago, and an old foe threatens the trial to awaken the Arc Dragon of Focus. Nya finds unusual help in Mysterium, while Arin shares doubts with Lloyd as they reach the Spectral Lands.",
+            "thumbnail": "https://image.tmdb.org/t/p/original/l7IqKyDjupG0t97PkVQuoQae15h.jpg",
+            "embed": "https://cdn1.futuretodayinc.com/files/a8wn4hw/vi/4d/7a/10715413/s10715413.m3u8",
+            "subtitles": [{
+                "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/be/ce/686a1c0c26f811f491e90b8fa6ea8404.vtt",
+                "lang": "en",
+                "label": "English",
+                "default": true
+            }]
+        },
+        {
+            "number": 19,
+            "title": "When Doves Cry",
+            "description": "The two teams of Ninja reach their respective caves in Djinjago and Mysterium. they each face surprising obstacles to awaken the Arc Dragon of Focus. Lloyd and Arin battle through heavy resistance in the Spectral Lands as ThunderFang absorbs power from the Well of the Lost. Back in the Monastery of Spinjitzu, an unexpected arrival spells trouble for Geo and Mr. Frohicky.",
+            "thumbnail": "https://image.tmdb.org/t/p/original/4tlQrLIqP3R2jFzZDb4N8p37Z7w.jpg",
+            "embed": "https://cdn1.futuretodayinc.com/files/a8wn4hw/vi/6c/9c/10715414/s10715414.m3u8",
+            "subtitles": [{
+                "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/37/51/db05b2f92730201d2365c4f01a1cb46c.vtt",
+                "lang": "en",
+                "label": "English",
+                "default": true
+            }]
+        },
+        {
+            "number": 20,
+            "title": "Chaos Reigns",
+            "description": "While the Ninja complete the Trials of Focus, Lloyd and Arin fight their way to the Well of the Lost. Their greatest obstacle may not be Hollow Ones or the Forbidden Five - it might be each other. A clash with ThunderFang in the skies above the Spectral Lands will determine the future of the Merged Lands. Unforeseen consequences await the Ninja, win or lose, as Ras puts his master's plan into action.",
+            "thumbnail": "https://image.tmdb.org/t/p/original/lxvNFL8je4l5AQo4acXQAEUjYYH.jpg",
+            "embed": "https://cdn1.futuretodayinc.com/files/a8wn4hw/vi/3e/5d/10715415/s10715415.m3u8",
+            "subtitles": [{
+                "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/30/69/9a5a6d831e07251a6864db89d0fba18a.vtt",
+                "lang": "en",
+                "label": "English",
+                "default": true
+            }]
+        }
+    ]
+}

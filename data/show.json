@@ -1,0 +1,363 @@
+{
+    "shows": [{
+            "id": "ninjago",
+            "title": "LEGO Ninjago: Masters of Spinjitzu",
+            "type": "show",
+            "genres": ["Action & Adventure", "Animation", "Fantasy"],
+            "rating": "TV-Y7",
+            "years": "2011 – 2022",
+            "creator": "Dan & Kevin Hageman",
+            "starring": ["Vincent Tong", "Michael Adamthwaite", "Kirby Morrow", "Brent Miller", "Kelly Metzger", "Jillian Michaels", "Paul Dobson"],
+            "poster": "https://image.tmdb.org/t/p/original/beKgqwruOGmVAvRwRvfuOcXwl2Z.jpg",
+            "banner": "https://image.tmdb.org/t/p/original/RUBG86JQ81CV6DMm0RKdGln2Kr.jpg",
+            "logo": "https://image.tmdb.org/t/p/original/8W6yO0MAh4Pl7OFIoLoKfwQWIBz.png",
+            "summary": "When the fate of their world, Ninjago, is challenged by great threats, it's up to the ninja: Kai, Jay, Cole, Zane, Lloyd and Nya to save the world.",
+            "seasons": [{
+                    "number": 0,
+                    "file": "data/seasons/ninjago_s0.json"
+                },
+                {
+                    "number": 1,
+                    "file": "data/seasons/ninjago_s1.json"
+                },
+                {
+                    "number": 2,
+                    "file": "data/seasons/ninjago_s2.json"
+                },
+                {
+                    "number": 3,
+                    "file": "data/seasons/ninjago_s3.json"
+                },
+                {
+                    "number": 4,
+                    "file": "data/seasons/ninjago_s4.json"
+                },
+                {
+                    "number": 5,
+                    "file": "data/seasons/ninjago_s5.json"
+                },
+                {
+                    "number": 6,
+                    "file": "data/seasons/ninjago_s6.json"
+                },
+                {
+                    "number": 7,
+                    "file": "data/seasons/ninjago_s7.json"
+                },
+                {
+                    "number": 8,
+                    "file": "data/seasons/ninjago_s8.json"
+                },
+                {
+                    "number": 9,
+                    "file": "data/seasons/ninjago_s9.json"
+                },
+                {
+                    "number": 10,
+                    "file": "data/seasons/ninjago_s10.json"
+                },
+                {
+                    "number": 11,
+                    "file": "data/seasons/ninjago_s11.json"
+                },
+                {
+                    "number": 12,
+                    "file": "data/seasons/ninjago_s12.json"
+                },
+                {
+                    "number": 13,
+                    "file": "data/seasons/ninjago_s13.json"
+                },
+                {
+                    "number": 14,
+                    "file": "data/seasons/ninjago_s14.json"
+                },
+                {
+                    "number": 15,
+                    "file": "data/seasons/ninjago_s15.json"
+                }
+            ]
+        },
+        {
+            "id": "ninjagodr",
+            "title": "LEGO Ninjago: Dragons Rising",
+            "type": "show",
+            "genres": ["Action & Adventure", "Animation", "Fantasy"],
+            "rating": "TV-Y7",
+            "years": "2023 – Present",
+            "newEpisodes": false,
+            "poster": "https://cdn1.futuretodayinc.com/files/a8wn4hw/im/iptv/a8/e8/4a6ee375eedd3de888a1c303829aa0c5.jpg",
+            "banner": "https://m.media-amazon.com/images/S/pv-target-images/013d4f514ad5ed51b9fbdb09a5ec24911f45ab3405c3e23923025287fcf8bc3b.jpg",
+            "logo": "https://image.tmdb.org/t/p/original/syIS6UQl4UhELTtu1ZWQcMSgR91.png",
+            "summary": "Many legendary realms have suddenly combined into one, but their union is unstable. A Spinjitzu Ninja Master must train a new generation of heroes to help find Elemental Dragons who can save the planet before the forces of evil use the same dragon energy to destroy this new world.",
+            "seasons": [{
+                    "number": 1,
+                    "file": "data/seasons/dr_s1.json"
+                },
+                {
+                    "number": 2,
+                    "file": "data/seasons/dr_s2.json"
+                },
+                {
+                    "number": 3,
+                    "file": "data/seasons/dr_s3.json"
+                },
+                {
+                    "number": 4,
+                    "file": "data/seasons/dr_s4.json"
+                }
+            ]
+        },
+        {
+            "id": "ninjagomonstrosity",
+            "title": "LEGO Ninjago Legends",
+            "type": "show",
+            "genres": ["Action & Adventure", "Animation", "Fantasy"],
+            "rating": "TV-Y7",
+            "poster": "https://m.media-amazon.com/images/M/MV5BMDZjNzEyYTQtZWZlYS00MWUyLTg1MjEtZmUzMmNlMDYwZGRkXkEyXkFqcGc@._V1_.jpg",
+            "banner": "https://cdn1.futuretodayinc.com/files/a8wn4hw/im/fe/fd/869a4ea8be974e6094f9a1df0396de7a.jpg",
+            "logo": "https://beam-images.warnermediacdn.com/BEAM_LWM_DELIVERABLES/4660cfec-ee29-4ef2-b15e-9966aa101eac/4c39771b-aa52-11f0-abb1-0afffd029469?host=wbd-images.prod-vod.h264.io&partner=beamcom",
+            "summary": "Follow the ninja through bold new adventures, from Kai’s journey in the Land of Monsters to a glimpse of Ninjago’s uncertain future.",
+            "seasons": [{
+                    "number": 1,
+                    "file": "data/seasons/legends_s1.json"
+                },
+                {
+                    "number": 2,
+                    "file": "data/seasons/legends_s2.json"
+                }
+            ]
+        },
+        {
+            "id": "dreamzzz",
+            "title": "LEGO DREAMZzz",
+            "type": "show",
+            "genres": ["Animation", "Fantasy", "Kids"],
+            "rating": "TV-Y7",
+            "years": "2023 – 2026",
+            "poster": "https://image.tmdb.org/t/p/original/bksnhr6slfT2mIcCTglGYD3pI9A.jpg",
+            "banner": "https://image.tmdb.org/t/p/original/i9TAaBxTqbRMbY6gWuTdtX9fzCr.jpg",
+            "logo": "https://image.tmdb.org/t/p/original/pFRxWD5a3gDNtbMt0tytEh9OIFv.png",
+            "summary": "A group of kids joins a secret agency and enter the Dream World to combat nightmares and use the power of imagination to save dreamers in distress.",
+            "seasons": [{
+                    "number": 1,
+                    "file": "data/seasons/dz_s1.json"
+                },
+                {
+                    "number": 2,
+                    "file": "data/seasons/dz_s2.json"
+                },
+                {
+                    "number": 3,
+                    "file": "data/seasons/dz_s3.json"
+                },
+                {
+                    "number": 4,
+                    "file": "data/seasons/dz_s4.json"
+                }
+            ]
+        },
+        {
+            "id": "chima",
+            "title": "LEGO LEGENDS OF CHIMA",
+            "type": "show",
+            "genres": ["Action & Adventure", "Animation", "Fantasy"],
+            "rating": "TV-Y7",
+            "years": "2013 – 2014",
+            "poster": "https://image.tmdb.org/t/p/original/rn1Bnam0yBolJPMhR4VJAeCxM0Y.jpg",
+            "banner": "https://cdn1.futuretodayinc.com/files/a8wn4hw/im/fd/f3/f48479a2142f68b8f625407e8af6ca28.jpg",
+            "logo": "https://image.tmdb.org/t/p/original/xTXGm0PSCbtEsKG7KzAqXLBJMXQ.png",
+            "summary": "Laval the Lion and Cragger the Crocodile are best friends who live in the mystical land of Chima. This all changes after an innocent escapade when Cragger gets his first experience with chi, a sacred resource important to Chima's delicate balance which gives its user awesome power.",
+            "seasons": [{
+                    "number": 1,
+                    "file": "data/seasons/chima_s1.json"
+                },
+                {
+                    "number": 2,
+                    "file": "data/seasons/chima_s2.json"
+                },
+                {
+                    "number": 3,
+                    "file": "data/seasons/chima_s3.json"
+                }
+            ]
+        },
+        {
+            "id": "nexo",
+            "title": "LEGO NEXO Knights",
+            "type": "show",
+            "genres": ["Action & Adventure", "Animation", "Sci-Fi"],
+            "rating": "TV-Y7",
+            "years": "2015 – 2017",
+            "poster": "https://image.tmdb.org/t/p/original/d0e5dJ2FQhlwEhFX4cB0ijp5SMd.jpg",
+            "banner": "https://cdn1.futuretodayinc.com/files/a8wn4hw/im/cf/1b/41a37321c4e4a272ea2b6416776372b7.jpg",
+            "logo": "https://occ-0-1500-1501.1.nflxso.net/dnm/api/v6/beuYL-MTCxPyt5oTOhVnWNGfZug/AAAABdIb8htG1RzUAKeNB5peevMi4_IFBFjCm_4wJ8hhYevIyp_i4ccKlqTUHOfOW2SrlCt1uebXaiJs0f-u7GY6l1annSd9FHz20gRT5amZKio.webp?r=d63",
+            "summary": "The adventure takes place in the futuristic Kingdom of Knighton. It focuses on the Nexo Knights as they journey to defeat Jestro the evil jester, the Book of Monsters, and their lava monster army. Clay leads the Nexo Knights, which include Macy, Lance, Aaron, and Axl. Together, under their mentor Merlok 2.0, they band together to defeat Jestro.",
+            "seasons": [{
+                    "number": 1,
+                    "file": "data/seasons/nexo_s1.json"
+                },
+                {
+                    "number": 2,
+                    "file": "data/seasons/nexo_s2.json"
+                },
+                {
+                    "number": 3,
+                    "file": "data/seasons/nexo_s3.json"
+                },
+                {
+                    "number": 4,
+                    "file": "data/seasons/nexo_s4.json"
+                }
+            ]
+        },
+        {
+            "id": "dotd",
+            "title": "LEGO Ninjago: Day of the Departed",
+            "type": "movie",
+            "genres": ["Action & Adventure", "Animation", "Fantasy"],
+            "rating": "TV-Y7",
+            "years": "2016",
+            "runtime": "44m",
+            "poster": "https://image.tmdb.org/t/p/original/dZM1tYuARngZdZMHSYPdU6zuA5N.jpg",
+            "banner": "https://image.tmdb.org/t/p/original/5Mx9bOqNN1aXokwwzKam2qiw2cY.jpg",
+            "logo": "https://image.tmdb.org/t/p/original/xiXPiWwAuI4JGUDFWiUzx73oaBW.png",
+            "summary": "When Cole returns to Yang's haunted temple to seek revenge on a former Airjitzu Master, he accidentally uses a powerful Dark Magic blade that unleashes the spectral forms of Ninjago's greatest villains and traps himself in the temple. The Ninja must return the ghosts to the Departed Realm before it's too late.",
+            "seasons": [{
+                "number": 1,
+                "file": "data/seasons/dotd.json"
+            }]
+        },
+        {
+            "id": "lmk",
+            "title": "LEGO Monkie Kid",
+            "type": "show",
+            "genres": ["Action & Adventure", "Animation", "Comedy"],
+            "rating": "TV-Y7",
+            "years": "2020 – 2023",
+            "poster": "https://cdn1.futuretodayinc.com/files/a8wn4hw/im/a0/96/f01ea63d0855f1d9b5b44d00ee634bac.jpg",
+            "banner": "https://image.tmdb.org/t/p/original/9XdI3OWp1O5AYMV5e7J1mmNNNsp.jpg",
+            "logo": "https://image.tmdb.org/t/p/original/6xrbLNUSisGPHYfpGMI2VNKuEhe.png",
+            "summary": "Centuries ago, the beloved Chinese Monkey King used his magical staff to capture and trap the evil Demon Bull King deep inside a mountain. Flash-forward to modern-day China, when fate leads MK (aka Monkie Kid), a young noodle shop delivery boy, to find the long-lost staff. Soon, MK and his best friends find themselves entangled in adventures packed full of action, mystery, imagination and magic.",
+            "seasons": [{
+                    "number": 3,
+                    "file": "data/seasons/lmk_s3.json"
+                },
+                {
+                    "number": 4,
+                    "file": "data/seasons/lmk_s4.json"
+                },
+                {
+                    "number": 5,
+                    "file": "data/seasons/lmk_s5.json"
+                }
+            ]
+        },
+        {
+            "id": "thelegoninjagomovie",
+            "comingSoon": true,
+            "title": "The LEGO Ninjago Movie",
+            "type": "movie",
+            "genres": ["Action & Adventure", "Animation", "Comedy"],
+            "rating": "PG",
+            "years": "2017",
+            "runtime": "1h 41m",
+            "poster": "https://image.tmdb.org/t/p/original/oNzOqGZfiwSB1GGdyX7QG4OdxUL.jpg",
+            "banner": "https://image.tmdb.org/t/p/original/6BQis8u6Q8U5J4EHqdyRRIE0njI.jpg",
+            "logo": "https://image.tmdb.org/t/p/original/kt3Jae5UE5RXunwkspaAM2x0yD1.png",
+            "summary": "Six young ninjas are tasked with defending their island home of Ninjago. By night, they’re gifted warriors using their skill and awesome fleet of vehicles to fight villains and monsters. By day, they’re ordinary teens struggling against their greatest enemy....high school.",
+            "seasons": [{
+                "number": 1,
+                "file": "data/seasons/thelegoninjagomovie.json"
+            }]
+        },
+        {
+            "id": "thelegomovie",
+            "comingSoon": true,
+            "title": "The LEGO Movie",
+            "type": "movie",
+            "genres": ["Animation"],
+            "rating": "K-7",
+            "years": "2014",
+            "runtime": "1h 40m",
+            "poster": "https://image.tmdb.org/t/p/original/bU3eFOHvzTrXBjzPJu9LZFRNQ11.jpg",
+            "banner": "https://image.tmdb.org/t/p/original/tpGQywkbnWItRPJbLVApMFTAABy.jpg",
+            "logo": "https://image.tmdb.org/t/p/original/2kTDt0uOb4xQzvw1h8ZRufoXNCX.png",
+            "summary": "An ordinary Lego mini-figure, mistakenly thought to be the extraordinary MasterBuilder, is recruited to join a quest to stop an evil Lego tyrant from conquering the universe.",
+            "seasons": [{
+                "number": 1,
+                "file": "data/seasons/thelegomovie.json"
+            }]
+        },
+        {
+            "id": "thelegobatmanmovie",
+            "comingSoon": true,
+            "title": "The LEGO Batman Movie",
+            "type": "movie",
+            "genres": ["Animation"],
+            "rating": "7",
+            "years": "2017",
+            "runtime": "1h 44m",
+            "poster": "https://image.tmdb.org/t/p/original/4FKZ90sJcwrOVPR1436AnnN52Kl.jpg",
+            "banner": "https://image.tmdb.org/t/p/original/5sqGN93VLMDOoa0JrwAVFNYMBrx.jpg",
+            "logo": "https://image.tmdb.org/t/p/original/l1ly31zDxwiLMWWTcjyOyV93dRe.png",
+            "summary": "A cooler-than-ever Bruce Wayne must deal with the usual suspects as they plan to rule Gotham City, while discovering that he has accidentally adopted a teenage orphan who wishes to become his sidekick.",
+            "seasons": [{
+                "number": 1,
+                "file": "data/seasons/thelegobatmanmovie.json"
+            }]
+        },
+        {
+            "id": "thelegomovie2",
+            "comingSoon": true,
+            "title": "The LEGO Movie 2: The Second Part",
+            "type": "movie",
+            "genres": ["Animation"],
+            "rating": "K-7",
+            "years": "2019",
+            "runtime": "1h 47m",
+            "poster": "https://image.tmdb.org/t/p/original/QTESAsBVZwjtGJNDP7utiGV37z.jpg",
+            "banner": "https://image.tmdb.org/t/p/original/2gglZmi9FvFT0ze21PQdZdt0d1i.jpg",
+            "logo": "https://image.tmdb.org/t/p/original/oVtzvWiS4DHaQuMeeXpXQDLaK6r.png",
+            "summary": "It's been five years since everything was awesome and the citizens are facing a huge new threat: LEGO DUPLO® invaders from outer space, wrecking everything faster than they can rebuild.",
+            "seasons": [{
+                "number": 1,
+                "file": "data/seasons/thelegomovie2.json"
+            }]
+        },
+        {
+            "id": "legotheadventuresofclutchpowers",
+            "comingSoon": true,
+            "title": "LEGO: The Adventures of Clutch Powers",
+            "type": "movie",
+            "genres": ["Animation"],
+            "rating": "G",
+            "years": "2010",
+            "runtime": "1h 21m",
+            "poster": "https://image.tmdb.org/t/p/original/sa9UQfzagl6VjSwkoknZcqfeWQE.jpg",
+            "banner": "https://image.tmdb.org/t/p/original/yrpxgtij5ozwNUAQ9oAAJSqvzpm.jpg",
+            "logo": "",
+            "summary": "Clutch Powers ventures on a mission assigned to him by his boss to solve the chaos that occurred on the Space Police prison planet.",
+            "seasons": [{
+                "number": 1,
+                "file": "data/seasons/legotheadventuresofclutchpowers.json"
+            }]
+        },
+        {
+            "id": "ninjagodecoded",
+            "title": "LEGO Ninjago: Decoded",
+            "type": "show",
+            "genres": ["Action & Adventure", "Animation", "Comedy"],
+            "rating": "TV-Y7",
+            "years": "2017",
+            "poster": "https://m.media-amazon.com/images/M/MV5BY2RkZmNjMjQtYWQ0Zi00YTM3LWIzZjItNThlZDA4YTFjNTdiXkEyXkFqcGc@.jpg",
+            "banner": "https://m.media-amazon.com/images/S/pv-target-images/2c83190d3a8363a069b415a72e7f13df2d99a9256ae7ab206100f0cfbf5031dd.jpg",
+            "logo": "https://ovp.itv.com/v2/images/programme/vc9ktbw/itv_hub/09_TitleLogo/default?distributionPartner=&fallback=none&treatment=none",
+            "summary": "Nya helps Zane backup memories of their adventures to the Samurai X Cave computer, but Zane encounters a mysterious puzzle buried deep within his code.",
+            "seasons": [{
+                "number": 1,
+                "file": "data/seasons/decoded_reals1.json"
+            }]
+        }
+    ]
+}

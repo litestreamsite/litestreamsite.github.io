@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>litestreamsite · Stream LEGO shows &amp; movies</title>
+    <meta name="description" content="Watch LEGO series, movies and specials for free on litestreamsite. Ninjago, Dragons Rising, DREAMZzz, Monkie Kid, Chima, NEXO Knights and more, no account needed.">
+    <meta name="theme-color" content="#07090F">
+    <meta name="color-scheme" content="dark light">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="litestreamsite">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="litestreamsite">
+    <meta property="og:title" content="litestreamsite · Stream LEGO shows &amp; movies">
+    <meta property="og:description" content="Watch LEGO series, movies and specials for free. No account needed.">
+    <meta property="og:image" content="https://image.tmdb.org/t/p/w1280/RUBG86JQ81CV6DMm0RKdGln2Kr.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" href="images/icons/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="images/icons/favicon-32.png" type="image/png" sizes="32x32">
+    <link rel="apple-touch-icon" href="images/icons/apple-touch-icon.png">
+    <link rel="manifest" href="manifest.json">
+    <script>
+        (function () {
+            try {
+                var d = document.documentElement, a = localStorage.getItem("lsAppearance");
+                if (a === "light" || (a === "system" && matchMedia("(prefers-color-scheme: light)").matches)) d.dataset.theme = "light";
+                var c = localStorage.getItem("lsTheme");
+                if (c && /^#[0-9a-f]{6}$/i.test(c)) d.style.setProperty("--accent", c);
+            } catch (e) {}
+        })();
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://image.tmdb.org">
+    <link rel="preconnect" href="https://cdn1.futuretodayinc.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css?v=20261013">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7SL251FNB8"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date());gtag("config","G-7SL251FNB8");</script>
+</head>
+<body>
+
+<a class="skip-link" href="#view">Skip to content</a>
+
+<header class="topbar" id="topbar">
+    <div class="topbar-inner">
+        <a class="brand" href="#/" aria-label="litestreamsite home">
+            <span class="brand-word">litestream<span>site</span></span>
+        </a>
+        <nav class="nav-links" aria-label="Primary">
+            <a class="nav-link" data-route="home" href="#/">Home</a>
+            <a class="nav-link" data-route="shows" href="#/shows">Shows</a>
+            <a class="nav-link" data-route="movies" href="#/movies">Movies</a>
+            <a class="nav-link" data-route="coming-soon" href="#/coming-soon">Coming Soon</a>
+            <a class="nav-link" data-route="my-list" href="#/my-list">My List</a>
+        </nav>
+        <div class="nav-actions">
+            <a class="nav-search" data-route="search" href="#/search" aria-label="Search">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7.5"/><path d="m20.5 20.5-4.2-4.2"/></svg>
+                <span class="nav-search-label">Search</span>
+                <kbd class="nav-kbd">/</kbd>
+            </a>
+            <a class="nav-icon nav-discord" href="https://discord.gg/Rczuvm2S9A" target="_blank" rel="noopener" aria-label="Join our Discord" title="Join our Discord">
+                <svg viewBox="0 0 71 55" fill="currentColor" aria-hidden="true"><path d="M60.1 4.9A58.5 58.5 0 0045.4.2a.2.2 0 00-.2.1 40.8 40.8 0 00-1.8 3.7 54 54 0 00-16.2 0A37.4 37.4 0 0025.4.3a.2.2 0 00-.2-.1A58.4 58.4 0 0010.5 5 59.6 59.6 0 00.4 45a.3.3 0 00.1.2 58.8 58.8 0 0017.7 9 .2.2 0 00.3-.1 42 42 0 003.6-5.9.2.2 0 00-.1-.3 38.8 38.8 0 01-5.5-2.6.2.2 0 010-.4l1.1-.9a.2.2 0 01.2 0 42 42 0 0035.6 0 .2.2 0 01.2 0l1.1.9a.2.2 0 010 .3 36.4 36.4 0 01-5.5 2.7.2.2 0 00-.1.3 47.2 47.2 0 003.6 5.8.2.2 0 00.3.1A58.6 58.6 0 0070 45.2a.2.2 0 00.1-.2c1.6-16.7-2.7-31.2-11.5-40.1zM23.7 37c-3.5 0-6.3-3.2-6.3-7s2.8-7 6.3-7 6.4 3.2 6.3 7-2.8 7-6.3 7zm23.3 0c-3.5 0-6.3-3.2-6.3-7s2.8-7 6.3-7 6.4 3.2 6.3 7-2.8 7-6.3 7z"/></svg>
+            </a>
+            <button class="nav-icon" id="settingsBtn" type="button" aria-label="Settings" title="Settings">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg>
+            </button>
+            <button class="nav-profile" id="profileBtn" type="button" aria-label="Profile" title="Profile">
+                <span class="avatar" id="navAvatar" aria-hidden="true"></span>
+            </button>
+        </div>
+    </div>
+</header>
+
+<main id="view" class="view" tabindex="-1">
+    <div class="boot" aria-busy="true" aria-label="Loading">
+        <div class="boot-hero skeleton"></div>
+        <div class="page-inner">
+            <div class="boot-line skeleton"></div>
+            <div class="boot-row">
+                <div class="skeleton"></div><div class="skeleton"></div><div class="skeleton"></div><div class="skeleton"></div><div class="skeleton"></div><div class="skeleton"></div><div class="skeleton"></div>
+            </div>
+        </div>
+    </div>
+    <noscript><div class="page-inner page-top"><h1 class="page-title">JavaScript is required</h1><p class="page-sub">Please enable JavaScript to use litestreamsite.</p></div></noscript>
+</main>
+
+<footer class="footer" id="footer">
+    <div class="footer-inner">
+        <div class="footer-brand">
+            <a class="brand" href="#/" aria-label="litestreamsite home">
+                <span class="brand-word">litestream<span>site</span></span>
+            </a>
+            <p>Stream LEGO series, movies and specials for free, all in one place. No account needed.</p>
+        </div>
+        <nav class="footer-col" aria-label="Browse">
+            <h2>Browse</h2>
+            <a href="#/">Home</a>
+            <a href="#/shows">Shows</a>
+            <a href="#/movies">Movies</a>
+            <a href="#/coming-soon">Coming Soon</a>
+            <a href="#/my-list">My List</a>
+        </nav>
+        <nav class="footer-col" aria-label="Community">
+            <h2>Community</h2>
+            <a href="https://discord.gg/Rczuvm2S9A" target="_blank" rel="noopener">Discord server</a>
+            <a href="https://discord.gg/Rczuvm2S9A" target="_blank" rel="noopener">Suggest a feature</a>
+            <a href="https://discord.gg/Rczuvm2S9A" target="_blank" rel="noopener">Report a problem</a>
+        </nav>
+        <div class="footer-col">
+            <h2>Help</h2>
+            <button type="button" data-open-modal="shortcutsModal">Keyboard shortcuts</button>
+            <button type="button" data-open-modal="settingsModal">Settings</button>
+            <a href="#/faq">FAQ</a>
+        </div>
+    </div>
+    <div class="footer-legal">
+        <p>&copy; 2026 litestreamsite. A fan-made project, not affiliated with or endorsed by the LEGO Group. LEGO&reg; is a trademark of the LEGO Group. All videos and artwork belong to their respective owners.</p>
+    </div>
+</footer>
+
+<nav class="tabbar" id="tabbar" aria-label="Primary mobile">
+    <a class="tab-item" data-route="home" href="#/">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10.2 12 3l9 7.2V20a1 1 0 0 1-1 1h-5v-6.5H9V21H4a1 1 0 0 1-1-1z"/></svg>
+        <span>Home</span>
+    </a>
+    <a class="tab-item" data-route="search" href="#/search">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7.5"/><path d="m20.5 20.5-4.2-4.2"/></svg>
+        <span>Search</span>
+    </a>
+    <a class="tab-item" data-route="shows" href="#/shows">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="6.5" width="19" height="14" rx="2.5"/><path d="m16.5 2.5-4.5 4-4.5-4"/></svg>
+        <span>Shows</span>
+    </a>
+    <a class="tab-item" data-route="movies" href="#/movies">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2.5"/><path d="M7.5 3v18M16.5 3v18M3 12h18M3 7.5h4.5M3 16.5h4.5M16.5 16.5H21M16.5 7.5H21"/></svg>
+        <span>Movies</span>
+    </a>
+    <a class="tab-item" data-route="my-list" href="#/my-list">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 21l-7-4.5L5 21V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+        <span>My List</span>
+    </a>
+</nav>
+
+<div class="player" id="player" role="dialog" aria-modal="true" aria-label="Video player" tabindex="-1">
+    <div class="player-stage" id="pVideoArea">
+        <video id="pVideo" playsinline x-webkit-airplay="allow" preload="auto"></video>
+        <iframe id="pFrame" title="Video player" hidden allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
+        <div class="sub-overlay" id="subOverlay" aria-live="off"></div>
+        <div class="player-loader" id="pLoader"><div class="spinner"></div></div>
+        <div class="player-flash" id="pFlash" aria-hidden="true"></div>
+        <div class="seek-flash left" id="seekLeft" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12.5 8c-2.65 0-5.05.99-6.9 2.6L2 7v9h9l-3.62-3.62c1.39-1.16 3.16-1.88 5.12-1.88 3.54 0 6.55 2.31 7.6 5.5l2.37-.78C21.08 11.03 17.15 8 12.5 8z"/></svg><span>10s</span></div>
+        <div class="seek-flash right" id="seekRight" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M11.5 8c2.65 0 5.05.99 6.9 2.6L22 7v9h-9l3.62-3.62c-1.39-1.16-3.16-1.88-5.12-1.88-3.54 0-6.55 2.31-7.6 5.5l-2.37-.78C2.92 11.03 6.85 8 11.5 8z"/></svg><span>10s</span></div>
+        <button class="skip-btn" id="skipBtn" type="button">Skip Intro</button>
+        <div class="upnext" id="upNext" role="button" tabindex="0" aria-label="Play next episode">
+            <div class="upnext-thumb">
+                <img id="upNextThumb" src="data:," alt="">
+                <span class="upnext-ring"><svg class="ring" viewBox="0 0 36 36"><circle cx="18" cy="18" r="16"/><circle class="ring-fill" id="upNextRing" cx="18" cy="18" r="16"/></svg><svg class="upnext-play" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
+            </div>
+            <div class="upnext-text">
+                <div class="upnext-label" id="upNextLabel">Next episode</div>
+                <div class="upnext-name" id="upNextName"></div>
+            </div>
+            <button class="upnext-dismiss" id="upNextDismiss" type="button" aria-label="Dismiss"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
+        </div>
+    </div>
+
+    <div class="player-top">
+        <button class="player-back" id="playerBackBtn" type="button" aria-label="Close player" title="Back (Esc)">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="M12 19l-7-7 7-7"/></svg>
+        </button>
+        <div class="player-titles">
+            <div class="player-show" id="pShowName"></div>
+            <div class="player-ep" id="pEpName"></div>
+        </div>
+        <div class="ctrl-pop" id="srcWrap" hidden>
+            <button class="player-chip" id="srcBtn" type="button" data-popup="srcPopup" aria-haspopup="true" aria-expanded="false">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+                <span>Sources</span>
+            </button>
+            <div class="popup popup-down" id="srcPopup" role="menu"></div>
+        </div>
+    </div>
+
+    <div class="controls" id="controlsBar">
+        <div class="scrubber" id="progressWrap" role="slider" aria-label="Seek" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+            <div class="scrub-track" id="progressTrack">
+                <div class="scrub-buffer" id="pBuffered"></div>
+                <div class="scrub-fill" id="pFill"></div>
+                <div class="scrub-handle" id="pHandle"></div>
+            </div>
+            <div class="scrub-tip" id="pTip">0:00</div>
+        </div>
+        <div class="ctrl-row">
+            <button class="ctrl-btn ctrl-play" id="playBtn" type="button" aria-label="Play" title="Play (Space)"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button>
+            <button class="ctrl-btn" id="prevEpBtn" type="button" aria-label="Previous episode" title="Previous episode (Shift+P)"><svg viewBox="0 0 24 24"><path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"/></svg></button>
+            <button class="ctrl-btn" id="nextEpBtn" type="button" aria-label="Next episode" title="Next episode (Shift+N)"><svg viewBox="0 0 24 24"><path d="M16 18h2V6h-2zM6 18l8.5-6L6 6z"/></svg></button>
+            <div class="vol">
+                <button class="ctrl-btn" id="muteBtn" type="button" aria-label="Mute" title="Mute (M)"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg></button>
+                <input type="range" class="vol-slider" id="volSlider" min="0" max="1" step="0.05" value="1" aria-label="Volume">
+            </div>
+            <span class="time" id="timeDisplay">0:00 / 0:00</span>
+            <div class="ctrl-spacer"></div>
+            <button class="ctrl-btn" id="airplayBtn" type="button" aria-label="AirPlay" title="AirPlay" hidden><svg viewBox="0 0 24 24"><path d="M5 17H3V5a2 2 0 012-2h14a2 2 0 012 2v12h-2V5H5zM12 15l5 6H7z"/></svg></button>
+            <button class="ctrl-btn" id="pipBtn" type="button" aria-label="Picture in picture" title="Picture in picture" hidden><svg viewBox="0 0 24 24"><path d="M19 11h-8v6h8v-6zm4 8V4.98C23 3.88 22.1 3 21 3H3c-1.1 0-2 .88-2 1.98V19c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2zm-2 .02H3V4.97h18v14.05z"/></svg></button>
+            <div class="ctrl-pop" id="dlWrap">
+                <button class="ctrl-btn" id="dlBtn" type="button" data-popup="dlPopup" aria-label="Download" title="Download" aria-haspopup="true" aria-expanded="false"><svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg></button>
+                <div class="popup" id="dlPopup" role="menu"></div>
+            </div>
+            <div class="ctrl-pop">
+                <button class="ctrl-btn ctrl-text" id="speedBtn" type="button" data-popup="speedPopup" aria-label="Playback speed" title="Playback speed" aria-haspopup="true" aria-expanded="false"><span id="speedLabel">1×</span></button>
+                <div class="popup" id="speedPopup" role="menu"></div>
+            </div>
+            <div class="ctrl-pop" id="qualWrap" hidden>
+                <button class="ctrl-btn" id="qualBtn" type="button" data-popup="qualPopup" aria-label="Quality" title="Quality" aria-haspopup="true" aria-expanded="false"><svg viewBox="0 0 24 24"><path d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58a.49.49 0 00.12-.61l-1.92-3.32a.49.49 0 00-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54a.48.48 0 00-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96a.49.49 0 00-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.07.62-.07.94s.02.64.07.94l-2.03 1.58a.49.49 0 00-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6A3.6 3.6 0 1115.6 12 3.6 3.6 0 0112 15.6z"/></svg></button>
+                <div class="popup" id="qualPopup" role="menu"></div>
+            </div>
+            <div class="ctrl-pop">
+                <button class="ctrl-btn" id="ccBtn" type="button" data-popup="subPopup" aria-label="Subtitles" title="Subtitles (C)" aria-haspopup="true" aria-expanded="false"><svg class="cc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="M10 9.5a1.5 1.5 0 00-1.5-1.5H7a1.5 1.5 0 00-1.5 1.5v5A1.5 1.5 0 007 16h1.5A1.5 1.5 0 0010 14.5"/><path d="M19 9.5a1.5 1.5 0 00-1.5-1.5H16a1.5 1.5 0 00-1.5 1.5v5A1.5 1.5 0 0016 16h1.5a1.5 1.5 0 001.5-1.5"/></svg></button>
+                <div class="popup popup-wide" id="subPopup" role="menu"></div>
+            </div>
+            <button class="ctrl-btn" id="fsBtn" type="button" aria-label="Fullscreen" title="Fullscreen (F)"><svg viewBox="0 0 24 24"><path d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z"/></svg></button>
+        </div>
+    </div>
+</div>
+
+<div class="modal" id="profileModal" role="dialog" aria-modal="true" aria-labelledby="profileTitle">
+    <div class="modal-dim" data-close="profileModal"></div>
+    <div class="sheet" tabindex="-1">
+        <button class="sheet-close" data-close="profileModal" aria-label="Close" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
+        <h2 class="sheet-title" id="profileTitle">Your profile</h2>
+        <p class="sheet-sub">Saved in this browser only. No account needed.</p>
+        <div class="profile-head">
+            <div class="avatar avatar-xl" id="avatarPreview"></div>
+            <div class="field">
+                <label for="profileNameInput">Display name</label>
+                <input id="profileNameInput" class="input" maxlength="20" placeholder="Your name" autocomplete="off" spellcheck="false">
+            </div>
+        </div>
+        <h3 class="sheet-section">Avatar</h3>
+        <div class="avatar-grid" id="avatarGrid"></div>
+        <h3 class="sheet-section">Your stats</h3>
+        <div class="stat-grid" id="statGrid"></div>
+        <div class="sheet-actions">
+            <button id="clearHistoryBtn" class="btn btn-ghost-danger" type="button">Clear watch history</button>
+            <button class="btn btn-primary" data-close="profileModal" type="button">Done</button>
+        </div>
+    </div>
+</div>
+
+<div class="modal" id="settingsModal" role="dialog" aria-modal="true" aria-labelledby="settingsTitle">
+    <div class="modal-dim" data-close="settingsModal"></div>
+    <div class="sheet sheet-narrow" tabindex="-1">
+        <button class="sheet-close" data-close="settingsModal" aria-label="Close" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
+        <h2 class="sheet-title" id="settingsTitle">Settings</h2>
+        <h3 class="sheet-section">Appearance</h3>
+        <div class="seg" id="appearanceSeg">
+            <button class="seg-btn" data-appearance="dark" type="button"><span class="seg-preview seg-dark"></span>Dark</button>
+            <button class="seg-btn" data-appearance="light" type="button"><span class="seg-preview seg-light"></span>Light</button>
+            <button class="seg-btn" data-appearance="system" type="button"><span class="seg-preview seg-system"></span>System</button>
+        </div>
+        <h3 class="sheet-section">Accent color</h3>
+        <div class="swatches" id="themePresets"></div>
+        <div class="accent-custom">
+            <label for="customAccentPicker">Custom color</label>
+            <input type="color" id="customAccentPicker" value="#3D7EFF">
+            <button class="btn btn-sm btn-glass" id="themeResetBtn" type="button">Reset</button>
+        </div>
+        <h3 class="sheet-section">Playback</h3>
+        <div class="setting-row">
+            <div><div class="setting-name">Autoplay next episode</div><div class="setting-desc">Start the next episode automatically, even across seasons.</div></div>
+            <button class="switch" id="autoplaySwitch" type="button" role="switch" aria-checked="true" aria-label="Autoplay next episode"><span></span></button>
+        </div>
+        <div class="setting-row">
+            <div><div class="setting-name">Subtitles on by default</div><div class="setting-desc">Turn on English subtitles when an episode has them.</div></div>
+            <button class="switch" id="subsSwitch" type="button" role="switch" aria-checked="true" aria-label="Subtitles on by default"><span></span></button>
+        </div>
+        <h3 class="sheet-section">TV mode</h3>
+        <div class="seg" id="tvSeg">
+            <button class="seg-btn seg-btn-sm" data-tv="auto" type="button">Auto</button>
+            <button class="seg-btn seg-btn-sm" data-tv="on" type="button">On</button>
+            <button class="seg-btn seg-btn-sm" data-tv="off" type="button">Off</button>
+        </div>
+        <p class="sheet-hint">TV mode enlarges the interface and enables arrow-key / D-pad navigation for smart TVs and game consoles. Auto detects TV browsers.</p>
+        <div class="sheet-actions">
+            <button class="btn btn-primary btn-block" data-close="settingsModal" type="button">Done</button>
+        </div>
+    </div>
+</div>
+
+<div class="modal" id="shortcutsModal" role="dialog" aria-modal="true" aria-labelledby="shortcutsTitle">
+    <div class="modal-dim" data-close="shortcutsModal"></div>
+    <div class="sheet sheet-narrow" tabindex="-1">
+        <button class="sheet-close" data-close="shortcutsModal" aria-label="Close" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
+        <h2 class="sheet-title" id="shortcutsTitle">Keyboard shortcuts</h2>
+        <h3 class="sheet-section">Anywhere</h3>
+        <dl class="keys">
+            <div><dt><kbd>/</kbd></dt><dd>Search</dd></div>
+            <div><dt><kbd>?</kbd></dt><dd>Show this list</dd></div>
+            <div><dt><kbd>Esc</kbd></dt><dd>Close dialogs</dd></div>
+        </dl>
+        <h3 class="sheet-section">In the player</h3>
+        <dl class="keys">
+            <div><dt><kbd>Space</kbd> <kbd>K</kbd></dt><dd>Play / pause</dd></div>
+            <div><dt><kbd>&larr;</kbd> <kbd>&rarr;</kbd></dt><dd>Back / forward 10 seconds</dd></div>
+            <div><dt><kbd>J</kbd> <kbd>L</kbd></dt><dd>Back / forward 10 seconds</dd></div>
+            <div><dt><kbd>&uarr;</kbd> <kbd>&darr;</kbd></dt><dd>Volume up / down</dd></div>
+            <div><dt><kbd>0</kbd>&ndash;<kbd>9</kbd></dt><dd>Jump to 0&ndash;90%</dd></div>
+            <div><dt><kbd>F</kbd></dt><dd>Fullscreen</dd></div>
+            <div><dt><kbd>M</kbd></dt><dd>Mute</dd></div>
+            <div><dt><kbd>C</kbd></dt><dd>Subtitles on / off</dd></div>
+            <div><dt><kbd>Shift</kbd> + <kbd>N</kbd></dt><dd>Next episode</dd></div>
+            <div><dt><kbd>Shift</kbd> + <kbd>P</kbd></dt><dd>Previous episode</dd></div>
+            <div><dt><kbd>Esc</kbd></dt><dd>Close the player</dd></div>
+        </dl>
+    </div>
+</div>
+
+<div class="toasts" id="toastStack" aria-live="polite"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/hls.js@1.5.20/dist/hls.min.js" defer></script>
+<script src="js/app.js?v=20261013" defer></script>
+</body>
+</html>
