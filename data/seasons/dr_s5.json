@@ -1,0 +1,19 @@
+{
+    "season": 5,
+    "episodes": [{
+            "number": 1,
+            "title": "The Evil Within",
+            "status": "upcoming",
+            "statusText": "2027",
+            "description": "Evil versions of the ninja descend on the Crossroads and launch an attack.",
+            "thumbnail": "https://image.tmdb.org/t/p/original/zy0L1LQ7x87KIDYNdWbNqNCpIEu.jpg",
+            "embed": "",
+            "subtitles": [{
+                "url": "",
+                "lang": "en",
+                "label": "English",
+                "default": true
+            }]
+        }
+    ]
+}
