@@ -228,6 +228,23 @@
                 "file": "data/seasons/dotd.json"
             }]
         },
+                {
+            "id": "httydcollab",
+            "title": "LEGO DREAMZzz: How To Fast Train Your Furious Dragon",
+            "type": "movie",
+            "genres": ["Action & Adventure", "Animation", "Fantasy"],
+            "rating": "TV-Y7",
+            "years": "2026",
+            "runtime": "39m",
+            "poster": "https://image.tmdb.org/t/p/original/eS599ZhvoOm9GGNpENut5ChKLh4.jpg",
+            "banner": "https://image.tmdb.org/t/p/original/yPFOaBsXLVeFHeUHRJCZVier9vm.jpg",
+            "logo": "https://image.tmdb.org/t/p/original/20Ttw8OtLkACSoQdPCwsc7yHei7.png",
+            "summary": "The dream chasers race nitro-injected street cars and join forces with dragon rider Hiccup in the wildest cross-over ever dreamed up as 'DREAMZzz', 'The Fast and the Furious' and 'How to train your Dragon' collide head on. But the Nightmare King is always scheming and plans to corrupt the friendly dragons of Berk, and our heroes soon find themselves in a desperate race to save the Dream World.",
+            "seasons": [{
+                "number": 1,
+                "file": "data/seasons/httydcollab.json"
+            }]
+        },
         {
             "id": "lmk",
             "title": "LEGO Monkie Kid",

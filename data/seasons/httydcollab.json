@@ -1,0 +1,11 @@
+{
+    "season": 1,
+    "episodes": [{
+            "number": 1,
+            "title": "How To Fast Train Your Furious Dragon",
+            "description": "The dream chasers race nitro-injected street cars and join forces with dragon rider Hiccup when the Nightmare King hatches a plot to corrupt the friendly dragons of Berk.",
+            "thumbnail": "ttps://www.lego.com/cdn/cs/catalog/assets/bltab57306d605c3551/1/Thumbnail_Asset_02.png",
+            "embed": "https://videoprocessingpipeline.services.lego.com/assets/15a03f48-32b6-4b48-a44b-7563d4b5e939/56296575-214f-4bde-8519-b49701127aa2/1080p.mp4"
+        }
+    ]
+}
