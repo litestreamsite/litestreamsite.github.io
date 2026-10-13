@@ -1,11 +1,6 @@
 (() => {
 'use strict';
 
-/* ==========================================================================
-   litestreamsite
-   A static single-page app built for GitHub Pages. All catalogue content
-   lives in data/show.json, data/hero.json and data/seasons/*.json.
-   ========================================================================== */
 
 document.documentElement.classList.add('js');
 
