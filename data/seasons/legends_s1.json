@@ -23,9 +23,13 @@
             "recapStart": null,
             "recapEnd": null,
             "creditsStart": null,
-            "directors": [],
-            "writers": [],
-            "cast": []
+            "directors": ["Ben Marsaud"],
+            "writers": ["Kevin Burke", "Chris Wyatt"],
+            "cast": [
+                { "name": "Vincent Tong", "role": "Kai" },
+                { "name": "Fiona Hogan", "role": "Daidan" },
+                { "name": "Ian Hanlin", "role": "Mech/Old Fire Master" }
+            ]
         },
         {
             "number": 2,
@@ -50,8 +54,11 @@
             "recapEnd": null,
             "creditsStart": null,
             "directors": [],
-            "writers": [],
-            "cast": []
+            "writers": ["Kevin Burke", "Chris Wyatt"],
+            "cast": [
+                { "name": "Vincent Tong", "role": "Kai/Fuzz" },
+                { "name": "Kazumi Evans", "role": "Wyldfyre/Daidan" }
+            ]
         },
         {
             "number": 3,
@@ -76,8 +83,11 @@
             "recapEnd": null,
             "creditsStart": null,
             "directors": [],
-            "writers": [],
-            "cast": []
+            "writers": ["Kevin Burke", "Chris Wyatt"],
+            "cast": [
+                { "name": "Vincent Tong", "role": "Kai/Bolsen/Fuzz" },
+                { "name": "Kazumi Evans", "role": "Wyldfyre/Daidan" }
+            ]
         },
         {
             "number": 4,
@@ -102,8 +112,11 @@
             "recapEnd": null,
             "creditsStart": null,
             "directors": [],
-            "writers": [],
-            "cast": []
+            "writers": ["Kevin Burke", "Chris Wyatt"],
+            "cast": [
+                { "name": "Vincent Tong", "role": "Kai/Bolsen/Fuzz" },
+                { "name": "Kazumi Evans", "role": "Wyldfyre/Daidan/Queen of Monsters" }
+            ]
         },
         {
             "number": 5,
@@ -129,7 +142,10 @@
             "creditsStart": null,
             "directors": [],
             "writers": [],
-            "cast": []
+            "cast": [
+                { "name": "Vincent Tong", "role": "Kai" },
+                { "name": "Kazumi Evans", "role": "Wyldfyre" }
+            ]
         }
     ]
 }

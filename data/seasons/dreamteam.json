@@ -18,7 +18,24 @@
             "creditsStart": null,
             "directors": ["Joel Salaysay"],
             "writers": ["Tommy Andreasen"],
-            "cast": []
+            "cast": [
+                { "name": "Andrew Francis", "role": "Cole" },
+                { "name": "Mike Taylor", "role": "Cooper" },
+                { "name": "Larissa Dias", "role": "Izzie" },
+                { "name": "Travis Turner", "role": "Jan" },
+                { "name": "Michael Adamthwaite", "role": "Jay" },
+                { "name": "Vincent Tong", "role": "Kai/Logan/Sneak" },
+                { "name": "Sam Vincent", "role": "Lloyd" },
+                { "name": "Marcos Cardenas", "role": "Mateo" },
+                { "name": "Samantha Hum", "role": "Max" },
+                { "name": "Alessandro Juliani", "role": "Night Hunter" },
+                { "name": "Kelly Metzger", "role": "Nya" },
+                { "name": "Adam Nurada", "role": "Snivel" },
+                { "name": "Laara Sadiq", "role": "Susan" },
+                { "name": "Paul Dobson", "role": "Wu" },
+                { "name": "Brent Miller", "role": "Zane" },
+                { "name": "Sarah Jeffery", "role": "Zoey" }
+            ]
         }
     ]
 }

@@ -23,9 +23,12 @@
             "recapStart": null,
             "recapEnd": null,
             "creditsStart": null,
-            "directors": [],
-            "writers": [],
-            "cast": []
+            "directors": ["David Cazeaux", "Charles Lefebvre"],
+            "writers": ["Glen Lakin"],
+            "cast": [
+                { "name": "Andrew Francis", "role": "Cole" },
+                { "name": "Brian Drummond", "role": "The Diviner/Runt" }
+            ]
         },
         {
             "number": 2,
@@ -49,9 +52,13 @@
             "recapStart": null,
             "recapEnd": null,
             "creditsStart": null,
-            "directors": [],
-            "writers": [],
-            "cast": []
+            "directors": ["David Cazeaux", "Charles Lefebvre"],
+            "writers": ["Glen Lakin"],
+            "cast": [
+                { "name": "Vincent Tong", "role": "Intercom operator" },
+                { "name": "Sabrina Pitre", "role": "Reporter" },
+                { "name": "Adrian Petriw", "role": "Scott" }
+            ]
         },
         {
             "number": 3,
@@ -75,9 +82,12 @@
             "recapStart": null,
             "recapEnd": null,
             "creditsStart": null,
-            "directors": [],
-            "writers": [],
-            "cast": []
+            "directors": ["David Cazeaux", "Charles Lefebvre", "Hugo Cierzniak"],
+            "writers": ["Glen Lakin"],
+            "cast": [
+                { "name": "Vincent Tong", "role": "Kai" },
+                { "name": "Kelly Metzger", "role": "Nya" }
+            ]
         }
     ]
 }
