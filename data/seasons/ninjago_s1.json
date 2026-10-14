@@ -1,18 +1,31 @@
 {
     "season": 1,
-    "episodes": [{
+    "episodes": [
+        {
             "number": 1,
             "title": "Rise of the Snakes",
             "description": "When Lloyd awakens an ancient Serpentine tribe, the out-of-practice ninja must defend Jamanakai Village—and a mysterious prophecy sparks a rivalry among them.",
             "thumbnail": "https://image.tmdb.org/t/p/original/9shVuO2CUO3tsuATFKfKcj7rrc8.jpg",
             "embed": "https://cdn1.futuretodayinc.com/files/a8wn4hw/vi/f5/92/10369151/s10369151.m3u8",
-            "subtitles": [{
-                "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/b9/50/65aad1d24e4fa9aede9fd1746cce2f65.vtt",
-                "lang": "en",
-                "label": "English",
-                "default": true
-            }]
-
+            "subtitles": [
+                {
+                    "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/b9/50/65aad1d24e4fa9aede9fd1746cce2f65.vtt",
+                    "lang": "en",
+                    "label": "English",
+                    "default": true
+                }
+            ],
+            "airDate": "",
+            "sources": [],
+            "downloads": [],
+            "introStart": null,
+            "introEnd": null,
+            "recapStart": null,
+            "recapEnd": null,
+            "creditsStart": null,
+            "directors": [],
+            "writers": [],
+            "cast": []
         },
         {
             "number": 2,
@@ -20,12 +33,25 @@
             "description": "When Zane’s search for his past leads the ninja to a Serpentine treehouse, Skales seizes power and the team returns to find their home in ruins.",
             "thumbnail": "https://image.tmdb.org/t/p/original/wt5gXZRztNSVDhdVm4ORlbLLqNs.jpg",
             "embed": "https://cdn1.futuretodayinc.com/files/a8wn4hw/vi/2f/e1/10369152/s10369152.m3u8",
-            "subtitles": [{
-                "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/34/74/0a4387a33c7cb506b5bcd72df0252a57.vtt",
-                "lang": "en",
-                "label": "English",
-                "default": true
-            }]
+            "subtitles": [
+                {
+                    "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/34/74/0a4387a33c7cb506b5bcd72df0252a57.vtt",
+                    "lang": "en",
+                    "label": "English",
+                    "default": true
+                }
+            ],
+            "airDate": "",
+            "sources": [],
+            "downloads": [],
+            "introStart": null,
+            "introEnd": null,
+            "recapStart": null,
+            "recapEnd": null,
+            "creditsStart": null,
+            "directors": [],
+            "writers": [],
+            "cast": []
         },
         {
             "number": 3,
@@ -33,12 +59,25 @@
             "description": "A visit to Jay’s parents turns dangerous when the Fangpyre strike, sending the ninja after a cure and unlocking a new power in their Golden Weapons.",
             "thumbnail": "https://image.tmdb.org/t/p/original/l2fMgU9YRnqrvA5tJvZa2lNaNoR.jpg",
             "embed": "https://cdn1.futuretodayinc.com/files/a8wn4hw/vi/f9/a3/10369153/s10369153.m3u8",
-            "subtitles": [{
-                "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/3f/45/abfd69e907ee1420e80abf10305c2c23.vtt",
-                "lang": "en",
-                "label": "English",
-                "default": true
-            }]
+            "subtitles": [
+                {
+                    "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/3f/45/abfd69e907ee1420e80abf10305c2c23.vtt",
+                    "lang": "en",
+                    "label": "English",
+                    "default": true
+                }
+            ],
+            "airDate": "",
+            "sources": [],
+            "downloads": [],
+            "introStart": null,
+            "introEnd": null,
+            "recapStart": null,
+            "recapEnd": null,
+            "creditsStart": null,
+            "directors": [],
+            "writers": [],
+            "cast": []
         },
         {
             "number": 4,
@@ -46,12 +85,25 @@
             "description": "As Zane’s dream of the Green Ninja fuels a rivalry, Lloyd finds a Serpentine ally and plots a new scheme against the ninja.",
             "thumbnail": "https://image.tmdb.org/t/p/original/24jn3rYwsmEEvyV8adzRo7GDDxJ.jpg",
             "embed": "https://cdn1.futuretodayinc.com/files/a8wn4hw/vi/44/53/10369154/s10369154.m3u8",
-            "subtitles": [{
-                "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/f5/e6/5afcf227af622424a635065c52bc98ff.vtt",
-                "lang": "en",
-                "label": "English",
-                "default": true
-            }]
+            "subtitles": [
+                {
+                    "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/f5/e6/5afcf227af622424a635065c52bc98ff.vtt",
+                    "lang": "en",
+                    "label": "English",
+                    "default": true
+                }
+            ],
+            "airDate": "",
+            "sources": [],
+            "downloads": [],
+            "introStart": null,
+            "introEnd": null,
+            "recapStart": null,
+            "recapEnd": null,
+            "creditsStart": null,
+            "directors": [],
+            "writers": [],
+            "cast": []
         },
         {
             "number": 5,
@@ -59,12 +111,25 @@
             "description": "As Pythor gathers the Serpentine tribes, the ninja race to the last tombs and encounter a mysterious masked warrior.",
             "thumbnail": "https://image.tmdb.org/t/p/original/2DuXsDGdsFbI5EX8Dd2SNXUFi0h.jpg",
             "embed": "https://cdn1.futuretodayinc.com/files/a8wn4hw/vi/e6/01/10369155/s10369155.m3u8",
-            "subtitles": [{
-                "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/e9/35/0e62ef72be6aee87ae3a367ab449f3d4.vtt",
-                "lang": "en",
-                "label": "English",
-                "default": true
-            }]
+            "subtitles": [
+                {
+                    "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/e9/35/0e62ef72be6aee87ae3a367ab449f3d4.vtt",
+                    "lang": "en",
+                    "label": "English",
+                    "default": true
+                }
+            ],
+            "airDate": "",
+            "sources": [],
+            "downloads": [],
+            "introStart": null,
+            "introEnd": null,
+            "recapStart": null,
+            "recapEnd": null,
+            "creditsStart": null,
+            "directors": [],
+            "writers": [],
+            "cast": []
         },
         {
             "number": 6,
@@ -72,12 +137,25 @@
             "description": "As Pythor fights to unite the Serpentine, Lloyd’s disguise lands him in the Slither Pit, and Samurai X’s identity is revealed.",
             "thumbnail": "https://image.tmdb.org/t/p/original/yYKIbxGdqUnQqe9Dg6A5h5BSlN1.jpg",
             "embed": "https://cdn1.futuretodayinc.com/files/a8wn4hw/vi/35/2f/10369156/s10369156.m3u8",
-            "subtitles": [{
-                "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/70/6d/e1f0223c480de8d2e67cfbfeaf1bf63c.vtt",
-                "lang": "en",
-                "label": "English",
-                "default": true
-            }]
+            "subtitles": [
+                {
+                    "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/70/6d/e1f0223c480de8d2e67cfbfeaf1bf63c.vtt",
+                    "lang": "en",
+                    "label": "English",
+                    "default": true
+                }
+            ],
+            "airDate": "",
+            "sources": [],
+            "downloads": [],
+            "introStart": null,
+            "introEnd": null,
+            "recapStart": null,
+            "recapEnd": null,
+            "creditsStart": null,
+            "directors": [],
+            "writers": [],
+            "cast": []
         },
         {
             "number": 7,
@@ -85,12 +163,25 @@
             "description": "As Zane uncovers a startling secret about his past, Pythor discovers a clue that could lead the Serpentine to the Fangblades.",
             "thumbnail": "https://image.tmdb.org/t/p/original/glKW31GDf1gyf8OZLpjDJTptJZy.jpg",
             "embed": "https://cdn1.futuretodayinc.com/files/a8wn4hw/vi/23/1a/10369157/s10369157.m3u8",
-            "subtitles": [{
-                "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/f5/34/37767666c9859afa2926d5e24b721784.vtt",
-                "lang": "en",
-                "label": "English",
-                "default": true
-            }]
+            "subtitles": [
+                {
+                    "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/f5/34/37767666c9859afa2926d5e24b721784.vtt",
+                    "lang": "en",
+                    "label": "English",
+                    "default": true
+                }
+            ],
+            "airDate": "",
+            "sources": [],
+            "downloads": [],
+            "introStart": null,
+            "introEnd": null,
+            "recapStart": null,
+            "recapEnd": null,
+            "creditsStart": null,
+            "directors": [],
+            "writers": [],
+            "cast": []
         },
         {
             "number": 8,
@@ -98,12 +189,25 @@
             "description": "As Jay’s date with Nya takes a dangerous turn, a Serpentine bite puts him to the test while Wu and Garmadon seek a way home.",
             "thumbnail": "https://image.tmdb.org/t/p/original/kcf3TF2YLwNAbWJJVi1A78LIc1x.jpg",
             "embed": "https://cdn1.futuretodayinc.com/files/a8wn4hw/vi/d7/45/10369158/s10369158.m3u8",
-            "subtitles": [{
-                "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/08/2d/2ad7c0c40e9df9e86824eceb3a7a5784.vtt",
-                "lang": "en",
-                "label": "English",
-                "default": true
-            }]
+            "subtitles": [
+                {
+                    "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/08/2d/2ad7c0c40e9df9e86824eceb3a7a5784.vtt",
+                    "lang": "en",
+                    "label": "English",
+                    "default": true
+                }
+            ],
+            "airDate": "",
+            "sources": [],
+            "downloads": [],
+            "introStart": null,
+            "introEnd": null,
+            "recapStart": null,
+            "recapEnd": null,
+            "creditsStart": null,
+            "directors": [],
+            "writers": [],
+            "cast": []
         },
         {
             "number": 9,
@@ -111,12 +215,25 @@
             "description": "When a Fangblade leads Cole back to his estranged father, the ninja enter a talent show with the Serpentine competing for the prize.",
             "thumbnail": "https://image.tmdb.org/t/p/original/736Q4bIuFipOJlaIPidjMDvmxsl.jpg",
             "embed": "https://cdn1.futuretodayinc.com/files/a8wn4hw/vi/53/7a/10369159/s10369159.m3u8",
-            "subtitles": [{
-                "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/49/dc/ba4817124f04b77679f4853c0ed7716a.vtt",
-                "lang": "en",
-                "label": "English",
-                "default": true
-            }]
+            "subtitles": [
+                {
+                    "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/49/dc/ba4817124f04b77679f4853c0ed7716a.vtt",
+                    "lang": "en",
+                    "label": "English",
+                    "default": true
+                }
+            ],
+            "airDate": "",
+            "sources": [],
+            "downloads": [],
+            "introStart": null,
+            "introEnd": null,
+            "recapStart": null,
+            "recapEnd": null,
+            "creditsStart": null,
+            "directors": [],
+            "writers": [],
+            "cast": []
         },
         {
             "number": 10,
@@ -124,12 +241,25 @@
             "description": "When Kai becomes convinced he’s destined to be the Green Ninja, a mission forces him to choose between glory and saving Lloyd.",
             "thumbnail": "https://image.tmdb.org/t/p/original/x1ZNMjDuj4GLN1tIA9khsEvss8P.jpg",
             "embed": "https://cdn1.futuretodayinc.com/files/a8wn4hw/vi/81/d9/10369160/s10369160.m3u8",
-            "subtitles": [{
-                "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/83/3c/4269d5d1b0b3aee3fe785de57cfddd6a.vtt",
-                "lang": "en",
-                "label": "English",
-                "default": true
-            }]
+            "subtitles": [
+                {
+                    "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/83/3c/4269d5d1b0b3aee3fe785de57cfddd6a.vtt",
+                    "lang": "en",
+                    "label": "English",
+                    "default": true
+                }
+            ],
+            "airDate": "",
+            "sources": [],
+            "downloads": [],
+            "introStart": null,
+            "introEnd": null,
+            "recapStart": null,
+            "recapEnd": null,
+            "creditsStart": null,
+            "directors": [],
+            "writers": [],
+            "cast": []
         },
         {
             "number": 11,
@@ -137,12 +267,25 @@
             "description": "When Pythor traps the ninja in his underground fortress, Lloyd takes his first mission as the Green Ninja with help from an unexpected ally.",
             "thumbnail": "https://image.tmdb.org/t/p/original/lwDVY1ohJROpW4A6pawlxkiBjOl.jpg",
             "embed": "https://cdn1.futuretodayinc.com/files/a8wn4hw/vi/e9/7b/10369161/s10369161.m3u8",
-            "subtitles": [{
-                "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/7c/2a/5b41c85aa67d8052662f0a44bf9efd79.vtt",
-                "lang": "en",
-                "label": "English",
-                "default": true
-            }]
+            "subtitles": [
+                {
+                    "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/7c/2a/5b41c85aa67d8052662f0a44bf9efd79.vtt",
+                    "lang": "en",
+                    "label": "English",
+                    "default": true
+                }
+            ],
+            "airDate": "",
+            "sources": [],
+            "downloads": [],
+            "introStart": null,
+            "introEnd": null,
+            "recapStart": null,
+            "recapEnd": null,
+            "creditsStart": null,
+            "directors": [],
+            "writers": [],
+            "cast": []
         },
         {
             "number": 12,
@@ -150,12 +293,25 @@
             "description": "When Pythor steals the Fangblades, the ninja race to Ouroboros to stop him from unleashing the Great Devourer.",
             "thumbnail": "https://image.tmdb.org/t/p/original/4hwjh4igXs13Wr2Mkj8gQgBFHhf.jpg",
             "embed": "https://cdn1.futuretodayinc.com/files/a8wn4hw/vi/3f/b3/10369162/s10369162.m3u8",
-            "subtitles": [{
-                "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/99/97/84149d0aa131a03e0f75bc9b070c4cd1.vtt",
-                "lang": "en",
-                "label": "English",
-                "default": true
-            }]
+            "subtitles": [
+                {
+                    "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/99/97/84149d0aa131a03e0f75bc9b070c4cd1.vtt",
+                    "lang": "en",
+                    "label": "English",
+                    "default": true
+                }
+            ],
+            "airDate": "",
+            "sources": [],
+            "downloads": [],
+            "introStart": null,
+            "introEnd": null,
+            "recapStart": null,
+            "recapEnd": null,
+            "creditsStart": null,
+            "directors": [],
+            "writers": [],
+            "cast": []
         },
         {
             "number": 13,
@@ -163,12 +319,25 @@
             "description": "As the Great Devourer ravages Ninjago City, the ninja face their greatest battle yet—and an uneasy alliance may be their only hope.",
             "thumbnail": "https://image.tmdb.org/t/p/original/9lfQlvE8HXG4iDRXwe0Oig9Ucop.jpg",
             "embed": "https://cdn1.futuretodayinc.com/files/a8wn4hw/vi/e6/df/10369163/s10369163.m3u8",
-            "subtitles": [{
-                "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/e2/d5/fe36e0be239c5e26be54cb344f3dd2b1.vtt",
-                "lang": "en",
-                "label": "English",
-                "default": true
-            }]
+            "subtitles": [
+                {
+                    "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/e2/d5/fe36e0be239c5e26be54cb344f3dd2b1.vtt",
+                    "lang": "en",
+                    "label": "English",
+                    "default": true
+                }
+            ],
+            "airDate": "",
+            "sources": [],
+            "downloads": [],
+            "introStart": null,
+            "introEnd": null,
+            "recapStart": null,
+            "recapEnd": null,
+            "creditsStart": null,
+            "directors": [],
+            "writers": [],
+            "cast": []
         }
     ]
 }

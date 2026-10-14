@@ -571,6 +571,7 @@ html[data-theme="light"] .hero-dot span { background: rgba(16, 20, 31, 0.18); }
 .ep-result-desc { font-size: 13.5px; line-height: 1.5; color: var(--text-2); display: -webkit-box; -webkit-line-clamp: 2; line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
 .thumb-empty { position: absolute; inset: 0; display: grid; place-items: center; color: var(--text-3); background: linear-gradient(160deg, var(--surface-2), var(--surface)); }
 .thumb-empty svg { width: 28px; height: 28px; }
+.thumb-hidden { font: 800 clamp(26px, 3vw, 40px)/1 var(--font-display); letter-spacing: -0.02em; font-variant-numeric: tabular-nums; }
 
 /* ---------- Details page ---------- */
 
@@ -984,7 +985,7 @@ kbd {
 .player:not(.hide-ui):not(.is-embed) .sub-overlay { bottom: 136px; }
 .sub-line {
     display: inline-block; max-width: min(900px, 92%); padding: 0.18em 0.65em; border-radius: 8px;
-    background: rgba(8, 9, 14, 0.74); color: #FFFFFF; text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
+    background: rgba(8, 9, 14, 0.74); color: var(--sub-color, #FFFFFF); text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
     font: 600 calc(clamp(17px, 2.3vw, 30px) * var(--sub-scale))/1.45 var(--font);
     -webkit-box-decoration-break: clone; box-decoration-break: clone;
 }
@@ -1236,3 +1237,150 @@ body.tv-mode ::-webkit-scrollbar { width: 0; height: 0; }
 @media (hover: none) {
     .rail-btn, .hero-arrow { display: none; }
 }
+
+/* ---------- Spoilers and watched controls ---------- */
+
+.setting-block { padding: 14px 0; border-bottom: 1px solid var(--line); }
+.setting-block .seg { margin-top: 12px; }
+.desc-hidden { font-style: italic; color: var(--text-3); }
+.link-btn { padding: 0; color: var(--accent-fg); font: inherit; font-style: normal; font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+.ep-watch {
+    position: relative; z-index: 2; flex-shrink: 0; align-self: center; display: grid; place-items: center;
+    width: 32px; height: 32px; margin: -6px -6px -6px 0; border-radius: 50%; color: var(--text-3);
+    transition: color 0.15s, background 0.15s;
+}
+.ep-watch svg { width: 20px; height: 20px; }
+.ep-watch:hover { color: var(--text); background: var(--surface-2); }
+.ep-watch.is-on { color: var(--accent-fg); }
+.ep-watch:focus-visible { outline: 2px solid var(--accent-fg); outline-offset: 1px; }
+.season-watch svg { width: 17px; height: 17px; }
+
+/* ---------- Cast & crew, people ---------- */
+
+.credits { position: relative; z-index: 1; margin-bottom: 48px; }
+.credit-facts { display: flex; flex-wrap: wrap; gap: 14px 40px; margin-bottom: 22px; }
+.credit-facts dt { margin-bottom: 6px; font: 700 12px/1 var(--font); letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-3); }
+.credit-facts dd { font-size: 15px; line-height: 1.6; }
+.person-link { color: var(--text); text-decoration: underline; text-decoration-color: var(--line-2); text-underline-offset: 3px; transition: text-decoration-color 0.15s; }
+.person-link:hover { text-decoration-color: currentColor; }
+.cast-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 10px; padding: 0; margin: 0; list-style: none; }
+.cast-card, .person-chip {
+    display: flex; align-items: center; gap: 12px; padding: 10px 12px; border-radius: 12px;
+    background: var(--surface); border: 1px solid var(--line); color: inherit; text-decoration: none;
+    transition: background 0.2s var(--ease), border-color 0.2s var(--ease);
+}
+.cast-card:hover, .person-chip:hover { background: var(--surface-2); border-color: var(--line-2); }
+.cast-card:focus-visible, .person-chip:focus-visible { outline: 2px solid var(--accent-fg); outline-offset: 2px; }
+.cast-avatar, .person-avatar {
+    display: grid; place-items: center; flex-shrink: 0; width: 42px; height: 42px; border-radius: 50%;
+    background: linear-gradient(140deg, rgba(var(--accent-rgb), 0.35), rgba(var(--accent-rgb), 0.12)); color: var(--text);
+    font: 700 14px/1 var(--font-display);
+}
+.cast-text { display: flex; flex-direction: column; gap: 3px; min-width: 0; }
+.cast-name { font-weight: 600; font-size: 14.5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.cast-role { color: var(--text-3); font-size: 13px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.person-chips { display: flex; flex-wrap: wrap; gap: 10px; }
+.person-chip { padding-right: 18px; }
+.person-head { display: flex; align-items: center; gap: 22px; margin-bottom: 40px; }
+.person-avatar { width: 88px; height: 88px; font-size: 30px; }
+.person-head .page-title { margin-bottom: 6px; }
+.credit-group { margin-bottom: 26px; }
+.credit-show { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; font: 600 15px/1.3 var(--font); color: var(--text-2); }
+.credit-show a { color: inherit; text-decoration: none; }
+.credit-show a:hover { color: var(--text); }
+.credit-show .count { font: 600 12px/1 var(--font); padding: 4px 8px; border-radius: 999px; background: var(--surface-2); }
+.ep-result-note { margin-bottom: 4px; color: var(--accent-fg); font-size: 13px; font-weight: 600; }
+
+/* ---------- Share dialog ---------- */
+
+#shareModal { z-index: 210; }   /* also opens over the player */
+.share-card { display: flex; overflow: hidden; margin-bottom: 18px; border-radius: 12px; background: var(--surface-2); border-left: 4px solid var(--accent); }
+.share-thumb { flex: 0 0 38%; aspect-ratio: 16 / 9; background: var(--surface); }
+.share-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.share-meta { min-width: 0; padding: 12px 14px; }
+.share-site { margin-bottom: 4px; color: var(--text-3); font-size: 12px; font-weight: 600; }
+.share-title { font-weight: 700; font-size: 15px; line-height: 1.3; }
+.share-sub { margin-top: 3px; color: var(--text-2); font-size: 13px; }
+.share-url { display: flex; gap: 10px; }
+.share-url .input { font: 500 14px/1 var(--font); }
+.share-time { display: flex; align-items: center; gap: 10px; margin-top: 14px; color: var(--text-2); font-size: 14px; font-weight: 600; cursor: pointer; }
+.share-time[hidden] { display: none; }
+.share-time input { width: 18px; height: 18px; accent-color: var(--accent); }
+.share-targets { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+.share-targets [hidden] { display: none; }
+
+/* ---------- Player additions ---------- */
+
+.player.sub-pos-top .sub-overlay { top: 7%; bottom: auto; }
+.player.sub-pos-top:not(.hide-ui):not(.is-embed) .sub-overlay { top: calc(96px + env(safe-area-inset-top)); bottom: auto; }
+.popup-seg .sub-color { display: grid; place-items: center; }
+.popup-seg .sub-color span { width: 16px; height: 16px; border-radius: 50%; background: var(--c); box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.4); }
+.popup-seg .sub-color.is-active { background: rgba(255, 255, 255, 0.22); box-shadow: inset 0 0 0 2px var(--accent); }
+.sub-sync { align-items: center; }
+.sub-sync button { flex: 0 0 38px; font-size: 18px; }
+.sub-sync button:last-child { flex: 0 0 auto; padding: 0 12px; font-size: 12.5px; }
+.sub-sync button:disabled { opacity: 0.4; }
+.sub-sync-val { flex: 1; text-align: center; color: rgba(255, 255, 255, 0.85); font: 600 12.5px/1 var(--font); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.cast-overlay {
+    position: absolute; inset: 0; z-index: 5; display: none; flex-direction: column; align-items: center; justify-content: center; gap: 14px;
+    background: radial-gradient(60% 60% at 50% 45%, rgba(var(--accent-rgb), 0.18), rgba(0, 0, 0, 0.92)); color: rgba(255, 255, 255, 0.9);
+    font: 600 16px/1.3 var(--font); text-align: center; pointer-events: none;
+}
+.cast-overlay svg { width: 56px; height: 56px; color: var(--accent-fg); }
+.player.is-casting .cast-overlay { display: flex; }
+.player.is-casting .sub-overlay { display: none; }
+#moreWrap { display: none; }
+
+@media (max-width: 640px) {
+    .ep-watch { width: 36px; height: 36px; margin: 0; }
+    .credit-facts { gap: 14px 28px; }
+    .cast-grid { grid-template-columns: 1fr 1fr; gap: 8px; }
+    .cast-card { padding: 8px 10px; gap: 10px; }
+    .cast-avatar { width: 36px; height: 36px; font-size: 12.5px; }
+    .person-head { gap: 16px; margin-bottom: 28px; }
+    .person-avatar { width: 64px; height: 64px; font-size: 22px; }
+    .share-card { flex-direction: column; }
+    .share-thumb { flex-basis: auto; }
+    .player.sub-pos-top:not(.hide-ui):not(.is-embed) .sub-overlay { top: calc(80px + env(safe-area-inset-top)); }
+    /* Speed, sleep timer, quality, download and PiP move into the "More" menu. */
+    #moreWrap { display: block; }
+    #speedBtn, #sleepBtn, #qualBtn, #dlBtn, #pipBtn { display: none; }
+}
+
+/* ---------- Backup and transfer ---------- */
+
+.transfer-hint { margin: -2px 0 14px; }
+.transfer-actions { display: flex; flex-wrap: wrap; gap: 8px; }
+.transfer-code { display: flex; align-items: flex-start; gap: 10px; margin-top: 12px; }
+.transfer-code[hidden] { display: none; }
+.textarea { height: auto; min-height: 76px; padding: 10px 12px; resize: vertical; font: 500 12.5px/1.45 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; word-break: break-all; }
+.icon-btn.is-on { background: rgba(var(--accent-rgb), 0.18); border-color: rgba(var(--accent-rgb), 0.55); color: var(--accent-fg); }
+
+@media (max-width: 640px) {
+    /* Keep the play button and the round buttons on one line. */
+    .detail-actions { flex-wrap: nowrap; gap: 8px; }
+    .detail-actions .btn-lg { min-width: 0; padding: 0 14px; }
+    .detail-actions .btn-lg span { overflow: hidden; text-overflow: ellipsis; }
+    /* Episode rows: title on its own line, then duration with the watched button at the far end. */
+    .ep-head { flex-direction: row; flex-wrap: wrap; align-items: center; column-gap: 10px; }
+    .ep-title { flex: 1 1 100%; }
+    .ep-head .ep-watch { margin: -4px -6px -4px auto; }
+}
+/* Long names and links must be able to shrink rather than widen their containers. */
+.cast-card, .person-chip { min-width: 0; }
+.share-url .input { flex: 1; min-width: 0; width: auto; }
+@media (max-width: 640px) {
+    .cast-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+/* ---------- Alternate sources prompt ---------- */
+
+#sourcesModal { z-index: 220; }   /* can open over the player */
+.alt-icon { display: grid; place-items: center; width: 52px; height: 52px; margin-bottom: 16px; border-radius: 14px; background: rgba(var(--accent-rgb), 0.14); color: var(--accent-fg); }
+.alt-icon svg { width: 26px; height: 26px; }
+.alt-points { display: grid; gap: 10px; margin: 0; padding: 0; list-style: none; }
+.alt-points li { position: relative; padding-left: 18px; color: var(--text-2); font-size: 14.5px; line-height: 1.55; }
+.alt-points li::before { content: ''; position: absolute; left: 2px; top: 0.62em; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
+.alt-points strong { color: var(--text); font-weight: 650; }
+#sourcesModal .sheet-hint { margin-top: 16px; }
+#sourcesModal .sheet-actions { margin-top: 22px; }

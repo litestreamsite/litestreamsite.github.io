@@ -15,8 +15,12 @@
     <meta property="og:site_name" content="litestreamsite">
     <meta property="og:title" content="litestreamsite · Stream LEGO shows &amp; movies">
     <meta property="og:description" content="Watch LEGO series, movies and specials for free. No account needed.">
+    <meta property="og:url" content="https://litestreamsite.github.io/">
     <meta property="og:image" content="https://image.tmdb.org/t/p/w1280/RUBG86JQ81CV6DMm0RKdGln2Kr.jpg">
     <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="litestreamsite · Stream LEGO shows &amp; movies">
+    <meta name="twitter:description" content="Watch LEGO series, movies and specials for free. No account needed.">
+    <meta name="twitter:image" content="https://image.tmdb.org/t/p/w1280/RUBG86JQ81CV6DMm0RKdGln2Kr.jpg">
     <link rel="icon" href="images/icons/favicon.svg" type="image/svg+xml">
     <link rel="icon" href="images/icons/favicon-32.png" type="image/png" sizes="32x32">
     <link rel="apple-touch-icon" href="images/icons/apple-touch-icon.png">
@@ -36,7 +40,7 @@
     <link rel="preconnect" href="https://image.tmdb.org">
     <link rel="preconnect" href="https://cdn1.futuretodayinc.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css?v=20261013">
+    <link rel="stylesheet" href="css/styles.css?v=20261016">
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-7SL251FNB8"></script>
     <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date());gtag("config","G-7SL251FNB8");</script>
 </head>
@@ -183,6 +187,14 @@
             </button>
             <div class="popup popup-down" id="srcPopup" role="menu"></div>
         </div>
+        <button class="player-back" id="pShareBtn" type="button" aria-label="Share" title="Share">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v7a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-7"/><path d="m16 6-4-4-4 4"/><path d="M12 2v13"/></svg>
+        </button>
+    </div>
+
+    <div class="cast-overlay" id="castOverlay" aria-live="polite">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M1 18v3h3c0-1.66-1.34-3-3-3zm0-4v2c2.76 0 5 2.24 5 5h2c0-3.87-3.13-7-7-7zm0-4v2a9 9 0 0 1 9 9h2c0-6.08-4.93-11-11-11zm20-7H3c-1.1 0-2 .9-2 2v3h2V5h18v14h-7v2h7c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"/></svg>
+        <span id="castLabel">Playing on your TV</span>
     </div>
 
     <div class="controls" id="controlsBar">
@@ -204,11 +216,16 @@
             </div>
             <span class="time" id="timeDisplay">0:00 / 0:00</span>
             <div class="ctrl-spacer"></div>
+            <button class="ctrl-btn" id="castBtn" type="button" aria-label="Cast to a TV" title="Cast to a TV" hidden><svg viewBox="0 0 24 24"><path d="M1 18v3h3c0-1.66-1.34-3-3-3zm0-4v2c2.76 0 5 2.24 5 5h2c0-3.87-3.13-7-7-7zm0-4v2a9 9 0 0 1 9 9h2c0-6.08-4.93-11-11-11zm20-7H3c-1.1 0-2 .9-2 2v3h2V5h18v14h-7v2h7c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"/></svg></button>
             <button class="ctrl-btn" id="airplayBtn" type="button" aria-label="AirPlay" title="AirPlay" hidden><svg viewBox="0 0 24 24"><path d="M5 17H3V5a2 2 0 012-2h14a2 2 0 012 2v12h-2V5H5zM12 15l5 6H7z"/></svg></button>
             <button class="ctrl-btn" id="pipBtn" type="button" aria-label="Picture in picture" title="Picture in picture" hidden><svg viewBox="0 0 24 24"><path d="M19 11h-8v6h8v-6zm4 8V4.98C23 3.88 22.1 3 21 3H3c-1.1 0-2 .88-2 1.98V19c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2zm-2 .02H3V4.97h18v14.05z"/></svg></button>
             <div class="ctrl-pop" id="dlWrap">
                 <button class="ctrl-btn" id="dlBtn" type="button" data-popup="dlPopup" aria-label="Download" title="Download" aria-haspopup="true" aria-expanded="false"><svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg></button>
                 <div class="popup" id="dlPopup" role="menu"></div>
+            </div>
+            <div class="ctrl-pop">
+                <button class="ctrl-btn" id="sleepBtn" type="button" data-popup="sleepPopup" aria-label="Sleep timer" title="Sleep timer" aria-haspopup="true" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.5 14.2A8.5 8.5 0 0 1 9.8 3.5a8.5 8.5 0 1 0 10.7 10.7z"/></svg></button>
+                <div class="popup" id="sleepPopup" role="menu"></div>
             </div>
             <div class="ctrl-pop">
                 <button class="ctrl-btn ctrl-text" id="speedBtn" type="button" data-popup="speedPopup" aria-label="Playback speed" title="Playback speed" aria-haspopup="true" aria-expanded="false"><span id="speedLabel">1×</span></button>
@@ -221,6 +238,11 @@
             <div class="ctrl-pop">
                 <button class="ctrl-btn" id="ccBtn" type="button" data-popup="subPopup" aria-label="Subtitles" title="Subtitles (C)" aria-haspopup="true" aria-expanded="false"><svg class="cc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="M10 9.5a1.5 1.5 0 00-1.5-1.5H7a1.5 1.5 0 00-1.5 1.5v5A1.5 1.5 0 007 16h1.5A1.5 1.5 0 0010 14.5"/><path d="M19 9.5a1.5 1.5 0 00-1.5-1.5H16a1.5 1.5 0 00-1.5 1.5v5A1.5 1.5 0 0016 16h1.5a1.5 1.5 0 001.5-1.5"/></svg></button>
                 <div class="popup popup-wide" id="subPopup" role="menu"></div>
+                <input type="file" id="subFileInput" accept=".vtt,.srt,text/vtt" hidden>
+            </div>
+            <div class="ctrl-pop" id="moreWrap">
+                <button class="ctrl-btn" id="moreBtn" type="button" data-popup="morePopup" aria-label="More options" title="More options" aria-haspopup="true" aria-expanded="false"><svg viewBox="0 0 24 24"><circle cx="5" cy="12" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="19" cy="12" r="2"/></svg></button>
+                <div class="popup" id="morePopup" role="menu"></div>
             </div>
             <button class="ctrl-btn" id="fsBtn" type="button" aria-label="Fullscreen" title="Fullscreen (F)"><svg viewBox="0 0 24 24"><path d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z"/></svg></button>
         </div>
@@ -244,6 +266,19 @@
         <div class="avatar-grid" id="avatarGrid"></div>
         <h3 class="sheet-section">Your stats</h3>
         <div class="stat-grid" id="statGrid"></div>
+        <h3 class="sheet-section">Move to another device</h3>
+        <p class="sheet-hint transfer-hint">My List, watch progress and settings are saved in this browser only. Take them to another device or browser with a backup file or a transfer code.</p>
+        <div class="transfer-actions">
+            <button class="btn btn-sm btn-glass" id="exportFileBtn" type="button">Download backup</button>
+            <button class="btn btn-sm btn-glass" id="importFileBtn" type="button">Restore from file</button>
+            <button class="btn btn-sm btn-glass" id="copyCodeBtn" type="button">Copy transfer code</button>
+            <button class="btn btn-sm btn-glass" id="pasteCodeBtn" type="button" aria-expanded="false" aria-controls="codeBox">Enter a code</button>
+        </div>
+        <div class="transfer-code" id="codeBox" hidden>
+            <textarea class="input textarea" id="codeInput" rows="3" placeholder="Paste the code from your other device" spellcheck="false" autocomplete="off" aria-label="Transfer code"></textarea>
+            <button class="btn btn-sm btn-primary" id="codeApplyBtn" type="button">Import</button>
+        </div>
+        <input type="file" id="importFileInput" accept=".json,application/json" hidden>
         <div class="sheet-actions">
             <button id="clearHistoryBtn" class="btn btn-ghost-danger" type="button">Clear watch history</button>
             <button class="btn btn-primary" data-close="profileModal" type="button">Done</button>
@@ -277,6 +312,24 @@
         <div class="setting-row">
             <div><div class="setting-name">Subtitles on by default</div><div class="setting-desc">Turn on English subtitles when an episode has them.</div></div>
             <button class="switch" id="subsSwitch" type="button" role="switch" aria-checked="true" aria-label="Subtitles on by default"><span></span></button>
+        </div>
+        <div class="setting-row">
+            <div><div class="setting-name">Alternate sources</div><div class="setting-desc">More episodes and higher quality from third-party players. These may show pop-up ads; an ad blocker helps.</div></div>
+            <button class="switch" id="altSwitch" type="button" role="switch" aria-checked="false" aria-label="Alternate sources"><span></span></button>
+        </div>
+        <h3 class="sheet-section">Spoilers</h3>
+        <div class="setting-block">
+            <div class="setting-name" id="stillsLabel">Episode stills</div>
+            <div class="setting-desc">Show episode numbers instead of thumbnails, so scenes aren't spoiled.</div>
+            <div class="seg" id="stillsSeg" role="group" aria-labelledby="stillsLabel">
+                <button class="seg-btn seg-btn-sm" data-stills="off" type="button">Show</button>
+                <button class="seg-btn seg-btn-sm" data-stills="unwatched" type="button">Hide unwatched</button>
+                <button class="seg-btn seg-btn-sm" data-stills="all" type="button">Hide all</button>
+            </div>
+        </div>
+        <div class="setting-row">
+            <div><div class="setting-name">Hide descriptions</div><div class="setting-desc">Hide what happens in episodes you haven't watched yet.</div></div>
+            <button class="switch" id="descSwitch" type="button" role="switch" aria-checked="false" aria-label="Hide descriptions of unwatched episodes"><span></span></button>
         </div>
         <h3 class="sheet-section">TV mode</h3>
         <div class="seg" id="tvSeg">
@@ -314,14 +367,58 @@
             <div><dt><kbd>C</kbd></dt><dd>Subtitles on / off</dd></div>
             <div><dt><kbd>Shift</kbd> + <kbd>N</kbd></dt><dd>Next episode</dd></div>
             <div><dt><kbd>Shift</kbd> + <kbd>P</kbd></dt><dd>Previous episode</dd></div>
+            <div><dt><kbd>[</kbd> <kbd>]</kbd></dt><dd>Subtitles earlier / later</dd></div>
             <div><dt><kbd>Esc</kbd></dt><dd>Close the player</dd></div>
         </dl>
+    </div>
+</div>
+
+<div class="modal" id="shareModal" role="dialog" aria-modal="true" aria-labelledby="shareTitle">
+    <div class="modal-dim" data-close="shareModal"></div>
+    <div class="sheet sheet-narrow" tabindex="-1">
+        <button class="sheet-close" data-close="shareModal" aria-label="Close" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
+        <h2 class="sheet-title" id="shareTitle">Share</h2>
+        <p class="sheet-sub">Links show a preview with the artwork when posted on Discord, X and most chat apps.</p>
+        <div class="share-card" id="sharePreview"></div>
+        <div class="share-url">
+            <input class="input" id="shareUrl" readonly aria-label="Link to share">
+            <button class="btn btn-primary" id="shareCopy" type="button">Copy</button>
+        </div>
+        <label class="share-time" id="shareTimeRow" hidden><input type="checkbox" id="shareTimeChk"> Start at <span id="shareTimeLabel"></span></label>
+        <div class="share-targets" id="shareTargets">
+            <button class="btn btn-sm btn-glass" id="shareNative" type="button">More…</button>
+            <button class="btn btn-sm btn-glass" type="button" data-share-to="x">X</button>
+            <button class="btn btn-sm btn-glass" type="button" data-share-to="bluesky">Bluesky</button>
+            <button class="btn btn-sm btn-glass" type="button" data-share-to="reddit">Reddit</button>
+            <button class="btn btn-sm btn-glass" type="button" data-share-to="whatsapp">WhatsApp</button>
+            <button class="btn btn-sm btn-glass" type="button" data-share-to="email">Email</button>
+        </div>
+    </div>
+</div>
+
+<div class="modal" id="sourcesModal" role="dialog" aria-modal="true" aria-labelledby="sourcesTitle" aria-describedby="sourcesDesc">
+    <div class="modal-dim" data-close="sourcesModal"></div>
+    <div class="sheet sheet-narrow" tabindex="-1">
+        <button class="sheet-close" data-close="sourcesModal" aria-label="Close" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
+        <div class="alt-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 2 10 5-10 5L2 7z"/><path d="m2 17 10 5 10-5"/><path d="m2 12 10 5 10-5"/></svg></div>
+        <h2 class="sheet-title" id="sourcesTitle">Turn on alternate sources?</h2>
+        <p class="sheet-sub" id="sourcesDesc">Some episodes and movies are hosted on third-party video players instead of being streamed directly.</p>
+        <ul class="alt-points">
+            <li><strong>More to watch.</strong> Unlocks episodes and movies that are only available from those players.</li>
+            <li><strong>Higher quality.</strong> Adds extra sources to the player's Sources menu.</li>
+            <li><strong>Pop-up ads.</strong> These players may open ads or new tabs. An ad blocker, such as uBlock Origin, stops most of them.</li>
+        </ul>
+        <p class="sheet-hint">If you leave them off, you'll only see videos streamed directly, with no ads. You can change this any time in Settings.</p>
+        <div class="sheet-actions">
+            <button class="btn btn-glass" id="altDeclineBtn" type="button">Not now</button>
+            <button class="btn btn-primary" id="altAcceptBtn" type="button">Turn on</button>
+        </div>
     </div>
 </div>
 
 <div class="toasts" id="toastStack" aria-live="polite"></div>
 
 <script src="https://cdn.jsdelivr.net/npm/hls.js@1.5.20/dist/hls.min.js" defer></script>
-<script src="js/app.js?v=20261013" defer></script>
+<script src="js/app.js?v=20261018" defer></script>
 </body>
 </html>

@@ -16,7 +16,7 @@
                     "number": 0,
                     "file": "data/seasons/ninjago_s0.json"
                 },
-                {
+                { 
                     "number": 1,
                     "file": "data/seasons/ninjago_s1.json"
                 },
@@ -92,7 +92,7 @@
             "summary": "After the Merge brings the realms together, new heroes Arin and Sora join the original Ninja to protect their changed world. Ras pursues a plan to reverse the Merge—with consequences for every realm.",
             "seasons": [{
                     "number": 1,
-                    "file": "data/seasons/dr_s1.json"
+                    "file": "data/seasons/dr_s1new.json"
                 },
                 {
                     "number": 2,
@@ -116,6 +116,7 @@
             "id": "ninjagomonstrosity",
             "title": "LEGO Ninjago Legends",
             "type": "show",
+            "newEpisodes": true,
             "genres": ["Action & Adventure", "Animation", "Fantasy"],
             "rating": "TV-Y7",
             "poster": "https://m.media-amazon.com/images/M/MV5BMDZjNzEyYTQtZWZlYS00MWUyLTg1MjEtZmUzMmNlMDYwZGRkXkEyXkFqcGc@._V1_.jpg",
@@ -236,6 +237,7 @@
             "id": "httydcollab",
             "title": "LEGO DREAMZzz: How To Fast Train Your Furious Dragon",
             "type": "movie",
+            "new": true,
             "genres": ["Action & Adventure", "Animation", "Fantasy"],
             "rating": "TV-Y7",
             "years": "2026",
@@ -243,10 +245,28 @@
             "poster": "https://image.tmdb.org/t/p/original/eS599ZhvoOm9GGNpENut5ChKLh4.jpg",
             "banner": "https://image.tmdb.org/t/p/original/yPFOaBsXLVeFHeUHRJCZVier9vm.jpg",
             "logo": "https://image.tmdb.org/t/p/original/20Ttw8OtLkACSoQdPCwsc7yHei7.png",
-            "summary": "The dream chasers race nitro-injected street cars and join forces with dragon rider Hiccup in the wildest cross-over ever dreamed up as 'DREAMZzz', 'The Fast and the Furious' and 'How to train your Dragon' collide head on. But the Nightmare King is always scheming and plans to corrupt the friendly dragons of Berk, and our heroes soon find themselves in a desperate race to save the Dream World.",
+            "summary": "The dream chasers race nitro-injected street cars and join forces with dragon rider Hiccup when the Nightmare King hatches a plot to corrupt the friendly dragons of Berk.",
             "seasons": [{
                 "number": 1,
                 "file": "data/seasons/httydcollab.json"
+            }]
+        },
+                        {
+            "id": "dreamteam",
+            "title": "LEGO Ninjago - Dream Team",
+            "type": "movie",
+            "new": true,
+            "genres": ["Action & Adventure", "Animation", "Fantasy"],
+            "rating": "TV-Y7",
+            "years": "2023",
+            "runtime": "22m",
+            "poster": "https://image.tmdb.org/t/p/original/1WyNGZSpN43AmquRfwecrfcVEHK.jpg",
+            "banner": "https://m.media-amazon.com/images/M/MV5BYzI5YzM3NDktMTYzNi00MjNmLTkwOTgtNjIxNzIzZTU4YWEyXkEyXkFqcGc@._V1_.jpg",
+            "logo": "",
+            "summary": "When the Ninja find a young boy, Jan, under attack by strange shadow creatures, they leap into action. But their fighting skills prove useless against their new enemies' powers and Jan is captured.",
+            "seasons": [{
+                "number": 1,
+                "file": "data/seasons/dreamteam.json"
             }]
         },
         {

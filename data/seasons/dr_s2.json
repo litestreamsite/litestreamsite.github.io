@@ -1,17 +1,31 @@
 {
     "season": 2,
-    "episodes": [{
+    "episodes": [
+        {
             "number": 1,
             "title": "The Blood Moon",
             "description": "As Lloyd is haunted by visions of a coming threat, Arin and Sora investigate strange break-ins while Ras gathers a masked army.",
             "thumbnail": "https://image.tmdb.org/t/p/original/gvlpnp97UliK5LsmIpo3bsFJGr3.jpg",
             "embed": "https://cdn1.futuretodayinc.com/files/a8wn4hw/vi/c4/2e/10590280/s10590280.m3u8",
-            "subtitles": [{
-                "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/80/fb/10a02a621abc5ec4cee2d889f14c236b.vtt",
-                "lang": "en",
-                "label": "English",
-                "default": true
-            }]
+            "subtitles": [
+                {
+                    "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/80/fb/10a02a621abc5ec4cee2d889f14c236b.vtt",
+                    "lang": "en",
+                    "label": "English",
+                    "default": true
+                }
+            ],
+            "airDate": "",
+            "sources": [],
+            "downloads": [],
+            "introStart": null,
+            "introEnd": null,
+            "recapStart": null,
+            "recapEnd": null,
+            "creditsStart": null,
+            "directors": [],
+            "writers": [],
+            "cast": []
         },
         {
             "number": 2,
@@ -19,12 +33,25 @@
             "description": "In the Cloud Kingdom, Lloyd and the ninja uncover the legend of the Forbidden Five as Ras unleashes a dangerous new power.",
             "thumbnail": "https://image.tmdb.org/t/p/original/7LOlTYsRQtzUHX2BoAFyzOVABN9.jpg",
             "embed": "https://cdn1.futuretodayinc.com/files/a8wn4hw/vi/16/ba/10590281/s10590281.m3u8",
-            "subtitles": [{
-                "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/1a/2b/a26632c4badcb0e0646fedb7c30d3e3d.vtt",
-                "lang": "en",
-                "label": "English",
-                "default": true
-            }]
+            "subtitles": [
+                {
+                    "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/1a/2b/a26632c4badcb0e0646fedb7c30d3e3d.vtt",
+                    "lang": "en",
+                    "label": "English",
+                    "default": true
+                }
+            ],
+            "airDate": "",
+            "sources": [],
+            "downloads": [],
+            "introStart": null,
+            "introEnd": null,
+            "recapStart": null,
+            "recapEnd": null,
+            "creditsStart": null,
+            "directors": [],
+            "writers": [],
+            "cast": []
         },
         {
             "number": 3,
@@ -32,12 +59,25 @@
             "description": "Lloyd’s visions lead the ninja into a perilous cave in search of a way to counter Shatterspin, while Ras sets the Cloud Kingdom on a dangerous course.",
             "thumbnail": "https://image.tmdb.org/t/p/original/ajjhvfYIh2mlsUFmCyp4ODmGj34.jpg",
             "embed": "https://cdn1.futuretodayinc.com/files/a8wn4hw/vi/9d/a9/10590282/s10590282.m3u8",
-            "subtitles": [{
-                "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/0c/e3/5fa787982343078269b3ce39ea4a02e5.vtt",
-                "lang": "en",
-                "label": "English",
-                "default": true
-            }]
+            "subtitles": [
+                {
+                    "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/0c/e3/5fa787982343078269b3ce39ea4a02e5.vtt",
+                    "lang": "en",
+                    "label": "English",
+                    "default": true
+                }
+            ],
+            "airDate": "",
+            "sources": [],
+            "downloads": [],
+            "introStart": null,
+            "introEnd": null,
+            "recapStart": null,
+            "recapEnd": null,
+            "creditsStart": null,
+            "directors": [],
+            "writers": [],
+            "cast": []
         },
         {
             "number": 4,
@@ -45,12 +85,25 @@
             "description": "As Cole helps the Finders fend off the Wolf Clan, Lloyd and the ninja seek the Dragon Masters’ help to counter Shatterspin.",
             "thumbnail": "https://image.tmdb.org/t/p/original/bPNpJYIczi3qgqzrhDmHtPIIM3i.jpg",
             "embed": "https://cdn1.futuretodayinc.com/files/a8wn4hw/vi/6b/5f/10590283/s10590283.m3u8",
-            "subtitles": [{
-                "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/ca/2b/36c2f7909ab93a1d7cc97cf62cf70444.vtt",
-                "lang": "en",
-                "label": "English",
-                "default": true
-            }]
+            "subtitles": [
+                {
+                    "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/ca/2b/36c2f7909ab93a1d7cc97cf62cf70444.vtt",
+                    "lang": "en",
+                    "label": "English",
+                    "default": true
+                }
+            ],
+            "airDate": "",
+            "sources": [],
+            "downloads": [],
+            "introStart": null,
+            "introEnd": null,
+            "recapStart": null,
+            "recapEnd": null,
+            "creditsStart": null,
+            "directors": [],
+            "writers": [],
+            "cast": []
         },
         {
             "number": 5,
@@ -58,12 +111,25 @@
             "description": "As the ninja begin training to counter Shatterspin, Bonzle reveals her true origins—and why Ras is hunting her.",
             "thumbnail": "https://image.tmdb.org/t/p/original/wupUj7bs6REy0X0dXmo59cx7UW6.jpg",
             "embed": "https://cdn1.futuretodayinc.com/files/a8wn4hw/vi/b4/af/10590284/s10590284.m3u8",
-            "subtitles": [{
-                "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/d9/c8/2e84a796738e1377ffc271082d65191c.vtt",
-                "lang": "en",
-                "label": "English",
-                "default": true
-            }]
+            "subtitles": [
+                {
+                    "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/d9/c8/2e84a796738e1377ffc271082d65191c.vtt",
+                    "lang": "en",
+                    "label": "English",
+                    "default": true
+                }
+            ],
+            "airDate": "",
+            "sources": [],
+            "downloads": [],
+            "introStart": null,
+            "introEnd": null,
+            "recapStart": null,
+            "recapEnd": null,
+            "creditsStart": null,
+            "directors": [],
+            "writers": [],
+            "cast": []
         },
         {
             "number": 6,
@@ -71,12 +137,25 @@
             "description": "As Arin struggles to keep up with the Dragon Masters, Cole, Zane and Bonzle’s search for Mysterium lands them in Dorama’s dangerous stage show.",
             "thumbnail": "https://image.tmdb.org/t/p/original/hmeBAKYspq6DgYXxbCaqi94XOOy.jpg",
             "embed": "https://cdn1.futuretodayinc.com/files/a8wn4hw/vi/47/43/10590285/s10590285.m3u8",
-            "subtitles": [{
-                "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/59/92/fc46f35b297d98ac9c65332f88177ac0.vtt",
-                "lang": "en",
-                "label": "English",
-                "default": true
-            }]
+            "subtitles": [
+                {
+                    "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/59/92/fc46f35b297d98ac9c65332f88177ac0.vtt",
+                    "lang": "en",
+                    "label": "English",
+                    "default": true
+                }
+            ],
+            "airDate": "",
+            "sources": [],
+            "downloads": [],
+            "introStart": null,
+            "introEnd": null,
+            "recapStart": null,
+            "recapEnd": null,
+            "creditsStart": null,
+            "directors": [],
+            "writers": [],
+            "cast": []
         },
         {
             "number": 7,
@@ -84,12 +163,25 @@
             "description": "As Kai strives to master Rising Dragon, Cole and Zane bring Bonzle to her creator—but the rising Blood Moon threatens them all.",
             "thumbnail": "https://image.tmdb.org/t/p/original/5o5rmnGHsknenB8h6QjAgBZv0VP.jpg",
             "embed": "https://cdn1.futuretodayinc.com/files/a8wn4hw/vi/3b/10/10590286/s10590286.m3u8",
-            "subtitles": [{
-                "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/03/02/8c0dc36d2db95ce64971486467a74e70.vtt",
-                "lang": "en",
-                "label": "English",
-                "default": true
-            }]
+            "subtitles": [
+                {
+                    "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/03/02/8c0dc36d2db95ce64971486467a74e70.vtt",
+                    "lang": "en",
+                    "label": "English",
+                    "default": true
+                }
+            ],
+            "airDate": "",
+            "sources": [],
+            "downloads": [],
+            "introStart": null,
+            "introEnd": null,
+            "recapStart": null,
+            "recapEnd": null,
+            "creditsStart": null,
+            "directors": [],
+            "writers": [],
+            "cast": []
         },
         {
             "number": 8,
@@ -97,12 +189,25 @@
             "description": "With the Blood Moon rising, the ninja split up to protect Bonzle and survive a storm that scatters their team across the Wyldness.",
             "thumbnail": "https://image.tmdb.org/t/p/original/37MDTK9UUWnTmUC1EGPo5RyOX1o.jpg",
             "embed": "https://cdn1.futuretodayinc.com/files/a8wn4hw/vi/29/b6/10590287/s10590287.m3u8",
-            "subtitles": [{
-                "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/f6/99/807e20526db872d99551eb5272ebf79a.vtt",
-                "lang": "en",
-                "label": "English",
-                "default": true
-            }]
+            "subtitles": [
+                {
+                    "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/f6/99/807e20526db872d99551eb5272ebf79a.vtt",
+                    "lang": "en",
+                    "label": "English",
+                    "default": true
+                }
+            ],
+            "airDate": "",
+            "sources": [],
+            "downloads": [],
+            "introStart": null,
+            "introEnd": null,
+            "recapStart": null,
+            "recapEnd": null,
+            "creditsStart": null,
+            "directors": [],
+            "writers": [],
+            "cast": []
         },
         {
             "number": 9,
@@ -110,12 +215,25 @@
             "description": "As Ras prepares the Blood Moon ritual, Arin and Riyu race to rescue Bonzle while the ninja infiltrate the Shadow Dojo.",
             "thumbnail": "https://image.tmdb.org/t/p/original/AksiWgbr4oau5kizGx8lilIwbAn.jpg",
             "embed": "https://cdn1.futuretodayinc.com/files/a8wn4hw/vi/8d/9b/10590288/s10590288.m3u8",
-            "subtitles": [{
-                "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/a2/c5/42f78d4a7176f1b9e127f4a02de50eef.vtt",
-                "lang": "en",
-                "label": "English",
-                "default": true
-            }]
+            "subtitles": [
+                {
+                    "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/a2/c5/42f78d4a7176f1b9e127f4a02de50eef.vtt",
+                    "lang": "en",
+                    "label": "English",
+                    "default": true
+                }
+            ],
+            "airDate": "",
+            "sources": [],
+            "downloads": [],
+            "introStart": null,
+            "introEnd": null,
+            "recapStart": null,
+            "recapEnd": null,
+            "creditsStart": null,
+            "directors": [],
+            "writers": [],
+            "cast": []
         },
         {
             "number": 10,
@@ -123,12 +241,25 @@
             "description": "The ninja race to stop Ras’s Blood Moon ritual, but as the battle turns against them, they must master Rising Dragon to keep the Forbidden Five at bay.",
             "thumbnail": "https://image.tmdb.org/t/p/original/fMHbSGxYlAcgA7toHxkYM4S8Uow.jpg",
             "embed": "https://cdn1.futuretodayinc.com/files/a8wn4hw/vi/f5/a7/10590289/s10590289.m3u8",
-            "subtitles": [{
-                "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/7c/36/a2f3af2f5018331cd309cd75464c24bd.vtt",
-                "lang": "en",
-                "label": "English",
-                "default": true
-            }]
+            "subtitles": [
+                {
+                    "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/7c/36/a2f3af2f5018331cd309cd75464c24bd.vtt",
+                    "lang": "en",
+                    "label": "English",
+                    "default": true
+                }
+            ],
+            "airDate": "",
+            "sources": [],
+            "downloads": [],
+            "introStart": null,
+            "introEnd": null,
+            "recapStart": null,
+            "recapEnd": null,
+            "creditsStart": null,
+            "directors": [],
+            "writers": [],
+            "cast": []
         },
         {
             "number": 11,
@@ -136,12 +267,25 @@
             "description": "As Arin and Sora search for answers about his parents, a dying dragon warns the ninja of a threat to the Source Dragons—and points them toward the Tournament.",
             "thumbnail": "https://image.tmdb.org/t/p/original/qrebHVlwZVr84q31o66VhekJ0IL.jpg",
             "embed": "https://cdn1.futuretodayinc.com/files/a8wn4hw/vi/cc/87/10625425/s10625425.m3u8",
-            "subtitles": [{
-                "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/04/d7/e8dba5bd48e99d68f28044985b9900a4.vtt",
-                "lang": "en",
-                "label": "English",
-                "default": true
-            }]
+            "subtitles": [
+                {
+                    "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/04/d7/e8dba5bd48e99d68f28044985b9900a4.vtt",
+                    "lang": "en",
+                    "label": "English",
+                    "default": true
+                }
+            ],
+            "airDate": "",
+            "sources": [],
+            "downloads": [],
+            "introStart": null,
+            "introEnd": null,
+            "recapStart": null,
+            "recapEnd": null,
+            "creditsStart": null,
+            "directors": [],
+            "writers": [],
+            "cast": []
         },
         {
             "number": 12,
@@ -149,12 +293,25 @@
             "description": "With Kai still trapped in the Nether-Space, Lloyd leads the ninja to the Tournament of the Sources.",
             "thumbnail": "https://image.tmdb.org/t/p/original/ukjedUIzg2Pr44fm3u1oVIZARUF.jpg",
             "embed": "https://cdn1.futuretodayinc.com/files/a8wn4hw/vi/e0/a4/10625426/s10625426.m3u8",
-            "subtitles": [{
-                "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/7a/97/4571fe6893ba60d8f241e5c4950dbae7.vtt",
-                "lang": "en",
-                "label": "English",
-                "default": true
-            }]
+            "subtitles": [
+                {
+                    "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/7a/97/4571fe6893ba60d8f241e5c4950dbae7.vtt",
+                    "lang": "en",
+                    "label": "English",
+                    "default": true
+                }
+            ],
+            "airDate": "",
+            "sources": [],
+            "downloads": [],
+            "introStart": null,
+            "introEnd": null,
+            "recapStart": null,
+            "recapEnd": null,
+            "creditsStart": null,
+            "directors": [],
+            "writers": [],
+            "cast": []
         },
         {
             "number": 13,
@@ -162,12 +319,25 @@
             "description": "At the Tournament of the Sources, Arin reconnects with an old friend just as a mysterious attack turns the competitors against one another.",
             "thumbnail": "https://image.tmdb.org/t/p/original/uOB80xqkyRIuCEewSIpy9uw0Abp.jpg",
             "embed": "https://cdn1.futuretodayinc.com/files/a8wn4hw/vi/24/58/10625427/s10625427.m3u8",
-            "subtitles": [{
-                "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/99/d0/b82d513d6a6aaa603c738acc47ab035c.vtt",
-                "lang": "en",
-                "label": "English",
-                "default": true
-            }]
+            "subtitles": [
+                {
+                    "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/99/d0/b82d513d6a6aaa603c738acc47ab035c.vtt",
+                    "lang": "en",
+                    "label": "English",
+                    "default": true
+                }
+            ],
+            "airDate": "",
+            "sources": [],
+            "downloads": [],
+            "introStart": null,
+            "introEnd": null,
+            "recapStart": null,
+            "recapEnd": null,
+            "creditsStart": null,
+            "directors": [],
+            "writers": [],
+            "cast": []
         },
         {
             "number": 14,
@@ -175,12 +345,25 @@
             "description": "As Nya faces an unexpected opponent at the tournament, Kai and Bonzle discover the Forbidden Five may be communicating with someone beyond Nether-Space.",
             "thumbnail": "https://image.tmdb.org/t/p/original/pRvBoreKpPbXV0I4k9FwZdMysHM.jpg",
             "embed": "https://cdn1.futuretodayinc.com/files/a8wn4hw/vi/2e/d2/10625428/s10625428.m3u8",
-            "subtitles": [{
-                "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/f8/df/9aa20eb643c5626df76063f7f56e6d77.vtt",
-                "lang": "en",
-                "label": "English",
-                "default": true
-            }]
+            "subtitles": [
+                {
+                    "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/f8/df/9aa20eb643c5626df76063f7f56e6d77.vtt",
+                    "lang": "en",
+                    "label": "English",
+                    "default": true
+                }
+            ],
+            "airDate": "",
+            "sources": [],
+            "downloads": [],
+            "introStart": null,
+            "introEnd": null,
+            "recapStart": null,
+            "recapEnd": null,
+            "creditsStart": null,
+            "directors": [],
+            "writers": [],
+            "cast": []
         },
         {
             "number": 15,
@@ -188,12 +371,25 @@
             "description": "The ninja race to avoid expulsion as Arin sneaks into the Wolf Clan’s quarters and hears Ras’s claim about the Merge—and Riyu finds a way to reach Kai.",
             "thumbnail": "https://image.tmdb.org/t/p/original/hcAGKd8ueHf6td91mJPF2rvCmvF.jpg",
             "embed": "https://cdn1.futuretodayinc.com/files/a8wn4hw/vi/43/51/10625429/s10625429.m3u8",
-            "subtitles": [{
-                "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/a5/ff/cd8c79242aed396869dde2bc2f268503.vtt",
-                "lang": "en",
-                "label": "English",
-                "default": true
-            }]
+            "subtitles": [
+                {
+                    "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/a5/ff/cd8c79242aed396869dde2bc2f268503.vtt",
+                    "lang": "en",
+                    "label": "English",
+                    "default": true
+                }
+            ],
+            "airDate": "",
+            "sources": [],
+            "downloads": [],
+            "introStart": null,
+            "introEnd": null,
+            "recapStart": null,
+            "recapEnd": null,
+            "creditsStart": null,
+            "directors": [],
+            "writers": [],
+            "cast": []
         },
         {
             "number": 16,
@@ -201,12 +397,25 @@
             "description": "As the tournament costs the ninja more of their powers, Ras stokes Arin’s doubts while a mysterious orb leads Cole to a hidden monastery.",
             "thumbnail": "https://image.tmdb.org/t/p/original/2eFQf25yWfXjkMfGogxm66yKGlB.jpg",
             "embed": "https://cdn1.futuretodayinc.com/files/a8wn4hw/vi/98/dd/10625430/s10625430.m3u8",
-            "subtitles": [{
-                "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/97/a1/561bc7a0e99edf748c445bad00a7aeec.vtt",
-                "lang": "en",
-                "label": "English",
-                "default": true
-            }]
+            "subtitles": [
+                {
+                    "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/97/a1/561bc7a0e99edf748c445bad00a7aeec.vtt",
+                    "lang": "en",
+                    "label": "English",
+                    "default": true
+                }
+            ],
+            "airDate": "",
+            "sources": [],
+            "downloads": [],
+            "introStart": null,
+            "introEnd": null,
+            "recapStart": null,
+            "recapEnd": null,
+            "creditsStart": null,
+            "directors": [],
+            "writers": [],
+            "cast": []
         },
         {
             "number": 17,
@@ -214,12 +423,25 @@
             "description": "As Lloyd faces Zeatrix in the tournament, his visions threaten to come true, while Kai reaches Nya from the Nether-Space—with danger close behind.",
             "thumbnail": "https://image.tmdb.org/t/p/original/iObExJM6Cg73vFwoXg3LhRkGUDL.jpg",
             "embed": "https://cdn1.futuretodayinc.com/files/a8wn4hw/vi/d0/d9/10625431/s10625431.m3u8",
-            "subtitles": [{
-                "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/9d/78/57e88d25d14660161bb45bd9334ee998.vtt",
-                "lang": "en",
-                "label": "English",
-                "default": true
-            }]
+            "subtitles": [
+                {
+                    "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/9d/78/57e88d25d14660161bb45bd9334ee998.vtt",
+                    "lang": "en",
+                    "label": "English",
+                    "default": true
+                }
+            ],
+            "airDate": "",
+            "sources": [],
+            "downloads": [],
+            "introStart": null,
+            "introEnd": null,
+            "recapStart": null,
+            "recapEnd": null,
+            "creditsStart": null,
+            "directors": [],
+            "writers": [],
+            "cast": []
         },
         {
             "number": 18,
@@ -227,12 +449,25 @@
             "description": "Arin and Wyldfyre uncover a clue linking a tournament official to Ras, while Sora faces Frak and Lloyd’s visions threaten his place in the competition.",
             "thumbnail": "https://image.tmdb.org/t/p/original/fkUxqchig3InBWdbKYbQw0PzP7i.jpg",
             "embed": "https://cdn1.futuretodayinc.com/files/a8wn4hw/vi/f2/f3/10625432/s10625432.m3u8",
-            "subtitles": [{
-                "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/be/0c/f0739e423a1466980251aae3e7980427.vtt",
-                "lang": "en",
-                "label": "English",
-                "default": true
-            }]
+            "subtitles": [
+                {
+                    "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/be/0c/f0739e423a1466980251aae3e7980427.vtt",
+                    "lang": "en",
+                    "label": "English",
+                    "default": true
+                }
+            ],
+            "airDate": "",
+            "sources": [],
+            "downloads": [],
+            "introStart": null,
+            "introEnd": null,
+            "recapStart": null,
+            "recapEnd": null,
+            "creditsStart": null,
+            "directors": [],
+            "writers": [],
+            "cast": []
         },
         {
             "number": 19,
@@ -240,12 +475,25 @@
             "description": "A flashback reveals the Forbidden Five’s brutal past as Sora faces Nokt and Arin uncovers a conspiracy behind the tournament.",
             "thumbnail": "https://image.tmdb.org/t/p/original/nx47gg6X9Um2ItRisyszntqzG9F.jpg",
             "embed": "https://cdn1.futuretodayinc.com/files/a8wn4hw/vi/24/58/10625433/s10625433.m3u8",
-            "subtitles": [{
-                "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/ac/3b/59512684d2bc3261c9343bfa03ce208e.vtt",
-                "lang": "en",
-                "label": "English",
-                "default": true
-            }]
+            "subtitles": [
+                {
+                    "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/ac/3b/59512684d2bc3261c9343bfa03ce208e.vtt",
+                    "lang": "en",
+                    "label": "English",
+                    "default": true
+                }
+            ],
+            "airDate": "",
+            "sources": [],
+            "downloads": [],
+            "introStart": null,
+            "introEnd": null,
+            "recapStart": null,
+            "recapEnd": null,
+            "creditsStart": null,
+            "directors": [],
+            "writers": [],
+            "cast": []
         },
         {
             "number": 20,
@@ -253,12 +501,25 @@
             "description": "The ninja face Nokt’s bid to unleash the Forbidden Five, while Arin’s search for his parents leads him toward an uncertain new path.",
             "thumbnail": "https://image.tmdb.org/t/p/original/9bbpBFiEr4jw0TSOgC76Nkz1XoD.jpg",
             "embed": "https://cdn1.futuretodayinc.com/files/a8wn4hw/vi/1a/a5/10625434/s10625434.m3u8",
-            "subtitles": [{
-                "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/84/ca/d5dcf32ccfa13e621c9cd93b487c1a81.vtt",
-                "lang": "en",
-                "label": "English",
-                "default": true
-            }]
+            "subtitles": [
+                {
+                    "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/84/ca/d5dcf32ccfa13e621c9cd93b487c1a81.vtt",
+                    "lang": "en",
+                    "label": "English",
+                    "default": true
+                }
+            ],
+            "airDate": "",
+            "sources": [],
+            "downloads": [],
+            "introStart": null,
+            "introEnd": null,
+            "recapStart": null,
+            "recapEnd": null,
+            "creditsStart": null,
+            "directors": [],
+            "writers": [],
+            "cast": []
         }
     ]
 }

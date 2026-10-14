@@ -1,17 +1,31 @@
 {
     "season": 3,
-    "episodes": [{
+    "episodes": [
+        {
             "number": 1,
             "title": "The Missing",
             "description": "With Arin and Jay still missing, the ninja search for their friends as the Forbidden Five begin their quest to free ThunderFang.",
             "thumbnail": "https://image.tmdb.org/t/p/original/fw1WrNLxZjeGQJpvA1cQpyhNfIs.jpg",
             "embed": "https://cdn1.futuretodayinc.com/files/a8wn4hw/vi/22/52/10679886/s10679886.m3u8",
-            "subtitles": [{
-                "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/26/99/4cd1c70c4b1922e022fc05363638e46d.vtt",
-                "lang": "en",
-                "label": "English",
-                "default": true
-            }]
+            "subtitles": [
+                {
+                    "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/26/99/4cd1c70c4b1922e022fc05363638e46d.vtt",
+                    "lang": "en",
+                    "label": "English",
+                    "default": true
+                }
+            ],
+            "airDate": "",
+            "sources": [],
+            "downloads": [],
+            "introStart": null,
+            "introEnd": null,
+            "recapStart": null,
+            "recapEnd": null,
+            "creditsStart": null,
+            "directors": [],
+            "writers": [],
+            "cast": []
         },
         {
             "number": 2,
@@ -19,12 +33,25 @@
             "description": "As the ninja search for their missing friends, Lloyd’s team discovers the First Land and faces a dangerous Cyclops. Meanwhile, Arin struggles to keep an injured Ras alive.",
             "thumbnail": "https://image.tmdb.org/t/p/original/6CKGzoFFtE3eFL5paQ5raEZhbqy.jpg",
             "embed": "https://cdn1.futuretodayinc.com/files/a8wn4hw/vi/89/7a/10679887/s10679887.m3u8",
-            "subtitles": [{
-                "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/f3/a3/b0c304f605575f5f43e3d85bef15c0a7.vtt",
-                "lang": "en",
-                "label": "English",
-                "default": true
-            }]
+            "subtitles": [
+                {
+                    "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/f3/a3/b0c304f605575f5f43e3d85bef15c0a7.vtt",
+                    "lang": "en",
+                    "label": "English",
+                    "default": true
+                }
+            ],
+            "airDate": "",
+            "sources": [],
+            "downloads": [],
+            "introStart": null,
+            "introEnd": null,
+            "recapStart": null,
+            "recapEnd": null,
+            "creditsStart": null,
+            "directors": [],
+            "writers": [],
+            "cast": []
         },
         {
             "number": 3,
@@ -32,12 +59,25 @@
             "description": "Arin and Morro brave the Spectral Lands to save Ras, while Kai and Nya search for Jay and the Forbidden Five close in on ThunderFang.",
             "thumbnail": "https://image.tmdb.org/t/p/original/fZLYiqpEnM5yVg0mtgsBOg927Cu.jpg",
             "embed": "https://cdn1.futuretodayinc.com/files/a8wn4hw/vi/21/cd/10679888/s10679888.m3u8",
-            "subtitles": [{
-                "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/5d/94/7084843908c72059dceece5d758ef512.vtt",
-                "lang": "en",
-                "label": "English",
-                "default": true
-            }]
+            "subtitles": [
+                {
+                    "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/5d/94/7084843908c72059dceece5d758ef512.vtt",
+                    "lang": "en",
+                    "label": "English",
+                    "default": true
+                }
+            ],
+            "airDate": "",
+            "sources": [],
+            "downloads": [],
+            "introStart": null,
+            "introEnd": null,
+            "recapStart": null,
+            "recapEnd": null,
+            "creditsStart": null,
+            "directors": [],
+            "writers": [],
+            "cast": []
         },
         {
             "number": 4,
@@ -45,12 +85,25 @@
             "description": "Zane tracks a robbery to a speeding train and clashes with Nokt over a Prismatic Blade, while a mysterious figure takes on a new mission at the Crossroads.",
             "thumbnail": "https://image.tmdb.org/t/p/original/b3CorOMZuLXpsKdsf14r2BSxH8C.jpg",
             "embed": "https://www.youtube.com/embed/F1eOEvRIqTs",
-            "subtitles": [{
-                "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/b3/e4/dfa50538bdcd7b2d50845c2a478ddd1c.vtt",
-                "lang": "en",
-                "label": "English",
-                "default": true
-            }]
+            "subtitles": [
+                {
+                    "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/b3/e4/dfa50538bdcd7b2d50845c2a478ddd1c.vtt",
+                    "lang": "en",
+                    "label": "English",
+                    "default": true
+                }
+            ],
+            "airDate": "",
+            "sources": [],
+            "downloads": [],
+            "introStart": null,
+            "introEnd": null,
+            "recapStart": null,
+            "recapEnd": null,
+            "creditsStart": null,
+            "directors": [],
+            "writers": [],
+            "cast": []
         },
         {
             "number": 5,
@@ -58,12 +111,25 @@
             "description": "As the Forbidden Five hunt another Prismatic Blade, Ras tempts Arin with a chance to undo the Merge and recover what he lost.",
             "thumbnail": "https://image.tmdb.org/t/p/original/uUf71vtY3P2Spu9tebj5tBr22Ea.jpg",
             "embed": "https://cdn1.futuretodayinc.com/files/a8wn4hw/vi/22/45/10679890/s10679890.m3u8",
-            "subtitles": [{
-                "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/70/4f/17749581f1e3033befa629a266dad1fd.vtt",
-                "lang": "en",
-                "label": "English",
-                "default": true
-            }]
+            "subtitles": [
+                {
+                    "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/70/4f/17749581f1e3033befa629a266dad1fd.vtt",
+                    "lang": "en",
+                    "label": "English",
+                    "default": true
+                }
+            ],
+            "airDate": "",
+            "sources": [],
+            "downloads": [],
+            "introStart": null,
+            "introEnd": null,
+            "recapStart": null,
+            "recapEnd": null,
+            "creditsStart": null,
+            "directors": [],
+            "writers": [],
+            "cast": []
         },
         {
             "number": 6,
@@ -71,12 +137,25 @@
             "description": "Rox targets a Djinn to repair a Prismatic Blade, while Ras draws Arin deeper into his plan to undo the Merge.",
             "thumbnail": "https://image.tmdb.org/t/p/original/vrDw4rGN4UBgqhI6c7Ifse6sG76.jpg",
             "embed": "https://cdn1.futuretodayinc.com/files/a8wn4hw/vi/b8/8e/10679891/s10679891.m3u8",
-            "subtitles": [{
-                "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/a0/58/d36169f5fd9fad068623a4f649d4b727.vtt",
-                "lang": "en",
-                "label": "English",
-                "default": true
-            }]
+            "subtitles": [
+                {
+                    "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/a0/58/d36169f5fd9fad068623a4f649d4b727.vtt",
+                    "lang": "en",
+                    "label": "English",
+                    "default": true
+                }
+            ],
+            "airDate": "",
+            "sources": [],
+            "downloads": [],
+            "introStart": null,
+            "introEnd": null,
+            "recapStart": null,
+            "recapEnd": null,
+            "creditsStart": null,
+            "directors": [],
+            "writers": [],
+            "cast": []
         },
         {
             "number": 7,
@@ -84,12 +163,25 @@
             "description": "As the ninja track the final Prismatic Blade, Arin helps Ras seek a way to undo the Merge—and faces growing doubts about their mission.",
             "thumbnail": "https://image.tmdb.org/t/p/original/c0ARvS6IKQcImsekeXvnL8sFHHH.jpg",
             "embed": "https://cdn1.futuretodayinc.com/files/a8wn4hw/vi/f6/b5/10679892/s10679892.m3u8",
-            "subtitles": [{
-                "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/da/72/462b4525e88ba6f46f3ef46fb4188536.vtt",
-                "lang": "en",
-                "label": "English",
-                "default": true
-            }]
+            "subtitles": [
+                {
+                    "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/da/72/462b4525e88ba6f46f3ef46fb4188536.vtt",
+                    "lang": "en",
+                    "label": "English",
+                    "default": true
+                }
+            ],
+            "airDate": "",
+            "sources": [],
+            "downloads": [],
+            "introStart": null,
+            "introEnd": null,
+            "recapStart": null,
+            "recapEnd": null,
+            "creditsStart": null,
+            "directors": [],
+            "writers": [],
+            "cast": []
         },
         {
             "number": 8,
@@ -97,12 +189,25 @@
             "description": "Drix launches an attack in the World Forest, while flashbacks reveal how Arin and Sora first became friends.",
             "thumbnail": "https://image.tmdb.org/t/p/original/fr1uWn9H2QY5zWnQZj7tSdYMkxf.jpg",
             "embed": "https://cdn1.futuretodayinc.com/files/a8wn4hw/vi/cc/00/10679893/s10679893.m3u8",
-            "subtitles": [{
-                "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/7f/29/289d67ce162ec0a5914fb4f8348393a8.vtt",
-                "lang": "en",
-                "label": "English",
-                "default": true
-            }]
+            "subtitles": [
+                {
+                    "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/7f/29/289d67ce162ec0a5914fb4f8348393a8.vtt",
+                    "lang": "en",
+                    "label": "English",
+                    "default": true
+                }
+            ],
+            "airDate": "",
+            "sources": [],
+            "downloads": [],
+            "introStart": null,
+            "introEnd": null,
+            "recapStart": null,
+            "recapEnd": null,
+            "creditsStart": null,
+            "directors": [],
+            "writers": [],
+            "cast": []
         },
         {
             "number": 9,
@@ -110,12 +215,25 @@
             "description": "The ninja face the Forbidden Five in a desperate fight over the Prismatic Blades, while Arin’s loyalty to Ras is put to the test.",
             "thumbnail": "https://image.tmdb.org/t/p/original/3Nm9lfHPiUX1qwQihziAIwDRDyR.jpg",
             "embed": "https://cdn1.futuretodayinc.com/files/a8wn4hw/vi/e8/7c/10679894/s10679894.m3u8",
-            "subtitles": [{
-                "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/23/e9/63e315c4dddce25dc656e362023ad2ba.vtt",
-                "lang": "en",
-                "label": "English",
-                "default": true
-            }]
+            "subtitles": [
+                {
+                    "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/23/e9/63e315c4dddce25dc656e362023ad2ba.vtt",
+                    "lang": "en",
+                    "label": "English",
+                    "default": true
+                }
+            ],
+            "airDate": "",
+            "sources": [],
+            "downloads": [],
+            "introStart": null,
+            "introEnd": null,
+            "recapStart": null,
+            "recapEnd": null,
+            "creditsStart": null,
+            "directors": [],
+            "writers": [],
+            "cast": []
         },
         {
             "number": 10,
@@ -123,12 +241,25 @@
             "description": "With Thunderfang unleashing chaos across the Merged Lands, Arin must find a way to stop the dragon and save his friends.",
             "thumbnail": "https://image.tmdb.org/t/p/original/74uFwUGtbZx7Qu6CICfqKZlX7bT.jpg",
             "embed": "https://cdn1.futuretodayinc.com/files/a8wn4hw/vi/eb/a9/10679895/s10679895.m3u8",
-            "subtitles": [{
-                "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/43/68/1986f8f1effcca27c7d8fd45b9fdb7df.vtt",
-                "lang": "en",
-                "label": "English",
-                "default": true
-            }]
+            "subtitles": [
+                {
+                    "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/43/68/1986f8f1effcca27c7d8fd45b9fdb7df.vtt",
+                    "lang": "en",
+                    "label": "English",
+                    "default": true
+                }
+            ],
+            "airDate": "",
+            "sources": [],
+            "downloads": [],
+            "introStart": null,
+            "introEnd": null,
+            "recapStart": null,
+            "recapEnd": null,
+            "creditsStart": null,
+            "directors": [],
+            "writers": [],
+            "cast": []
         },
         {
             "number": 11,
@@ -136,12 +267,25 @@
             "description": "The ninja regroup to find Arin and Sora, who are drawn into a mysterious attack in Mysterium that leaves villagers in a living sleep.",
             "thumbnail": "https://image.tmdb.org/t/p/original/vSWj2lgEoFsjseJi1FLznZAy88S.jpg",
             "embed": "https://cdn1.futuretodayinc.com/files/a8wn4hw/vi/09/cc/10715406/s10715406.m3u8",
-            "subtitles": [{
-                "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/f4/c7/8f14d2e2aa3f8b589664477bf60c2d38.vtt",
-                "lang": "en",
-                "label": "English",
-                "default": true
-            }]
+            "subtitles": [
+                {
+                    "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/f4/c7/8f14d2e2aa3f8b589664477bf60c2d38.vtt",
+                    "lang": "en",
+                    "label": "English",
+                    "default": true
+                }
+            ],
+            "airDate": "",
+            "sources": [],
+            "downloads": [],
+            "introStart": null,
+            "introEnd": null,
+            "recapStart": null,
+            "recapEnd": null,
+            "creditsStart": null,
+            "directors": [],
+            "writers": [],
+            "cast": []
         },
         {
             "number": 12,
@@ -149,12 +293,25 @@
             "description": "Jay leads a risky infiltration of the Administration, while Arin and Sora search Mysterium for a route to the Underworld and a way to save its hollowed villagers.",
             "thumbnail": "https://image.tmdb.org/t/p/original/wva4TANTCszQT7tk2pTMpaieJv0.jpg",
             "embed": "https://cdn1.futuretodayinc.com/files/a8wn4hw/vi/f1/00/10715407/s10715407.m3u8",
-            "subtitles": [{
-                "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/19/eb/165b5df32aef69a8af20bab69b4367f2.vtt",
-                "lang": "en",
-                "label": "English",
-                "default": true
-            }]
+            "subtitles": [
+                {
+                    "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/19/eb/165b5df32aef69a8af20bab69b4367f2.vtt",
+                    "lang": "en",
+                    "label": "English",
+                    "default": true
+                }
+            ],
+            "airDate": "",
+            "sources": [],
+            "downloads": [],
+            "introStart": null,
+            "introEnd": null,
+            "recapStart": null,
+            "recapEnd": null,
+            "creditsStart": null,
+            "directors": [],
+            "writers": [],
+            "cast": []
         },
         {
             "number": 13,
@@ -162,12 +319,25 @@
             "description": "Undercover in the seemingly perfect Land of Lee, Lloyd and Wyldfyre search for Arin’s parents—and uncover a sinister secret beneath the town’s cheerful façade.",
             "thumbnail": "https://image.tmdb.org/t/p/original/qTX4KcFz9iSj5qVEfJj7kJwDYGb.jpg",
             "embed": "https://cdn1.futuretodayinc.com/files/a8wn4hw/vi/bc/37/10715408/s10715408.m3u8",
-            "subtitles": [{
-                "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/5d/d9/ff0118f230a54f1935cb901d9babdf6e.vtt",
-                "lang": "en",
-                "label": "English",
-                "default": true
-            }]
+            "subtitles": [
+                {
+                    "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/5d/d9/ff0118f230a54f1935cb901d9babdf6e.vtt",
+                    "lang": "en",
+                    "label": "English",
+                    "default": true
+                }
+            ],
+            "airDate": "",
+            "sources": [],
+            "downloads": [],
+            "introStart": null,
+            "introEnd": null,
+            "recapStart": null,
+            "recapEnd": null,
+            "creditsStart": null,
+            "directors": [],
+            "writers": [],
+            "cast": []
         },
         {
             "number": 14,
@@ -175,12 +345,25 @@
             "description": "Jay and Nya uncover the truth behind Lee’s fake cemetery, while Arin faces an impossible choice at the Forge of the Forgotten.",
             "thumbnail": "https://image.tmdb.org/t/p/original/nlDhLwaCujfQY98MgGM5yBJVbum.jpg",
             "embed": "https://cdn1.futuretodayinc.com/files/a8wn4hw/vi/e0/58/10715409/s10715409.m3u8",
-            "subtitles": [{
-                "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/e0/fd/890eb8f56a0309bc332268e21e93073a.vtt",
-                "lang": "en",
-                "label": "English",
-                "default": true
-            }]
+            "subtitles": [
+                {
+                    "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/e0/fd/890eb8f56a0309bc332268e21e93073a.vtt",
+                    "lang": "en",
+                    "label": "English",
+                    "default": true
+                }
+            ],
+            "airDate": "",
+            "sources": [],
+            "downloads": [],
+            "introStart": null,
+            "introEnd": null,
+            "recapStart": null,
+            "recapEnd": null,
+            "creditsStart": null,
+            "directors": [],
+            "writers": [],
+            "cast": []
         },
         {
             "number": 15,
@@ -188,12 +371,25 @@
             "description": "As Arin searches for his parents, the ninja confront Lee’s strange community and uncover the truth behind its forced harmony.",
             "thumbnail": "https://image.tmdb.org/t/p/original/kOPOowOtS6QPEwTdo9wXT1xD0ww.jpg",
             "embed": "https://cdn1.futuretodayinc.com/files/a8wn4hw/vi/c9/df/10715410/s10715410.m3u8",
-            "subtitles": [{
-                "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/20/92/cd8d23709924f2fbbbae5331d2d5b29c.vtt",
-                "lang": "en",
-                "label": "English",
-                "default": true
-            }]
+            "subtitles": [
+                {
+                    "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/20/92/cd8d23709924f2fbbbae5331d2d5b29c.vtt",
+                    "lang": "en",
+                    "label": "English",
+                    "default": true
+                }
+            ],
+            "airDate": "",
+            "sources": [],
+            "downloads": [],
+            "introStart": null,
+            "introEnd": null,
+            "recapStart": null,
+            "recapEnd": null,
+            "creditsStart": null,
+            "directors": [],
+            "writers": [],
+            "cast": []
         },
         {
             "number": 16,
@@ -201,12 +397,25 @@
             "description": "As invisible Spectral Dragonians steal souls across the realms, the ninja follow the trail to the Well of the Lost—and a chilling discovery.",
             "thumbnail": "https://image.tmdb.org/t/p/original/3TZOY7Z88FGMUy1ZanazLH6bFay.jpg",
             "embed": "https://cdn1.futuretodayinc.com/files/a8wn4hw/vi/cf/45/10715411/s10715411.m3u8",
-            "subtitles": [{
-                "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/dc/29/f8326ef2e3c45f37d8ec1b5d6aef2a34.vtt",
-                "lang": "en",
-                "label": "English",
-                "default": true
-            }]
+            "subtitles": [
+                {
+                    "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/dc/29/f8326ef2e3c45f37d8ec1b5d6aef2a34.vtt",
+                    "lang": "en",
+                    "label": "English",
+                    "default": true
+                }
+            ],
+            "airDate": "",
+            "sources": [],
+            "downloads": [],
+            "introStart": null,
+            "introEnd": null,
+            "recapStart": null,
+            "recapEnd": null,
+            "creditsStart": null,
+            "directors": [],
+            "writers": [],
+            "cast": []
         },
         {
             "number": 17,
@@ -214,12 +423,25 @@
             "description": "As Thunderfang grows stronger on stolen souls, the ninja set out to summon the Arc Dragon of Focus—but Jay refuses to join the mission.",
             "thumbnail": "https://image.tmdb.org/t/p/original/cxOYJl7ld21yXF9JDrWg44dIY9Z.jpg",
             "embed": "https://cdn1.futuretodayinc.com/files/a8wn4hw/vi/37/db/10715412/s10715412.m3u8",
-            "subtitles": [{
-                "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/a4/45/6cce89f3aa53299e0774df18111c64c3.vtt",
-                "lang": "en",
-                "label": "English",
-                "default": true
-            }]
+            "subtitles": [
+                {
+                    "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/a4/45/6cce89f3aa53299e0774df18111c64c3.vtt",
+                    "lang": "en",
+                    "label": "English",
+                    "default": true
+                }
+            ],
+            "airDate": "",
+            "sources": [],
+            "downloads": [],
+            "introStart": null,
+            "introEnd": null,
+            "recapStart": null,
+            "recapEnd": null,
+            "creditsStart": null,
+            "directors": [],
+            "writers": [],
+            "cast": []
         },
         {
             "number": 18,
@@ -227,12 +449,25 @@
             "description": "As Thunderfang’s power grows, the ninja split across the realms to awaken the Arc Dragon of Focus—but each path brings new dangers.",
             "thumbnail": "https://image.tmdb.org/t/p/original/8NWIGKx4yNGJg4hl78JStpyBN9F.jpg",
             "embed": "https://cdn1.futuretodayinc.com/files/a8wn4hw/vi/4d/7a/10715413/s10715413.m3u8",
-            "subtitles": [{
-                "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/be/ce/686a1c0c26f811f491e90b8fa6ea8404.vtt",
-                "lang": "en",
-                "label": "English",
-                "default": true
-            }]
+            "subtitles": [
+                {
+                    "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/be/ce/686a1c0c26f811f491e90b8fa6ea8404.vtt",
+                    "lang": "en",
+                    "label": "English",
+                    "default": true
+                }
+            ],
+            "airDate": "",
+            "sources": [],
+            "downloads": [],
+            "introStart": null,
+            "introEnd": null,
+            "recapStart": null,
+            "recapEnd": null,
+            "creditsStart": null,
+            "directors": [],
+            "writers": [],
+            "cast": []
         },
         {
             "number": 19,
@@ -240,12 +475,25 @@
             "description": "As Lloyd and Arin fight to reach the Well of the Lost, Ras attacks the monastery, while the other ninja race to awaken the Arc Dragon of Focus.",
             "thumbnail": "https://image.tmdb.org/t/p/original/xf7QUTroOZyVauKXFO0iyHQe2qZ.jpg",
             "embed": "https://cdn1.futuretodayinc.com/files/a8wn4hw/vi/6c/9c/10715414/s10715414.m3u8",
-            "subtitles": [{
-                "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/37/51/db05b2f92730201d2365c4f01a1cb46c.vtt",
-                "lang": "en",
-                "label": "English",
-                "default": true
-            }]
+            "subtitles": [
+                {
+                    "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/37/51/db05b2f92730201d2365c4f01a1cb46c.vtt",
+                    "lang": "en",
+                    "label": "English",
+                    "default": true
+                }
+            ],
+            "airDate": "",
+            "sources": [],
+            "downloads": [],
+            "introStart": null,
+            "introEnd": null,
+            "recapStart": null,
+            "recapEnd": null,
+            "creditsStart": null,
+            "directors": [],
+            "writers": [],
+            "cast": []
         },
         {
             "number": 20,
@@ -253,12 +501,25 @@
             "description": "The ninja join forces with the Arc Dragon of Focus to face Thunderfang, as Ras puts his master's plan into action.",
             "thumbnail": "https://image.tmdb.org/t/p/original/bCz3qeWFpCeZIOyojYx8gH00SN6.jpg",
             "embed": "https://cdn1.futuretodayinc.com/files/a8wn4hw/vi/3e/5d/10715415/s10715415.m3u8",
-            "subtitles": [{
-                "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/30/69/9a5a6d831e07251a6864db89d0fba18a.vtt",
-                "lang": "en",
-                "label": "English",
-                "default": true
-            }]
+            "subtitles": [
+                {
+                    "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/30/69/9a5a6d831e07251a6864db89d0fba18a.vtt",
+                    "lang": "en",
+                    "label": "English",
+                    "default": true
+                }
+            ],
+            "airDate": "",
+            "sources": [],
+            "downloads": [],
+            "introStart": null,
+            "introEnd": null,
+            "recapStart": null,
+            "recapEnd": null,
+            "creditsStart": null,
+            "directors": [],
+            "writers": [],
+            "cast": []
         }
     ]
 }

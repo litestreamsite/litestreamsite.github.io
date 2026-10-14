@@ -1,6 +1,7 @@
 {
     "season": 5,
-    "episodes": [{
+    "episodes": [
+        {
             "number": 1,
             "title": "The Evil Within",
             "status": "upcoming",
@@ -8,12 +9,25 @@
             "description": "Evil versions of the ninja descend on the Crossroads and launch an attack.",
             "thumbnail": "https://image.tmdb.org/t/p/original/zy0L1LQ7x87KIDYNdWbNqNCpIEu.jpg",
             "embed": "",
-            "subtitles": [{
-                "url": "",
-                "lang": "en",
-                "label": "English",
-                "default": true
-            }]
+            "subtitles": [
+                {
+                    "url": "",
+                    "lang": "en",
+                    "label": "English",
+                    "default": true
+                }
+            ],
+            "airDate": "",
+            "sources": [],
+            "downloads": [],
+            "introStart": null,
+            "introEnd": null,
+            "recapStart": null,
+            "recapEnd": null,
+            "creditsStart": null,
+            "directors": [],
+            "writers": [],
+            "cast": []
         },
         {
             "number": 2,
@@ -23,14 +37,27 @@
             "description": "No synopsis available.",
             "thumbnail": "https://cdn1.futuretodayinc.com/files/a8wn4hw/im/iptv/e3/45/0bbc4951d53cafed3f23146e49033f64.jpg",
             "embed": "",
-            "subtitles": [{
-                "url": "",
-                "lang": "en",
-                "label": "English",
-                "default": true
-            }]
-        },
+            "subtitles": [
                 {
+                    "url": "",
+                    "lang": "en",
+                    "label": "English",
+                    "default": true
+                }
+            ],
+            "airDate": "",
+            "sources": [],
+            "downloads": [],
+            "introStart": null,
+            "introEnd": null,
+            "recapStart": null,
+            "recapEnd": null,
+            "creditsStart": null,
+            "directors": [],
+            "writers": [],
+            "cast": []
+        },
+        {
             "number": 3,
             "title": "TBD",
             "status": "upcoming",
@@ -38,14 +65,27 @@
             "description": "No synopsis available.",
             "thumbnail": "https://cdn1.futuretodayinc.com/files/a8wn4hw/im/iptv/e3/45/0bbc4951d53cafed3f23146e49033f64.jpg",
             "embed": "",
-            "subtitles": [{
-                "url": "",
-                "lang": "en",
-                "label": "English",
-                "default": true
-            }]
-        },
+            "subtitles": [
                 {
+                    "url": "",
+                    "lang": "en",
+                    "label": "English",
+                    "default": true
+                }
+            ],
+            "airDate": "",
+            "sources": [],
+            "downloads": [],
+            "introStart": null,
+            "introEnd": null,
+            "recapStart": null,
+            "recapEnd": null,
+            "creditsStart": null,
+            "directors": [],
+            "writers": [],
+            "cast": []
+        },
+        {
             "number": 4,
             "title": "TBD",
             "status": "upcoming",
@@ -53,14 +93,27 @@
             "description": "No synopsis available.",
             "thumbnail": "https://cdn1.futuretodayinc.com/files/a8wn4hw/im/iptv/e3/45/0bbc4951d53cafed3f23146e49033f64.jpg",
             "embed": "",
-            "subtitles": [{
-                "url": "",
-                "lang": "en",
-                "label": "English",
-                "default": true
-            }]
-        },
+            "subtitles": [
                 {
+                    "url": "",
+                    "lang": "en",
+                    "label": "English",
+                    "default": true
+                }
+            ],
+            "airDate": "",
+            "sources": [],
+            "downloads": [],
+            "introStart": null,
+            "introEnd": null,
+            "recapStart": null,
+            "recapEnd": null,
+            "creditsStart": null,
+            "directors": [],
+            "writers": [],
+            "cast": []
+        },
+        {
             "number": 5,
             "title": "TBD",
             "status": "upcoming",
@@ -68,14 +121,27 @@
             "description": "No synopsis available.",
             "thumbnail": "https://cdn1.futuretodayinc.com/files/a8wn4hw/im/iptv/e3/45/0bbc4951d53cafed3f23146e49033f64.jpg",
             "embed": "",
-            "subtitles": [{
-                "url": "",
-                "lang": "en",
-                "label": "English",
-                "default": true
-            }]
-        },
+            "subtitles": [
                 {
+                    "url": "",
+                    "lang": "en",
+                    "label": "English",
+                    "default": true
+                }
+            ],
+            "airDate": "",
+            "sources": [],
+            "downloads": [],
+            "introStart": null,
+            "introEnd": null,
+            "recapStart": null,
+            "recapEnd": null,
+            "creditsStart": null,
+            "directors": [],
+            "writers": [],
+            "cast": []
+        },
+        {
             "number": 6,
             "title": "TBD",
             "status": "upcoming",
@@ -83,14 +149,27 @@
             "description": "No synopsis available.",
             "thumbnail": "https://cdn1.futuretodayinc.com/files/a8wn4hw/im/iptv/e3/45/0bbc4951d53cafed3f23146e49033f64.jpg",
             "embed": "",
-            "subtitles": [{
-                "url": "",
-                "lang": "en",
-                "label": "English",
-                "default": true
-            }]
-        },
+            "subtitles": [
                 {
+                    "url": "",
+                    "lang": "en",
+                    "label": "English",
+                    "default": true
+                }
+            ],
+            "airDate": "",
+            "sources": [],
+            "downloads": [],
+            "introStart": null,
+            "introEnd": null,
+            "recapStart": null,
+            "recapEnd": null,
+            "creditsStart": null,
+            "directors": [],
+            "writers": [],
+            "cast": []
+        },
+        {
             "number": 7,
             "title": "TBD",
             "status": "upcoming",
@@ -98,14 +177,27 @@
             "description": "No synopsis available.",
             "thumbnail": "https://cdn1.futuretodayinc.com/files/a8wn4hw/im/iptv/e3/45/0bbc4951d53cafed3f23146e49033f64.jpg",
             "embed": "",
-            "subtitles": [{
-                "url": "",
-                "lang": "en",
-                "label": "English",
-                "default": true
-            }]
-        },
+            "subtitles": [
                 {
+                    "url": "",
+                    "lang": "en",
+                    "label": "English",
+                    "default": true
+                }
+            ],
+            "airDate": "",
+            "sources": [],
+            "downloads": [],
+            "introStart": null,
+            "introEnd": null,
+            "recapStart": null,
+            "recapEnd": null,
+            "creditsStart": null,
+            "directors": [],
+            "writers": [],
+            "cast": []
+        },
+        {
             "number": 8,
             "title": "TBD",
             "status": "upcoming",
@@ -113,14 +205,27 @@
             "description": "No synopsis available.",
             "thumbnail": "https://cdn1.futuretodayinc.com/files/a8wn4hw/im/iptv/e3/45/0bbc4951d53cafed3f23146e49033f64.jpg",
             "embed": "",
-            "subtitles": [{
-                "url": "",
-                "lang": "en",
-                "label": "English",
-                "default": true
-            }]
-        },
+            "subtitles": [
                 {
+                    "url": "",
+                    "lang": "en",
+                    "label": "English",
+                    "default": true
+                }
+            ],
+            "airDate": "",
+            "sources": [],
+            "downloads": [],
+            "introStart": null,
+            "introEnd": null,
+            "recapStart": null,
+            "recapEnd": null,
+            "creditsStart": null,
+            "directors": [],
+            "writers": [],
+            "cast": []
+        },
+        {
             "number": 9,
             "title": "TBD",
             "status": "upcoming",
@@ -128,14 +233,27 @@
             "description": "No synopsis available.",
             "thumbnail": "https://cdn1.futuretodayinc.com/files/a8wn4hw/im/iptv/e3/45/0bbc4951d53cafed3f23146e49033f64.jpg",
             "embed": "",
-            "subtitles": [{
-                "url": "",
-                "lang": "en",
-                "label": "English",
-                "default": true
-            }]
-        },
+            "subtitles": [
                 {
+                    "url": "",
+                    "lang": "en",
+                    "label": "English",
+                    "default": true
+                }
+            ],
+            "airDate": "",
+            "sources": [],
+            "downloads": [],
+            "introStart": null,
+            "introEnd": null,
+            "recapStart": null,
+            "recapEnd": null,
+            "creditsStart": null,
+            "directors": [],
+            "writers": [],
+            "cast": []
+        },
+        {
             "number": 10,
             "title": "TBD",
             "status": "upcoming",
@@ -143,14 +261,27 @@
             "description": "No synopsis available.",
             "thumbnail": "https://cdn1.futuretodayinc.com/files/a8wn4hw/im/iptv/e3/45/0bbc4951d53cafed3f23146e49033f64.jpg",
             "embed": "",
-            "subtitles": [{
-                "url": "",
-                "lang": "en",
-                "label": "English",
-                "default": true
-            }]
-        },
+            "subtitles": [
                 {
+                    "url": "",
+                    "lang": "en",
+                    "label": "English",
+                    "default": true
+                }
+            ],
+            "airDate": "",
+            "sources": [],
+            "downloads": [],
+            "introStart": null,
+            "introEnd": null,
+            "recapStart": null,
+            "recapEnd": null,
+            "creditsStart": null,
+            "directors": [],
+            "writers": [],
+            "cast": []
+        },
+        {
             "number": 11,
             "title": "TBD",
             "status": "upcoming",
@@ -158,14 +289,27 @@
             "description": "No synopsis available.",
             "thumbnail": "https://cdn1.futuretodayinc.com/files/a8wn4hw/im/iptv/e3/45/0bbc4951d53cafed3f23146e49033f64.jpg",
             "embed": "",
-            "subtitles": [{
-                "url": "",
-                "lang": "en",
-                "label": "English",
-                "default": true
-            }]
-        },
+            "subtitles": [
                 {
+                    "url": "",
+                    "lang": "en",
+                    "label": "English",
+                    "default": true
+                }
+            ],
+            "airDate": "",
+            "sources": [],
+            "downloads": [],
+            "introStart": null,
+            "introEnd": null,
+            "recapStart": null,
+            "recapEnd": null,
+            "creditsStart": null,
+            "directors": [],
+            "writers": [],
+            "cast": []
+        },
+        {
             "number": 12,
             "title": "TBD",
             "status": "upcoming",
@@ -173,14 +317,27 @@
             "description": "No synopsis available.",
             "thumbnail": "https://cdn1.futuretodayinc.com/files/a8wn4hw/im/iptv/e3/45/0bbc4951d53cafed3f23146e49033f64.jpg",
             "embed": "",
-            "subtitles": [{
-                "url": "",
-                "lang": "en",
-                "label": "English",
-                "default": true
-            }]
-        },
+            "subtitles": [
                 {
+                    "url": "",
+                    "lang": "en",
+                    "label": "English",
+                    "default": true
+                }
+            ],
+            "airDate": "",
+            "sources": [],
+            "downloads": [],
+            "introStart": null,
+            "introEnd": null,
+            "recapStart": null,
+            "recapEnd": null,
+            "creditsStart": null,
+            "directors": [],
+            "writers": [],
+            "cast": []
+        },
+        {
             "number": 13,
             "title": "TBD",
             "status": "upcoming",
@@ -188,14 +345,27 @@
             "description": "No synopsis available.",
             "thumbnail": "https://cdn1.futuretodayinc.com/files/a8wn4hw/im/iptv/e3/45/0bbc4951d53cafed3f23146e49033f64.jpg",
             "embed": "",
-            "subtitles": [{
-                "url": "",
-                "lang": "en",
-                "label": "English",
-                "default": true
-            }]
-        },
+            "subtitles": [
                 {
+                    "url": "",
+                    "lang": "en",
+                    "label": "English",
+                    "default": true
+                }
+            ],
+            "airDate": "",
+            "sources": [],
+            "downloads": [],
+            "introStart": null,
+            "introEnd": null,
+            "recapStart": null,
+            "recapEnd": null,
+            "creditsStart": null,
+            "directors": [],
+            "writers": [],
+            "cast": []
+        },
+        {
             "number": 14,
             "title": "TBD",
             "status": "upcoming",
@@ -203,14 +373,27 @@
             "description": "No synopsis available.",
             "thumbnail": "https://cdn1.futuretodayinc.com/files/a8wn4hw/im/iptv/e3/45/0bbc4951d53cafed3f23146e49033f64.jpg",
             "embed": "",
-            "subtitles": [{
-                "url": "",
-                "lang": "en",
-                "label": "English",
-                "default": true
-            }]
-        },
+            "subtitles": [
                 {
+                    "url": "",
+                    "lang": "en",
+                    "label": "English",
+                    "default": true
+                }
+            ],
+            "airDate": "",
+            "sources": [],
+            "downloads": [],
+            "introStart": null,
+            "introEnd": null,
+            "recapStart": null,
+            "recapEnd": null,
+            "creditsStart": null,
+            "directors": [],
+            "writers": [],
+            "cast": []
+        },
+        {
             "number": 15,
             "title": "TBD",
             "status": "upcoming",
@@ -218,14 +401,27 @@
             "description": "No synopsis available.",
             "thumbnail": "https://cdn1.futuretodayinc.com/files/a8wn4hw/im/iptv/e3/45/0bbc4951d53cafed3f23146e49033f64.jpg",
             "embed": "",
-            "subtitles": [{
-                "url": "",
-                "lang": "en",
-                "label": "English",
-                "default": true
-            }]
-        },
+            "subtitles": [
                 {
+                    "url": "",
+                    "lang": "en",
+                    "label": "English",
+                    "default": true
+                }
+            ],
+            "airDate": "",
+            "sources": [],
+            "downloads": [],
+            "introStart": null,
+            "introEnd": null,
+            "recapStart": null,
+            "recapEnd": null,
+            "creditsStart": null,
+            "directors": [],
+            "writers": [],
+            "cast": []
+        },
+        {
             "number": 16,
             "title": "TBD",
             "status": "upcoming",
@@ -233,14 +429,27 @@
             "description": "No synopsis available.",
             "thumbnail": "https://cdn1.futuretodayinc.com/files/a8wn4hw/im/iptv/e3/45/0bbc4951d53cafed3f23146e49033f64.jpg",
             "embed": "",
-            "subtitles": [{
-                "url": "",
-                "lang": "en",
-                "label": "English",
-                "default": true
-            }]
-        },
+            "subtitles": [
                 {
+                    "url": "",
+                    "lang": "en",
+                    "label": "English",
+                    "default": true
+                }
+            ],
+            "airDate": "",
+            "sources": [],
+            "downloads": [],
+            "introStart": null,
+            "introEnd": null,
+            "recapStart": null,
+            "recapEnd": null,
+            "creditsStart": null,
+            "directors": [],
+            "writers": [],
+            "cast": []
+        },
+        {
             "number": 17,
             "title": "TBD",
             "status": "upcoming",
@@ -248,14 +457,27 @@
             "description": "No synopsis available.",
             "thumbnail": "https://cdn1.futuretodayinc.com/files/a8wn4hw/im/iptv/e3/45/0bbc4951d53cafed3f23146e49033f64.jpg",
             "embed": "",
-            "subtitles": [{
-                "url": "",
-                "lang": "en",
-                "label": "English",
-                "default": true
-            }]
-        },
+            "subtitles": [
                 {
+                    "url": "",
+                    "lang": "en",
+                    "label": "English",
+                    "default": true
+                }
+            ],
+            "airDate": "",
+            "sources": [],
+            "downloads": [],
+            "introStart": null,
+            "introEnd": null,
+            "recapStart": null,
+            "recapEnd": null,
+            "creditsStart": null,
+            "directors": [],
+            "writers": [],
+            "cast": []
+        },
+        {
             "number": 18,
             "title": "TBD",
             "status": "upcoming",
@@ -263,14 +485,27 @@
             "description": "No synopsis available.",
             "thumbnail": "https://cdn1.futuretodayinc.com/files/a8wn4hw/im/iptv/e3/45/0bbc4951d53cafed3f23146e49033f64.jpg",
             "embed": "",
-            "subtitles": [{
-                "url": "",
-                "lang": "en",
-                "label": "English",
-                "default": true
-            }]
-        },
+            "subtitles": [
                 {
+                    "url": "",
+                    "lang": "en",
+                    "label": "English",
+                    "default": true
+                }
+            ],
+            "airDate": "",
+            "sources": [],
+            "downloads": [],
+            "introStart": null,
+            "introEnd": null,
+            "recapStart": null,
+            "recapEnd": null,
+            "creditsStart": null,
+            "directors": [],
+            "writers": [],
+            "cast": []
+        },
+        {
             "number": 19,
             "title": "TBD",
             "status": "upcoming",
@@ -278,14 +513,27 @@
             "description": "No synopsis available.",
             "thumbnail": "https://cdn1.futuretodayinc.com/files/a8wn4hw/im/iptv/e3/45/0bbc4951d53cafed3f23146e49033f64.jpg",
             "embed": "",
-            "subtitles": [{
-                "url": "",
-                "lang": "en",
-                "label": "English",
-                "default": true
-            }]
-        },
+            "subtitles": [
                 {
+                    "url": "",
+                    "lang": "en",
+                    "label": "English",
+                    "default": true
+                }
+            ],
+            "airDate": "",
+            "sources": [],
+            "downloads": [],
+            "introStart": null,
+            "introEnd": null,
+            "recapStart": null,
+            "recapEnd": null,
+            "creditsStart": null,
+            "directors": [],
+            "writers": [],
+            "cast": []
+        },
+        {
             "number": 20,
             "title": "TBD",
             "status": "upcoming",
@@ -293,12 +541,25 @@
             "description": "No synopsis available.",
             "thumbnail": "https://cdn1.futuretodayinc.com/files/a8wn4hw/im/iptv/e3/45/0bbc4951d53cafed3f23146e49033f64.jpg",
             "embed": "",
-            "subtitles": [{
-                "url": "",
-                "lang": "en",
-                "label": "English",
-                "default": true
-            }]
+            "subtitles": [
+                {
+                    "url": "",
+                    "lang": "en",
+                    "label": "English",
+                    "default": true
+                }
+            ],
+            "airDate": "",
+            "sources": [],
+            "downloads": [],
+            "introStart": null,
+            "introEnd": null,
+            "recapStart": null,
+            "recapEnd": null,
+            "creditsStart": null,
+            "directors": [],
+            "writers": [],
+            "cast": []
         }
     ]
 }

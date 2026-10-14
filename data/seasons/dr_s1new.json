@@ -1,0 +1,525 @@
+{
+    "season": 1,
+    "episodes": [
+        {
+            "number": 1,
+            "title": "The Merge: Part 1",
+            "description": "Years after the Merge, Arin and Sora enter a mech race, but a runaway dragon disrupts their plans.",
+            "thumbnail": "https://image.tmdb.org/t/p/original/3qWpdtd3ru9dQIzgwSWHiBmobWp.jpg",
+            "embed": "",
+            "subtitles": [
+                {
+                    "url": "",
+                    "lang": "",
+                    "label": "",
+                    "default": null
+                }
+            ],
+            "airDate": "",
+            "sources": [],
+            "downloads": [],
+            "introStart": null,
+            "introEnd": null,
+            "recapStart": null,
+            "recapEnd": null,
+            "creditsStart": null,
+            "directors": [],
+            "writers": [],
+            "cast": []
+        },
+        {
+            "number": 2,
+            "title": "The Merge: Part 2",
+            "description": "Arin and Sora join Lloyd on a journey to find a dragon’s home and uncover more about the strange world created by the Merge.",
+            "thumbnail": "https://image.tmdb.org/t/p/original/crKvGtUDNfhTtb1RfChlGCB7hMm.jpg",
+            "embed": "",
+            "subtitles": [
+                {
+                    "url": "",
+                    "lang": "",
+                    "label": "",
+                    "default": null
+                }
+            ],
+            "airDate": "",
+            "sources": [],
+            "downloads": [],
+            "introStart": null,
+            "introEnd": null,
+            "recapStart": null,
+            "recapEnd": null,
+            "creditsStart": null,
+            "directors": [],
+            "writers": [],
+            "cast": []
+        },
+        {
+            "number": 3,
+            "title": "Crossroads Carnival",
+            "description": "Arin and Sora sneak away from training for the Crossroads Carnival, where a missing friend turns their day out into a rescue mission.",
+            "thumbnail": "https://image.tmdb.org/t/p/original/9LpzJlz7kvugpWFv3X8DUbUWaXz.jpg",
+            "embed": "",
+            "subtitles": [
+                {
+                    "url": "",
+                    "lang": "",
+                    "label": "",
+                    "default": null
+                }
+            ],
+            "airDate": "",
+            "sources": [],
+            "downloads": [],
+            "introStart": null,
+            "introEnd": null,
+            "recapStart": null,
+            "recapEnd": null,
+            "creditsStart": null,
+            "directors": [],
+            "writers": [],
+            "cast": []
+        },
+        {
+            "number": 4,
+            "title": "Beyond Madness",
+            "description": "Reunited in a strange realm, the ninja try to help the Craglings and dragons resolve a conflict threatening the village.",
+            "thumbnail": "https://image.tmdb.org/t/p/original/bw3RZct2QdhHIJhtZYzSVpS0saI.jpg",
+            "embed": "",
+            "subtitles": [
+                {
+                    "url": "",
+                    "lang": "",
+                    "label": "",
+                    "default": null
+                }
+            ],
+            "airDate": "",
+            "sources": [],
+            "downloads": [],
+            "introStart": null,
+            "introEnd": null,
+            "recapStart": null,
+            "recapEnd": null,
+            "creditsStart": null,
+            "directors": [],
+            "writers": [],
+            "cast": []
+        },
+        {
+            "number": 5,
+            "title": "Writers of Destiny",
+            "description": "A MergeQuake brings the ninja to the Cloud Kingdom, where a hidden power and the writers’ records challenge what they know about destiny.",
+            "thumbnail": "https://image.tmdb.org/t/p/original/sWTkrve3LczKephWgASjTpZlPmS.jpg",
+            "embed": "",
+            "subtitles": [
+                {
+                    "url": "",
+                    "lang": "",
+                    "label": "",
+                    "default": null
+                }
+            ],
+            "airDate": "",
+            "sources": [],
+            "downloads": [],
+            "introStart": null,
+            "introEnd": null,
+            "recapStart": null,
+            "recapEnd": null,
+            "creditsStart": null,
+            "directors": [],
+            "writers": [],
+            "cast": []
+        },
+        {
+            "number": 6,
+            "title": "Return to Imperium",
+            "description": "Sora returns to Imperium to stop her invention from being used against dragons, while Lloyd and Arin try to keep their cover.",
+            "thumbnail": "https://image.tmdb.org/t/p/original/1UkkGkJAbXJ7Wu7vdf9PuzyLeIw.jpg",
+            "embed": "",
+            "subtitles": [
+                {
+                    "url": "",
+                    "lang": "",
+                    "label": "",
+                    "default": null
+                }
+            ],
+            "airDate": "",
+            "sources": [],
+            "downloads": [],
+            "introStart": null,
+            "introEnd": null,
+            "recapStart": null,
+            "recapEnd": null,
+            "creditsStart": null,
+            "directors": [],
+            "writers": [],
+            "cast": []
+        },
+        {
+            "number": 7,
+            "title": "Mindless Beasts",
+            "description": "Arin tries to blend in with Imperium’s youth group, while Lloyd struggles to earn the trust of a fiery prisoner.",
+            "thumbnail": "https://image.tmdb.org/t/p/original/rW8OhRhQ0HhaLfUGCfnYbLT4B4y.jpg",
+            "embed": "",
+            "subtitles": [
+                {
+                    "url": "",
+                    "lang": "",
+                    "label": "",
+                    "default": null
+                }
+            ],
+            "airDate": "",
+            "sources": [],
+            "downloads": [],
+            "introStart": null,
+            "introEnd": null,
+            "recapStart": null,
+            "recapEnd": null,
+            "creditsStart": null,
+            "directors": [],
+            "writers": [],
+            "cast": []
+        },
+        {
+            "number": 8,
+            "title": "I Will Be the Danger",
+            "description": "Wyldfyre’s past reveals her bond with Heatwave as the freed dragons run wild in Imperium, while Kai discovers a mysterious path beneath the monastery.",
+            "thumbnail": "https://image.tmdb.org/t/p/original/yzRCdZyhU0uR4xvui8lko1j30o5.jpg",
+            "embed": "",
+            "subtitles": [
+                {
+                    "url": "",
+                    "lang": "",
+                    "label": "",
+                    "default": null
+                }
+            ],
+            "airDate": "",
+            "sources": [],
+            "downloads": [],
+            "introStart": null,
+            "introEnd": null,
+            "recapStart": null,
+            "recapEnd": null,
+            "creditsStart": null,
+            "directors": [],
+            "writers": [],
+            "cast": []
+        },
+        {
+            "number": 9,
+            "title": "The Calm Inside",
+            "description": "Lloyd draws on Wu’s lessons to lead a risky rescue in Imperium, while Kai and Nya follow a mysterious voice beneath the monastery.",
+            "thumbnail": "https://image.tmdb.org/t/p/original/eD56lVy55YMPKLQJLd4bjefW9wp.jpg",
+            "embed": "",
+            "subtitles": [
+                {
+                    "url": "",
+                    "lang": "",
+                    "label": "",
+                    "default": null
+                }
+            ],
+            "airDate": "",
+            "sources": [],
+            "downloads": [],
+            "introStart": null,
+            "introEnd": null,
+            "recapStart": null,
+            "recapEnd": null,
+            "creditsStart": null,
+            "directors": [],
+            "writers": [],
+            "cast": []
+        },
+        {
+            "number": 10,
+            "title": "The Battle of the Second Monastery",
+            "description": "The ninja fight to escape Imperium with the dragons, while Lloyd and Zane uncover a secret beneath the city.",
+            "thumbnail": "https://image.tmdb.org/t/p/original/eptZac6sF2ogkozlnDUutKjFYTN.jpg",
+            "embed": "",
+            "subtitles": [
+                {
+                    "url": "",
+                    "lang": "",
+                    "label": "",
+                    "default": null
+                }
+            ],
+            "airDate": "",
+            "sources": [],
+            "downloads": [],
+            "introStart": null,
+            "introEnd": null,
+            "recapStart": null,
+            "recapEnd": null,
+            "creditsStart": null,
+            "directors": [],
+            "writers": [],
+            "cast": []
+        },
+        {
+            "number": 11,
+            "title": "The Temple of the Dragon Cores",
+            "description": "An ancient temple may hold the key to stopping the MergeQuakes, but Rapton is already tracking the ninja.",
+            "thumbnail": "https://image.tmdb.org/t/p/original/oTIiBetAC8ncjvvGvoEoScVM001.jpg",
+            "embed": "",
+            "subtitles": [
+                {
+                    "url": "",
+                    "lang": "",
+                    "label": "",
+                    "default": null
+                }
+            ],
+            "airDate": "",
+            "sources": [],
+            "downloads": [],
+            "introStart": null,
+            "introEnd": null,
+            "recapStart": null,
+            "recapEnd": null,
+            "creditsStart": null,
+            "directors": [],
+            "writers": [],
+            "cast": []
+        },
+        {
+            "number": 12,
+            "title": "Gangs of the Sea",
+            "description": "Lloyd coaches Arin in his unusual Spinjitzu as a damaged Bounty leaves them stranded amid a village’s pirate troubles.",
+            "thumbnail": "https://image.tmdb.org/t/p/original/7qsToWn58X13je0zTRX9QitrogQ.jpg",
+            "embed": "",
+            "subtitles": [
+                {
+                    "url": "",
+                    "lang": "",
+                    "label": "",
+                    "default": null
+                }
+            ],
+            "airDate": "",
+            "sources": [],
+            "downloads": [],
+            "introStart": null,
+            "introEnd": null,
+            "recapStart": null,
+            "recapEnd": null,
+            "creditsStart": null,
+            "directors": [],
+            "writers": [],
+            "cast": []
+        },
+        {
+            "number": 13,
+            "title": "Wyldly Inappropriate",
+            "description": "Kai and Wyldfyre try to earn the Lava-Tides’ trust, while Zane joins a Crossroads celebration held in his honor.",
+            "thumbnail": "https://image.tmdb.org/t/p/original/xUrDYvKuslDYejSIkKVZTHDajT9.jpg",
+            "embed": "",
+            "subtitles": [
+                {
+                    "url": "",
+                    "lang": "",
+                    "label": "",
+                    "default": null
+                }
+            ],
+            "airDate": "",
+            "sources": [],
+            "downloads": [],
+            "introStart": null,
+            "introEnd": null,
+            "recapStart": null,
+            "recapEnd": null,
+            "creditsStart": null,
+            "directors": [],
+            "writers": [],
+            "cast": []
+        },
+        {
+            "number": 14,
+            "title": "The Last Djinn",
+            "description": "Nya and Sora’s search for a Dragon Core takes a dangerous turn when they stumble into an ancient curse.",
+            "thumbnail": "https://image.tmdb.org/t/p/original/xFag4hgXlrVDNkkDkfSY2BAtNGj.jpg",
+            "embed": "",
+            "subtitles": [
+                {
+                    "url": "",
+                    "lang": "",
+                    "label": "",
+                    "default": null
+                }
+            ],
+            "airDate": "",
+            "sources": [],
+            "downloads": [],
+            "introStart": null,
+            "introEnd": null,
+            "recapStart": null,
+            "recapEnd": null,
+            "creditsStart": null,
+            "directors": [],
+            "writers": [],
+            "cast": []
+        },
+        {
+            "number": 15,
+            "title": "They Call It Doom",
+            "description": "The search for the Dragon Cores leads each ninja team into a different challenge, from a hostile village to a strange new land.",
+            "thumbnail": "https://image.tmdb.org/t/p/original/6wJWcpEynBAYNq79WT48N3FQ3CK.jpg",
+            "embed": "",
+            "subtitles": [
+                {
+                    "url": "",
+                    "lang": "",
+                    "label": "",
+                    "default": null
+                }
+            ],
+            "airDate": "",
+            "sources": [],
+            "downloads": [],
+            "introStart": null,
+            "introEnd": null,
+            "recapStart": null,
+            "recapEnd": null,
+            "creditsStart": null,
+            "directors": [],
+            "writers": [],
+            "cast": []
+        },
+        {
+            "number": 16,
+            "title": "Land of Lost Things",
+            "description": "Nya and Sora reunite with Cole in the Land of Lost Things, where the Finders’ home holds a Dragon Core and hidden secrets.",
+            "thumbnail": "https://image.tmdb.org/t/p/original/561MLVgw3otklE7QRzS1Jy13kdf.jpg",
+            "embed": "",
+            "subtitles": [
+                {
+                    "url": "",
+                    "lang": "",
+                    "label": "",
+                    "default": null
+                }
+            ],
+            "airDate": "",
+            "sources": [],
+            "downloads": [],
+            "introStart": null,
+            "introEnd": null,
+            "recapStart": null,
+            "recapEnd": null,
+            "creditsStart": null,
+            "directors": [],
+            "writers": [],
+            "cast": []
+        },
+        {
+            "number": 17,
+            "title": "The Administration",
+            "description": "A Dragon Core chase lands Lloyd, Arin, and Zane in the bizarre bureaucracy of the Administration, while Kai teaches Wyldfyre patience.",
+            "thumbnail": "https://image.tmdb.org/t/p/original/wP1ixO5MH2YGlEfQ3gycTFQCIOq.jpg",
+            "embed": "",
+            "subtitles": [
+                {
+                    "url": "",
+                    "lang": "",
+                    "label": "",
+                    "default": null
+                }
+            ],
+            "airDate": "",
+            "sources": [],
+            "downloads": [],
+            "introStart": null,
+            "introEnd": null,
+            "recapStart": null,
+            "recapEnd": null,
+            "creditsStart": null,
+            "directors": [],
+            "writers": [],
+            "cast": []
+        },
+        {
+            "number": 18,
+            "title": "Absolute Power",
+            "description": "The ninja infiltrate Imperium to recover a stolen Dragon Core, while Cole follows a mysterious voice.",
+            "thumbnail": "https://image.tmdb.org/t/p/original/4tv06CLkGkBp7x6wxTOrSglT7Vs.jpg",
+            "embed": "",
+            "subtitles": [
+                {
+                    "url": "",
+                    "lang": "",
+                    "label": "",
+                    "default": null
+                }
+            ],
+            "airDate": "",
+            "sources": [],
+            "downloads": [],
+            "introStart": null,
+            "introEnd": null,
+            "recapStart": null,
+            "recapEnd": null,
+            "creditsStart": null,
+            "directors": [],
+            "writers": [],
+            "cast": []
+        },
+        {
+            "number": 19,
+            "title": "We Are All Dragons",
+            "description": "Sora and the Imperium teens risk everything to expose Beatrix’s lies, while the ninja race to stop her dangerous new weapon.",
+            "thumbnail": "https://image.tmdb.org/t/p/original/gRbc4lHXXJP1g9lOZc3D139abGS.jpg",
+            "embed": "",
+            "subtitles": [
+                {
+                    "url": "",
+                    "lang": "",
+                    "label": "",
+                    "default": null
+                }
+            ],
+            "airDate": "",
+            "sources": [],
+            "downloads": [],
+            "introStart": null,
+            "introEnd": null,
+            "recapStart": null,
+            "recapEnd": null,
+            "creditsStart": null,
+            "directors": [],
+            "writers": [],
+            "cast": []
+        },
+        {
+            "number": 20,
+            "title": "The Power Within",
+            "description": "As Beatrix’s weapon unleashes a catastrophic MergeQuake storm, the ninja must find the strength to protect the merged realms.",
+            "thumbnail": "https://image.tmdb.org/t/p/original/teYO8ptmQurR9JnNavturiBYpCu.jpg",
+            "embed": "",
+            "subtitles": [
+                {
+                    "url": "",
+                    "lang": "",
+                    "label": "",
+                    "default": null
+                }
+            ],
+            "airDate": "",
+            "sources": [],
+            "downloads": [],
+            "introStart": null,
+            "introEnd": null,
+            "recapStart": null,
+            "recapEnd": null,
+            "creditsStart": null,
+            "directors": [],
+            "writers": [],
+            "cast": []
+        }
+    ]
+}

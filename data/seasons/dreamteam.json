@@ -1,0 +1,24 @@
+{
+    "season": 1,
+    "episodes": [
+        {
+            "number": 1,
+            "title": "Ninjago - Dream Team",
+            "description": "",
+            "thumbnail": "",
+            "embed": "https://videoprocessingpipeline.services.lego.com/assets/3e2a4b2a-48b7-41f2-bef3-8aa09c7e76c1/6009942c-161c-41d1-949d-b05a00855e2a/1080p.mp4",
+            "airDate": "November 27, 2023",
+            "sources": [],
+            "subtitles": [],
+            "downloads": [],
+            "introStart": null,
+            "introEnd": null,
+            "recapStart": null,
+            "recapEnd": null,
+            "creditsStart": null,
+            "directors": ["Joel Salaysay"],
+            "writers": ["Tommy Andreasen"],
+            "cast": []
+        }
+    ]
+}

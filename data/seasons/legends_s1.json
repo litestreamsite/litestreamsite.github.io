@@ -1,17 +1,31 @@
 {
     "season": 1,
-    "episodes": [{
+    "episodes": [
+        {
             "number": 1,
             "title": "Monstrosity",
             "description": "Stranded in the Land of Monsters, Kai fights to survive and find his way home. Alongside a dragon and a long-lost mech, he discovers that hope may be the strongest force of all.",
             "thumbnail": "https://cdn1.futuretodayinc.com/files/a8wn4hw/im/50/e3/e7e74da59ee40a2ac3ec5bff70572616.jpg",
             "embed": "https://cdn1.futuretodayinc.com/files/a8wn4hw/vi/95/f0/10705763/s10705763.m3u8",
-            "subtitles": [{
-                "url": "",
-                "lang": "en",
-                "label": "English",
-                "default": true
-            }]
+            "subtitles": [
+                {
+                    "url": "",
+                    "lang": "en",
+                    "label": "English",
+                    "default": true
+                }
+            ],
+            "airDate": "",
+            "sources": [],
+            "downloads": [],
+            "introStart": null,
+            "introEnd": null,
+            "recapStart": null,
+            "recapEnd": null,
+            "creditsStart": null,
+            "directors": [],
+            "writers": [],
+            "cast": []
         },
         {
             "number": 2,
@@ -19,12 +33,25 @@
             "description": "Kai recounts how a battle in the Land of Monsters led him and Daidan into the living Forest of Teeth, where a strange creature offers him unexpected help.",
             "thumbnail": "https://www.lego.com/cdn/cs/catalog/assets/blt852c464b78fc8296/1/01._Publishing_-_AID254GL0b21a944_Monstrous_Journey_Episode_01_Forest_of_Teeth_THUMBNAIL.png",
             "embed": "https://videoprocessingpipeline.services.lego.com/assets/1b3ff55e-47a6-4fdd-9e35-a7097647a374/2397634a-f7bd-4615-a8bd-b31c0087f07e/1080p.mp4",
-            "subtitles": [{
-                "url": "",
-                "lang": "en",
-                "label": "English",
-                "default": true
-            }]
+            "subtitles": [
+                {
+                    "url": "",
+                    "lang": "en",
+                    "label": "English",
+                    "default": true
+                }
+            ],
+            "airDate": "",
+            "sources": [],
+            "downloads": [],
+            "introStart": null,
+            "introEnd": null,
+            "recapStart": null,
+            "recapEnd": null,
+            "creditsStart": null,
+            "directors": [],
+            "writers": [],
+            "cast": []
         },
         {
             "number": 3,
@@ -32,12 +59,25 @@
             "description": "As Kai recounts his adventures to Wyldfyre, a monster pig nearly brings his journey to an end. A mysterious bounty hunter offers help—but when Daidan is captured, Kai must decide whether he can trust him.",
             "thumbnail": "https://www.lego.com/cdn/cs/catalog/assets/blt12a1bc2192cea7d4/1/AID254GL92edceeb_Ninjago_KaiMonstrosity_HEROIMAGE-EP002_16x9.jpg",
             "embed": "https://videoprocessingpipeline.services.lego.com/assets/daf2743f-daed-47e7-a8a4-e2d57ee02ccc/f1ee0d80-04c4-44ca-9b2f-b324009a6e64/1080p.mp4",
-            "subtitles": [{
-                "url": "",
-                "lang": "en",
-                "label": "English",
-                "default": true
-            }]
+            "subtitles": [
+                {
+                    "url": "",
+                    "lang": "en",
+                    "label": "English",
+                    "default": true
+                }
+            ],
+            "airDate": "",
+            "sources": [],
+            "downloads": [],
+            "introStart": null,
+            "introEnd": null,
+            "recapStart": null,
+            "recapEnd": null,
+            "creditsStart": null,
+            "directors": [],
+            "writers": [],
+            "cast": []
         },
         {
             "number": 4,
@@ -45,12 +85,25 @@
             "description": "Kai and Bolsen race to save Daidan, only to face betrayal and the Queen of Monsters.",
             "thumbnail": "https://www.lego.com/cdn/cs/catalog/assets/blt3cccbbb1ce6d03ea/1/AID254GL1439b9d4_Monstrous_Journey_Episode_03_THUMBNAIL.jpg",
             "embed": "https://videoprocessingpipeline.services.lego.com/assets/91527aa0-3a77-44a9-a502-5838046d2556/41169f09-11b4-4a5d-952f-b32b008d9334/1080p.mp4",
-            "subtitles": [{
-                "url": "",
-                "lang": "en",
-                "label": "English",
-                "default": true
-            }]
+            "subtitles": [
+                {
+                    "url": "",
+                    "lang": "en",
+                    "label": "English",
+                    "default": true
+                }
+            ],
+            "airDate": "",
+            "sources": [],
+            "downloads": [],
+            "introStart": null,
+            "introEnd": null,
+            "recapStart": null,
+            "recapEnd": null,
+            "creditsStart": null,
+            "directors": [],
+            "writers": [],
+            "cast": []
         },
         {
             "number": 5,
@@ -58,12 +111,25 @@
             "description": "Kai films Wyldfyre’s training as she works to perfect her aim. Inspired by his posts, she challenges him to a friendly competition—and Kai’s ready to take the shot.",
             "thumbnail": "https://www.lego.com/cdn/cs/catalog/assets/bltf2bbe79345906923/1/AID254GLce8a441e_Monstrosity_NPC_Video_04_Wyldfyre_Training_THUMBNAIL.jpg",
             "embed": "https://videoprocessingpipeline.services.lego.com/assets/217c1be7-c215-42a5-bf1c-dfe65dce85be/10caff35-7f65-4834-a297-b32b008d4601/1080p.mp4",
-            "subtitles": [{
-                "url": "",
-                "lang": "en",
-                "label": "English",
-                "default": true
-            }]
+            "subtitles": [
+                {
+                    "url": "",
+                    "lang": "en",
+                    "label": "English",
+                    "default": true
+                }
+            ],
+            "airDate": "",
+            "sources": [],
+            "downloads": [],
+            "introStart": null,
+            "introEnd": null,
+            "recapStart": null,
+            "recapEnd": null,
+            "creditsStart": null,
+            "directors": [],
+            "writers": [],
+            "cast": []
         }
     ]
 }

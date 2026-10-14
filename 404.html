@@ -6,6 +6,21 @@
     <title>Page not found · litestreamsite</title>
     <meta name="robots" content="noindex">
     <meta name="theme-color" content="#07090F">
+    <script>
+        // Send links the site can handle into the app instead of showing this page:
+        // share links whose page hasn't been built yet (/s/<show>/<season>/<episode>/), and
+        // app pages typed without the "#" (e.g. /shows or /details/ninjago).
+        (function () {
+            var p = location.pathname, q = new URLSearchParams(location.search), t = q.get('t');
+            var share = p.match(/^(.*?\/)s\/([^\/]+)\/?(?:(\d+)\/(\d+)\/?)?$/);
+            if (share) {
+                location.replace(share[1] + '#/details/' + share[2] + (share[3] ? '/' + share[3] + '/' + share[4] : '') + (t ? '?t=' + encodeURIComponent(t) : ''));
+                return;
+            }
+            var app = p.match(/^\/((?:shows|movies|coming-soon|my-list|faq|search|details|person)(?:\/.*)?)$/);
+            if (app) location.replace('/#/' + app[1].replace(/\/+$/, ''));
+        })();
+    </script>
     <link rel="icon" href="/images/icons/favicon.svg" type="image/svg+xml">
     <style>
         :root { color-scheme: dark; }

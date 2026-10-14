@@ -49,6 +49,12 @@ const SUB_SIZES = [
     { id: 'lg', label: 'L', scale: 1.35 }, { id: 'xl', label: 'XL', scale: 1.7 },
 ];
 const SUB_BGS = [{ id: 'solid', label: 'Solid' }, { id: 'soft', label: 'Soft' }, { id: 'none', label: 'None' }];
+const SUB_COLORS = [
+    { id: 'white', label: 'White', color: '#FFFFFF' }, { id: 'yellow', label: 'Yellow', color: '#FFE14D' },
+    { id: 'cyan', label: 'Cyan', color: '#6BE4F0' }, { id: 'green', label: 'Green', color: '#8EF59B' },
+];
+const SUB_POSITIONS = [{ id: 'bottom', label: 'Bottom' }, { id: 'top', label: 'Top' }];
+const SUB_DELAY_STEP = 0.25;
 const SPEEDS = [0.5, 0.75, 1, 1.25, 1.5, 2];
 const TV_RE = /(smart-?tv|tizen|web0s|webos|netcast|nettv|viera|aquos|bravia|roku|dtv|playstation|xbox|crkey|googletv|google tv|hbbtv|vidaa|hisense|sony.?tv)/i;
 
@@ -76,6 +82,10 @@ const ICON = {
     help: svgIcon('<circle cx="12" cy="12" r="9.25"/><path d="M9.2 9a2.9 2.9 0 0 1 5.6 1c0 2-2.8 2.6-2.8 4"/><path d="M12 17.25h.01"/>'),
     discord: '<svg viewBox="0 0 71 55" fill="currentColor" aria-hidden="true"><path d="M60.1 4.9A58.5 58.5 0 0045.4.2a.2.2 0 00-.2.1 40.8 40.8 0 00-1.8 3.7 54 54 0 00-16.2 0A37.4 37.4 0 0025.4.3a.2.2 0 00-.2-.1A58.4 58.4 0 0010.5 5 59.6 59.6 0 00.4 45a.3.3 0 00.1.2 58.8 58.8 0 0017.7 9 .2.2 0 00.3-.1 42 42 0 003.6-5.9.2.2 0 00-.1-.3 38.8 38.8 0 01-5.5-2.6.2.2 0 010-.4l1.1-.9a.2.2 0 01.2 0 42 42 0 0035.6 0 .2.2 0 01.2 0l1.1.9a.2.2 0 010 .3 36.4 36.4 0 01-5.5 2.7.2.2 0 00-.1.3 47.2 47.2 0 003.6 5.8.2.2 0 00.3.1A58.6 58.6 0 0070 45.2a.2.2 0 00.1-.2c1.6-16.7-2.7-31.2-11.5-40.1zM23.7 37c-3.5 0-6.3-3.2-6.3-7s2.8-7 6.3-7 6.4 3.2 6.3 7-2.8 7-6.3 7zm23.3 0c-3.5 0-6.3-3.2-6.3-7s2.8-7 6.3-7 6.4 3.2 6.3 7-2.8 7-6.3 7z"/></svg>',
     pause: '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.5 5h3.5v14H6.5zM14 5h3.5v14H14z"/></svg>',
+    watched: svgIcon('<circle cx="12" cy="12" r="9.25"/><path d="m8.25 12.25 2.5 2.5 5-5.25"/>'),
+    shuffle: svgIcon('<path d="M16 3h5v5"/><path d="M4 20 21 3"/><path d="M21 16v5h-5"/><path d="m15 15 6 6"/><path d="M4 4l5 5"/>'),
+    moon: svgIcon('<path d="M20.5 14.2A8.5 8.5 0 0 1 9.8 3.5a8.5 8.5 0 1 0 10.7 10.7z"/>'),
+    user: svgIcon('<circle cx="12" cy="8.5" r="4"/><path d="M4.5 20.5c1.4-3.6 4.2-5.5 7.5-5.5s6.1 1.9 7.5 5.5"/>'),
 };
 
 /* ---------- Small helpers ---------- */
@@ -150,13 +160,23 @@ const playableSeasons = (show) => (show && Array.isArray(show.seasons) ? show.se
 const isMovie = (show) => !!show && show.type === 'movie';
 const autoplayOn = () => lsGet('lsAutoplay') !== '0';
 const subsEnabled = () => lsGet('lsSubsOn') !== '0';
+// Spoiler settings: episode stills ('off' | 'unwatched' | 'all') and descriptions of unwatched episodes.
+const stillsMode = () => { const v = lsGet('lsHideStills', 'off'); return v === '1' || v === 'all' ? 'all' : (v === 'unwatched' ? 'unwatched' : 'off'); };
+const stillHidden = (showId, s, e) => { const m = stillsMode(); return m === 'all' || (m === 'unwatched' && !isWatched(getProgress(showId, s, e))); };
+const descHidden = (showId, s, e) => lsGet('lsHideDesc') === '1' && !isWatched(getProgress(showId, s, e));
+const stillPlaceholder = (ep) => `<div class="thumb-empty thumb-hidden" aria-hidden="true">${esc(String(ep.number))}</div>`;
+const HIDDEN_DESC = 'Description hidden until you watch this episode.';
 
 function epStatus(ep) {
     const s = String(ep.status || '').toLowerCase().trim();
     if (s === 'upcoming' || s === 'soon' || s === 'coming-soon' || s === 'comingsoon' || (ep.upcoming && !s)) return { id: 'upcoming', label: ep.statusText || 'Coming soon' };
     if (s === 'unavailable') return { id: 'unavailable', label: ep.statusText || 'Unavailable' };
+    // A released episode with nothing to play counts as unavailable without needing a status.
+    if (!hasAnySource(ep)) return { id: 'unavailable', label: ep.statusText || 'Unavailable' };
     return null;
 }
+const hasAnySource = (ep) => !!((ep.embed && String(ep.embed).trim()) ||
+    (Array.isArray(ep.sources) && ep.sources.some(x => x && x.url && String(x.url).trim())));
 
 /* ---------- Toasts ---------- */
 
@@ -195,7 +215,8 @@ if (!progressMap || typeof progressMap !== 'object' || Array.isArray(progressMap
 const saveProgress = () => writeJSON(PROG_KEY, progressMap);
 const progKey = (showId, s, e) => `${showId}|${s}|${e}`;
 const getProgress = (showId, s, e) => progressMap[progKey(showId, s, e)] || null;
-const isWatched = (p) => !!(p && p.d && p.t / p.d >= 0.95);
+// "w" is set when an episode is marked watched by hand.
+const isWatched = (p) => !!(p && (p.w || (p.d && p.t / p.d >= 0.95)));
 const isInProgress = (p) => !!(p && p.t > 5 && !isWatched(p));
 const isUpNext = (p) => !!(p && p.n && !(p.t > 5));
 const progPct = (p) => (p && p.d ? Math.min((p.t / p.d) * 100, 100) : 0);
@@ -216,6 +237,23 @@ function markUpNext(showId, s, ep) {
     const prev = progressMap[key];
     if (prev && prev.t > 5) return;
     progressMap[key] = { t: 0, d: (prev && prev.d) || null, u: Date.now(), title: ep.title || '', thumb: ep.thumbnail || '', n: 1 };
+    saveProgress();
+}
+// Mark episodes watched/unwatched by hand. Returns the previous entries so the change can be undone.
+function setWatched(showId, s, eps, on) {
+    const before = [];
+    eps.forEach(ep => {
+        const key = progKey(showId, s, ep.number);
+        const prev = progressMap[key];
+        before.push([key, prev]);
+        if (!on) { delete progressMap[key]; return; }
+        progressMap[key] = { t: (prev && prev.t) || 0, d: (prev && prev.d) || null, u: Date.now(), title: ep.title || (prev && prev.title) || '', thumb: ep.thumbnail || (prev && prev.thumb) || '', w: 1 };
+    });
+    saveProgress();
+    return before;
+}
+function restoreProgress(before) {
+    before.forEach(([key, prev]) => { if (prev) progressMap[key] = prev; else delete progressMap[key]; });
     saveProgress();
 }
 function parseProgEntries() {
@@ -382,6 +420,10 @@ function syncSwitches() {
     const set = (id, on) => { const el = $(id); if (el) el.setAttribute('aria-checked', on ? 'true' : 'false'); };
     set('autoplaySwitch', autoplayOn());
     set('subsSwitch', subsEnabled());
+    set('descSwitch', lsGet('lsHideDesc') === '1');
+    set('altSwitch', altSourcesOn());
+    const mode = stillsMode();
+    $$('#stillsSeg .seg-btn').forEach(b => { const on = b.dataset.stills === mode; b.classList.toggle('is-active', on); b.setAttribute('aria-pressed', on); });
 }
 function initThemeUI() {
     applyAccent(lsGet('lsTheme') || DEFAULT_ACCENT, false);
@@ -535,7 +577,7 @@ function srcTypeTag(src) {
     if (src.type === 'iframe') return 'EMBED';
     return src.url.toLowerCase().includes('.m3u8') ? 'HLS' : 'MP4';
 }
-function episodeSources(ep) {
+function allSources(ep) {
     if (!ep || epStatus(ep)) return [];
     const list = [];
     if (ep.embed && ep.embed.trim()) list.push({ label: 'Default', url: ep.embed.trim(), type: sourceKindOf(ep.embed), def: true });
@@ -545,7 +587,18 @@ function episodeSources(ep) {
     });
     return list;
 }
+// Alternate sources are third-party players (embeds such as DoodStream, and "type": "tab" links),
+// which can show pop-up ads. They stay off until the viewer agrees in the first-visit prompt or
+// Settings; until then only direct video files play. YouTube embeds don't show pop-up ads, so
+// they always play. Remove a site from AD_FREE_EMBEDS to treat it as an alternate source.
+const AD_FREE_EMBEDS = /^https?:\/\/(?:www\.|m\.)?(?:youtube\.com|youtube-nocookie\.com|youtu\.be)\//i;
+const altSourcesOn = () => lsGet('lsAltSources') === '1';
+const isAltSource = (src) => src.type === 'tab' || (src.type === 'iframe' && !AD_FREE_EMBEDS.test(src.url));
+const episodeSources = (ep) => (altSourcesOn() ? allSources(ep) : allSources(ep).filter(s => !isAltSource(s)));
 const isPlayable = (ep) => episodeSources(ep).length > 0;
+// The episode exists but only plays from alternate sources, which are turned off.
+const needsAltSources = (ep) => !altSourcesOn() && !isPlayable(ep) && allSources(ep).length > 0;
+const ALT_LABEL = 'Alternate source';
 function toEmbedUrl(url) {
     const u = url.trim();
     const yt = u.match(/(?:youtube(?:-nocookie)?\.com\/(?:watch\?(?:.*&)?v=|embed\/|shorts\/|live\/|v\/)|youtu\.be\/)([A-Za-z0-9_-]{6,})/i);
@@ -573,6 +626,16 @@ function historyKey() {
     try { history.replaceState(Object.assign({}, st || {}, { lsKey: key }), ''); } catch {}
     return { key, traversal: false };
 }
+// "?t=" accepts seconds (90), clock time (1:30) or 1m30s.
+function parseStartTime(v) {
+    if (v == null || v === '') return null;
+    const s = String(v).trim();
+    if (/^\d+(\.\d+)?$/.test(s)) return +s;
+    const hms = s.match(/^(?:(\d+)h)?(?:(\d+)m)?(?:(\d+)s)?$/i);
+    if (hms && (hms[1] || hms[2] || hms[3])) return (+hms[1] || 0) * 3600 + (+hms[2] || 0) * 60 + (+hms[3] || 0);
+    if (/^\d+(:\d{1,2}){1,2}$/.test(s)) return s.split(':').reduce((a, n) => a * 60 + +n, 0);
+    return null;
+}
 function parseHash() {
     let h = location.hash || '#/';
     if (h.startsWith('#show=')) {
@@ -585,6 +648,10 @@ function parseHash() {
         h = nh;
     }
     if (!h.startsWith('#/')) return { name: 'home' };
+    // Episode links may carry "?t=" (start time); search terms keep any "?" they contain.
+    const qi = h.startsWith('#/search') ? -1 : h.indexOf('?');
+    const query = new URLSearchParams(qi >= 0 ? h.slice(qi + 1) : '');
+    if (qi >= 0) h = h.slice(0, qi);
     const parts = h.slice(2).split('/').filter(Boolean).map(p => { try { return decodeURIComponent(p); } catch { return p; } });
     if (!parts.length) return { name: 'home' };
     switch (parts[0]) {
@@ -592,10 +659,12 @@ function parseHash() {
             return { name: parts[0] };
         case 'search':
             return { name: 'search', q: parts.slice(1).join('/') };
+        case 'person':
+            return parts[1] ? { name: 'person', person: parts[1] } : { name: 'home' };
         case 'details':
             if (parts.length >= 4) {
                 const s = parseInt(parts[2], 10), e = parseInt(parts[3], 10);
-                if (!isNaN(s) && !isNaN(e)) return { name: 'episode', id: parts[1], s, e };
+                if (!isNaN(s) && !isNaN(e)) return { name: 'episode', id: parts[1], s, e, t: parseStartTime(query.get('t')) };
             }
             if (parts.length >= 2) return { name: 'details', id: parts[1] };
             return { name: 'home' };
@@ -636,7 +705,8 @@ function route(opts = {}) {
         case 'search': renderSearch(r.q || ''); setTitle('Search'); break;
         case 'faq': renderFaqPage(); setTitle('Help & FAQ'); break;
         case 'details': renderDetails(r.id, { keep }); break;
-        case 'episode': renderEpisodePage(r.id, r.s, r.e); break;
+        case 'episode': renderEpisodePage(r.id, r.s, r.e, r.t); break;
+        case 'person': renderPersonPage(r.person); break;
         default: renderNotFound(); setTitle('Not found');
     }
     window.scrollTo(0, y);
@@ -658,7 +728,7 @@ window.addEventListener('popstate', () => {
 });
 
 function tvInitialFocus() {
-    if (!tvActive) return;
+    if (!tvActive || topModal()) return;
     requestAnimationFrame(() => {
         const target = document.querySelector('#view .hero-slide.is-active .btn-primary') ||
             document.querySelector('#view .btn-primary') ||
@@ -688,7 +758,7 @@ function posterCard(show) {
             <div class="card-media">
                 ${show.poster ? `<img class="card-img fade" src="${esc(IMG.poster(show.poster))}" alt="" loading="lazy" decoding="async" draggable="false">` : ''}
                 <div class="card-fallback"><span>${esc(show.title)}</span></div>
-                ${show.newEpisodes && !soon ? '<span class="badge badge-accent card-badge">New episodes</span>' : ''}
+                ${newBadgeText(show) ? `<span class="badge badge-accent card-badge">${esc(newBadgeText(show))}</span>` : ''}
                 ${soon ? `<span class="badge badge-glass card-badge">${esc(show.comingSoonText || 'Coming soon')}</span>` : ''}
                 <div class="card-hover"><div class="card-hover-title">${esc(show.title)}</div><div class="card-hover-sub">${esc(sub)}</div></div>
             </div>
@@ -715,7 +785,7 @@ function continueCard(en) {
     const show = getShow(en.showId);
     const p = en.p;
     const up = isUpNext(p);
-    const img = p.thumb ? IMG.card(p.thumb) : IMG.card(show.banner || show.poster);
+    const img = IMG.card((!stillHidden(en.showId, en.s, en.e) && p.thumb) || show.banner || show.poster);
     const epLabel = isMovie(show) ? (p.title && p.title !== show.title ? p.title : 'Movie') : `${epCode(en.s, en.e)}${p.title ? ' · ' + p.title : ''}`;
     const left = up ? 'Up next' : (p.d ? `${fmtMinutes(p.d - p.t)} left` : `${fmtClock(p.t)} watched`);
     const verb = up ? 'Play' : 'Resume';
@@ -774,8 +844,18 @@ window.addEventListener('resize', () => $$('.rail').forEach(updateRail), { passi
 function emptyState({ icon = ICON.film, title, text = '', action = '' }) {
     return `<div class="empty"><div class="empty-icon">${icon}</div><h2>${esc(title)}</h2>${text ? `<p>${esc(text)}</p>` : ''}${action}</div>`;
 }
+// show.json: "newEpisodes": true labels a show "New episodes"; "new": true labels a show or
+// movie "New". Either can be text instead of true to say something else ("New season").
+function newBadgeText(show) {
+    if (show.comingSoon) return '';
+    const v = show.newEpisodes || show.new;
+    if (!v) return '';
+    return typeof v === 'string' ? v : (show.newEpisodes ? 'New episodes' : 'New');
+}
 function metaHtml(show, { seasons = true } = {}) {
     const bits = [];
+    const fresh = newBadgeText(show);
+    if (fresh) bits.push(`<span class="badge badge-accent">${esc(fresh)}</span>`);
     if (show.rating) bits.push(`<span class="badge badge-outline">${esc(show.rating)}</span>`);
     if (show.years) bits.push(`<span>${esc(show.years)}</span>`);
     const n = seasonCount(show);
@@ -1004,12 +1084,6 @@ function browseList(kind) {
     if (kind === 'movies') return state.shows.filter(s => !s.comingSoon && isMovie(s));
     return state.shows.filter(s => s.comingSoon);
 }
-const yearKey = (show) => {
-    const y = String(show.years || '');
-    const nums = (y.match(/\d{4}/g) || []).map(Number);
-    if (/present/i.test(y)) nums.push(9999);
-    return nums.length ? Math.max(...nums) : 0;
-};
 function renderBrowse(kind) {
     const meta = BROWSE_META[kind];
     setTitle(meta.title);
@@ -1034,8 +1108,6 @@ function renderBrowse(kind) {
                     <option value="default">Featured</option>
                     <option value="az">A–Z</option>
                     <option value="za">Z–A</option>
-                    <option value="new">Newest</option>
-                    <option value="old">Oldest</option>
                 </select>
                 ${ICON.chevD}
             </label>
@@ -1048,8 +1120,6 @@ function renderBrowse(kind) {
         if (mem.genre !== 'All') list = list.filter(s => (s.genres || []).includes(mem.genre));
         if (mem.sort === 'az') list.sort((a, b) => a.title.localeCompare(b.title));
         else if (mem.sort === 'za') list.sort((a, b) => b.title.localeCompare(a.title));
-        else if (mem.sort === 'new') list.sort((a, b) => yearKey(b) - yearKey(a));
-        else if (mem.sort === 'old') list.sort((a, b) => yearKey(a) - yearKey(b));
         $('browseGrid').innerHTML = list.length ? list.map(wide ? wideCard : posterCard).join('') : emptyState({ title: meta.empty });
         $('browseCount').textContent = base.length ? plural(list.length, 'title') : '';
     };
@@ -1151,14 +1221,15 @@ function searchEpisodes(index, toks) {
         return { r, score, i };
     }).filter(Boolean).sort((a, b) => b.score - a.score || a.i - b.i).map(x => x.r);
 }
-function epResultHtml(r, toks) {
+function epResultHtml(r, toks, note) {
     const st = epStatus(r.ep);
     return `<a class="ep-result" href="#/details/${encodeURIComponent(r.show.id)}/${r.s}/${r.ep.number}">
-        <div class="ep-result-thumb">${r.ep.thumbnail ? `<img class="fade" src="${esc(IMG.thumb(r.ep.thumbnail))}" alt="" loading="lazy" decoding="async">` : `<div class="thumb-empty">${ICON.film}</div>`}${st ? `<span class="badge badge-glass">${esc(st.label)}</span>` : ''}</div>
+        <div class="ep-result-thumb">${stillHidden(r.show.id, r.s, r.ep.number) ? stillPlaceholder(r.ep) : r.ep.thumbnail ? `<img class="fade" src="${esc(IMG.thumb(r.ep.thumbnail))}" alt="" loading="lazy" decoding="async">` : `<div class="thumb-empty">${ICON.film}</div>`}${st ? `<span class="badge badge-glass">${esc(st.label)}</span>` : (needsAltSources(r.ep) ? `<span class="badge badge-glass">${ALT_LABEL}</span>` : '')}</div>
         <div class="ep-result-body">
             <div class="ep-result-kicker">${esc(r.show.title)} · ${esc(isMovie(r.show) ? 'Movie' : epCode(r.s, r.ep.number))}</div>
             <div class="ep-result-title">${highlight(r.ep.title || 'Episode ' + r.ep.number, toks)}</div>
-            ${r.ep.description ? `<p class="ep-result-desc">${esc(r.ep.description)}</p>` : ''}
+            ${note ? `<div class="ep-result-note">${esc(note)}</div>` : ''}
+            ${r.ep.description ? (descHidden(r.show.id, r.s, r.ep.number) ? `<p class="ep-result-desc desc-hidden">${HIDDEN_DESC}</p>` : `<p class="ep-result-desc">${esc(r.ep.description)}</p>`) : ''}
         </div>
     </a>`;
 }
@@ -1166,7 +1237,7 @@ function renderSearch(q0) {
     $('view').innerHTML = `<div class="page page-search"><div class="page-inner page-top">
         <form class="search-field" id="searchForm" role="search" autocomplete="off">
             ${ICON.search}
-            <input type="search" id="searchInput" placeholder="Search shows, movies and episodes" aria-label="Search shows, movies and episodes" enterkeyhint="search" spellcheck="false" autocomplete="off">
+            <input type="search" id="searchInput" placeholder="Search shows, episodes and people" aria-label="Search shows, movies, episodes and people" enterkeyhint="search" spellcheck="false" autocomplete="off">
             <button class="search-clear" id="searchClear" type="button" aria-label="Clear search" hidden>${ICON.x}</button>
         </form>
         <div id="searchResults" aria-live="polite"></div>
@@ -1188,17 +1259,21 @@ function renderSearch(q0) {
         if (!toks.length) { res.innerHTML = ''; return; }
         const titles = searchTitles(toks);
         res.innerHTML = `${titles.length ? `<section class="search-section"><h2 class="section-title">Titles <span class="count">${titles.length}</span></h2><div class="grid">${titles.map(posterCard).join('')}</div></section>` : ''}
+            <section class="search-section" id="peopleResults"></section>
             <section class="search-section" id="epResults"><div class="search-loading"><span class="spinner spinner-sm"></span>Searching episodes…</div></section>`;
-        loadEpisodeIndex().then(index => {
+        Promise.all([loadEpisodeIndex(), loadPeople()]).then(([index, people]) => {
             if (runId !== searchRun || !$('epResults')) return;
+            const persons = [...people.values()].filter(p => { const n = norm(p.name); return toks.every(t => n.includes(t)); })
+                .sort((a, b) => creditCount(b) - creditCount(a)).slice(0, 12);
+            $('peopleResults').innerHTML = persons.length ? `<h2 class="section-title">People <span class="count">${persons.length}</span></h2><div class="person-chips">${persons.map(personChipHtml).join('')}</div>` : '';
             const all = searchEpisodes(index, toks);
             const eps = all.slice(0, 60);
             if (eps.length) {
                 $('epResults').innerHTML = `<h2 class="section-title">Episodes <span class="count">${all.length}</span></h2><div class="ep-results">${eps.map(r => epResultHtml(r, toks)).join('')}</div>`;
-            } else if (titles.length) {
+            } else if (titles.length || persons.length) {
                 $('epResults').innerHTML = '';
             } else {
-                res.innerHTML = emptyState({ icon: ICON.search, title: `No results for "${raw}"`, text: 'Check the spelling, or try a show, character or episode name.' });
+                res.innerHTML = emptyState({ icon: ICON.search, title: `No results for "${raw}"`, text: 'Check the spelling, or try a show, character, episode or person.' });
             }
         });
     };
@@ -1208,6 +1283,103 @@ function renderSearch(q0) {
     run();
     if (q0) loadEpisodeIndex();
     if (!tvActive) setTimeout(() => { if (input.isConnected) input.focus({ preventScroll: true }); }, 60);
+}
+
+/* ==========================================================================
+   People (cast, writers, directors)
+   ========================================================================== */
+
+// Episode JSON: "cast": [{ "name": "Vincent Tong", "role": "Kai" }] (plain name strings work too),
+// "writers": ["..."], "directors": ["..."]. A show's "starring" and "creator" count as credits too.
+const nameList = (v) => (Array.isArray(v) ? v : (v ? [v] : []))
+    .map(x => String((x && typeof x === 'object' ? x.name : x) || '').trim()).filter(Boolean);
+function epCredits(ep) {
+    const cast = (Array.isArray(ep.cast) ? ep.cast : (ep.cast ? [ep.cast] : [])).map(c => (c && typeof c === 'object'
+        ? { name: String(c.name || '').trim(), role: String(c.role || c.character || '').trim() }
+        : { name: String(c || '').trim(), role: '' })).filter(c => c.name);
+    return { cast, writers: nameList(ep.writers), directors: nameList(ep.directors) };
+}
+const personHref = (name) => '#/person/' + encodeURIComponent(name);
+const personLink = (name) => `<a class="person-link" href="${personHref(name)}">${esc(name)}</a>`;
+const creditCount = (p) => p.acted.length + p.wrote.length + p.directed.length + p.shows.length;
+
+// Every credit in the library, keyed by normalised name.
+let peopleP = null;
+function loadPeople() {
+    if (peopleP) return peopleP;
+    peopleP = loadEpisodeIndex().then(index => {
+        const map = new Map();
+        const get = (name) => {
+            const k = norm(name);
+            if (!map.has(k)) map.set(k, { name, acted: [], wrote: [], directed: [], shows: [] });
+            return map.get(k);
+        };
+        index.forEach(r => {
+            const c = epCredits(r.ep);
+            c.cast.forEach(x => get(x.name).acted.push({ r, role: x.role }));
+            c.writers.forEach(n => get(n).wrote.push({ r }));
+            c.directors.forEach(n => get(n).directed.push({ r }));
+        });
+        state.shows.forEach(show => {
+            nameList(show.starring).forEach(n => get(n).shows.push({ show, as: 'Starring' }));
+            nameList(show.creator).forEach(n => get(n).shows.push({ show, as: 'Created' }));
+        });
+        return map;
+    });
+    return peopleP;
+}
+function personChipHtml(p) {
+    const n = p.acted.length + p.wrote.length + p.directed.length;
+    const sub = n ? plural(n, 'episode') : plural(p.shows.length, 'title');
+    return `<a class="person-chip" href="${personHref(p.name)}"><span class="cast-avatar" aria-hidden="true">${esc(initials(p.name))}</span><span class="cast-text"><span class="cast-name">${esc(p.name)}</span><span class="cast-role">${esc(sub)}</span></span></a>`;
+}
+// Episodes grouped under each show, in library order.
+function creditGroupsHtml(list, note) {
+    const groups = new Map();
+    list.forEach(x => { const id = x.r.show.id; if (!groups.has(id)) groups.set(id, []); groups.get(id).push(x); });
+    return [...groups.values()].map(items => `<div class="credit-group">
+        <h3 class="credit-show"><a href="#/details/${encodeURIComponent(items[0].r.show.id)}">${esc(items[0].r.show.title)}</a> <span class="count">${items.length}</span></h3>
+        <div class="ep-results">${items.map(x => epResultHtml(x.r, [], note(x))).join('')}</div>
+    </div>`).join('');
+}
+function renderPersonPage(name) {
+    setTitle(name);
+    $('view').innerHTML = `<div class="page"><div class="page-inner page-top">
+        <header class="person-head">
+            <span class="person-avatar" aria-hidden="true">${esc(initials(name))}</span>
+            <div>
+                <p class="eyebrow">Cast &amp; crew</p>
+                <h1 class="page-title">${esc(name)}</h1>
+                <p class="page-sub" id="personSummary"></p>
+            </div>
+        </header>
+        <div id="personBody"><div class="search-loading"><span class="spinner spinner-sm"></span>Finding credits…</div></div>
+    </div></div>`;
+    const key = norm(name);
+    loadPeople().then(map => {
+        if (state.route.name !== 'person' || norm(state.route.person) !== key || !$('personBody')) return;
+        const p = map.get(key);
+        if (!p) {
+            $('personBody').innerHTML = emptyState({ icon: ICON.user, title: 'No credits yet', text: `Nothing on ${BRAND} credits ${name} yet.` });
+            return;
+        }
+        const bits = [];
+        if (p.acted.length) bits.push(`appears in ${plural(p.acted.length, 'episode')}`);
+        if (p.wrote.length) bits.push(`wrote ${p.wrote.length}`);
+        if (p.directed.length) bits.push(`directed ${p.directed.length}`);
+        const summary = bits.join(' · ');
+        $('personSummary').textContent = summary.charAt(0).toUpperCase() + summary.slice(1);
+        const sections = [];
+        const starring = p.shows.filter(x => x.as === 'Starring').map(x => x.show);
+        const created = p.shows.filter(x => x.as === 'Created').map(x => x.show);
+        if (created.length) sections.push(['Created', `<div class="grid">${created.map(posterCard).join('')}</div>`]);
+        if (starring.length) sections.push(['Starring in', `<div class="grid">${starring.map(posterCard).join('')}</div>`]);
+        if (p.directed.length) sections.push([`Directed <span class="count">${p.directed.length}</span>`, creditGroupsHtml(p.directed, () => '')]);
+        if (p.wrote.length) sections.push([`Written <span class="count">${p.wrote.length}</span>`, creditGroupsHtml(p.wrote, () => '')]);
+        if (p.acted.length) sections.push([`Acted in <span class="count">${p.acted.length}</span>`, creditGroupsHtml(p.acted, x => (x.role ? 'as ' + x.role : ''))]);
+        $('personBody').innerHTML = sections.map(([h, html]) => `<section class="search-section"><h2 class="section-title">${h}</h2>${html}</section>`).join('');
+        applyPendingScroll();
+    });
 }
 
 /* ==========================================================================
@@ -1257,7 +1429,8 @@ function renderDetails(id, opts = {}) {
                     ${show.comingSoon
                         ? `<span class="soon-pill">${ICON.clock}<span>${esc(show.comingSoonText || 'Coming soon')}</span></span>`
                         : `${target ? `<button class="btn btn-primary btn-lg" id="detailPlayBtn" type="button">${ICON.play}<span>${esc(resumeLabel(show, target))}</span></button>` : ''}
-                           ${listBtnHtml(show.id, isInMyList(show.id), 'icon-btn icon-btn-lg')}`}
+                           ${listBtnHtml(show.id, isInMyList(show.id), 'icon-btn icon-btn-lg')}
+                           ${hasEpisodes ? `<button class="icon-btn icon-btn-lg" id="detailRandomBtn" type="button" aria-label="Play a random episode" title="Random episode">${ICON.shuffle}</button>` : ''}`}
                     <button class="icon-btn icon-btn-lg" id="detailShareBtn" type="button" aria-label="Share" title="Share">${ICON.share}</button>
                 </div>
                 ${resumeNote}
@@ -1274,7 +1447,12 @@ function renderDetails(id, opts = {}) {
 
     const playBtn = $('detailPlayBtn');
     if (playBtn) playBtn.addEventListener('click', () => playEpisodeByRef(show.id, target.s, target.e));
-    $('detailShareBtn').addEventListener('click', () => shareLink(show.title, '#/details/' + encodeURIComponent(show.id)));
+    $('detailShareBtn').addEventListener('click', () => openShare({
+        title: show.title, sub: [kindLabel(show), show.years].filter(Boolean).join(' · '),
+        image: show.banner || show.poster, path: sharePath(show.id),
+    }));
+    const randomBtn = $('detailRandomBtn');
+    if (randomBtn) randomBtn.addEventListener('click', () => playRandomEpisode(show, randomBtn));
     $$('#detailTabs .tab').forEach(t => t.addEventListener('click', () => setDetailTab(t.dataset.tab)));
     $('detailTabs').addEventListener('keydown', (e) => {
         if (e.key !== 'ArrowLeft' && e.key !== 'ArrowRight') return;
@@ -1313,8 +1491,8 @@ function renderAboutTab() {
     if (show.rating) fields.push(['Rating', esc(show.rating)]);
     if (isMovie(show)) { if (show.runtime) fields.push(['Runtime', esc(show.runtime)]); }
     else if (playable.length && !show.comingSoon) fields.push(['Seasons', String(seasonCount(show))]);
-    if (show.creator) fields.push(['Created by', esc(Array.isArray(show.creator) ? show.creator.join(', ') : show.creator)]);
-    if (show.starring && show.starring.length) fields.push(['Starring', show.starring.map(esc).join('<br>')]);
+    if (nameList(show.creator).length) fields.push(['Created by', nameList(show.creator).map(personLink).join(', ')]);
+    if (nameList(show.starring).length) fields.push(['Starring', nameList(show.starring).map(personLink).join('<br>')]);
     $('tabPanel').innerHTML = `<div class="about">
         <div class="about-main">
             <h2 class="about-title">${esc(show.title)}</h2>
@@ -1343,7 +1521,7 @@ function renderEpisodesTab() {
             <div class="dropdown-menu" id="seasonMenu" role="listbox">${playable.map((s, i) => `<button class="dropdown-opt" type="button" role="option" data-si="${i}">${esc(seasonLabel(s.number))}</button>`).join('')}</div>
         </div>`;
     else picker = `<div class="chips season-chips" role="tablist" aria-label="Seasons">${playable.map((s, i) => `<button class="chip" type="button" role="tab" data-si="${i}">${esc(seasonLabel(s.number))}</button>`).join('')}</div>`;
-    panel.innerHTML = `<div class="season-bar">${picker}<span class="season-count" id="seasonCount"></span></div><div class="ep-list" id="epList"></div>`;
+    panel.innerHTML = `<div class="season-bar">${picker}<span class="season-count" id="seasonCount"></span><button class="btn btn-sm btn-glass season-watch" id="seasonWatchBtn" type="button" hidden></button></div><div class="ep-list" id="epList"></div>`;
     if (useMenu && playable.length > 1) {
         const dd = $('seasonDropdown'), btn = $('seasonBtn');
         btn.addEventListener('click', (e) => { e.stopPropagation(); setDropdown(!dd.classList.contains('is-open')); });
@@ -1388,6 +1566,7 @@ function pickDetailSeason(si) {
     const cached = seasonDataSync(ref.file);
     if (cached) { done(cached); return; }
     showEpSkeleton();
+    if ($('seasonWatchBtn')) $('seasonWatchBtn').hidden = true;
     fetchSeason(ref.file).then(done).catch(() => {
         if (reqId !== state.detail.reqId || !$('epList')) return;
         $('seasonCount').textContent = '';
@@ -1402,6 +1581,7 @@ function showEpSkeleton() {
 }
 function renderExternalSeason(data) {
     $('seasonCount').textContent = '';
+    if ($('seasonWatchBtn')) $('seasonWatchBtn').hidden = true;
     const btn = data.button && data.button.url ? data.button : null;
     $('epList').innerHTML = `<div class="notice">
         <div class="notice-icon">${ICON.external}</div>
@@ -1412,16 +1592,21 @@ function renderExternalSeason(data) {
         </div>
     </div>`;
 }
+function watchBtnHtml(watched, attrs, cls = 'ep-watch') {
+    const label = watched ? 'Mark as unwatched' : 'Mark as watched';
+    return `<button class="${cls}${watched ? ' is-on' : ''}" type="button" ${attrs} aria-pressed="${watched}" aria-label="${label}" title="${label}">${ICON.watched}</button>`;
+}
 function epRowHtml(show, seasonNumber, ep, i) {
     const st = epStatus(ep);
     const p = st ? null : getProgress(show.id, seasonNumber, ep.number);
     const dur = st ? '' : knownDuration(ep);
     const playable = !st && isPlayable(ep);
+    const lock = !st && needsAltSources(ep);
     const href = `#/details/${encodeURIComponent(show.id)}/${seasonNumber}/${ep.number}`;
-    return `<div class="ep${st ? ' is-status' : ''}${isWatched(p) ? ' is-watched' : ''}">
+    return `<div class="ep${st || lock ? ' is-status' : ''}${isWatched(p) ? ' is-watched' : ''}">
         <div class="ep-thumb">
-            ${ep.thumbnail ? `<img class="fade" src="${esc(IMG.thumb(ep.thumbnail))}" alt="" loading="lazy" decoding="async" draggable="false">` : `<div class="thumb-empty">${ICON.film}</div>`}
-            ${st ? `<span class="ep-status">${esc(st.label)}</span>` : ''}
+            ${stillHidden(show.id, seasonNumber, ep.number) ? stillPlaceholder(ep) : ep.thumbnail ? `<img class="fade" src="${esc(IMG.thumb(ep.thumbnail))}" alt="" loading="lazy" decoding="async" draggable="false">` : `<div class="thumb-empty">${ICON.film}</div>`}
+            ${st ? `<span class="ep-status">${esc(st.label)}</span>` : (lock ? `<span class="ep-status">${ALT_LABEL}</span>` : '')}
             ${playable ? `<button class="ep-play" type="button" data-play-ep="${i}" aria-label="Play episode ${esc(String(ep.number))}: ${esc(ep.title || '')}"><span>${ICON.play}</span></button>` : ''}
             ${isWatched(p) ? `<span class="ep-check" title="Watched">${ICON.check}</span>` : ''}
             ${isInProgress(p) ? `<div class="progress-bar"><span style="width:${progPct(p).toFixed(1)}%"></span></div>` : ''}
@@ -1429,24 +1614,67 @@ function epRowHtml(show, seasonNumber, ep, i) {
         <div class="ep-body">
             <div class="ep-head">
                 <h3 class="ep-title"><a class="ep-link" href="${href}" draggable="false"><span class="ep-num">${esc(String(ep.number))}.</span> ${esc(ep.title || 'Episode ' + ep.number)}</a></h3>
-                ${st ? '' : `<span class="ep-dur" data-dur-url="${esc((ep.embed || '').trim())}">${esc(dur)}</span>`}
+                ${st ? '' : `<span class="ep-dur" data-dur-url="${esc((ep.embed || '').trim())}">${esc(dur)}</span>${watchBtnHtml(isWatched(p), `data-watch-ep="${i}"`)}`}
             </div>
-            ${ep.description ? `<p class="ep-desc">${esc(ep.description)}</p>` : ''}
+            ${ep.description ? (descHidden(show.id, seasonNumber, ep.number) ? `<p class="ep-desc desc-hidden">${HIDDEN_DESC}</p>` : `<p class="ep-desc">${esc(ep.description)}</p>`) : ''}
         </div>
     </div>`;
 }
 function renderEpisodeList(show, seasonNumber, data) {
     const eps = Array.isArray(data.episodes) ? data.episodes : [];
     const el = $('epList');
-    const upcoming = eps.filter(e => epStatus(e)).length;
-    $('seasonCount').textContent = eps.length ? plural(eps.length, 'episode') + (upcoming ? ` · ${upcoming} coming soon` : '') : '';
+    const statuses = eps.map(epStatus).filter(Boolean);
+    const upcoming = statuses.filter(x => x.id === 'upcoming').length, unavailable = statuses.length - upcoming;
+    $('seasonCount').textContent = eps.length ? plural(eps.length, 'episode') + (upcoming ? ` · ${upcoming} coming soon` : '') + (unavailable ? ` · ${unavailable} unavailable` : '') : '';
+    const released = eps.map((e, i) => i).filter(i => !epStatus(eps[i]));
+    const allWatched = released.length > 0 && released.every(i => isWatched(getProgress(show.id, seasonNumber, eps[i].number)));
+    const sw = $('seasonWatchBtn');
+    if (sw) {
+        sw.hidden = !released.length;
+        sw.innerHTML = `${ICON.watched}<span>${allWatched ? 'Mark season unwatched' : 'Mark season watched'}</span>`;
+        sw.onclick = () => toggleWatched(show, seasonNumber, data, released, !allWatched);
+    }
     if (!eps.length) { el.innerHTML = emptyState({ title: 'No episodes in this season yet' }); return; }
     el.innerHTML = eps.map((ep, i) => epRowHtml(show, seasonNumber, ep, i)).join('');
     $$('[data-play-ep]', el).forEach(btn => btn.addEventListener('click', (e) => {
         e.preventDefault();
         openPlayer(show, seasonNumber, data, +btn.dataset.playEp);
     }));
+    $$('[data-watch-ep]', el).forEach(btn => btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        toggleWatched(show, seasonNumber, data, [+btn.dataset.watchEp], btn.getAttribute('aria-pressed') !== 'true');
+    }));
     observeDurations(el);
+}
+// Marks episodes (by index in the season) watched or unwatched. Marking watched also
+// queues the following episode in Continue Watching, like finishing it would.
+async function toggleWatched(show, s, data, idxs, on) {
+    const eps = idxs.map(i => data.episodes[i]).filter(Boolean);
+    if (!eps.length) return;
+    const before = setWatched(show.id, s, eps, on);
+    if (on && !isMovie(show)) {
+        const nx = await findNeighbor(show, s, data, Math.max(...idxs), 1).catch(() => null);
+        if (nx) {
+            const next = nx.data.episodes[nx.idx];
+            const key = progKey(show.id, nx.seasonNumber, next.number);
+            before.push([key, progressMap[key]]);
+            markUpNext(show.id, nx.seasonNumber, next);
+        }
+    }
+    refreshAfterWatch();
+    const what = eps.length === 1 ? (eps[0].title || 'Episode ' + eps[0].number) : plural(eps.length, 'episode');
+    toast(`Marked ${what} as ${on ? 'watched' : 'unwatched'}`, {
+        icon: on ? ICON.check : ICON.x,
+        action: { label: 'Undo', fn: () => { restoreProgress(before); refreshAfterWatch(); } },
+    });
+}
+// Redraw the page in place, keeping scroll and keyboard focus on the button that was pressed.
+function refreshAfterWatch() {
+    const a = document.activeElement;
+    const sel = a && a.id ? '#' + a.id : (a && a.dataset && a.dataset.watchEp != null ? `[data-watch-ep="${a.dataset.watchEp}"]` : null);
+    route({ keepScroll: true });
+    const el = sel && document.querySelector(sel);
+    if (el) el.focus({ preventScroll: true });
 }
 function observeDurations(scope) {
     if (state.durIO) state.durIO.disconnect();
@@ -1465,7 +1693,7 @@ function observeDurations(scope) {
    Episode page
    ========================================================================== */
 
-function renderEpisodePage(id, sNum, eNum) {
+function renderEpisodePage(id, sNum, eNum, startAt) {
     const show = getShow(id);
     if (!show) { renderNotFound("That title doesn't exist or was removed."); setTitle('Not found'); return; }
     const ref = playableSeasons(show).find(x => x.number === sNum);
@@ -1477,6 +1705,13 @@ function renderEpisodePage(id, sNum, eNum) {
         if (idx < 0) { location.replace('#/details/' + encodeURIComponent(id)); return; }
         renderEpisodePageContent(show, ref.number, data, idx);
         applyPendingScroll();
+        // A shared "?t=" link starts playback at that point. Drop it from the address first so
+        // closing the player (which redraws this page) doesn't start it again.
+        if (startAt != null) {
+            try { history.replaceState(history.state, '', location.pathname + location.search + location.hash.replace(/\?.*$/, '')); } catch {}
+            state.route.t = null;
+            if (isPlayable(data.episodes[idx])) openPlayer(show, ref.number, data, idx, { startAt });
+        }
     };
     const cached = seasonDataSync(ref.file);
     if (cached) { draw(cached); return; }
@@ -1485,6 +1720,25 @@ function renderEpisodePage(id, sNum, eNum) {
     fetchSeason(ref.file).then(draw).catch(() => {
         $('view').innerHTML = `<div class="page"><div class="page-inner page-top">${emptyState({ icon: ICON.alert, title: "Couldn't load this episode", text: 'Check your connection and try again.', action: `<a class="btn btn-primary" href="#/details/${encodeURIComponent(id)}">Back to ${esc(show.title)}</a>` })}</div></div>`;
     });
+}
+const fmtAirDate = (v) => {
+    const d = v && /^\d{4}-\d{2}-\d{2}$/.test(v) ? new Date(v + 'T00:00:00') : null;
+    return d && !isNaN(d) ? d.toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric' }) : (v ? String(v) : '');
+};
+const initials = (name) => name.split(/\s+/).filter(w => /^[a-z0-9]/i.test(w)).map(w => w[0]).slice(0, 2).join('').toUpperCase() || '?';
+function creditsHtml(ep) {
+    const { cast, writers, directors } = epCredits(ep);
+    if (!cast.length && !writers.length && !directors.length) return '';
+    const facts = [['Directed by', directors], ['Written by', writers]].filter(([, list]) => list.length)
+        .map(([k, list]) => `<div><dt>${k}</dt><dd>${list.map(personLink).join(', ')}</dd></div>`).join('');
+    return `<section class="credits page-inner" aria-labelledby="creditsTitle">
+        <h2 class="section-title" id="creditsTitle">Cast &amp; crew</h2>
+        ${facts ? `<dl class="credit-facts">${facts}</dl>` : ''}
+        ${cast.length ? `<ul class="cast-grid">${cast.map(c => `<li><a class="cast-card" href="${personHref(c.name)}">
+            <span class="cast-avatar" aria-hidden="true">${esc(initials(c.name))}</span>
+            <span class="cast-text"><span class="cast-name">${esc(c.name)}</span>${c.role ? `<span class="cast-role">${esc(c.role)}</span>` : ''}</span>
+        </a></li>`).join('')}</ul>` : ''}
+    </section>`;
 }
 function renderEpisodePageContent(show, seasonNumber, data, idx) {
     const eps = data.episodes;
@@ -1496,8 +1750,11 @@ function renderEpisodePageContent(show, seasonNumber, data, idx) {
     const prevEp = idx > 0 ? eps[idx - 1] : null;
     const nextEp = idx < eps.length - 1 ? eps[idx + 1] : null;
     const canPlay = isPlayable(ep);
+    const lock = !st && needsAltSources(ep);
     const base = `#/details/${encodeURIComponent(show.id)}/${seasonNumber}/`;
-    const img = ep.thumbnail || show.banner || '';
+    const img = (!stillHidden(show.id, seasonNumber, ep.number) && ep.thumbnail) || show.banner || '';
+    const hideDesc = !!ep.description && descHidden(show.id, seasonNumber, ep.number);
+    const aired = fmtAirDate(ep.airDate);
     setTitle(`${ep.title || 'Episode ' + ep.number} · ${show.title}`);
     $('view').innerHTML = `<div class="page page-episode">
         <div class="ep-backdrop"><div class="ep-backdrop-img" style="background-image:${esc(cssUrl(IMG.card(img)))}"></div></div>
@@ -1507,9 +1764,9 @@ function renderEpisodePageContent(show, seasonNumber, data, idx) {
                 ${isMovie(show) ? '' : `<span class="crumb-sep">/</span><span>${esc(seasonLabel(seasonNumber))}</span>`}
             </nav>
             <div class="ep-page-grid">
-                <div class="ep-page-media${st ? ' is-status' : ''}">
+                <div class="ep-page-media${st || lock ? ' is-status' : ''}">
                     ${img ? `<img class="fade" src="${esc(IMG.still(img))}" alt="" decoding="async">` : `<div class="thumb-empty">${ICON.film}</div>`}
-                    ${st ? `<span class="ep-status">${esc(st.label)}</span>` : ''}
+                    ${st ? `<span class="ep-status">${esc(st.label)}</span>` : (lock ? `<span class="ep-status">${ALT_LABEL}</span>` : '')}
                     ${canPlay ? `<button class="ep-page-play" type="button" data-ep-page-play aria-label="Play">${ICON.play}</button>` : ''}
                     ${inProg ? `<div class="progress-bar"><span style="width:${progPct(p).toFixed(1)}%"></span></div>` : ''}
                 </div>
@@ -1519,19 +1776,26 @@ function renderEpisodePageContent(show, seasonNumber, data, idx) {
                     <div class="meta-line">
                         ${st ? `<span class="badge badge-accent-soft">${esc(st.label)}</span>` : ''}
                         ${dur ? `<span>${esc(dur)}</span>` : (ep.embed && !st ? '<span id="epPageDur"></span>' : '')}
+                        ${aired ? `<span>${esc(aired)}</span>` : ''}
                         ${show.rating ? `<span class="badge badge-outline">${esc(show.rating)}</span>` : ''}
                         ${watched ? `<span class="badge badge-success">${ICON.check}Watched</span>` : ''}
                     </div>
-                    <p class="ep-page-desc">${esc(ep.description || 'No description available for this episode.')}</p>
+                    ${hideDesc
+                        ? `<p class="ep-page-desc desc-hidden" id="epDesc">${HIDDEN_DESC} <button class="link-btn" type="button" id="epDescReveal">Show anyway</button></p>`
+                        : `<p class="ep-page-desc">${esc(ep.description || 'No description available for this episode.')}</p>`}
                     <div class="detail-actions">
                         ${canPlay
                             ? `<button class="btn btn-primary btn-lg" type="button" data-ep-page-play>${ICON.play}<span>${inProg ? 'Resume' : 'Play'}</span></button>`
-                            : `<button class="btn btn-primary btn-lg" type="button" disabled>${st ? esc(st.label) : 'Unavailable'}</button>`}
+                            : (lock
+                                ? '<button class="btn btn-primary btn-lg" type="button" data-alt-enable><span>Turn on alternate sources</span></button>'
+                                : `<button class="btn btn-primary btn-lg" type="button" disabled>${st ? esc(st.label) : 'Unavailable'}</button>`)}
                         ${listBtnHtml(show.id, isInMyList(show.id), 'icon-btn icon-btn-lg')}
+                        ${st ? '' : watchBtnHtml(watched, 'id="epWatchBtn"', 'icon-btn icon-btn-lg')}
                         <button class="icon-btn icon-btn-lg" id="epShareBtn" type="button" aria-label="Share" title="Share">${ICON.share}</button>
                     </div>
                     ${inProg ? `<p class="hint">You're ${Math.round(progPct(p))}% through. Playback resumes from ${fmtClock(p.t)}.</p>` : ''}
                     ${st && st.id === 'upcoming' ? '<p class="hint">This episode isn\'t out yet. Check back soon.</p>' : ''}
+                    ${lock ? '<p class="hint">This episode plays in a third-party player, which may show pop-up ads. An ad blocker helps.</p>' : ''}
                     <div class="ep-pager">
                         ${prevEp ? `<a class="pager-link" href="${base}${prevEp.number}">${ICON.chevL}<span><small>Previous</small>${esc(prevEp.title || 'Episode ' + prevEp.number)}</span></a>` : '<span></span>'}
                         ${nextEp ? `<a class="pager-link pager-next" href="${base}${nextEp.number}"><span><small>Next</small>${esc(nextEp.title || 'Episode ' + nextEp.number)}</span>${ICON.chevR}</a>` : ''}
@@ -1539,22 +1803,31 @@ function renderEpisodePageContent(show, seasonNumber, data, idx) {
                 </div>
             </div>
         </div>
+        ${creditsHtml(ep)}
         ${eps.length > 1 ? `<div id="epMoreSlot"></div>` : ''}
     </div>`;
     $$('[data-ep-page-play]').forEach(b => b.addEventListener('click', () => openPlayer(show, seasonNumber, data, idx)));
-    $('epShareBtn').addEventListener('click', () => shareLink(`${show.title}: ${ep.title || ''}`, base + ep.number));
+    $('epShareBtn').addEventListener('click', () => openShare({
+        title: isMovie(show) ? show.title : `${ep.title || 'Episode ' + ep.number}`,
+        sub: isMovie(show) ? kindLabel(show) : `${show.title} · ${epCode(seasonNumber, ep.number)}`,
+        image: img, path: sharePath(show.id, seasonNumber, ep.number), time: inProg ? p.t : null,
+    }));
+    const wb = $('epWatchBtn');
+    if (wb) wb.addEventListener('click', () => toggleWatched(show, seasonNumber, data, [idx], !watched));
+    const reveal = $('epDescReveal');
+    if (reveal) reveal.addEventListener('click', () => { const d = $('epDesc'); d.classList.remove('desc-hidden'); d.textContent = ep.description; });
     const durEl = $('epPageDur');
     if (durEl) queueDuration((ep.embed || '').trim(), durEl);
     if (eps.length > 1) {
         const cards = eps.map((e2) => {
             const st2 = epStatus(e2);
             const p2 = st2 ? null : getProgress(show.id, seasonNumber, e2.number);
-            return `<div class="card wide-card mini-ep${e2 === ep ? ' is-current' : ''}${st2 ? ' is-status' : ''}">
+            return `<div class="card wide-card mini-ep${e2 === ep ? ' is-current' : ''}${st2 || needsAltSources(e2) ? ' is-status' : ''}">
                 <a class="card-link" href="${base}${e2.number}" draggable="false"${e2 === ep ? ' aria-current="page"' : ''}>
                     <div class="card-media card-media-wide">
-                        ${e2.thumbnail ? `<img class="card-img fade" src="${esc(IMG.thumb(e2.thumbnail))}" alt="" loading="lazy" decoding="async" draggable="false">` : ''}
+                        ${stillHidden(show.id, seasonNumber, e2.number) ? stillPlaceholder(e2) : e2.thumbnail ? `<img class="card-img fade" src="${esc(IMG.thumb(e2.thumbnail))}" alt="" loading="lazy" decoding="async" draggable="false">` : ''}
                         <div class="card-fallback"><span>${esc(e2.title || '')}</span></div>
-                        ${st2 ? `<span class="ep-status">${esc(st2.label)}</span>` : ''}
+                        ${st2 ? `<span class="ep-status">${esc(st2.label)}</span>` : (needsAltSources(e2) ? `<span class="ep-status">${ALT_LABEL}</span>` : '')}
                         ${e2 === ep ? '<span class="badge badge-accent card-badge">Now viewing</span>' : ''}
                         ${isWatched(p2) ? `<span class="ep-check">${ICON.check}</span>` : ''}
                         ${isInProgress(p2) ? `<div class="progress-bar"><span style="width:${progPct(p2).toFixed(1)}%"></span></div>` : ''}
@@ -1572,17 +1845,73 @@ function renderEpisodePageContent(show, seasonNumber, data, idx) {
     tvInitialFocus();
 }
 
-async function shareLink(title, hash) {
-    const url = location.origin + location.pathname + hash;
-    if (navigator.share && window.matchMedia && matchMedia('(pointer: coarse)').matches) {
-        try { await navigator.share({ title, url }); return; } catch (e) { if (e && e.name === 'AbortError') return; }
-    }
-    try { await navigator.clipboard.writeText(url); toast('Link copied to clipboard'); }
-    catch { window.prompt('Copy this link:', url); }
+/* ---------- Sharing ---------- */
+
+// Shared links point at the small pages under s/ (built by _tools/build-share-pages.js), which
+// carry the title, description and episode still for Discord/X/etc. previews and then forward
+// visitors into the app. 404.html forwards those links too if a page hasn't been built yet.
+const siteBase = () => location.origin + location.pathname.replace(/[^/]*$/, '');
+const sharePath = (showId, s, e) => `s/${encodeURIComponent(showId)}/` + (s != null && e != null ? `${s}/${e}/` : '');
+const shareCtx = { opts: null };
+function shareUrl() {
+    const o = shareCtx.opts;
+    const withTime = o.time != null && $('shareTimeChk').checked;
+    return siteBase() + o.path + (withTime ? `?t=${Math.floor(o.time)}` : '');
 }
+function openShare(opts) {
+    shareCtx.opts = opts;
+    $('sharePreview').innerHTML = `<div class="share-thumb">${opts.image ? `<img src="${esc(IMG.card(opts.image))}" alt="">` : ''}</div>
+        <div class="share-meta"><div class="share-site">${BRAND}</div><div class="share-title">${esc(opts.title)}</div>${opts.sub ? `<div class="share-sub">${esc(opts.sub)}</div>` : ''}</div>`;
+    const hasTime = opts.time != null && opts.time >= 1;
+    $('shareTimeRow').hidden = !hasTime;
+    $('shareTimeChk').checked = hasTime && !!opts.timeDefault;
+    $('shareTimeLabel').textContent = hasTime ? fmtClock(opts.time) : '';
+    $('shareNative').hidden = !navigator.share;
+    updateShareUrl();
+    if (playerOpen() && isFullscreen()) toggleFS();  // the dialog can't show over a fullscreen player
+    openModal('shareModal');
+}
+function updateShareUrl() { if (shareCtx.opts) $('shareUrl').value = shareUrl(); }
+$('shareTimeChk').addEventListener('change', updateShareUrl);
+$('shareCopy').addEventListener('click', async () => {
+    const url = shareUrl();
+    try { await navigator.clipboard.writeText(url); toast('Link copied'); }
+    catch { $('shareUrl').select(); document.execCommand && document.execCommand('copy'); toast('Link copied'); }
+});
+$('shareUrl').addEventListener('focus', (e) => e.target.select());
+$('shareNative').addEventListener('click', async () => {
+    const o = shareCtx.opts;
+    try { await navigator.share({ title: o.title, text: o.sub ? `${o.title} · ${o.sub}` : o.title, url: shareUrl() }); } catch {}
+});
+$('shareTargets').addEventListener('click', (e) => {
+    const b = e.target.closest('[data-share-to]');
+    if (!b || !shareCtx.opts) return;
+    const url = encodeURIComponent(shareUrl());
+    const text = encodeURIComponent(`Watching ${shareCtx.opts.title}${shareCtx.opts.sub ? ' · ' + shareCtx.opts.sub : ''}`);
+    const to = {
+        x: `https://x.com/intent/post?text=${text}&url=${url}`,
+        bluesky: `https://bsky.app/intent/compose?text=${text}%20${url}`,
+        reddit: `https://www.reddit.com/submit?url=${url}&title=${encodeURIComponent(shareCtx.opts.title)}`,
+        whatsapp: `https://wa.me/?text=${text}%20${url}`,
+        email: `mailto:?subject=${encodeURIComponent(shareCtx.opts.title)}&body=${text}%0A${url}`,
+    }[b.dataset.shareTo];
+    if (to) window.open(to, '_blank', 'noopener');
+});
 
 /* ---------- Starting playback from anywhere ---------- */
 
+async function playRandomEpisode(show, btn) {
+    if (btn) btn.disabled = true;
+    const seasons = await Promise.all(playableSeasons(show).map(ref => fetchSeason(ref.file).then(data => ({ ref, data })).catch(() => null)));
+    if (btn) btn.disabled = false;
+    const pool = [];
+    seasons.forEach(x => {
+        if (x && isEpisodeSeason(x.data)) x.data.episodes.forEach((ep, idx) => { if (isPlayable(ep)) pool.push({ s: x.ref.number, data: x.data, idx }); });
+    });
+    if (!pool.length) { toastNothingToPlay(seasons.some(x => x && isEpisodeSeason(x.data) && x.data.episodes.some(needsAltSources))); return; }
+    const pick = pool[Math.floor(Math.random() * pool.length)];
+    openPlayer(show, pick.s, pick.data, pick.idx);
+}
 function smartPlayShow(show) {
     if (show.comingSoon) { location.hash = '#/details/' + encodeURIComponent(show.id); return; }
     const target = findResumeTarget(show);
@@ -1597,6 +1926,7 @@ async function playEpisodeByRef(showId, sNum, eNum) {
     // playable episode (skips external-only and upcoming seasons).
     const tryList = sNum != null ? playable.filter(x => x.number === sNum) : playable;
     if (!tryList.length) { location.hash = '#/details/' + encodeURIComponent(showId); return; }
+    let locked = false;
     for (const ref of tryList) {
         let data;
         try { data = await fetchSeason(ref.file); } catch { continue; }
@@ -1610,12 +1940,16 @@ async function playEpisodeByRef(showId, sNum, eNum) {
             return;
         }
         const idx = eps.findIndex(isPlayable);
-        if (idx < 0) continue;
+        if (idx < 0) { locked = locked || eps.some(needsAltSources); continue; }
         openPlayer(show, ref.number, data, idx);
         return;
     }
     location.hash = '#/details/' + encodeURIComponent(showId);
-    toast('No streamable episodes available yet.', { icon: ICON.alert });
+    toastNothingToPlay(locked);
+}
+function toastNothingToPlay(locked) {
+    if (locked) toast('This plays from alternate sources, which are turned off.', { icon: ICON.layers, duration: 6000, action: { label: 'Turn on', fn: openAltPrompt } });
+    else toast('No streamable episodes available yet.', { icon: ICON.alert });
 }
 async function findNeighbor(show, seasonNumber, seasonData, epIdx, dir) {
     const eps = (seasonData && seasonData.episodes) || [];
@@ -1663,6 +1997,9 @@ function stopMedia() {
     try { video.pause(); } catch {}
     detachCueTrack();
     state.play.subIdx = -1;
+    state.play.subDelay = 0;
+    state.play.tick = state.play.onEnded = null;
+    castState.loaded = false;
     if (state.hls) { try { state.hls.destroy(); } catch {} state.hls = null; }
     try { video.removeAttribute('src'); while (video.firstChild) video.removeChild(video.firstChild); video.load(); } catch {}
     revokeObjectUrls();
@@ -1692,12 +2029,34 @@ function saveCurrentPosition() {
     const { show, seasonNumber, kind } = state.play;
     const ep = curEp();
     if (kind !== 'direct' || !show || !ep) return;
-    if (video.currentTime > 0 && isFinite(video.duration) && video.duration > 0) {
-        setProgress(show.id, seasonNumber, ep.number, video.currentTime, video.duration, { title: ep.title, thumb: ep.thumbnail });
-    }
+    const t = mediaTime(), d = mediaDuration();
+    if (t > 0 && isFinite(d) && d > 0) setProgress(show.id, seasonNumber, ep.number, t, d, { title: ep.title, thumb: ep.thumbnail });
 }
 
-function openPlayer(show, seasonNumber, seasonData, epIdx) {
+// Transport goes through these so the same controls drive the local video or a Chromecast.
+const mediaTime = () => (castActive() ? castState.player.currentTime : video.currentTime) || 0;
+const mediaDuration = () => (castActive() ? castState.player.duration : video.duration);
+const mediaPaused = () => (castActive() ? castState.player.isPaused : video.paused);
+function seekMedia(t) {
+    const d = mediaDuration();
+    if (!isFinite(d) || !d) return;
+    t = clamp(t, 0, d);
+    if (castActive()) { castState.player.currentTime = t; castState.ctl.seek(); }
+    else video.currentTime = t;
+    updateScrub(t, d);
+    updateTime(t, d);
+}
+function playMedia() {
+    if (castActive()) { if (castState.player.isPaused) castState.ctl.playOrPause(); return; }
+    const p = video.play();
+    if (p && p.catch) p.catch(() => {});
+}
+function pauseMedia() {
+    if (castActive()) { if (!castState.player.isPaused) castState.ctl.playOrPause(); return; }
+    video.pause();
+}
+
+function openPlayer(show, seasonNumber, seasonData, epIdx, opts = {}) {
     const eps = (seasonData && seasonData.episodes) || [];
     const ep = eps[epIdx];
     if (!ep) return;
@@ -1705,7 +2064,8 @@ function openPlayer(show, seasonNumber, seasonData, epIdx) {
     Object.assign(state.play, {
         show, seasonNumber, seasonData, epIdx,
         sources: episodeSources(ep), srcIdx: -1, kind: null, defaultSubPicked: false,
-        next: null, prev: null, nextP: null, upNextDismissed: false, watchedMarked: false,
+        next: null, prev: null, nextP: null, upNextDismissed: false, watchedMarked: false, creditsJumped: false,
+        startAt: opts.startAt != null ? opts.startAt : null,
     });
     const tok = ++state.play.token;
     seasonMemo.set(show.id, seasonNumber);
@@ -1719,7 +2079,7 @@ function openPlayer(show, seasonNumber, seasonData, epIdx) {
     $('pEpName').textContent = movie
         ? (ep.title && ep.title !== show.title ? ep.title : '')
         : `${epCode(seasonNumber, ep.number)} · ${ep.title || 'Episode ' + ep.number}`;
-    $('srcWrap').hidden = state.play.sources.length < 2;
+    $('srcWrap').hidden = allSources(ep).length < 2;
     $('prevEpBtn').hidden = movie;
     $('nextEpBtn').hidden = movie;
     updateEpNavButtons();
@@ -1727,6 +2087,7 @@ function openPlayer(show, seasonNumber, seasonData, epIdx) {
     document.body.classList.add('is-locked');
     heroHold('player', true);
     applySubStyle();
+    updateMediaSession();
 
     if (!movie) {
         state.play.nextP = findNeighbor(show, seasonNumber, seasonData, epIdx, 1).catch(() => null);
@@ -1738,6 +2099,14 @@ function openPlayer(show, seasonNumber, seasonData, epIdx) {
     }
 
     requestAnimationFrame(() => { if (playerOpen()) playerEl.focus({ preventScroll: true }); });
+    if (!state.play.sources.length && needsAltSources(ep)) {
+        showPlayerMessage({
+            icon: ICON.layers, title: 'Alternate source needed',
+            text: 'This plays in a third-party player that may show pop-up ads. Turn on alternate sources to watch it.',
+            actions: '<button class="btn btn-primary" type="button" data-alt-enable>Turn on alternate sources</button>',
+        });
+        return;
+    }
     if (!state.play.sources.length) {
         showPlayerMessage({ title: 'Video unavailable', text: 'This episode could not be loaded. Try again later or report it on Discord.', actions: discordBtn() });
         return;
@@ -1749,6 +2118,8 @@ function openPlayer(show, seasonNumber, seasonData, epIdx) {
 function updateEpNavButtons() {
     $('prevEpBtn').disabled = !state.play.prev;
     $('nextEpBtn').disabled = !state.play.next;
+    setMediaAction('previoustrack', state.play.prev ? playPrev : null);
+    setMediaAction('nexttrack', state.play.next ? playNext : null);
 }
 function startSource(i) {
     const src = state.play.sources[i];
@@ -1761,7 +2132,7 @@ function startSource(i) {
     state.play.kind = src.type;
     if (src.type === 'iframe') {
         playerEl.classList.add('is-embed');
-        playerEl.classList.remove('hide-ui');
+        playerEl.classList.remove('hide-ui', 'is-casting');
         video.hidden = true;
         frame.hidden = false;
         frame.src = toEmbedUrl(src.url);
@@ -1773,6 +2144,7 @@ function startSource(i) {
         setupVideo(src.url, ep, ltok);
     }
     buildSrcMenu();
+    updateCastButton();
     resetCtrlTimer();
 }
 
@@ -1780,18 +2152,21 @@ function setupVideo(url, ep, ltok) {
     const { show, seasonNumber: sNum } = state.play;
     const live = () => ltok === state.play.loadTok;
     const existing = getProgress(show.id, sNum, ep.number);
-    const startTime = isInProgress(existing) ? existing.t : 0;
+    // A "?t=" link wins over the saved resume point; either way it is used once.
+    const startTime = state.play.startAt != null ? state.play.startAt : (isInProgress(existing) ? existing.t : 0);
+    state.play.startAt = null;
     const meta = { title: ep.title, thumb: ep.thumbnail };
     const introS = num(ep.introStart), introE = num(ep.introEnd);
     const recapS = num(ep.recapStart), recapE = num(ep.recapEnd);
+    const creditsS = num(ep.creditsStart);
 
     attachSubtitles(ep, ltok);
     applyStoredVolume();
     video.playbackRate = state.playbackSpeed;
     updateSpeedLabel();
 
-    video.ontimeupdate = () => {
-        const ct = video.currentTime, dur = video.duration;
+    // Runs on every time update, whether the local video or a Chromecast is playing.
+    state.play.tick = (ct, dur) => {
         if (ct > 0 && isFinite(dur) && Date.now() - state.lastProgSave > 3000) {
             state.lastProgSave = Date.now();
             setProgress(show.id, sNum, ep.number, ct, dur, meta);
@@ -1799,32 +2174,47 @@ function setupVideo(url, ep, ltok) {
         }
         updateScrub(ct, dur);
         updateTime(ct, dur);
+        updatePositionState(ct, dur);
         const sb = $('skipBtn');
         if (recapS != null && recapE != null && ct >= recapS && ct < recapE) {
             sb.textContent = 'Skip Recap'; state.currentSkipTarget = recapE; sb.classList.add('is-shown');
         } else if (introS != null && introE != null && ct >= introS && ct < introE) {
             sb.textContent = 'Skip Intro'; state.currentSkipTarget = introE; sb.classList.add('is-shown');
         } else { sb.classList.remove('is-shown'); state.currentSkipTarget = null; }
+        // Up Next shows for the last 15 seconds, or from "creditsStart" when the episode has one;
+        // with credits marked, autoplay moves on 10 seconds into them rather than at the very end.
         const nx = state.play.next;
-        const remain = dur - ct;
-        if (nx && isFinite(dur) && dur > 60 && remain <= 15 && remain > 0 && !state.play.upNextDismissed) showUpNext(nx, remain, false);
-        else if (remain > 15) hideUpNext();
+        if (!nx || !isFinite(dur) || dur <= 60) return;
+        const credits = creditsS != null && creditsS > 0 && creditsS < dur - 5 ? creditsS : null;
+        const showAt = credits != null ? credits : dur - 15;
+        const autoAt = credits != null ? Math.min(credits + 10, dur) : dur;
+        if (ct >= showAt && ct < dur && !state.play.upNextDismissed) {
+            showUpNext(nx, autoAt - ct, false, autoAt - showAt);
+            if (credits != null && ct >= autoAt && willAutoplay() && !state.play.creditsJumped) { state.play.creditsJumped = true; state.play.onEnded(); }
+        } else if (ct < showAt) hideUpNext();
     };
-    video.onended = () => {
+    state.play.onEnded = () => {
         if (!live()) return;
-        if (isFinite(video.duration) && video.duration > 0) setProgress(show.id, sNum, ep.number, video.duration, video.duration, meta);
+        const dur = mediaDuration();
+        if (isFinite(dur) && dur > 0) setProgress(show.id, sNum, ep.number, dur, dur, meta);
         queueUpNextMark();
         const tok = state.play.token;
         state.play.nextP.then(nx => {
             if (tok !== state.play.token) return;
+            if (sleepAtEpisodeEnd()) return;
             if (!nx) { requestClosePlayer(); return; }
-            if (autoplayOn() && !state.play.upNextDismissed) playNext();
+            if (willAutoplay() && !state.play.upNextDismissed) playNext();
             else { showUpNext(nx, 0, true); playerEl.classList.remove('hide-ui'); }
         });
     };
-    video.onplay = () => { updatePlayIcon(true); $('pLoader').classList.remove('is-shown'); resetCtrlTimer(); };
-    video.onpause = () => { updatePlayIcon(false); playerEl.classList.remove('hide-ui'); saveCurrentPosition(); };
-    video.onwaiting = () => $('pLoader').classList.add('is-shown');
+    video.ontimeupdate = () => { if (!castActive() && state.play.tick) state.play.tick(video.currentTime, video.duration); };
+    video.onended = () => { if (!castActive() && state.play.onEnded) state.play.onEnded(); };
+    video.onplay = () => { updatePlayIcon(true); $('pLoader').classList.remove('is-shown'); resetCtrlTimer(); setPlaybackState('playing'); };
+    video.onpause = () => {
+        if (castActive()) return;   // pausing the local copy while the TV plays isn't a user pause
+        updatePlayIcon(false); playerEl.classList.remove('hide-ui'); saveCurrentPosition(); setPlaybackState('paused');
+    };
+    video.onwaiting = () => { if (!castActive()) $('pLoader').classList.add('is-shown'); };
     video.onplaying = () => $('pLoader').classList.remove('is-shown');
     video.oncanplay = () => $('pLoader').classList.remove('is-shown');
     video.onprogress = updateBuffered;
@@ -1838,17 +2228,18 @@ function setupVideo(url, ep, ltok) {
             if (!live() || resumed || !isFinite(video.duration) || !video.duration) return;
             resumed = true;
             if (startTime > 0 && startTime < video.duration - 10) video.currentTime = startTime;
-            addScrubMarkers(video.duration, introS, introE, recapS, recapE);
+            addScrubMarkers(video.duration, introS, introE, recapS, recapE, creditsS);
         };
         applyResume();
         if (!resumed) {
             video.addEventListener('loadedmetadata', applyResume, { once: true });
             video.addEventListener('durationchange', applyResume, { once: true });
         }
+        if (state.hls && state.hls.levels && state.hls.levels.length > 1) $('qualWrap').hidden = false;
+        if (castConnected()) { castLoad(startTime); return; }
         const p = video.play();
         if (p && p.catch) p.catch(() => { if (live()) { updatePlayIcon(false); playerEl.classList.remove('hide-ui'); $('pLoader').classList.remove('is-shown'); } });
         video.playbackRate = state.playbackSpeed;
-        if (state.hls && state.hls.levels && state.hls.levels.length > 1) $('qualWrap').hidden = false;
     };
     if (/\.m3u8(\?|#|$)/i.test(url) && window.Hls && Hls.isSupported()) {
         const hls = new Hls({ maxBufferLength: 30 });
@@ -1870,6 +2261,242 @@ function setupVideo(url, ep, ltok) {
         video.src = url;
     }
 }
+
+/* ---------- Lock screen and headphone controls (Media Session) ---------- */
+
+const hasMediaSession = 'mediaSession' in navigator;
+function setMediaAction(action, fn) { if (hasMediaSession) { try { navigator.mediaSession.setActionHandler(action, fn); } catch {} } }
+function setPlaybackState(s) { if (hasMediaSession) { try { navigator.mediaSession.playbackState = s; } catch {} } }
+function updateMediaSession() {
+    if (!hasMediaSession || !window.MediaMetadata) return;
+    const { show, seasonNumber } = state.play;
+    const ep = curEp();
+    if (!show || !ep) { navigator.mediaSession.metadata = null; return; }
+    const art = (!stillHidden(show.id, seasonNumber, ep.number) && ep.thumbnail) || show.banner;
+    const artwork = [];
+    if (art) artwork.push({ src: IMG.card(art), sizes: '780x439' });
+    if (show.poster) artwork.push({ src: IMG.poster(show.poster), sizes: '500x750' });
+    try {
+        navigator.mediaSession.metadata = new MediaMetadata({
+            title: isMovie(show) ? show.title : (ep.title || 'Episode ' + ep.number),
+            artist: isMovie(show) ? BRAND : `${show.title} · ${epCode(seasonNumber, ep.number)}`,
+            album: isMovie(show) ? '' : seasonLabel(seasonNumber),
+            artwork,
+        });
+    } catch {}
+}
+let lastPosState = 0;
+function updatePositionState(ct, dur) {
+    if (!hasMediaSession || !navigator.mediaSession.setPositionState || !isFinite(dur) || dur <= 0 || Date.now() - lastPosState < 1000) return;
+    lastPosState = Date.now();
+    try { navigator.mediaSession.setPositionState({ duration: dur, position: clamp(ct, 0, dur), playbackRate: castActive() ? 1 : (video.playbackRate || 1) }); } catch {}
+}
+setMediaAction('play', () => { if (playerOpen()) playMedia(); });
+setMediaAction('pause', () => { if (playerOpen()) pauseMedia(); });
+setMediaAction('seekbackward', (d) => { if (playerOpen()) seekBy(-((d && d.seekOffset) || 10)); });
+setMediaAction('seekforward', (d) => { if (playerOpen()) seekBy((d && d.seekOffset) || 10); });
+setMediaAction('seekto', (d) => { if (playerOpen() && d && d.seekTime != null) seekMedia(d.seekTime); });
+setMediaAction('stop', () => { if (playerOpen()) requestClosePlayer(); });
+
+/* ---------- Sleep timer ---------- */
+
+const SLEEP_MINUTES = [15, 30, 45, 60, 90];
+const sleep = { mode: null, at: 0, timer: null };   // mode: 'time' | 'episode'
+const willAutoplay = () => autoplayOn() && sleep.mode !== 'episode';
+function setSleep(mode, minutes) {
+    clearTimeout(sleep.timer);
+    Object.assign(sleep, { mode, at: mode === 'time' ? Date.now() + minutes * 60000 : 0, timer: null });
+    if (mode === 'time') sleep.timer = setTimeout(sleepNow, minutes * 60000);
+    $('sleepBtn').classList.toggle('is-on', !!mode);
+    const what = isMovie(state.play.show) ? 'movie' : 'episode';
+    toast(!mode ? 'Sleep timer off' : (mode === 'episode' ? `Playback will stop after this ${what}` : `Playback will stop in ${plural(minutes, 'minute')}`), { icon: ICON.moon });
+}
+function cancelSleep() {
+    clearTimeout(sleep.timer);
+    Object.assign(sleep, { mode: null, at: 0, timer: null });
+    $('sleepBtn').classList.remove('is-on');
+}
+function sleepAtEpisodeEnd() {
+    if (sleep.mode !== 'episode') return false;
+    sleepNow();
+    return true;
+}
+function sleepNow() {
+    cancelSleep();
+    if (!playerOpen()) return;
+    fadeOutAndPause(() => {
+        if (!playerOpen()) return;
+        const d = showPlayerMessage({
+            icon: ICON.moon, title: 'Sleep timer', text: 'Playback paused. Sleep well!',
+            actions: `<button class="btn btn-primary" type="button" data-keep-watching>${ICON.play}<span>Keep watching</span></button>`,
+        });
+        d.querySelector('[data-keep-watching]').addEventListener('click', () => {
+            d.remove();
+            playerEl.classList.remove('has-msg');
+            const dur = mediaDuration();
+            if (isFinite(dur) && mediaTime() >= dur - 1 && state.play.next) playNext(); else playMedia();
+        });
+    });
+}
+// Lower the volume over three seconds before pausing, so it doesn't cut off abruptly.
+function fadeOutAndPause(done) {
+    if (castActive() || video.paused) { pauseMedia(); done(); return; }
+    const start = video.volume, steps = 30;
+    let i = 0;
+    const iv = setInterval(() => {
+        i++;
+        video.volume = start * (1 - i / steps);
+        if (i >= steps || video.paused) { clearInterval(iv); video.pause(); video.volume = start; done(); }
+    }, 100);
+}
+function buildSleepMenu() {
+    const p = $('sleepPopup');
+    const what = isMovie(state.play.show) ? 'movie' : 'episode';
+    const left = sleep.mode === 'time' ? Math.max(1, Math.ceil((sleep.at - Date.now()) / 60000)) : 0;
+    let h = '<div class="popup-label">Sleep timer</div>';
+    if (sleep.mode) h += `<div class="popup-note">${sleep.mode === 'episode' ? `Stops at the end of this ${what}.` : `Stops in ${plural(left, 'minute')}.`}</div>`;
+    h += `<button class="popup-item${!sleep.mode ? ' is-active' : ''}" type="button" data-sleep="off">Off</button>`;
+    SLEEP_MINUTES.forEach(m => { h += `<button class="popup-item" type="button" data-sleep="${m}">${m < 60 ? m + ' minutes' : (m === 60 ? '1 hour' : m / 60 + ' hours')}</button>`; });
+    h += `<button class="popup-item${sleep.mode === 'episode' ? ' is-active' : ''}" type="button" data-sleep="episode">End of this ${what}</button>`;
+    p.innerHTML = h;
+    $$('[data-sleep]', p).forEach(b => b.addEventListener('click', () => {
+        const v = b.dataset.sleep;
+        if (v === 'off') { cancelSleep(); toast('Sleep timer off', { icon: ICON.moon }); }
+        else setSleep(v === 'episode' ? 'episode' : 'time', +v);
+        closeAllPopups();
+    }));
+}
+
+/* ---------- Chromecast ---------- */
+
+// Google's Cast SDK works in Chrome and Edge (desktop and Android) on https or localhost. The cast
+// button only appears once a Cast device is found. The TV streams straight from the video host and
+// fetches the subtitle files itself, so it gets the original files rather than the tidied copies.
+const castState = { ctx: null, player: null, ctl: null, loaded: false };
+const castConnected = () => !!(castState.ctx && castState.ctx.getCurrentSession());
+const castActive = () => castState.loaded && castConnected();
+function initCast() {
+    if (!window.chrome || /iPhone|iPad|iPod/i.test(navigator.userAgent) || tvActive) return;
+    window.__onGCastApiAvailable = (ok) => {
+        if (!ok || !window.cast || !window.cast.framework) return;
+        const fw = window.cast.framework;
+        const ctx = castState.ctx = fw.CastContext.getInstance();
+        ctx.setOptions({ receiverApplicationId: chrome.cast.media.DEFAULT_MEDIA_RECEIVER_APP_ID, autoJoinPolicy: chrome.cast.AutoJoinPolicy.ORIGIN_SCOPED });
+        castState.player = new fw.RemotePlayer();
+        const ctl = castState.ctl = new fw.RemotePlayerController(castState.player);
+        const E = fw.RemotePlayerEventType;
+        ctx.addEventListener(fw.CastContextEventType.CAST_STATE_CHANGED, updateCastButton);
+        ctl.addEventListener(E.IS_CONNECTED_CHANGED, onCastConnection);
+        ctl.addEventListener(E.CURRENT_TIME_CHANGED, () => {
+            if (castActive() && state.play.tick) state.play.tick(castState.player.currentTime, castState.player.duration);
+        });
+        ctl.addEventListener(E.IS_PAUSED_CHANGED, () => {
+            if (!castActive()) return;
+            updatePlayIcon(!castState.player.isPaused);
+            setPlaybackState(castState.player.isPaused ? 'paused' : 'playing');
+            if (castState.player.isPaused) { playerEl.classList.remove('hide-ui'); saveCurrentPosition(); }
+        });
+        ctl.addEventListener(E.PLAYER_STATE_CHANGED, () => {
+            if (!castActive()) return;
+            const ps = castState.player.playerState;
+            $('pLoader').classList.toggle('is-shown', ps === 'BUFFERING');
+            const ms = ctx.getCurrentSession().getMediaSession();
+            if (ps === 'IDLE' && ms && ms.idleReason === 'FINISHED' && state.play.onEnded) state.play.onEnded();
+        });
+        updateCastButton();
+    };
+    const s = document.createElement('script');
+    s.src = 'https://www.gstatic.com/cv/js/sender/v1/cast_sender.js?loadCastFramework=1';
+    s.async = true;
+    document.head.appendChild(s);
+}
+function updateCastButton() {
+    const st = castState.ctx ? castState.ctx.getCastState() : 'NO_DEVICES_AVAILABLE';
+    const btn = $('castBtn');
+    btn.hidden = st === 'NO_DEVICES_AVAILABLE' || state.play.kind === 'iframe';
+    btn.classList.toggle('is-on', st === 'CONNECTED');
+    btn.setAttribute('aria-label', st === 'CONNECTED' ? 'Casting. Choose to stop or switch device' : 'Cast to a TV');
+}
+function onCastConnection() {
+    if (castState.player.isConnected) {
+        if (playerOpen() && state.play.kind === 'direct') castLoad(video.currentTime);
+    } else if (castState.loaded || playerEl.classList.contains('is-casting')) {
+        // Casting stopped: carry on here from where the TV got to.
+        const saved = castState.player.savedPlayerState;
+        castState.loaded = false;
+        playerEl.classList.remove('is-casting');
+        if (playerOpen() && state.play.kind === 'direct') {
+            if (saved && saved.currentTime) video.currentTime = saved.currentTime;
+            if (state.hls) state.hls.startLoad(video.currentTime);
+            video.play().catch(() => {});
+        }
+    }
+    updateCastButton();
+}
+function castSubTrackId() {
+    const ep = curEp();
+    const t = state.play.subIdx >= 0 ? video.textTracks[state.play.subIdx] : null;
+    if (!ep || !t) return null;
+    const i = (ep.subtitles || []).filter(x => x && x.url && x.url.trim()).findIndex((x, j) => (x.label || x.lang || 'Track ' + (j + 1)) === t.label);
+    return i >= 0 ? i + 1 : null;
+}
+function castLoad(startTime) {
+    const session = castState.ctx && castState.ctx.getCurrentSession();
+    const src = state.play.sources[state.play.srcIdx];
+    const { show, seasonNumber } = state.play;
+    const ep = curEp();
+    if (!session || !src || src.type !== 'direct' || !ep) return;
+    const media = chrome.cast.media;
+    const hls = /\.m3u8(\?|#|$)/i.test(src.url);
+    const info = new media.MediaInfo(src.url, hls ? 'application/x-mpegurl' : 'video/mp4');
+    info.streamType = media.StreamType.BUFFERED;
+    if (hls) { info.hlsSegmentFormat = media.HlsSegmentFormat.TS; info.hlsVideoSegmentFormat = media.HlsVideoSegmentFormat.MPEG2_TS; }
+    const md = isMovie(show) ? new media.MovieMediaMetadata() : new media.TvShowMediaMetadata();
+    md.title = isMovie(show) ? show.title : (ep.title || 'Episode ' + ep.number);
+    if (isMovie(show)) md.subtitle = BRAND;
+    else { md.seriesTitle = show.title; md.season = seasonNumber; md.episode = ep.number; }
+    const art = (!stillHidden(show.id, seasonNumber, ep.number) && ep.thumbnail) || show.banner;
+    if (art) md.images = [new chrome.cast.Image(IMG.card(art))];
+    info.metadata = md;
+    info.tracks = (ep.subtitles || []).filter(t => t && t.url && t.url.trim()).map((t, i) => {
+        const tr = new media.Track(i + 1, media.TrackType.TEXT);
+        tr.trackContentId = new URL(t.url.trim(), location.href).href;
+        tr.trackContentType = 'text/vtt';
+        tr.subtype = media.TextTrackType.SUBTITLES;
+        tr.name = t.label || t.lang || 'Track ' + (i + 1);
+        tr.language = t.lang || 'en';
+        return tr;
+    });
+    const req = new media.LoadRequest(info);
+    req.currentTime = startTime || 0;
+    req.autoplay = true;
+    const sub = castSubTrackId();
+    if (sub) req.activeTrackIds = [sub];
+    castState.loaded = true;   // set first, so pausing the local copy isn't treated as a user pause
+    video.pause();
+    if (state.hls) state.hls.stopLoad();
+    playerEl.classList.add('is-casting');
+    $('castLabel').textContent = `Playing on ${session.getCastDevice().friendlyName || 'your TV'}`;
+    updatePlayIcon(true);
+    session.loadMedia(req).catch(err => {
+        console.warn('Cast load failed', err);
+        castState.loaded = false;
+        playerEl.classList.remove('is-casting');
+        toast("Couldn't play this on the TV", { icon: ICON.alert });
+        if (state.hls) state.hls.startLoad(video.currentTime);
+        video.play().catch(() => {});
+    });
+}
+function castSyncSubs() {
+    const ms = castActive() && castState.ctx.getCurrentSession().getMediaSession();
+    if (!ms) return;
+    const id = castSubTrackId();
+    try { ms.editTracksInfo(new chrome.cast.media.EditTracksInfoRequest(id ? [id] : []), () => {}, () => {}); } catch {}
+}
+$('castBtn').addEventListener('click', () => {
+    if (castState.ctx) castState.ctx.requestSession().catch(() => {});
+});
+
 function queueUpNextMark() {
     const show = state.play.show;
     const p = state.play.nextP;
@@ -1896,7 +2523,8 @@ function fatalPlaybackError() {
     const d = showPlayerMessage({
         title: 'Video unavailable',
         text: "This episode couldn't be loaded. Try again, or report it on Discord if it keeps happening.",
-        actions: `<button class="btn btn-primary" type="button" data-retry>${ICON.refresh}<span>Try again</span></button>${discordBtn()}`,
+        actions: `<button class="btn btn-primary" type="button" data-retry>${ICON.refresh}<span>Try again</span></button>` +
+            (allSources(curEp()).length > state.play.sources.length ? '<button class="btn btn-glass" type="button" data-alt-enable>Try alternate sources</button>' : '') + discordBtn(),
     });
     d.querySelector('[data-retry]').addEventListener('click', () => startSource(Math.max(0, state.play.srcIdx)));
 }
@@ -1920,25 +2548,28 @@ function buildSrcMenu() {
         if (s.type === 'tab') { window.open(s.url, '_blank', 'noopener'); return; }
         if (i !== state.play.srcIdx || playerEl.classList.contains('has-msg')) { saveCurrentPosition(); startSource(i); }
     }));
+    const hidden = allSources(curEp()).length - state.play.sources.length;
+    if (hidden > 0) p.insertAdjacentHTML('beforeend', `<div class="popup-divider"></div><div class="popup-note">${plural(hidden, 'more source')} from third-party players, which may show pop-up ads.</div><button class="popup-item" type="button" data-alt-enable>Turn on alternate sources</button>`);
 }
 
 /* ---------- Up next ---------- */
 
 const RING_LEN = 2 * Math.PI * 16;
-function showUpNext(nx, remain, ended) {
+function showUpNext(nx, remain, ended, span = 15) {
     const el = $('upNext');
     const ep = nx.data.episodes[nx.idx];
     const key = nx.seasonNumber + ':' + nx.idx;
     if (el.dataset.key !== key) {
         el.dataset.key = key;
-        $('upNextThumb').src = ep.thumbnail ? IMG.thumb(ep.thumbnail) : 'data:,';
+        const art = (!stillHidden(state.play.show.id, nx.seasonNumber, ep.number) && ep.thumbnail) || state.play.show.banner;
+        $('upNextThumb').src = art ? IMG.thumb(art) : 'data:,';
         $('upNextName').textContent = `${epCode(nx.seasonNumber, ep.number)} · ${ep.title || 'Episode ' + ep.number}`;
         el.setAttribute('aria-label', `Play next episode: ${ep.title || 'Episode ' + ep.number}`);
     }
-    const auto = autoplayOn() && !ended;
+    const auto = willAutoplay() && !ended;
     $('upNextLabel').textContent = auto ? `Next episode in ${Math.max(1, Math.ceil(remain))}s` : 'Next episode';
     $('upNextRing').style.strokeDasharray = RING_LEN.toFixed(2);
-    $('upNextRing').style.strokeDashoffset = auto ? (RING_LEN * clamp(remain / 15, 0, 1)).toFixed(2) : '0';
+    $('upNextRing').style.strokeDashoffset = auto ? (RING_LEN * clamp(remain / span, 0, 1)).toFixed(2) : '0';
     el.classList.toggle('is-auto', auto);
     el.classList.add('is-shown');
 }
@@ -1956,29 +2587,103 @@ function applySubStyle() {
     playerEl.style.setProperty('--sub-scale', size.scale);
     playerEl.classList.remove('sub-bg-solid', 'sub-bg-soft', 'sub-bg-none');
     playerEl.classList.add('sub-bg-' + (SUB_BGS.some(b => b.id === st.bg) ? st.bg : 'solid'));
+    playerEl.style.setProperty('--sub-color', (SUB_COLORS.find(c => c.id === st.color) || SUB_COLORS[0]).color);
+    playerEl.classList.toggle('sub-pos-top', st.pos === 'top');
+}
+// Subtitle timing: every cue keeps its original times (_s/_e) and is shown subDelay seconds later.
+function shiftTrackCues(track) {
+    const cues = track && track.cues;
+    if (!cues) return;
+    const d = state.play.subDelay || 0;
+    for (let i = 0; i < cues.length; i++) {
+        const c = cues[i];
+        if (c._s == null) { c._s = c.startTime; c._e = c.endTime; }
+        c.startTime = Math.max(0, c._s + d);
+        c.endTime = Math.max(0, c._e + d);
+    }
+}
+function setSubDelay(d) {
+    state.play.subDelay = Math.round(clamp(d, -30, 30) * 100) / 100;
+    for (let i = 0; i < video.textTracks.length; i++) shiftTrackCues(video.textTracks[i]);
+    renderActiveCues();
+}
+const fmtSubDelay = (d) => (!d ? 'In sync' : `${+Math.abs(d).toFixed(2)}s ${d > 0 ? 'later' : 'earlier'}`);
+// Subtitle files are read here rather than handed to the browser as-is: hosts serve .vtt as
+// application/octet-stream (Firefox refuses that MIME type), some use SRT-style commas, and
+// broadcast files start their timecode at 01:00:00. Every track is rebuilt as clean WebVTT.
+function parseSubTime(s) {
+    const m = String(s).trim().match(/^(?:(\d+):)?(\d{1,2}):(\d{1,2})(?:[.,](\d{1,3}))?$/);
+    return m ? (+m[1] || 0) * 3600 + +m[2] * 60 + +m[3] + (m[4] ? +('0.' + m[4]) : 0) : NaN;
+}
+// Reads WebVTT or SRT into [{ s, e, t }] (seconds + raw cue text), sorted by start time.
+function parseSubtitles(text) {
+    const cues = [];
+    String(text || '').replace(/^\uFEFF/, '').replace(/\r\n?/g, '\n').split(/\n[ \t]*\n/).forEach(block => {
+        const lines = block.split('\n');
+        const ti = lines.findIndex(l => l.includes('-->'));
+        if (ti < 0 || /^(NOTE|STYLE|REGION)\b/.test(lines[0])) return;
+        const [a, b] = lines[ti].split('-->');
+        const s = parseSubTime(a), e = parseSubTime(String(b).trim().split(/\s+/)[0]);
+        const t = lines.slice(ti + 1).join('\n').trim();
+        if (isFinite(s) && isFinite(e) && e > s && t) cues.push({ s, e, t });
+    });
+    return cues.sort((x, y) => x.s - y.s);
+}
+// Pulls broadcast timecodes (first cue at 1h+) back to zero, then applies the track's own
+// "offset" (seconds, may be negative) from the season JSON.
+function shiftSubtitles(cues, offset) {
+    const first = cues.length ? cues[0].s : 0;
+    const shift = (first >= 3600 ? -Math.floor(first / 3600) * 3600 : 0) + (num(offset) || 0);
+    if (!shift) return cues;
+    return cues.map(c => ({ s: Math.max(0, c.s + shift), e: c.e + shift, t: c.t })).filter(c => c.e > c.s);
+}
+const toVtt = (cues) => 'WEBVTT\n\n' + cues.map(c => `${fmtVTT(c.s)} --> ${fmtVTT(c.e)}\n${c.t.replace(/-->/g, '->')}`).join('\n\n') + '\n';
+function addSubTrack(cues, label, lang) {
+    const t = document.createElement('track');
+    t.kind = 'subtitles';
+    t.label = label;
+    t.srclang = lang || '';
+    const burl = URL.createObjectURL(new Blob([toVtt(cues)], { type: 'text/vtt' }));
+    video._objectUrls.push(burl);
+    t.src = burl;
+    // Cues arrive once the track loads; apply any timing offset the viewer has set.
+    t.addEventListener('load', () => { if (state.play.subDelay) shiftTrackCues(t.track); });
+    video.appendChild(t);
+    try { t.track.mode = 'hidden'; } catch {}
+    return t;
 }
 function attachSubtitles(ep, ltok) {
     const subs = (Array.isArray(ep.subtitles) ? ep.subtitles : []).filter(t => t && t.url && t.url.trim());
     subs.forEach((trk, i) => {
-        fetch(trk.url.trim()).then(r => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.blob(); }).then(blob => {
+        fetchText(trk.url.trim()).then(text => {
             if (ltok !== state.play.loadTok || !playerOpen()) return;
-            const t = document.createElement('track');
-            t.kind = 'subtitles';
-            t.label = trk.label || trk.lang || ('Track ' + (i + 1));
-            t.srclang = trk.lang || '';
-            const burl = URL.createObjectURL(blob);
-            video._objectUrls.push(burl);
-            t.src = burl;
-            video.appendChild(t);
-            try { t.track.mode = 'hidden'; } catch {}
+            const cues = shiftSubtitles(parseSubtitles(text), trk.offset);
+            if (!cues.length) { console.warn('Subtitle file has no cues', trk.url); return; }
+            const t = addSubTrack(cues, trk.label || trk.lang || ('Track ' + (i + 1)), trk.lang);
             const wantDefault = trk.default || trk.lang === 'en';
             if (wantDefault && !state.play.defaultSubPicked && subsEnabled()) {
                 state.play.defaultSubPicked = true;
                 setTimeout(() => { if (ltok === state.play.loadTok) setActiveSubTrack(trackIndexOf(t.track)); }, 150);
             }
-        }).catch(() => {});
+        }).catch(err => console.warn('Subtitles failed to load (the host may block cross-origin requests)', trk.url, err));
     });
 }
+// A .vtt/.srt picked from the viewer's device; it lasts until the episode changes.
+$('subFileInput').addEventListener('change', (e) => {
+    const input = e.target;
+    const file = input.files && input.files[0];
+    input.value = '';
+    if (!file || !playerOpen()) return;
+    const ltok = state.play.loadTok;
+    file.text().then(text => {
+        if (ltok !== state.play.loadTok) return;
+        const cues = shiftSubtitles(parseSubtitles(text));
+        if (!cues.length) { toast("That file doesn't contain any subtitles", { icon: ICON.alert }); return; }
+        const t = addSubTrack(cues, file.name.replace(/\.[^.]+$/, '').slice(0, 40) || 'Subtitles', '');
+        setTimeout(() => { if (ltok === state.play.loadTok) setActiveSubTrack(trackIndexOf(t.track)); }, 150);
+        toast('Subtitles loaded');
+    }).catch(() => toast("Couldn't read that file", { icon: ICON.alert }));
+});
 function trackIndexOf(track) {
     for (let i = 0; i < video.textTracks.length; i++) if (video.textTracks[i] === track) return i;
     return -1;
@@ -1998,9 +2703,13 @@ function setActiveSubTrack(idx) {
     }
     updateCCBtn();
     syncSwitches();
+    castSyncSubs();
 }
+const CUE_ENTITIES = { amp: '&', lt: '<', gt: '>', quot: '"', apos: "'", nbsp: '\u00A0', lrm: '\u200E', rlm: '\u200F' };
 function cueToHtml(text) {
-    let s = String(text || '').replace(/<\/?(c|v|lang|ruby|rt)[^>]*>/gi, '').replace(/<\d{2}:[^>]*>/g, '');
+    // Keep only <i>/<b>/<u>: drop VTT voice/class/timestamp tags, SRT <font> tags and {\an8}-style overrides.
+    let s = String(text || '').replace(/\{\\[^}]*\}/g, '').replace(/<([ibu])\.[^>]*>/gi, '<$1>').replace(/<(?!\/?[ibu]>)[^>]*>/gi, '')
+        .replace(/&(amp|lt|gt|quot|apos|nbsp|lrm|rlm);/g, (_, n) => CUE_ENTITIES[n]);
     s = esc(s).replace(/&lt;(\/?)(i|b|u)&gt;/gi, '<$1$2>');
     return s.split('\n').map(l => l.trim()).filter(Boolean).map(l => `<span class="sub-line">${l}</span>`).join('');
 }
@@ -2046,6 +2755,7 @@ function buildSubMenu() {
         h += `<button class="popup-item${state.play.subIdx === i ? ' is-active' : ''}" type="button" data-sub="${i}">${esc(t.label)}</button>`;
     }
     if (!tracks.length) h += '<div class="popup-note">No subtitles for this episode.</div>';
+    if (state.play.kind === 'direct') h += '<button class="popup-item" type="button" data-sub-file><span>Load from file…</span><span class="tag">VTT / SRT</span></button>';
     if (hasSource) {
         h += '<div class="popup-divider"></div><div class="popup-label">AI translate</div><div class="popup-grid">';
         TRANSLATE_LANGS.forEach(lang => { h += `<button class="popup-item" type="button" data-ai="${lang.code}" data-ai-label="${esc(lang.label)}">${esc(lang.label.replace(' (AI)', ''))}</button>`; });
@@ -2056,21 +2766,47 @@ function buildSubMenu() {
         SUB_SIZES.map(s => `<button type="button" class="${st.size === s.id ? 'is-active' : ''}" data-sub-size="${s.id}">${s.label}</button>`).join('') + '</div>';
     h += '<div class="popup-label">Background</div><div class="popup-seg">' +
         SUB_BGS.map(b => `<button type="button" class="${(st.bg || 'solid') === b.id ? 'is-active' : ''}" data-sub-bg="${b.id}">${b.label}</button>`).join('') + '</div>';
+    h += '<div class="popup-label">Colour</div><div class="popup-seg">' +
+        SUB_COLORS.map(c => `<button type="button" class="sub-color${(st.color || 'white') === c.id ? ' is-active' : ''}" data-sub-color="${c.id}" style="--c:${c.color}" aria-label="${c.label}" title="${c.label}"><span></span></button>`).join('') + '</div>';
+    h += '<div class="popup-label">Position</div><div class="popup-seg">' +
+        SUB_POSITIONS.map(o => `<button type="button" class="${(st.pos || 'bottom') === o.id ? 'is-active' : ''}" data-sub-pos="${o.id}">${o.label}</button>`).join('') + '</div>';
+    if (tracks.length) {
+        const d = state.play.subDelay || 0;
+        h += `<div class="popup-label">Timing</div><div class="popup-seg sub-sync">
+            <button type="button" data-sub-delay="${-SUB_DELAY_STEP}" aria-label="Show subtitles earlier" title="Earlier">&minus;</button>
+            <span class="sub-sync-val" id="subSyncVal" aria-live="polite">${fmtSubDelay(d)}</span>
+            <button type="button" data-sub-delay="${SUB_DELAY_STEP}" aria-label="Show subtitles later" title="Later">+</button>
+            <button type="button" data-sub-delay="reset" id="subSyncReset"${d ? '' : ' disabled'}>Reset</button>
+        </div>`;
+    }
     const p = $('subPopup');
     p.innerHTML = h;
+    // Redraw in place, keeping the menu scrolled to the control that was used.
+    const rebuild = () => { const top = p.scrollTop; buildSubMenu(); p.scrollTop = top; };
+    const saveStyle = (k, v) => { const st2 = getSubStyle(); st2[k] = v; writeJSON('lsSubStyle', st2); applySubStyle(); rebuild(); };
+    $$('[data-sub-color]', p).forEach(b => b.addEventListener('click', () => saveStyle('color', b.dataset.subColor)));
+    $$('[data-sub-pos]', p).forEach(b => b.addEventListener('click', () => saveStyle('pos', b.dataset.subPos)));
+    $$('[data-sub-delay]', p).forEach(b => b.addEventListener('click', () => {
+        const v = b.dataset.subDelay;
+        setSubDelay(v === 'reset' ? 0 : (state.play.subDelay || 0) + parseFloat(v));
+        $('subSyncVal').textContent = fmtSubDelay(state.play.subDelay);
+        $('subSyncReset').disabled = !state.play.subDelay;
+    }));
     $$('[data-sub]', p).forEach(b => b.addEventListener('click', () => {
         if (b.dataset.sub === 'off') turnSubsOff();
         else setActiveSubTrack(parseInt(b.dataset.sub, 10));
         closeAllPopups();
     }));
+    const fileBtn = p.querySelector('[data-sub-file]');
+    if (fileBtn) fileBtn.addEventListener('click', () => { closeAllPopups(); $('subFileInput').click(); });
     $$('[data-ai]', p).forEach(b => b.addEventListener('click', () => setAISub(b.dataset.ai, b.dataset.aiLabel)));
     $$('[data-sub-size]', p).forEach(b => b.addEventListener('click', () => {
         const st2 = getSubStyle(); st2.size = b.dataset.subSize; writeJSON('lsSubStyle', st2);
-        applySubStyle(); buildSubMenu();
+        applySubStyle(); rebuild();
     }));
     $$('[data-sub-bg]', p).forEach(b => b.addEventListener('click', () => {
         const st2 = getSubStyle(); st2.bg = b.dataset.subBg; writeJSON('lsSubStyle', st2);
-        applySubStyle(); buildSubMenu();
+        applySubStyle(); rebuild();
     }));
 }
 async function setAISub(code, label) {
@@ -2089,7 +2825,10 @@ async function setAISub(code, label) {
     if (!src.cues || !src.cues.length) { toast('No subtitles to translate yet', { icon: ICON.alert }); return; }
     toast('Translating subtitles…', { icon: ICON.clock });
     const cues = [];
-    for (let i = 0; i < src.cues.length; i++) cues.push({ s: src.cues[i].startTime, e: src.cues[i].endTime, t: src.cues[i].text });
+    for (let i = 0; i < src.cues.length; i++) {
+        const c = src.cues[i];
+        cues.push({ s: c._s != null ? c._s : c.startTime, e: c._e != null ? c._e : c.endTime, t: c.text });
+    }
     try {
         const SEP = ' ||| ';
         const translated = [];
@@ -2103,16 +2842,7 @@ async function setAISub(code, label) {
             for (let j = 0; j < c.length; j++) translated.push(j < parts.length && parts[j].trim() ? parts[j].trim() : c[j].t);
         }
         if (ltok !== state.play.loadTok) return;
-        let vtt = 'WEBVTT\n\n';
-        for (let i = 0; i < cues.length; i++) vtt += `${fmtVTT(cues[i].s)} --> ${fmtVTT(cues[i].e)}\n${translated[i] || cues[i].t}\n\n`;
-        const burl = URL.createObjectURL(new Blob([vtt], { type: 'text/vtt' }));
-        video._objectUrls.push(burl);
-        const nt = document.createElement('track');
-        nt.kind = 'subtitles';
-        nt.label = full;
-        nt.srclang = code;
-        nt.src = burl;
-        video.appendChild(nt);
+        const nt = addSubTrack(cues.map((c, i) => ({ s: c.s, e: c.e, t: translated[i] || c.t })), full, code);
         await new Promise(r => setTimeout(r, 300));
         setActiveSubTrack(trackIndexOf(nt.track));
         toast('Subtitles translated');
@@ -2135,8 +2865,8 @@ function flashCenter(playing) {
 }
 function togglePlay() {
     if (state.play.kind !== 'direct' || playerEl.classList.contains('has-msg')) return;
-    if (video.paused) { video.play().catch(() => {}); flashCenter(true); }
-    else { video.pause(); flashCenter(false); }
+    if (mediaPaused()) { playMedia(); flashCenter(true); }
+    else { pauseMedia(); flashCenter(false); }
 }
 function updatePlayIcon(playing) {
     const b = $('playBtn');
@@ -2163,6 +2893,7 @@ function syncVolumeUI() {
     $('muteBtn').setAttribute('aria-label', muted ? 'Unmute' : 'Mute');
 }
 function setVolume(v) {
+    if (castActive()) { castState.player.volumeLevel = clamp(v, 0, 1); castState.ctl.setVolumeLevel(); }
     video.volume = clamp(v, 0, 1);
     video.muted = video.volume === 0;
     lsSet('lsVolume', video.volume);
@@ -2189,7 +2920,7 @@ function updateBuffered() {
         $('pBuffered').style.width = (video.buffered.end(video.buffered.length - 1) / video.duration * 100) + '%';
     }
 }
-function addScrubMarkers(dur, iS, iE, rS, rE) {
+function addScrubMarkers(dur, iS, iE, rS, rE, cS) {
     const bar = $('progressTrack');
     $$('.scrub-marker').forEach(m => m.remove());
     const add = (s, e) => {
@@ -2202,13 +2933,12 @@ function addScrubMarkers(dur, iS, iE, rS, rE) {
     };
     add(rS, rE);
     add(iS, iE);
+    add(cS, cS != null ? dur : null);
 }
 function seekBy(delta) {
-    if (state.play.kind !== 'direct' || !isFinite(video.duration)) return;
-    video.currentTime = clamp(video.currentTime + delta, 0, video.duration);
+    if (state.play.kind !== 'direct' || !isFinite(mediaDuration())) return;
+    seekMedia(mediaTime() + delta);
     flashSeek(delta < 0 ? 'left' : 'right');
-    updateScrub(video.currentTime, video.duration);
-    updateTime(video.currentTime, video.duration);
 }
 function flashSeek(side) {
     const el = $(side === 'left' ? 'seekLeft' : 'seekRight');
@@ -2272,6 +3002,10 @@ function requestClosePlayer() {
 }
 function closePlayerNow(skipRefresh) {
     saveCurrentPosition();
+    if (castActive()) { try { castState.ctl.stop(); } catch {} }
+    playerEl.classList.remove('is-casting');
+    cancelSleep();
+    if (hasMediaSession) { navigator.mediaSession.metadata = null; setPlaybackState('none'); }
     if (document.pictureInPictureElement) document.exitPictureInPicture().catch(() => {});
     if (isFullscreen()) {
         try {
@@ -2299,7 +3033,7 @@ function closePlayerNow(skipRefresh) {
 
 /* ---------- Popups (speed, quality, subtitles, download, sources) ---------- */
 
-const POPUPS = ['speedPopup', 'qualPopup', 'subPopup', 'dlPopup', 'srcPopup'];
+const POPUPS = ['speedPopup', 'qualPopup', 'subPopup', 'dlPopup', 'srcPopup', 'sleepPopup', 'morePopup'];
 const anyPopupOpen = () => POPUPS.some(id => $(id).classList.contains('is-open'));
 function togglePopup(id) {
     const p = $(id);
@@ -2312,6 +3046,8 @@ function togglePopup(id) {
     if (id === 'subPopup') buildSubMenu();
     if (id === 'dlPopup') buildDLMenu();
     if (id === 'srcPopup') buildSrcMenu();
+    if (id === 'sleepPopup') buildSleepMenu();
+    if (id === 'morePopup') buildMoreMenu();
     p.classList.add('is-open');
     const btn = document.querySelector(`[data-popup="${id}"]`);
     if (btn) btn.setAttribute('aria-expanded', 'true');
@@ -2322,8 +3058,25 @@ function closeAllPopups() {
     $$('[data-popup]').forEach(b => b.setAttribute('aria-expanded', 'false'));
 }
 $$('[data-popup]').forEach(btn => btn.addEventListener('click', (e) => { e.stopPropagation(); togglePopup(btn.dataset.popup); resetCtrlTimer(); }));
-document.addEventListener('click', (e) => { if (!e.target.closest('[data-popup]') && !e.target.closest('.popup')) closeAllPopups(); });
+// A button that redrew its own menu is no longer in the page by now, so it can't be an outside click.
+document.addEventListener('click', (e) => { if (e.target.isConnected && !e.target.closest('[data-popup]') && !e.target.closest('.popup')) closeAllPopups(); });
 
+// Phones get one "More" menu for the controls that don't fit in the bar.
+function buildMoreMenu() {
+    const src = state.play.sources[state.play.srcIdx];
+    const items = [['speedPopup', 'Playback speed', state.playbackSpeed === 1 ? 'Normal' : state.playbackSpeed + '×']];
+    if (!$('qualWrap').hidden) items.push(['qualPopup', 'Quality', '']);
+    items.push(['sleepPopup', 'Sleep timer', sleep.mode ? (sleep.mode === 'episode' ? 'End of ' + (isMovie(state.play.show) ? 'movie' : 'episode') : 'On') : 'Off']);
+    if (src && src.type === 'direct') items.push(['dlPopup', 'Download', '']);
+    if (!$('pipBtn').hidden) items.push(['pip', 'Picture in picture', '']);
+    const p = $('morePopup');
+    p.innerHTML = '<div class="popup-label">More</div>' + items.map(([id, label, val]) =>
+        `<button class="popup-item" type="button" data-more="${id}"><span>${esc(label)}</span>${val ? `<span class="tag">${esc(val)}</span>` : ''}</button>`).join('');
+    $$('[data-more]', p).forEach(b => b.addEventListener('click', () => {
+        if (b.dataset.more === 'pip') { closeAllPopups(); togglePiP(); return; }
+        togglePopup(b.dataset.more);
+    }));
+}
 function updateSpeedLabel() { $('speedLabel').textContent = state.playbackSpeed === 1 ? '1×' : state.playbackSpeed + '×'; }
 function buildSpeedMenu() {
     $('speedPopup').innerHTML = '<div class="popup-label">Playback speed</div>' + SPEEDS.map(s =>
@@ -2557,7 +3310,19 @@ $('muteBtn').addEventListener('click', toggleMute);
 $('fsBtn').addEventListener('click', toggleFS);
 $('pipBtn').addEventListener('click', togglePiP);
 $('playerBackBtn').addEventListener('click', requestClosePlayer);
-$('skipBtn').addEventListener('click', () => { if (state.currentSkipTarget != null) video.currentTime = state.currentSkipTarget; });
+$('skipBtn').addEventListener('click', () => { if (state.currentSkipTarget != null) seekMedia(state.currentSkipTarget); });
+$('pShareBtn').addEventListener('click', () => {
+    const { show, seasonNumber } = state.play;
+    const ep = curEp();
+    if (!show || !ep) return;
+    const t = state.play.kind === 'direct' ? mediaTime() : null;
+    openShare({
+        title: isMovie(show) ? show.title : (ep.title || 'Episode ' + ep.number),
+        sub: isMovie(show) ? kindLabel(show) : `${show.title} · ${epCode(seasonNumber, ep.number)}`,
+        image: (!stillHidden(show.id, seasonNumber, ep.number) && ep.thumbnail) || show.banner,
+        path: sharePath(show.id, seasonNumber, ep.number), time: t, timeDefault: true,
+    });
+});
 $('upNext').addEventListener('click', (e) => { if (!e.target.closest('#upNextDismiss')) playNext(); });
 $('upNext').addEventListener('keydown', (e) => { if ((e.key === 'Enter' || e.key === ' ') && e.target === $('upNext')) { e.preventDefault(); playNext(); } });
 $('upNextDismiss').addEventListener('click', (e) => { e.stopPropagation(); state.play.upNextDismissed = true; hideUpNext(); });
@@ -2572,20 +3337,15 @@ video.addEventListener('leavepictureinpicture', () => $('pipBtn').classList.remo
     let dragging = false;
     const pctAt = (x) => { const r = wrap.getBoundingClientRect(); return clamp((x - r.left) / r.width, 0, 1); };
     const showTip = (x) => {
-        if (!isFinite(video.duration)) { tip.classList.remove('is-shown'); return; }
+        if (!isFinite(mediaDuration())) { tip.classList.remove('is-shown'); return; }
         const pct = pctAt(x);
-        tip.textContent = fmtClock(pct * video.duration);
+        tip.textContent = fmtClock(pct * mediaDuration());
         const r = wrap.getBoundingClientRect();
         const half = tip.offsetWidth / 2;
         tip.style.left = clamp(pct * r.width, half, r.width - half) + 'px';
         tip.classList.add('is-shown');
     };
-    const seekTo = (x) => {
-        if (!video.duration || !isFinite(video.duration)) return;
-        video.currentTime = pctAt(x) * video.duration;
-        updateScrub(video.currentTime, video.duration);
-        updateTime(video.currentTime, video.duration);
-    };
+    const seekTo = (x) => seekMedia(pctAt(x) * mediaDuration());
     wrap.addEventListener('pointerdown', (e) => {
         if (state.play.kind !== 'direct') return;
         dragging = true;
@@ -2618,7 +3378,7 @@ stage.addEventListener('touchend', (e) => {
     const w = stage.clientWidth;
     if (now - lastTapTime < 300 && Math.abs(x - lastTapX) < 100) {
         e.preventDefault();
-        if (state.play.kind !== 'direct' || !isFinite(video.duration)) return;
+        if (state.play.kind !== 'direct' || !isFinite(mediaDuration())) return;
         seekBy(x < w / 2 ? -10 : 10);
         lastTapTime = 0;
         resetCtrlTimer();
@@ -2696,9 +3456,15 @@ function onPlayerKey(e) {
     if (k === 'f') { e.preventDefault(); toggleFS(); return; }
     if (k === 'm') { e.preventDefault(); toggleMute(); return; }
     if (k === 'c') { e.preventDefault(); toggleSubtitles(); return; }
-    if (/^[0-9]$/.test(e.key) && !e.ctrlKey && !e.metaKey && !e.altKey && isFinite(video.duration)) {
+    if ((e.key === '[' || e.key === ']') && video.textTracks.length) {
         e.preventDefault();
-        video.currentTime = video.duration * (+e.key / 10);
+        setSubDelay((state.play.subDelay || 0) + (e.key === ']' ? SUB_DELAY_STEP : -SUB_DELAY_STEP));
+        toast(`Subtitles: ${fmtSubDelay(state.play.subDelay)}`, { icon: ICON.clock, duration: 1400 });
+        return;
+    }
+    if (/^[0-9]$/.test(e.key) && !e.ctrlKey && !e.metaKey && !e.altKey && isFinite(mediaDuration())) {
+        e.preventDefault();
+        seekMedia(mediaDuration() * (+e.key / 10));
     }
 }
 
@@ -2706,7 +3472,7 @@ function onPlayerKey(e) {
    Modals
    ========================================================================== */
 
-const MODALS = ['profileModal', 'settingsModal', 'shortcutsModal'];
+const MODALS = ['profileModal', 'settingsModal', 'shortcutsModal', 'shareModal', 'sourcesModal'];
 const modalReturn = {};
 function anyModalOpen() { return MODALS.some(id => $(id).classList.contains('is-open')) || playerOpen(); }
 const topModal = () => MODALS.slice().reverse().find(id => $(id).classList.contains('is-open')) || null;
@@ -2726,6 +3492,7 @@ function closeModal(id) {
     const m = $(id);
     if (!m.classList.contains('is-open')) return;
     m.classList.remove('is-open');
+    if (id === 'sourcesModal' && lsGet('lsAltSources') == null) lsSet('lsAltSources', '0');
     if (!anyModalOpen()) document.body.classList.remove('is-locked');
     const rf = modalReturn[id];
     if (rf && rf.isConnected) { try { rf.focus({ preventScroll: true }); } catch {} }
@@ -2772,7 +3539,7 @@ function renderAvatarGrid() {
     }));
 }
 function renderStats() {
-    const entries = parseProgEntries().filter(en => en.p.t > 0);
+    const entries = parseProgEntries().filter(en => en.p.t > 0 || en.p.w);
     const completed = entries.filter(en => isWatched(en.p)).length;
     let totalSecs = 0;
     const showCounts = {};
@@ -2815,6 +3582,113 @@ $('clearHistoryBtn').addEventListener('click', () => {
 });
 $('profileBtn').addEventListener('click', () => openModal('profileModal'));
 
+/* ---------- Backup and transfer between devices ---------- */
+
+// Settings that travel with a backup (the profile, My List, progress and subtitle style always do).
+const BACKUP_KEYS = ['lsAutoplay', 'lsSubsOn', 'lsAltSources', 'lsHideStills', 'lsHideDesc', 'lsAppearance', 'lsTheme', 'lsTvMode', 'lsSpeed', 'lsVolume', 'lsMuted'];
+function makeBackup() {
+    const settings = {};
+    BACKUP_KEYS.forEach(k => { const v = lsGet(k); if (v != null) settings[k] = v; });
+    return { app: BRAND, v: 1, at: new Date().toISOString(), profile, myList: getMyList(), progress: progressMap, subStyle: getSubStyle(), settings };
+}
+// Merges a backup into this browser: My List gains any missing titles, and for each episode
+// the more recently watched copy of the progress wins. Settings are taken from the backup.
+function applyBackup(data) {
+    if (!data || typeof data !== 'object' || data.app !== BRAND) throw userErr(`That isn't a ${BRAND} backup.`);
+    const list = getMyList();
+    let titles = 0, episodes = 0;
+    (Array.isArray(data.myList) ? data.myList : []).forEach(id => { if (typeof id === 'string' && !list.includes(id)) { list.push(id); titles++; } });
+    writeJSON('myList', list);
+    Object.entries(data.progress && typeof data.progress === 'object' ? data.progress : {}).forEach(([k, p]) => {
+        if (!p || typeof p !== 'object' || typeof p.t !== 'number' || k.split('|').length !== 3) return;
+        const cur = progressMap[k];
+        if (!cur || (p.u || 0) > (cur.u || 0)) { progressMap[k] = p; episodes++; }
+    });
+    saveProgress();
+    const bp = data.profile && typeof data.profile === 'object' ? data.profile : {};
+    if (!profile.name && bp.name) profile.name = String(bp.name).slice(0, 20);
+    if (!profile.avatar && bp.avatar) profile.avatar = String(bp.avatar);
+    saveProfile();
+    if (data.subStyle && typeof data.subStyle === 'object') writeJSON('lsSubStyle', data.subStyle);
+    Object.entries(data.settings && typeof data.settings === 'object' ? data.settings : {})
+        .forEach(([k, v]) => { if (BACKUP_KEYS.includes(k) && typeof v === 'string') lsSet(k, v); });
+    state.playbackSpeed = parseFloat(lsGet('lsSpeed', '1')) || 1;
+    initThemeUI();
+    refreshAvatarUI();
+    prepareProfile();
+    if (state.route.name === 'home') { renderContinueRow(); renderMyListRow(); }
+    else if (state.route.name === 'my-list') renderMyListGrid();
+    else refreshEpisodeViews();
+    toast(`Imported ${plural(titles, 'title')} and progress for ${plural(episodes, 'episode')}`);
+}
+// Transfer codes are the backup as gzip + base64url ("LS1."), or plain base64url ("LS0.")
+// where the browser can't compress.
+async function encodeTransferCode(obj) {
+    let bytes = new TextEncoder().encode(JSON.stringify(obj)), prefix = 'LS0.';
+    if (window.CompressionStream) {
+        bytes = new Uint8Array(await new Response(new Blob([bytes]).stream().pipeThrough(new CompressionStream('gzip'))).arrayBuffer());
+        prefix = 'LS1.';
+    }
+    let bin = '';
+    for (let i = 0; i < bytes.length; i += 0x8000) bin += String.fromCharCode.apply(null, bytes.subarray(i, i + 0x8000));
+    return prefix + btoa(bin).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
+}
+async function decodeTransferCode(code) {
+    const m = String(code || '').replace(/\s+/g, '').match(/^LS([01])\.([A-Za-z0-9_-]+)$/);
+    if (!m) throw userErr("That code doesn't look right. Copy the whole code and try again.");
+    let bytes;
+    try { bytes = Uint8Array.from(atob(m[2].replace(/-/g, '+').replace(/_/g, '/')), c => c.charCodeAt(0)); }
+    catch { throw userErr("That code doesn't look right. Copy the whole code and try again."); }
+    if (m[1] === '1') {
+        if (!window.DecompressionStream) throw userErr("This browser can't read transfer codes. Use a backup file instead.");
+        bytes = new Uint8Array(await new Response(new Blob([bytes]).stream().pipeThrough(new DecompressionStream('gzip'))).arrayBuffer());
+    }
+    return JSON.parse(new TextDecoder().decode(bytes));
+}
+function confirmImport(data) {
+    const titles = Array.isArray(data && data.myList) ? data.myList.length : 0;
+    const eps = data && data.progress && typeof data.progress === 'object' ? Object.keys(data.progress).length : 0;
+    return window.confirm(`Import ${plural(titles, 'saved title')} and ${plural(eps, 'watch record')}? They'll be merged with what's already on this device, and your settings will be replaced.`);
+}
+$('exportFileBtn').addEventListener('click', () => {
+    saveBlob(new Blob([JSON.stringify(makeBackup(), null, 2)], { type: 'application/json' }), `${BRAND}-backup-${new Date().toISOString().slice(0, 10)}.json`);
+    toast('Backup downloaded', { icon: ICON.download });
+});
+$('importFileBtn').addEventListener('click', () => $('importFileInput').click());
+$('importFileInput').addEventListener('change', async (e) => {
+    const file = e.target.files && e.target.files[0];
+    e.target.value = '';
+    if (!file) return;
+    try {
+        const data = JSON.parse(await file.text());
+        if (data && data.app === BRAND && !confirmImport(data)) return;
+        applyBackup(data);
+    } catch (err) { toast(err && err.userMessage ? err.userMessage : "Couldn't read that backup file", { icon: ICON.alert }); }
+});
+$('copyCodeBtn').addEventListener('click', async () => {
+    try {
+        const code = await encodeTransferCode(makeBackup());
+        await navigator.clipboard.writeText(code);
+        toast('Transfer code copied. Paste it into "Enter a code" on your other device.', { duration: 5000 });
+    } catch { toast("Couldn't copy the code. Use a backup file instead.", { icon: ICON.alert }); }
+});
+$('pasteCodeBtn').addEventListener('click', () => {
+    const box = $('codeBox');
+    box.hidden = !box.hidden;
+    $('pasteCodeBtn').setAttribute('aria-expanded', String(!box.hidden));
+    if (!box.hidden) $('codeInput').focus();
+});
+$('codeApplyBtn').addEventListener('click', async () => {
+    try {
+        const data = await decodeTransferCode($('codeInput').value);
+        if (data && data.app === BRAND && !confirmImport(data)) return;
+        applyBackup(data);
+        $('codeInput').value = '';
+        $('codeBox').hidden = true;
+        $('pasteCodeBtn').setAttribute('aria-expanded', 'false');
+    } catch (err) { toast(err && err.userMessage ? err.userMessage : "Couldn't read that code", { icon: ICON.alert }); }
+});
+
 /* ---------- Settings ---------- */
 
 function prepareSettings() {
@@ -2834,6 +3708,28 @@ $('themeResetBtn').addEventListener('click', () => { lsDel('lsTheme'); applyAcce
 $('customAccentPicker').addEventListener('input', (e) => applyAccent(e.target.value));
 $('autoplaySwitch').addEventListener('click', () => { lsSet('lsAutoplay', autoplayOn() ? '0' : '1'); syncSwitches(); });
 $('subsSwitch').addEventListener('click', () => { lsSet('lsSubsOn', subsEnabled() ? '0' : '1'); syncSwitches(); });
+$$('#stillsSeg .seg-btn').forEach(b => b.addEventListener('click', () => { lsSet('lsHideStills', b.dataset.stills); syncSwitches(); refreshEpisodeViews(); }));
+$('altSwitch').addEventListener('click', () => setAltSources(!altSourcesOn()));
+function openAltPrompt() { closeAllPopups(); openModal('sourcesModal'); }
+function setAltSources(on) {
+    lsSet('lsAltSources', on ? '1' : '0');
+    syncSwitches();
+    // Re-open whatever was waiting on this choice: the player, or the page behind the dialog.
+    if (playerOpen() && state.play.show && curEp()) openPlayer(state.play.show, state.play.seasonNumber, state.play.seasonData, state.play.epIdx);
+    else refreshEpisodeViews();
+}
+$('altAcceptBtn').addEventListener('click', () => { closeModal('sourcesModal'); setAltSources(true); toast('Alternate sources turned on'); });
+$('altDeclineBtn').addEventListener('click', () => { closeModal('sourcesModal'); setAltSources(false); });
+$('descSwitch').addEventListener('click', () => { lsSet('lsHideDesc', lsGet('lsHideDesc') === '1' ? '0' : '1'); syncSwitches(); refreshEpisodeViews(); });
+// Redraw whatever on the current page shows episode stills or descriptions, without leaving the open settings sheet.
+function refreshEpisodeViews() {
+    const r = state.route;
+    if (r.name === 'home') renderContinueRow();
+    else if (r.name === 'details' && state.detail.tab === 'episodes') renderEpisodesTab();
+    else if (r.name === 'episode') renderEpisodePage(r.id, r.s, r.e);
+    else if (r.name === 'person') renderPersonPage(r.person);
+    else if (r.name === 'search' && $('searchInput')) $('searchInput').dispatchEvent(new Event('input'));
+}
 
 /* ==========================================================================
    Global interactions
@@ -2842,6 +3738,7 @@ $('subsSwitch').addEventListener('click', () => { lsSet('lsSubsOn', subsEnabled(
 document.addEventListener('click', (e) => {
     const listBtn = e.target.closest('[data-toggle-list]');
     if (listBtn) { e.preventDefault(); e.stopPropagation(); toggleMyList(listBtn.dataset.toggleList); return; }
+    if (e.target.closest('[data-alt-enable]')) { e.preventDefault(); openAltPrompt(); return; }
     const playShow = e.target.closest('[data-play-show]');
     if (playShow) { const show = getShow(playShow.dataset.playShow); if (show) smartPlayShow(show); return; }
     const resume = e.target.closest('[data-resume]');
@@ -2934,7 +3831,7 @@ function spatialMove(dir) {
     }
 }
 document.addEventListener('keydown', (e) => {
-    if (playerOpen()) { onPlayerKey(e); return; }
+    if (playerOpen() && !topModal()) { onPlayerKey(e); return; }
     const t = e.target;
     const typing = t.tagName === 'INPUT' || t.tagName === 'TEXTAREA' || t.tagName === 'SELECT' || t.isContentEditable;
     const isBackKey = e.keyCode === 461 || e.keyCode === 10009 || e.key === 'GoBack' || e.key === 'BrowserBack';
@@ -2974,6 +3871,7 @@ document.addEventListener('keydown', (e) => {
 initThemeUI();
 refreshAvatarUI();
 updateTopbar();
+initCast();
 
 function boot() {
     Promise.all([
@@ -2982,8 +3880,11 @@ function boot() {
     ]).then(([showData, heroJson]) => {
         state.shows = (showData && Array.isArray(showData.shows) ? showData.shows : []).filter(s => s && s.id && s.title);
         state.hero = heroJson && Array.isArray(heroJson.featured) ? heroJson.featured : [];
+        // Featured entries must point at a show or movie id from show.json; others are skipped.
+        state.hero.forEach(h => { if (h && !getShow(h.showId)) console.warn(`hero.json: no show or movie with id "${h.showId}" in show.json, so it isn't featured`); });
         migrateOldProgress();
         route();
+        if (lsGet('lsAltSources') == null) setTimeout(() => { if (!topModal()) openModal('sourcesModal'); }, 700);
     }).catch(err => {
         console.error('Boot failed', err);
         $('view').innerHTML = `<div class="page"><div class="page-inner page-top">${emptyState({

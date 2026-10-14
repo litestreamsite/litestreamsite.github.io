@@ -1,17 +1,31 @@
 {
     "season": 8,
-    "episodes": [{
+    "episodes": [
+        {
             "number": 1,
             "title": "The Mask of Deception",
             "description": "After a year apart, the ninja reunite to protect the royal family from a masked gang—and Lloyd is captivated by Princess Harumi.",
             "thumbnail": "https://image.tmdb.org/t/p/original/7mJI8JlXgzD8iS67qesXIoE745a.jpg",
             "embed": "https://cdn1.futuretodayinc.com/files/a8wn4hw/vi/4b/17/10369225/s10369225.m3u8",
-            "subtitles": [{
-                "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/8c/9f/264148ced8385faa843bfcc2a462ebe7.vtt",
-                "lang": "en",
-                "label": "English",
-                "default": true
-            }]
+            "subtitles": [
+                {
+                    "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/8c/9f/264148ced8385faa843bfcc2a462ebe7.vtt",
+                    "lang": "en",
+                    "label": "English",
+                    "default": true
+                }
+            ],
+            "airDate": "",
+            "sources": [],
+            "downloads": [],
+            "introStart": null,
+            "introEnd": null,
+            "recapStart": null,
+            "recapEnd": null,
+            "creditsStart": null,
+            "directors": [],
+            "writers": [],
+            "cast": []
         },
         {
             "number": 2,
@@ -19,12 +33,25 @@
             "description": "As Lloyd grows closer to Princess Harumi, the Sons of Garmadon launch a devastating attack on the royal palace.",
             "thumbnail": "https://image.tmdb.org/t/p/original/r7AOSAGy0T2fPTQcX3DoixoYHoy.jpg",
             "embed": "https://cdn1.futuretodayinc.com/files/a8wn4hw/vi/78/ee/10369226/s10369226.m3u8",
-            "subtitles": [{
-                "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/66/ff/f4ebb89aa682477217498b7e61b0764a.vtt",
-                "lang": "en",
-                "label": "English",
-                "default": true
-            }]
+            "subtitles": [
+                {
+                    "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/66/ff/f4ebb89aa682477217498b7e61b0764a.vtt",
+                    "lang": "en",
+                    "label": "English",
+                    "default": true
+                }
+            ],
+            "airDate": "",
+            "sources": [],
+            "downloads": [],
+            "introStart": null,
+            "introEnd": null,
+            "recapStart": null,
+            "recapEnd": null,
+            "creditsStart": null,
+            "directors": [],
+            "writers": [],
+            "cast": []
         },
         {
             "number": 3,
@@ -32,12 +59,25 @@
             "description": "As the ninja infiltrate the Sons of Garmadon, Lloyd uncovers the chilling purpose of the Oni Masks.",
             "thumbnail": "https://image.tmdb.org/t/p/original/nwIwl0jnMfJaBAlOCKKQXcaQyXt.jpg",
             "embed": "https://cdn1.futuretodayinc.com/files/a8wn4hw/vi/3d/84/10369227/s10369227.m3u8",
-            "subtitles": [{
-                "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/c7/f6/26e8ad571dbb3b6bafc5779ce4bfe2c5.vtt",
-                "lang": "en",
-                "label": "English",
-                "default": true
-            }]
+            "subtitles": [
+                {
+                    "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/c7/f6/26e8ad571dbb3b6bafc5779ce4bfe2c5.vtt",
+                    "lang": "en",
+                    "label": "English",
+                    "default": true
+                }
+            ],
+            "airDate": "",
+            "sources": [],
+            "downloads": [],
+            "introStart": null,
+            "introEnd": null,
+            "recapStart": null,
+            "recapEnd": null,
+            "creditsStart": null,
+            "directors": [],
+            "writers": [],
+            "cast": []
         },
         {
             "number": 4,
@@ -45,12 +85,25 @@
             "description": "Zane goes undercover to track the Sons of Garmadon, while Cole makes an unexpected discovery inside their hideout.",
             "thumbnail": "https://image.tmdb.org/t/p/original/hb1aFhBqEeXJoUXqYfBMPWwVhwf.jpg",
             "embed": "https://cdn1.futuretodayinc.com/files/a8wn4hw/vi/eb/84/10369228/s10369228.m3u8",
-            "subtitles": [{
-                "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/39/6c/5c1d712766bafbc43dd39a32ccf35668.vtt",
-                "lang": "en",
-                "label": "English",
-                "default": true
-            }]
+            "subtitles": [
+                {
+                    "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/39/6c/5c1d712766bafbc43dd39a32ccf35668.vtt",
+                    "lang": "en",
+                    "label": "English",
+                    "default": true
+                }
+            ],
+            "airDate": "",
+            "sources": [],
+            "downloads": [],
+            "introStart": null,
+            "introEnd": null,
+            "recapStart": null,
+            "recapEnd": null,
+            "creditsStart": null,
+            "directors": [],
+            "writers": [],
+            "cast": []
         },
         {
             "number": 5,
@@ -58,12 +111,25 @@
             "description": "As the ninja care for a mysterious baby, a coded message and an unexpected map lead them into a dangerous storm.",
             "thumbnail": "https://image.tmdb.org/t/p/original/nCDBjwX7SsokmYf4Hr3qiI33iTH.jpg",
             "embed": "https://cdn1.futuretodayinc.com/files/a8wn4hw/vi/eb/9e/10369229/s10369229.m3u8",
-            "subtitles": [{
-                "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/f5/ed/9f9a933686fd6745be6dcd7df813a196.vtt",
-                "lang": "en",
-                "label": "English",
-                "default": true
-            }]
+            "subtitles": [
+                {
+                    "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/f5/ed/9f9a933686fd6745be6dcd7df813a196.vtt",
+                    "lang": "en",
+                    "label": "English",
+                    "default": true
+                }
+            ],
+            "airDate": "",
+            "sources": [],
+            "downloads": [],
+            "introStart": null,
+            "introEnd": null,
+            "recapStart": null,
+            "recapEnd": null,
+            "creditsStart": null,
+            "directors": [],
+            "writers": [],
+            "cast": []
         },
         {
             "number": 6,
@@ -71,12 +137,25 @@
             "description": "While Lloyd and Harumi brave Primeval’s Eye, the ninja investigate the baby’s strange transformation.",
             "thumbnail": "https://image.tmdb.org/t/p/original/b3zyjMVEBZWvean9nGx04rprvNj.jpg",
             "embed": "https://cdn1.futuretodayinc.com/files/a8wn4hw/vi/a6/eb/10369230/s10369230.m3u8",
-            "subtitles": [{
-                "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/25/36/b9d41f0ba07fb5cdadf15cc619aa5ca4.vtt",
-                "lang": "en",
-                "label": "English",
-                "default": true
-            }]
+            "subtitles": [
+                {
+                    "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/25/36/b9d41f0ba07fb5cdadf15cc619aa5ca4.vtt",
+                    "lang": "en",
+                    "label": "English",
+                    "default": true
+                }
+            ],
+            "airDate": "",
+            "sources": [],
+            "downloads": [],
+            "introStart": null,
+            "introEnd": null,
+            "recapStart": null,
+            "recapEnd": null,
+            "creditsStart": null,
+            "directors": [],
+            "writers": [],
+            "cast": []
         },
         {
             "number": 7,
@@ -84,12 +163,25 @@
             "description": "As Lloyd and Harumi search for the final Oni Mask, the ninja struggle to escape the Sons of Garmadon and a monstrous threat.",
             "thumbnail": "https://image.tmdb.org/t/p/original/9fPItVmlgKIj6dTUmTIDDJ6puxh.jpg",
             "embed": "https://cdn1.futuretodayinc.com/files/a8wn4hw/vi/41/f7/10369231/s10369231.m3u8",
-            "subtitles": [{
-                "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/2a/8e/dddd9aa8df43434398605b63b9d78fad.vtt",
-                "lang": "en",
-                "label": "English",
-                "default": true
-            }]
+            "subtitles": [
+                {
+                    "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/2a/8e/dddd9aa8df43434398605b63b9d78fad.vtt",
+                    "lang": "en",
+                    "label": "English",
+                    "default": true
+                }
+            ],
+            "airDate": "",
+            "sources": [],
+            "downloads": [],
+            "introStart": null,
+            "introEnd": null,
+            "recapStart": null,
+            "recapEnd": null,
+            "creditsStart": null,
+            "directors": [],
+            "writers": [],
+            "cast": []
         },
         {
             "number": 8,
@@ -97,12 +189,25 @@
             "description": "The ninja launch a desperate rescue as Harumi begins the ritual to bring Garmadon back.",
             "thumbnail": "https://image.tmdb.org/t/p/original/q71V8oFcbBhB3kAhpSnqFS7zUhy.jpg",
             "embed": "https://cdn1.futuretodayinc.com/files/a8wn4hw/vi/aa/6d/10369232/s10369232.m3u8",
-            "subtitles": [{
-                "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/05/c3/2fe1aa8c7c53e78ea62b450cbd775cb3.vtt",
-                "lang": "en",
-                "label": "English",
-                "default": true
-            }]
+            "subtitles": [
+                {
+                    "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/05/c3/2fe1aa8c7c53e78ea62b450cbd775cb3.vtt",
+                    "lang": "en",
+                    "label": "English",
+                    "default": true
+                }
+            ],
+            "airDate": "",
+            "sources": [],
+            "downloads": [],
+            "introStart": null,
+            "introEnd": null,
+            "recapStart": null,
+            "recapEnd": null,
+            "creditsStart": null,
+            "directors": [],
+            "writers": [],
+            "cast": []
         },
         {
             "number": 9,
@@ -110,12 +215,25 @@
             "description": "The resurrected Garmadon sets his sights on Lloyd, who still hopes to save his father.",
             "thumbnail": "https://image.tmdb.org/t/p/original/9gVlIYuDNWZU4hIfhSz4y9f67JA.jpg",
             "embed": "https://cdn1.futuretodayinc.com/files/a8wn4hw/vi/64/00/10369233/s10369233.m3u8",
-            "subtitles": [{
-                "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/9a/f1/38098343c04e23186cf2d9476e0a8d42.vtt",
-                "lang": "en",
-                "label": "English",
-                "default": true
-            }]
+            "subtitles": [
+                {
+                    "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/9a/f1/38098343c04e23186cf2d9476e0a8d42.vtt",
+                    "lang": "en",
+                    "label": "English",
+                    "default": true
+                }
+            ],
+            "airDate": "",
+            "sources": [],
+            "downloads": [],
+            "introStart": null,
+            "introEnd": null,
+            "recapStart": null,
+            "recapEnd": null,
+            "creditsStart": null,
+            "directors": [],
+            "writers": [],
+            "cast": []
         },
         {
             "number": 10,
@@ -123,12 +241,25 @@
             "description": "With his powers gone and Garmadon’s Colossus tearing through the city, Lloyd must find the strength to keep fighting.",
             "thumbnail": "https://image.tmdb.org/t/p/original/wMXzsm3j9NyzafMP2gPg9ktSgCF.jpg",
             "embed": "https://cdn1.futuretodayinc.com/files/a8wn4hw/vi/41/44/10369234/s10369234.m3u8",
-            "subtitles": [{
-                "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/7f/03/146a477e1723bcc26c9aa899926db8b9.vtt",
-                "lang": "en",
-                "label": "English",
-                "default": true
-            }]
+            "subtitles": [
+                {
+                    "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/7f/03/146a477e1723bcc26c9aa899926db8b9.vtt",
+                    "lang": "en",
+                    "label": "English",
+                    "default": true
+                }
+            ],
+            "airDate": "",
+            "sources": [],
+            "downloads": [],
+            "introStart": null,
+            "introEnd": null,
+            "recapStart": null,
+            "recapEnd": null,
+            "creditsStart": null,
+            "directors": [],
+            "writers": [],
+            "cast": []
         }
     ]
 }

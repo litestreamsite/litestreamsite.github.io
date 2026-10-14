@@ -1,17 +1,31 @@
 {
     "season": 2,
-    "episodes": [{
+    "episodes": [
+        {
             "number": 1,
             "title": "Darkness Shall Rise",
             "description": "As the ninja struggle to rebuild their lives and train Lloyd, Garmadon rallies the Serpentine and forges a powerful new weapon.",
             "thumbnail": "https://image.tmdb.org/t/p/original/oWNOyTbbr9GXQwhzbA57w454oTf.jpg",
             "embed": "https://cdn1.futuretodayinc.com/files/a8wn4hw/vi/57/82/10369164/s10369164.m3u8",
-            "subtitles": [{
-                "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/d8/2e/fab3c75c972681a3ad04137fe06d331b.vtt",
-                "lang": "en",
-                "label": "English",
-                "default": true
-            }]
+            "subtitles": [
+                {
+                    "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/d8/2e/fab3c75c972681a3ad04137fe06d331b.vtt",
+                    "lang": "en",
+                    "label": "English",
+                    "default": true
+                }
+            ],
+            "airDate": "",
+            "sources": [],
+            "downloads": [],
+            "introStart": null,
+            "introEnd": null,
+            "recapStart": null,
+            "recapEnd": null,
+            "creditsStart": null,
+            "directors": [],
+            "writers": [],
+            "cast": []
         },
         {
             "number": 2,
@@ -19,12 +33,25 @@
             "description": "When Garmadon’s Mega Weapon resurrects the Bounty’s pirate crew, the ninja battle to reclaim their ship as Lloyd discovers a new skill.",
             "thumbnail": "https://image.tmdb.org/t/p/original/90XD04TJIcMjnt1AHit84isbybs.jpg",
             "embed": "https://cdn1.futuretodayinc.com/files/a8wn4hw/vi/e4/dc/10369165/s10369165.m3u8",
-            "subtitles": [{
-                "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/1e/5a/fa3683aba7557828374e88f5ad5729d7.vtt",
-                "lang": "en",
-                "label": "English",
-                "default": true
-            }]
+            "subtitles": [
+                {
+                    "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/1e/5a/fa3683aba7557828374e88f5ad5729d7.vtt",
+                    "lang": "en",
+                    "label": "English",
+                    "default": true
+                }
+            ],
+            "airDate": "",
+            "sources": [],
+            "downloads": [],
+            "introStart": null,
+            "introEnd": null,
+            "recapStart": null,
+            "recapEnd": null,
+            "creditsStart": null,
+            "directors": [],
+            "writers": [],
+            "cast": []
         },
         {
             "number": 3,
@@ -32,12 +59,25 @@
             "description": "When Garmadon unleashes evil copies of the ninja, Lloyd must rally his former classmates to help save the team.",
             "thumbnail": "https://image.tmdb.org/t/p/original/dYUCet2fjce77IGDOMBxJz0toVi.jpg",
             "embed": "https://cdn1.futuretodayinc.com/files/a8wn4hw/vi/2d/f9/10369166/s10369166.m3u8",
-            "subtitles": [{
-                "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/1c/ad/7138169d6425664f3278944141474ec6.vtt",
-                "lang": "en",
-                "label": "English",
-                "default": true
-            }]
+            "subtitles": [
+                {
+                    "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/1c/ad/7138169d6425664f3278944141474ec6.vtt",
+                    "lang": "en",
+                    "label": "English",
+                    "default": true
+                }
+            ],
+            "airDate": "",
+            "sources": [],
+            "downloads": [],
+            "introStart": null,
+            "introEnd": null,
+            "recapStart": null,
+            "recapEnd": null,
+            "creditsStart": null,
+            "directors": [],
+            "writers": [],
+            "cast": []
         },
         {
             "number": 4,
@@ -45,12 +85,25 @@
             "description": "To save Dareth’s dojo, the ninja enter Ninjago’s most dangerous race—but Garmadon is determined to keep them from winning.",
             "thumbnail": "https://image.tmdb.org/t/p/original/rZU8169SxiYihR1XCArLJPToAOo.jpg",
             "embed": "https://cdn1.futuretodayinc.com/files/a8wn4hw/vi/93/f7/10369167/s10369167.m3u8",
-            "subtitles": [{
-                "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/7c/d4/545a292a104e9bd562fda4983ceb3c96.vtt",
-                "lang": "en",
-                "label": "English",
-                "default": true
-            }]
+            "subtitles": [
+                {
+                    "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/7c/d4/545a292a104e9bd562fda4983ceb3c96.vtt",
+                    "lang": "en",
+                    "label": "English",
+                    "default": true
+                }
+            ],
+            "airDate": "",
+            "sources": [],
+            "downloads": [],
+            "introStart": null,
+            "introEnd": null,
+            "recapStart": null,
+            "recapEnd": null,
+            "creditsStart": null,
+            "directors": [],
+            "writers": [],
+            "cast": []
         },
         {
             "number": 5,
@@ -58,12 +111,25 @@
             "description": "When Garmadon unleashes an ancient monster and turns the ninja into children, Lloyd must step up to save his friends.",
             "thumbnail": "https://image.tmdb.org/t/p/original/l0CYYubf7abSjpbzgvdpNF3PrOe.jpg",
             "embed": "https://cdn1.futuretodayinc.com/files/a8wn4hw/vi/8e/11/10369168/s10369168.m3u8",
-            "subtitles": [{
-                "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/8e/38/e2939f8aca382d2d4d764d35047a8e8f.vtt",
-                "lang": "en",
-                "label": "English",
-                "default": true
-            }]
+            "subtitles": [
+                {
+                    "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/8e/38/e2939f8aca382d2d4d764d35047a8e8f.vtt",
+                    "lang": "en",
+                    "label": "English",
+                    "default": true
+                }
+            ],
+            "airDate": "",
+            "sources": [],
+            "downloads": [],
+            "introStart": null,
+            "introEnd": null,
+            "recapStart": null,
+            "recapEnd": null,
+            "creditsStart": null,
+            "directors": [],
+            "writers": [],
+            "cast": []
         },
         {
             "number": 6,
@@ -71,12 +137,25 @@
             "description": "When Garmadon rewrites history with the Mega Weapon, the ninja must protect the past to preserve the future—and Lloyd’s destiny.",
             "thumbnail": "https://image.tmdb.org/t/p/original/4eVuTDfcmov7F3lcQ7Q03i7js4m.jpg",
             "embed": "https://cdn1.futuretodayinc.com/files/a8wn4hw/vi/d9/f7/10369169/s10369169.m3u8",
-            "subtitles": [{
-                "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/f0/ab/74dd25a7b67cbafbf524bd74a2be1c33.vtt",
-                "lang": "en",
-                "label": "English",
-                "default": true
-            }]
+            "subtitles": [
+                {
+                    "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/f0/ab/74dd25a7b67cbafbf524bd74a2be1c33.vtt",
+                    "lang": "en",
+                    "label": "English",
+                    "default": true
+                }
+            ],
+            "airDate": "",
+            "sources": [],
+            "downloads": [],
+            "introStart": null,
+            "introEnd": null,
+            "recapStart": null,
+            "recapEnd": null,
+            "creditsStart": null,
+            "directors": [],
+            "writers": [],
+            "cast": []
         },
         {
             "number": 7,
@@ -84,12 +163,25 @@
             "description": "When Lloyd meets his long-lost mother, he learns of an ancient evil poised to return—while Garmadon searches for the Dark Island.",
             "thumbnail": "https://image.tmdb.org/t/p/original/ds32jdIvPpriX3DlkIITy3pOzVl.jpg",
             "embed": "https://cdn1.futuretodayinc.com/files/a8wn4hw/vi/fd/f6/10369170/s10369170.m3u8",
-            "subtitles": [{
-                "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/55/58/412b8ccf708307ef3a2f5ef9174c1477.vtt",
-                "lang": "en",
-                "label": "English",
-                "default": true
-            }]
+            "subtitles": [
+                {
+                    "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/55/58/412b8ccf708307ef3a2f5ef9174c1477.vtt",
+                    "lang": "en",
+                    "label": "English",
+                    "default": true
+                }
+            ],
+            "airDate": "",
+            "sources": [],
+            "downloads": [],
+            "introStart": null,
+            "introEnd": null,
+            "recapStart": null,
+            "recapEnd": null,
+            "creditsStart": null,
+            "directors": [],
+            "writers": [],
+            "cast": []
         },
         {
             "number": 8,
@@ -97,12 +189,25 @@
             "description": "As an unstoppable Stone Army overruns Ninjago City, the ninja race to evacuate its citizens while Garmadon seizes control of the warriors.",
             "thumbnail": "https://image.tmdb.org/t/p/original/snwPb9NTPzlAxmoCu73d5DsS2yB.jpg",
             "embed": "https://cdn1.futuretodayinc.com/files/a8wn4hw/vi/83/ad/10369171/s10369171.m3u8",
-            "subtitles": [{
-                "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/6c/99/e359bd4dff79da07c3a72123bc657198.vtt",
-                "lang": "en",
-                "label": "English",
-                "default": true
-            }]
+            "subtitles": [
+                {
+                    "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/6c/99/e359bd4dff79da07c3a72123bc657198.vtt",
+                    "lang": "en",
+                    "label": "English",
+                    "default": true
+                }
+            ],
+            "airDate": "",
+            "sources": [],
+            "downloads": [],
+            "introStart": null,
+            "introEnd": null,
+            "recapStart": null,
+            "recapEnd": null,
+            "creditsStart": null,
+            "directors": [],
+            "writers": [],
+            "cast": []
         },
         {
             "number": 9,
@@ -110,12 +215,25 @@
             "description": "On the perilous voyage to the Dark Island, Zane reunites with his father and risks everything to free a chained sea creature.",
             "thumbnail": "https://image.tmdb.org/t/p/original/f06a94EwEezwrcozptuU3BgYbNj.jpg",
             "embed": "https://cdn1.futuretodayinc.com/files/a8wn4hw/vi/e0/f7/10369172/s10369172.m3u8",
-            "subtitles": [{
-                "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/ec/5f/9606ff4f5f96271617de4c8883ec69ea.vtt",
-                "lang": "en",
-                "label": "English",
-                "default": true
-            }]
+            "subtitles": [
+                {
+                    "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/ec/5f/9606ff4f5f96271617de4c8883ec69ea.vtt",
+                    "lang": "en",
+                    "label": "English",
+                    "default": true
+                }
+            ],
+            "airDate": "",
+            "sources": [],
+            "downloads": [],
+            "introStart": null,
+            "introEnd": null,
+            "recapStart": null,
+            "recapEnd": null,
+            "creditsStart": null,
+            "directors": [],
+            "writers": [],
+            "cast": []
         },
         {
             "number": 10,
@@ -123,12 +241,25 @@
             "description": "On the Dark Island, the ninja race to reclaim their elemental powers as Lloyd prepares to unlock a legendary fighting technique.",
             "thumbnail": "https://image.tmdb.org/t/p/original/quaxsGzi97D67Y8HKpnxR3d9ks2.jpg",
             "embed": "https://cdn1.futuretodayinc.com/files/a8wn4hw/vi/27/04/10369173/s10369173.m3u8",
-            "subtitles": [{
-                "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/9b/20/3925001e5ab0036aeb0ba9d2fd2eb06a.vtt",
-                "lang": "en",
-                "label": "English",
-                "default": true
-            }]
+            "subtitles": [
+                {
+                    "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/9b/20/3925001e5ab0036aeb0ba9d2fd2eb06a.vtt",
+                    "lang": "en",
+                    "label": "English",
+                    "default": true
+                }
+            ],
+            "airDate": "",
+            "sources": [],
+            "downloads": [],
+            "introStart": null,
+            "introEnd": null,
+            "recapStart": null,
+            "recapEnd": null,
+            "creditsStart": null,
+            "directors": [],
+            "writers": [],
+            "cast": []
         },
         {
             "number": 11,
@@ -136,12 +267,25 @@
             "description": "As the final battle nears, Lloyd struggles to face his father while the ninja risk everything to steal the Helmet of Shadows.",
             "thumbnail": "https://image.tmdb.org/t/p/original/AtuPnPKSnyquBdNXmiRQJs6bDL7.jpg",
             "embed": "https://cdn1.futuretodayinc.com/files/a8wn4hw/vi/6a/1a/10369174/s10369174.m3u8",
-            "subtitles": [{
-                "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/0b/ec/486fd166e4395b374d11f0177701e568.vtt",
-                "lang": "en",
-                "label": "English",
-                "default": true
-            }]
+            "subtitles": [
+                {
+                    "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/0b/ec/486fd166e4395b374d11f0177701e568.vtt",
+                    "lang": "en",
+                    "label": "English",
+                    "default": true
+                }
+            ],
+            "airDate": "",
+            "sources": [],
+            "downloads": [],
+            "introStart": null,
+            "introEnd": null,
+            "recapStart": null,
+            "recapEnd": null,
+            "creditsStart": null,
+            "directors": [],
+            "writers": [],
+            "cast": []
         },
         {
             "number": 12,
@@ -149,12 +293,25 @@
             "description": "As the Overlord corrupts Ninjago and takes control of Garmadon, Lloyd faces a devastating battle on the Dark Island.",
             "thumbnail": "https://image.tmdb.org/t/p/original/mZYMThiylCbcVyLkqzv77rg8zNq.jpg",
             "embed": "https://cdn1.futuretodayinc.com/files/a8wn4hw/vi/ef/26/10369175/s10369175.m3u8",
-            "subtitles": [{
-                "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/ad/fd/5edcc30fcda530de162c016d96cd36bb.vtt",
-                "lang": "en",
-                "label": "English",
-                "default": true
-            }]
+            "subtitles": [
+                {
+                    "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/ad/fd/5edcc30fcda530de162c016d96cd36bb.vtt",
+                    "lang": "en",
+                    "label": "English",
+                    "default": true
+                }
+            ],
+            "airDate": "",
+            "sources": [],
+            "downloads": [],
+            "introStart": null,
+            "introEnd": null,
+            "recapStart": null,
+            "recapEnd": null,
+            "creditsStart": null,
+            "directors": [],
+            "writers": [],
+            "cast": []
         },
         {
             "number": 13,
@@ -162,12 +319,25 @@
             "description": "As darkness engulfs Ninjago, Lloyd must embrace his ultimate power and lead the ninja in a final battle against the Overlord.",
             "thumbnail": "https://image.tmdb.org/t/p/original/40Fc3oYDk06c9xtQUb8Ooeaf5jv.jpg",
             "embed": "https://cdn1.futuretodayinc.com/files/a8wn4hw/vi/75/a9/10369176/s10369176.m3u8",
-            "subtitles": [{
-                "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/6c/9d/4fd543ba7bf8c5453761580bbb3b9c6c.vtt",
-                "lang": "en",
-                "label": "English",
-                "default": true
-            }]
+            "subtitles": [
+                {
+                    "url": "https://cdn1.futuretodayinc.com/files/a8wn4hw/cc/6c/9d/4fd543ba7bf8c5453761580bbb3b9c6c.vtt",
+                    "lang": "en",
+                    "label": "English",
+                    "default": true
+                }
+            ],
+            "airDate": "",
+            "sources": [],
+            "downloads": [],
+            "introStart": null,
+            "introEnd": null,
+            "recapStart": null,
+            "recapEnd": null,
+            "creditsStart": null,
+            "directors": [],
+            "writers": [],
+            "cast": []
         }
     ]
 }

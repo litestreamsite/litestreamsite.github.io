@@ -1,11 +1,32 @@
 {
     "season": 1,
-    "episodes": [{
+    "episodes": [
+        {
             "number": 1,
             "title": "How To Fast Train Your Furious Dragon",
             "description": "The dream chasers race nitro-injected street cars and join forces with dragon rider Hiccup when the Nightmare King hatches a plot to corrupt the friendly dragons of Berk.",
-            "thumbnail": "ttps://www.lego.com/cdn/cs/catalog/assets/bltab57306d605c3551/1/Thumbnail_Asset_02.png",
-            "embed": "https://videoprocessingpipeline.services.lego.com/assets/15a03f48-32b6-4b48-a44b-7563d4b5e939/56296575-214f-4bde-8519-b49701127aa2/1080p.mp4"
+            "thumbnail": "https://www.lego.com/cdn/cs/catalog/assets/bltab57306d605c3551/1/Thumbnail_Asset_02.png",
+            "embed": "https://videoprocessingpipeline.services.lego.com/assets/15a03f48-32b6-4b48-a44b-7563d4b5e939/56296575-214f-4bde-8519-b49701127aa2/1080p.mp4",
+            "airDate": "August 17, 2026",
+            "sources": [],
+            "subtitles": [],
+            "downloads": [],
+            "introStart": null,
+            "introEnd": null,
+            "recapStart": null,
+            "recapEnd": null,
+            "creditsStart": null,
+            "directors": ["Clint Butler"],
+            "writers": ["Jeremy Adams"],
+            "cast": [
+                { "name": "Mike Taylor", "role": "Cooper" },
+                { "name": "Ian Hanlin", "role": "Hiccup" },
+                { "name": "Larissa Dias", "role": "Izzie" },
+                { "name": "Vincent Tong", "role": "Logan" },
+                { "name": "Marcos Cardenas", "role": "Mateo" },
+                { "name": "Brian Drummond", "role": "Mr. Oz/Migo/Nightmare King" },
+                { "name": "Sarah Jeffery", "role": "Zoey" }
+            ]
         }
     ]
 }
