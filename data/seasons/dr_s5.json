@@ -25,9 +25,12 @@
             "recapStart": null,
             "recapEnd": null,
             "creditsStart": null,
-            "directors": [],
+            "directors": ["Daniel Ife"],
             "writers": [],
-            "cast": []
+            "cast": [
+                { "name": "Kelly Metzger", "role": "Ninjagan" },
+                { "name": "Vincent Tong", "role": "Evil Kai" }
+            ]
         },
         {
             "number": 2,
@@ -53,7 +56,7 @@
             "recapStart": null,
             "recapEnd": null,
             "creditsStart": null,
-            "directors": [],
+            "directors": ["Shane Poettcker"],
             "writers": [],
             "cast": []
         },
@@ -81,7 +84,7 @@
             "recapStart": null,
             "recapEnd": null,
             "creditsStart": null,
-            "directors": [],
+            "directors": ["Daniel Ife"],
             "writers": [],
             "cast": []
         },
@@ -109,7 +112,7 @@
             "recapStart": null,
             "recapEnd": null,
             "creditsStart": null,
-            "directors": [],
+            "directors": ["Shane Poettcker"],
             "writers": [],
             "cast": []
         },
@@ -137,7 +140,7 @@
             "recapStart": null,
             "recapEnd": null,
             "creditsStart": null,
-            "directors": [],
+            "directors": ["Daniel Ife"],
             "writers": [],
             "cast": []
         },
@@ -165,7 +168,7 @@
             "recapStart": null,
             "recapEnd": null,
             "creditsStart": null,
-            "directors": [],
+            "directors": ["Shane Poettcker"],
             "writers": [],
             "cast": []
         },
@@ -193,7 +196,7 @@
             "recapStart": null,
             "recapEnd": null,
             "creditsStart": null,
-            "directors": [],
+            "directors": ["Daniel Ife"],
             "writers": [],
             "cast": []
         },
@@ -221,7 +224,7 @@
             "recapStart": null,
             "recapEnd": null,
             "creditsStart": null,
-            "directors": [],
+            "directors": ["Shane Poettcker"],
             "writers": [],
             "cast": []
         },
@@ -249,7 +252,7 @@
             "recapStart": null,
             "recapEnd": null,
             "creditsStart": null,
-            "directors": [],
+            "directors": ["Daniel Ife"],
             "writers": [],
             "cast": []
         },
@@ -277,7 +280,7 @@
             "recapStart": null,
             "recapEnd": null,
             "creditsStart": null,
-            "directors": [],
+            "directors": ["Shane Poettcker"],
             "writers": [],
             "cast": []
         },
@@ -305,7 +308,7 @@
             "recapStart": null,
             "recapEnd": null,
             "creditsStart": null,
-            "directors": [],
+            "directors": ["Daniel Ife"],
             "writers": [],
             "cast": []
         },
@@ -333,7 +336,7 @@
             "recapStart": null,
             "recapEnd": null,
             "creditsStart": null,
-            "directors": [],
+            "directors": ["Shane Poettcker"],
             "writers": [],
             "cast": []
         },
@@ -361,7 +364,7 @@
             "recapStart": null,
             "recapEnd": null,
             "creditsStart": null,
-            "directors": [],
+            "directors": ["Daniel Ife"],
             "writers": [],
             "cast": []
         },
@@ -389,7 +392,7 @@
             "recapStart": null,
             "recapEnd": null,
             "creditsStart": null,
-            "directors": [],
+            "directors": ["Shane Poettcker"],
             "writers": [],
             "cast": []
         },
@@ -417,7 +420,7 @@
             "recapStart": null,
             "recapEnd": null,
             "creditsStart": null,
-            "directors": [],
+            "directors": ["Daniel Ife"],
             "writers": [],
             "cast": []
         },
@@ -445,7 +448,7 @@
             "recapStart": null,
             "recapEnd": null,
             "creditsStart": null,
-            "directors": [],
+            "directors": ["Shane Poettcker"],
             "writers": [],
             "cast": []
         },
@@ -473,7 +476,7 @@
             "recapStart": null,
             "recapEnd": null,
             "creditsStart": null,
-            "directors": [],
+            "directors": ["Daniel Ife"],
             "writers": [],
             "cast": []
         },
@@ -501,7 +504,7 @@
             "recapStart": null,
             "recapEnd": null,
             "creditsStart": null,
-            "directors": [],
+            "directors": ["Shane Poettcker"],
             "writers": [],
             "cast": []
         },
@@ -529,7 +532,7 @@
             "recapStart": null,
             "recapEnd": null,
             "creditsStart": null,
-            "directors": [],
+            "directors": ["Daniel Ife"],
             "writers": [],
             "cast": []
         },
@@ -557,7 +560,7 @@
             "recapStart": null,
             "recapEnd": null,
             "creditsStart": null,
-            "directors": [],
+            "directors": ["Shane Poettcker"],
             "writers": [],
             "cast": []
         }

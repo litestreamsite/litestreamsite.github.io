@@ -23,9 +23,58 @@
             "recapStart": null,
             "recapEnd": null,
             "creditsStart": null,
-            "directors": [],
-            "writers": [],
-            "cast": []
+            "directors": [
+                "Peder Pedersen"
+            ],
+            "writers": [
+                "John Derevlany"
+            ],
+            "cast": [
+                {
+                    "name": "Michael Patric",
+                    "role": "Bezar/Eglor/Gorzan/Mungus"
+                },
+                {
+                    "name": "Jeff Evans Todd",
+                    "role": "Bladvic/Razar/VoomVoom"
+                },
+                {
+                    "name": "David Attar",
+                    "role": "Cragger/Rogon/Stealthor"
+                },
+                {
+                    "name": "Bethany Brown",
+                    "role": "Eris/Wonald"
+                },
+                {
+                    "name": "Christopher Molineux",
+                    "role": "Fangar/Vornon"
+                },
+                {
+                    "name": "Meghan Kinsley",
+                    "role": "G'Loona"
+                },
+                {
+                    "name": "Bill Courage",
+                    "role": "Lagravis/Mottrot/Scrug"
+                },
+                {
+                    "name": "Scott Shantz",
+                    "role": "Laval/Scolder/Skinnet/Vardy/Worriz"
+                },
+                {
+                    "name": "Cassandra Ford",
+                    "role": "Maula"
+                },
+                {
+                    "name": "Jesse Inocalla",
+                    "role": "Plovar/Runk/Scorm/Scutter"
+                },
+                {
+                    "name": "Adam White",
+                    "role": "VoomVoom"
+                }
+            ]
         },
         {
             "number": 2,
@@ -49,9 +98,50 @@
             "recapStart": null,
             "recapEnd": null,
             "creditsStart": null,
-            "directors": [],
-            "writers": [],
-            "cast": []
+            "directors": [
+                "Peder Pedersen"
+            ],
+            "writers": [
+                "John Derevlany"
+            ],
+            "cast": [
+                {
+                    "name": "David Attar",
+                    "role": "Cragger/Crug/Rogon"
+                },
+                {
+                    "name": "Jeff Evans Todd",
+                    "role": "Crawley/VoomVoom"
+                },
+                {
+                    "name": "Bethany Brown",
+                    "role": "Crooler/Eris"
+                },
+                {
+                    "name": "Michael Patric",
+                    "role": "Eglor/Gorzan/Mungus"
+                },
+                {
+                    "name": "Christopher Molineux",
+                    "role": "Fangar/Vornon"
+                },
+                {
+                    "name": "Bill Courage",
+                    "role": "Lagravis/Longtooth/Mottrot"
+                },
+                {
+                    "name": "Scott Shantz",
+                    "role": "Laval/Vardy/Worriz"
+                },
+                {
+                    "name": "Cassandra Ford",
+                    "role": "Maula"
+                },
+                {
+                    "name": "Adam White",
+                    "role": "VoomVoom"
+                }
+            ]
         },
         {
             "number": 3,
@@ -75,9 +165,54 @@
             "recapStart": null,
             "recapEnd": null,
             "creditsStart": null,
-            "directors": [],
-            "writers": [],
-            "cast": []
+            "directors": [
+                "Peder Pedersen"
+            ],
+            "writers": [
+                "John Derevlany"
+            ],
+            "cast": [
+                {
+                    "name": "David Attar",
+                    "role": "Cragger/Rogon"
+                },
+                {
+                    "name": "Michael Patric",
+                    "role": "Eglor/Gorzan/Mungus"
+                },
+                {
+                    "name": "Bethany Brown",
+                    "role": "Eris"
+                },
+                {
+                    "name": "Jeff Evans Todd",
+                    "role": "Ewald/Strainor/VoomVoom"
+                },
+                {
+                    "name": "Christopher Molineux",
+                    "role": "Fangar/Vornon"
+                },
+                {
+                    "name": "Sean Shaffer",
+                    "role": "Fluminox"
+                },
+                {
+                    "name": "Bill Courage",
+                    "role": "Lagravis/Longtooth/Mottrot"
+                },
+                {
+                    "name": "Scott Shantz",
+                    "role": "Laval/Vardy"
+                },
+                {
+                    "name": "Cassandra Ford",
+                    "role": "Maula"
+                },
+                {
+                    "name": "Adam White",
+                    "role": "VoomVoom"
+                }
+            ]
         },
         {
             "number": 4,
@@ -101,9 +236,58 @@
             "recapStart": null,
             "recapEnd": null,
             "creditsStart": null,
-            "directors": [],
-            "writers": [],
-            "cast": []
+            "directors": [
+                "Peder Pedersen"
+            ],
+            "writers": [
+                "John Derevlany"
+            ],
+            "cast": [
+                {
+                    "name": "Jeff Evans Todd",
+                    "role": "Beaver"
+                },
+                {
+                    "name": "Michael Patric",
+                    "role": "Bezar/Mungus"
+                },
+                {
+                    "name": "David Attar",
+                    "role": "Cragger"
+                },
+                {
+                    "name": "Bethany Brown",
+                    "role": "Eris"
+                },
+                {
+                    "name": "Christopher Molineux",
+                    "role": "Fangar"
+                },
+                {
+                    "name": "Paula Hoffman",
+                    "role": "Flinx"
+                },
+                {
+                    "name": "Sean Shaffer",
+                    "role": "Fluminox"
+                },
+                {
+                    "name": "Bill Courage",
+                    "role": "Lagravis/Longtooth/Mottrot"
+                },
+                {
+                    "name": "Scott Shantz",
+                    "role": "Laval/Vardy"
+                },
+                {
+                    "name": "Cassandra Ford",
+                    "role": "Maula"
+                },
+                {
+                    "name": "Dave Pettitt",
+                    "role": "Tormak"
+                }
+            ]
         },
         {
             "number": 5,
@@ -127,9 +311,66 @@
             "recapStart": null,
             "recapEnd": null,
             "creditsStart": null,
-            "directors": [],
-            "writers": [],
-            "cast": []
+            "directors": [
+                "Peder Pedersen"
+            ],
+            "writers": [
+                "John Derevlany"
+            ],
+            "cast": [
+                {
+                    "name": "Jeff Evans Todd",
+                    "role": "Bladvic/Leonidas/Razar/Strainor/VoomVoom"
+                },
+                {
+                    "name": "David Attar",
+                    "role": "Cragger/Rogon"
+                },
+                {
+                    "name": "Bethany Brown",
+                    "role": "Eris"
+                },
+                {
+                    "name": "Christopher Molineux",
+                    "role": "Fangar/Vornon"
+                },
+                {
+                    "name": "Scott Shantz",
+                    "role": "Firox/Laval/Skinnet/Vardy/Worriz"
+                },
+                {
+                    "name": "Paula Hoffman",
+                    "role": "Flinx"
+                },
+                {
+                    "name": "Sean Shaffer",
+                    "role": "Fluminox"
+                },
+                {
+                    "name": "Adam White",
+                    "role": "Foltrax/VoomVoom"
+                },
+                {
+                    "name": "Michael Patric",
+                    "role": "Frax/Gorzan/Mungus"
+                },
+                {
+                    "name": "Bill Courage",
+                    "role": "Lagravis/Longtooth/Mottrot"
+                },
+                {
+                    "name": "Racquel Belmonte",
+                    "role": "Li'Ella"
+                },
+                {
+                    "name": "Cassandra Ford",
+                    "role": "Maula"
+                },
+                {
+                    "name": "Dave Pettitt",
+                    "role": "Tormak"
+                }
+            ]
         },
         {
             "number": 6,
@@ -153,9 +394,66 @@
             "recapStart": null,
             "recapEnd": null,
             "creditsStart": null,
-            "directors": [],
-            "writers": [],
-            "cast": []
+            "directors": [
+                "Peder Pedersen"
+            ],
+            "writers": [
+                "John Derevlany"
+            ],
+            "cast": [
+                {
+                    "name": "David Attar",
+                    "role": "Cragger/Rogon/Stealthor"
+                },
+                {
+                    "name": "Chris Durchand",
+                    "role": "Dom de la Woosh"
+                },
+                {
+                    "name": "Bethany Brown",
+                    "role": "Eris"
+                },
+                {
+                    "name": "Christopher Molineux",
+                    "role": "Fangar/Vornon"
+                },
+                {
+                    "name": "Paula Hoffman",
+                    "role": "Flinx"
+                },
+                {
+                    "name": "Sean Shaffer",
+                    "role": "Fluminox"
+                },
+                {
+                    "name": "Meghan Kinsley",
+                    "role": "G'Loona/Li'Ella"
+                },
+                {
+                    "name": "Michael Patric",
+                    "role": "Gorzan/Mungus"
+                },
+                {
+                    "name": "Scott Shantz",
+                    "role": "Laval/Vardy"
+                },
+                {
+                    "name": "Cassandra Ford",
+                    "role": "Maula"
+                },
+                {
+                    "name": "Bill Courage",
+                    "role": "Mottrot"
+                },
+                {
+                    "name": "Jeff Evans Todd",
+                    "role": "Strainor/VoomVoom"
+                },
+                {
+                    "name": "Adam White",
+                    "role": "VoomVoom"
+                }
+            ]
         },
         {
             "number": 7,
@@ -179,9 +477,74 @@
             "recapStart": null,
             "recapEnd": null,
             "creditsStart": null,
-            "directors": [],
-            "writers": [],
-            "cast": []
+            "directors": [
+                "Peder Pedersen"
+            ],
+            "writers": [
+                "John Derevlany"
+            ],
+            "cast": [
+                {
+                    "name": "David Attar",
+                    "role": "Cragger/Crug/Rogon/Stealthor"
+                },
+                {
+                    "name": "Bethany Brown",
+                    "role": "Crooler/Eris"
+                },
+                {
+                    "name": "Christopher Molineux",
+                    "role": "Fangar/Vornon"
+                },
+                {
+                    "name": "Scott Shantz",
+                    "role": "Firox/Laval/Skinnet/Vardy"
+                },
+                {
+                    "name": "Paula Hoffman",
+                    "role": "Flinx"
+                },
+                {
+                    "name": "Sean Shaffer",
+                    "role": "Fluminox"
+                },
+                {
+                    "name": "Adam White",
+                    "role": "Foltrax/VoomVoom"
+                },
+                {
+                    "name": "Michael Patric",
+                    "role": "Frax/Gorzan/Mungus"
+                },
+                {
+                    "name": "Bill Courage",
+                    "role": "Lagravis/Mottrot"
+                },
+                {
+                    "name": "Meghan Kinsley",
+                    "role": "Li'Ella"
+                },
+                {
+                    "name": "Cassandra Ford",
+                    "role": "Maula"
+                },
+                {
+                    "name": "Jesse Inocalla",
+                    "role": "Plovar"
+                },
+                {
+                    "name": "John Nelson",
+                    "role": "Rukus"
+                },
+                {
+                    "name": "Jeff Evans Todd",
+                    "role": "Strainor/VoomVoom"
+                },
+                {
+                    "name": "Dave Pettitt",
+                    "role": "Tormak"
+                }
+            ]
         },
         {
             "number": 8,
@@ -205,9 +568,74 @@
             "recapStart": null,
             "recapEnd": null,
             "creditsStart": null,
-            "directors": [],
-            "writers": [],
-            "cast": []
+            "directors": [
+                "Peder Pedersen"
+            ],
+            "writers": [
+                "John Derevlany"
+            ],
+            "cast": [
+                {
+                    "name": "Bethany Brown",
+                    "role": "Eris"
+                },
+                {
+                    "name": "Jeff Evans Todd",
+                    "role": "Ewald/Leonidas/Lundor/Razar/Strainor"
+                },
+                {
+                    "name": "Christopher Molineux",
+                    "role": "Fangar"
+                },
+                {
+                    "name": "Paula Hoffman",
+                    "role": "Flinx"
+                },
+                {
+                    "name": "Sean Shaffer",
+                    "role": "Fluminox"
+                },
+                {
+                    "name": "Bill Courage",
+                    "role": "Lagravis/Longtooth/Mottrot"
+                },
+                {
+                    "name": "Scott Shantz",
+                    "role": "Laval/Razcal/Vardy"
+                },
+                {
+                    "name": "Meghan Kinsley",
+                    "role": "Li'Ella"
+                },
+                {
+                    "name": "Cassandra Ford",
+                    "role": "Maula"
+                },
+                {
+                    "name": "Michael Patric",
+                    "role": "Mungus"
+                },
+                {
+                    "name": "Jesse Inocalla",
+                    "role": "Plovar/Runk"
+                },
+                {
+                    "name": "Racquel Belmonte",
+                    "role": "Rinona"
+                },
+                {
+                    "name": "David Attar",
+                    "role": "Rogon/Stealthor"
+                },
+                {
+                    "name": "John Nelson",
+                    "role": "Rukus"
+                },
+                {
+                    "name": "Dave Pettitt",
+                    "role": "Tormak"
+                }
+            ]
         },
         {
             "number": 9,
@@ -231,9 +659,74 @@
             "recapStart": null,
             "recapEnd": null,
             "creditsStart": null,
-            "directors": [],
-            "writers": [],
-            "cast": []
+            "directors": [
+                "Peder Pedersen"
+            ],
+            "writers": [
+                "John Derevlany"
+            ],
+            "cast": [
+                {
+                    "name": "Michael Patric",
+                    "role": "Bezar/Frax/Mungus"
+                },
+                {
+                    "name": "David Attar",
+                    "role": "Cragger/Lennox/Rogon/Stealthor"
+                },
+                {
+                    "name": "Bethany Brown",
+                    "role": "Crooler"
+                },
+                {
+                    "name": "Christopher Molineux",
+                    "role": "Fangar/Vornon"
+                },
+                {
+                    "name": "Paula Hoffman",
+                    "role": "Flinx"
+                },
+                {
+                    "name": "Adam White",
+                    "role": "Firox/VoomVoom"
+                },
+                {
+                    "name": "Sean Shaffer",
+                    "role": "Fluminox"
+                },
+                {
+                    "name": "Scott Shantz",
+                    "role": "Foltrax/Laval/Skinnet/Vardy"
+                },
+                {
+                    "name": "Jesse Inocalla",
+                    "role": "Lennox/Plovar/Runk"
+                },
+                {
+                    "name": "Jeff Evans Todd",
+                    "role": "Lennox/Leonidas/Lundor/Razar/VoomVoom"
+                },
+                {
+                    "name": "Meghan Kinsley",
+                    "role": "Li'Ella"
+                },
+                {
+                    "name": "Bill Courage",
+                    "role": "Longtooth/Mottrot"
+                },
+                {
+                    "name": "Cassandra Ford",
+                    "role": "Maula"
+                },
+                {
+                    "name": "John Nelson",
+                    "role": "Rukus"
+                },
+                {
+                    "name": "Dave Pettitt",
+                    "role": "Tormak"
+                }
+            ]
         },
         {
             "number": 10,
@@ -257,9 +750,74 @@
             "recapStart": null,
             "recapEnd": null,
             "creditsStart": null,
-            "directors": [],
-            "writers": [],
-            "cast": []
+            "directors": [
+                "Peder Pedersen"
+            ],
+            "writers": [
+                "John Derevlany"
+            ],
+            "cast": [
+                {
+                    "name": "Michael Patric",
+                    "role": "Bezar/Gorzan/Mungus"
+                },
+                {
+                    "name": "Jeff Evans Todd",
+                    "role": "Bladvic/Strainor/VoomVoom"
+                },
+                {
+                    "name": "David Attar",
+                    "role": "Cragger/Rogon/Stealthor"
+                },
+                {
+                    "name": "Bill Courage",
+                    "role": "Crominus/Lagravis/Mottrot"
+                },
+                {
+                    "name": "Meghan Kinsley",
+                    "role": "Crunket/Li'Ella"
+                },
+                {
+                    "name": "Chris Durchand",
+                    "role": "Dom de la Woosh"
+                },
+                {
+                    "name": "Bethany Brown",
+                    "role": "Eris"
+                },
+                {
+                    "name": "Christopher Molineux",
+                    "role": "Fangar/Vornon"
+                },
+                {
+                    "name": "Scott Shantz",
+                    "role": "Laval/Vardy/Worriz"
+                },
+                {
+                    "name": "Cassandra Ford",
+                    "role": "Maula/Spinlyn"
+                },
+                {
+                    "name": "Jesse Inocalla",
+                    "role": "Plovar/Runk/Scorm"
+                },
+                {
+                    "name": "Racquel Belmonte",
+                    "role": "Rinona"
+                },
+                {
+                    "name": "John Nelson",
+                    "role": "Rukus"
+                },
+                {
+                    "name": "Dave Pettitt",
+                    "role": "Tormak"
+                },
+                {
+                    "name": "Adam White",
+                    "role": "VoomVoom"
+                }
+            ]
         },
         {
             "number": 11,
@@ -283,9 +841,66 @@
             "recapStart": null,
             "recapEnd": null,
             "creditsStart": null,
-            "directors": [],
-            "writers": [],
-            "cast": []
+            "directors": [
+                "Peder Pedersen"
+            ],
+            "writers": [
+                "John Derevlany"
+            ],
+            "cast": [
+                {
+                    "name": "Michael Patric",
+                    "role": "Eglor/Frax/Gorzan"
+                },
+                {
+                    "name": "Bethany Brown",
+                    "role": "Eris"
+                },
+                {
+                    "name": "Scott Shantz",
+                    "role": "Firox/Laval/Razcal/Vardy/Worriz"
+                },
+                {
+                    "name": "Adam White",
+                    "role": "Foltrax"
+                },
+                {
+                    "name": "Christopher Molineux",
+                    "role": "Fangar/Vornon"
+                },
+                {
+                    "name": "Jesse Inocalla",
+                    "role": "Lennox/Runk"
+                },
+                {
+                    "name": "David Attar",
+                    "role": "Lennox/Rogon/Stealthor"
+                },
+                {
+                    "name": "Jeff Evans Todd",
+                    "role": "Lennox/Leonidas/Lundor/Razar/Strainor/Tazar"
+                },
+                {
+                    "name": "Meghan Kinsley",
+                    "role": "Li'Ella"
+                },
+                {
+                    "name": "Cassandra Ford",
+                    "role": "Maula"
+                },
+                {
+                    "name": "Bill Courage",
+                    "role": "Mottrot/Trakkar"
+                },
+                {
+                    "name": "John Nelson",
+                    "role": "Rukus"
+                },
+                {
+                    "name": "Dave Pettitt",
+                    "role": "Tormak"
+                }
+            ]
         },
         {
             "number": 12,
@@ -309,9 +924,62 @@
             "recapStart": null,
             "recapEnd": null,
             "creditsStart": null,
-            "directors": [],
-            "writers": [],
-            "cast": []
+            "directors": [
+                "Peder Pedersen"
+            ],
+            "writers": [
+                "John Derevlany"
+            ],
+            "cast": [
+                {
+                    "name": "David Attar",
+                    "role": "Cragger"
+                },
+                {
+                    "name": "Bethany Brown",
+                    "role": "Eris"
+                },
+                {
+                    "name": "Christopher Molineux",
+                    "role": "Fangar/Vornon"
+                },
+                {
+                    "name": "Sean Shaffer",
+                    "role": "Fluminox"
+                },
+                {
+                    "name": "Scott Shantz",
+                    "role": "Firox/Laval/Vardy"
+                },
+                {
+                    "name": "Adam White",
+                    "role": "Foltrax/VoomVoom"
+                },
+                {
+                    "name": "Michael Patric",
+                    "role": "Frax"
+                },
+                {
+                    "name": "Bill Courage",
+                    "role": "Lavertus/Mottrot"
+                },
+                {
+                    "name": "Meghan Kinsley",
+                    "role": "Li'Ella"
+                },
+                {
+                    "name": "Cassandra Ford",
+                    "role": "Maula"
+                },
+                {
+                    "name": "Jeff Evans Todd",
+                    "role": "Strainor/VoomVoom"
+                },
+                {
+                    "name": "Dave Pettitt",
+                    "role": "Tormak"
+                }
+            ]
         },
         {
             "number": 13,
@@ -335,9 +1003,66 @@
             "recapStart": null,
             "recapEnd": null,
             "creditsStart": null,
-            "directors": [],
-            "writers": [],
-            "cast": []
+            "directors": [
+                "Peder Pedersen"
+            ],
+            "writers": [
+                "John Derevlany"
+            ],
+            "cast": [
+                {
+                    "name": "Michael Patric",
+                    "role": "Bezar/Frax/Gorzan/Mungus"
+                },
+                {
+                    "name": "David Attar",
+                    "role": "Cragger/Rogon/Stealthor"
+                },
+                {
+                    "name": "Jeff Evans Todd",
+                    "role": "Eagle Scholar/Lundor"
+                },
+                {
+                    "name": "Bethany Brown",
+                    "role": "Eris"
+                },
+                {
+                    "name": "Christopher Molineux",
+                    "role": "Fangar"
+                },
+                {
+                    "name": "Scott Shantz",
+                    "role": "Firox/Laval/Vardy/Worriz"
+                },
+                {
+                    "name": "Adam White",
+                    "role": "Foltrax"
+                },
+                {
+                    "name": "Meghan Kinsley",
+                    "role": "G'Loona/Li'Ella"
+                },
+                {
+                    "name": "Jesse Inocalla",
+                    "role": "Grumlo/Runk"
+                },
+                {
+                    "name": "Bill Courage",
+                    "role": "Lavertus/Mottrot/Trakkar"
+                },
+                {
+                    "name": "Cassandra Ford",
+                    "role": "Maula"
+                },
+                {
+                    "name": "John Nelson",
+                    "role": "Rukus"
+                },
+                {
+                    "name": "Dave Pettitt",
+                    "role": "Tormak"
+                }
+            ]
         },
         {
             "number": 14,
@@ -361,9 +1086,54 @@
             "recapStart": null,
             "recapEnd": null,
             "creditsStart": null,
-            "directors": [],
-            "writers": [],
-            "cast": []
+            "directors": [
+                "Peder Pedersen"
+            ],
+            "writers": [
+                "John Derevlany"
+            ],
+            "cast": [
+                {
+                    "name": "Jeff Evans Todd",
+                    "role": "Bladvic"
+                },
+                {
+                    "name": "David Attar",
+                    "role": "Cragger/Crug/Stealthor"
+                },
+                {
+                    "name": "Bethany Brown",
+                    "role": "Eris"
+                },
+                {
+                    "name": "Christopher Molineux",
+                    "role": "Fangar"
+                },
+                {
+                    "name": "Bill Courage",
+                    "role": "Lagravis/Lavertus/Longtooth/Mottrot"
+                },
+                {
+                    "name": "Scott Shantz",
+                    "role": "Laval/Vardy/Worriz"
+                },
+                {
+                    "name": "Meghan Kinsley",
+                    "role": "Li'Ella"
+                },
+                {
+                    "name": "Cassandra Ford",
+                    "role": "Maula"
+                },
+                {
+                    "name": "Michael Patric",
+                    "role": "Mungus"
+                },
+                {
+                    "name": "Dave Pettitt",
+                    "role": "Tormak"
+                }
+            ]
         },
         {
             "number": 15,
@@ -387,9 +1157,66 @@
             "recapStart": null,
             "recapEnd": null,
             "creditsStart": null,
-            "directors": [],
-            "writers": [],
-            "cast": []
+            "directors": [
+                "Peder Pedersen"
+            ],
+            "writers": [
+                "John Derevlany"
+            ],
+            "cast": [
+                {
+                    "name": "Jeff Evans Todd",
+                    "role": "Bladvic/Ewald/Razar/VoomVoom"
+                },
+                {
+                    "name": "David Attar",
+                    "role": "Cragger/Crug/Rogon/Stealthor"
+                },
+                {
+                    "name": "Michael Patric",
+                    "role": "Eglor/Frax/Gorzan/Mungus"
+                },
+                {
+                    "name": "Bethany Brown",
+                    "role": "Eris"
+                },
+                {
+                    "name": "Christopher Molineux",
+                    "role": "Fangar"
+                },
+                {
+                    "name": "Scott Shantz",
+                    "role": "Firox/Laval/Vardy/Worriz"
+                },
+                {
+                    "name": "Paula Hoffman",
+                    "role": "Flinx"
+                },
+                {
+                    "name": "Sean Shaffer",
+                    "role": "Fluminox"
+                },
+                {
+                    "name": "Adam White",
+                    "role": "Foltrax/VoomVoom"
+                },
+                {
+                    "name": "Bill Courage",
+                    "role": "Lagravis/Lavertus/Longtooth/Mottrot"
+                },
+                {
+                    "name": "Racquel Belmonte",
+                    "role": "Li'Ella"
+                },
+                {
+                    "name": "Cassandra Ford",
+                    "role": "Maula"
+                },
+                {
+                    "name": "Dave Pettitt",
+                    "role": "Tormak"
+                }
+            ]
         }
     ]
 }

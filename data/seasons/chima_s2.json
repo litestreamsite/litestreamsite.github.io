@@ -23,9 +23,46 @@
             "recapStart": null,
             "recapEnd": null,
             "creditsStart": null,
-            "directors": [],
-            "writers": [],
-            "cast": []
+            "directors": [
+                "Peder Pedersen"
+            ],
+            "writers": [
+                "John Derevlany"
+            ],
+            "cast": [
+                {
+                    "name": "Jeff Evans Todd",
+                    "role": "Bladvic/Razar"
+                },
+                {
+                    "name": "David Attar",
+                    "role": "Cragger/Rogon"
+                },
+                {
+                    "name": "Bethany Brown",
+                    "role": "Crooler/Eris"
+                },
+                {
+                    "name": "Meghan Kinsley",
+                    "role": "Crunket"
+                },
+                {
+                    "name": "Michael Patric",
+                    "role": "Gorzan"
+                },
+                {
+                    "name": "Bill Courage",
+                    "role": "Lagravis/Lavertus"
+                },
+                {
+                    "name": "Scott Shantz",
+                    "role": "Laval/Skinnet/Worriz"
+                },
+                {
+                    "name": "Jesse Inocalla",
+                    "role": "Scorm"
+                }
+            ]
         },
         {
             "number": 2,
@@ -49,9 +86,50 @@
             "recapStart": null,
             "recapEnd": null,
             "creditsStart": null,
-            "directors": [],
-            "writers": [],
-            "cast": []
+            "directors": [
+                "Peder Pedersen"
+            ],
+            "writers": [
+                "John Derevlany"
+            ],
+            "cast": [
+                {
+                    "name": "Michael Patric",
+                    "role": "Bat Soldier/Gorzan"
+                },
+                {
+                    "name": "Jeff Evans Todd",
+                    "role": "Bladvic/Crawley/Razar/Sparratus"
+                },
+                {
+                    "name": "David Attar",
+                    "role": "Cragger/Crug/Rogon/Sparacon"
+                },
+                {
+                    "name": "Bethany Brown",
+                    "role": "Crooler/Eris"
+                },
+                {
+                    "name": "Meghan Kinsley",
+                    "role": "Crunket"
+                },
+                {
+                    "name": "Bill Courage",
+                    "role": "Lagravis/Lavertus/Sparacon/Sparratus"
+                },
+                {
+                    "name": "Scott Shantz",
+                    "role": "Laval/Worriz"
+                },
+                {
+                    "name": "Racquel Belmonte",
+                    "role": "Rinona"
+                },
+                {
+                    "name": "Cassandra Ford",
+                    "role": "Spinlyn"
+                }
+            ]
         },
         {
             "number": 3,
@@ -75,9 +153,54 @@
             "recapStart": null,
             "recapEnd": null,
             "creditsStart": null,
-            "directors": [],
-            "writers": [],
-            "cast": []
+            "directors": [
+                "Peder Pedersen"
+            ],
+            "writers": [
+                "John Derevlany"
+            ],
+            "cast": [
+                {
+                    "name": "Jeff Evans Todd",
+                    "role": "Bladvic/Razar/Scolder"
+                },
+                {
+                    "name": "David Attar",
+                    "role": "Cragger/Rogon"
+                },
+                {
+                    "name": "Bethany Brown",
+                    "role": "Crooler/Eris"
+                },
+                {
+                    "name": "Meghan Kinsley",
+                    "role": "Crunket"
+                },
+                {
+                    "name": "Michael Patric",
+                    "role": "Gorzan"
+                },
+                {
+                    "name": "Bill Courage",
+                    "role": "Lagravis/Lavertus/Longtooth/Scrug"
+                },
+                {
+                    "name": "Scott Shantz",
+                    "role": "Laval/Scolder/Scutter/Worriz"
+                },
+                {
+                    "name": "Jesse Inocalla",
+                    "role": "Plovar/Scorm"
+                },
+                {
+                    "name": "Racquel Belmonte",
+                    "role": "Rinona"
+                },
+                {
+                    "name": "Cassandra Ford",
+                    "role": "Spinlyn"
+                }
+            ]
         },
         {
             "number": 4,
@@ -101,9 +224,50 @@
             "recapStart": null,
             "recapEnd": null,
             "creditsStart": null,
-            "directors": [],
-            "writers": [],
-            "cast": []
+            "directors": [
+                "Peder Pedersen"
+            ],
+            "writers": [
+                "John Derevlany"
+            ],
+            "cast": [
+                {
+                    "name": "Jeff Evans Todd",
+                    "role": "Bladvic/Razar/Scolder"
+                },
+                {
+                    "name": "David Attar",
+                    "role": "Cragger/Rogon"
+                },
+                {
+                    "name": "Bill Courage",
+                    "role": "Crominus/Lavertus/Scrug"
+                },
+                {
+                    "name": "Bethany Brown",
+                    "role": "Eris"
+                },
+                {
+                    "name": "Michael Patric",
+                    "role": "Gorzan"
+                },
+                {
+                    "name": "Scott Shantz",
+                    "role": "Laval/Scolder/Scutter/Worriz"
+                },
+                {
+                    "name": "Jesse Inocalla",
+                    "role": "Plovar/Scorm"
+                },
+                {
+                    "name": "Racquel Belmonte",
+                    "role": "Rinona"
+                },
+                {
+                    "name": "Cassandra Ford",
+                    "role": "Spinlyn"
+                }
+            ]
         },
         {
             "number": 5,
@@ -127,9 +291,46 @@
             "recapStart": null,
             "recapEnd": null,
             "creditsStart": null,
-            "directors": [],
-            "writers": [],
-            "cast": []
+            "directors": [
+                "Peder Pedersen"
+            ],
+            "writers": [
+                "John Derevlany"
+            ],
+            "cast": [
+                {
+                    "name": "Jeff Evans Todd",
+                    "role": "Bladvic/Razar/Scolder"
+                },
+                {
+                    "name": "David Attar",
+                    "role": "Cragger/Rogon"
+                },
+                {
+                    "name": "Bill Courage",
+                    "role": "Crominus/Lavertus/Scrug"
+                },
+                {
+                    "name": "Bethany Brown",
+                    "role": "Eris"
+                },
+                {
+                    "name": "Michael Patric",
+                    "role": "Gorzan"
+                },
+                {
+                    "name": "Scott Shantz",
+                    "role": "Laval/Scolder/Scutter/Worriz"
+                },
+                {
+                    "name": "Jesse Inocalla",
+                    "role": "Plovar/Scorm"
+                },
+                {
+                    "name": "Cassandra Ford",
+                    "role": "Spinlyn"
+                }
+            ]
         },
         {
             "number": 6,
@@ -153,9 +354,54 @@
             "recapStart": null,
             "recapEnd": null,
             "creditsStart": null,
-            "directors": [],
-            "writers": [],
-            "cast": []
+            "directors": [
+                "Peder Pedersen"
+            ],
+            "writers": [
+                "John Derevlany"
+            ],
+            "cast": [
+                {
+                    "name": "Jeff Evans Todd",
+                    "role": "Bladvic/Ewald/Razar/Spider Soldier"
+                },
+                {
+                    "name": "David Attar",
+                    "role": "Cragger/Rogon"
+                },
+                {
+                    "name": "Bill Courage",
+                    "role": "Crominus/Lagravis/Lavertus"
+                },
+                {
+                    "name": "Bethany Brown",
+                    "role": "Crooler/Eris"
+                },
+                {
+                    "name": "Meghan Kinsley",
+                    "role": "Crunket"
+                },
+                {
+                    "name": "Michael Patric",
+                    "role": "Eglor/Gorzan"
+                },
+                {
+                    "name": "Scott Shantz",
+                    "role": "Laval/Worriz"
+                },
+                {
+                    "name": "Jesse Inocalla",
+                    "role": "Plovar/Scorm"
+                },
+                {
+                    "name": "Racquel Belmonte",
+                    "role": "Rinona"
+                },
+                {
+                    "name": "Cassandra Ford",
+                    "role": "Spinlyn"
+                }
+            ]
         }
     ]
 }
