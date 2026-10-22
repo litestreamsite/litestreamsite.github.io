@@ -1,20 +1,17 @@
 {
     "season": 1,
-    "episodes": [
-        {
+    "episodes": [{
             "number": 1,
-            "title": "Monstrosity",
-            "description": "Stranded in the Land of Monsters, Kai fights to survive and find his way home. Alongside a dragon and a long-lost mech, he discovers that hope may be the strongest force of all.",
-            "thumbnail": "https://cdn1.futuretodayinc.com/files/a8wn4hw/im/50/e3/e7e74da59ee40a2ac3ec5bff70572616.jpg",
-            "embed": "https://cdn1.futuretodayinc.com/files/a8wn4hw/vi/95/f0/10705763/s10705763.m3u8",
-            "subtitles": [
-                {
-                    "url": "",
-                    "lang": "en",
-                    "label": "English",
-                    "default": true
-                }
-            ],
+            "title": "To Become a Monster",
+            "description": "Stranded in the Land of Monsters, Kai tries to stop a green dragon from seeking revenge on a giant creature.",
+            "thumbnail": "https://image.tmdb.org/t/p/original/owCztDYqVGmfwwIigH35HArUeH0.jpg",
+            "embed": "https://videoprocessingpipeline.services.lego.com/assets/380b2141-c308-4e5f-b391-c8626aa13125/7f75b057-d18d-4d3d-8e41-b29201645ef2/1080p.mp4",
+            "subtitles": [{
+                "url": "",
+                "lang": "en",
+                "label": "English",
+                "default": true
+            }],
             "airDate": "June 12, 2025",
             "sources": [],
             "downloads": [],
@@ -25,26 +22,96 @@
             "creditsStart": null,
             "directors": ["Ben Marsaud"],
             "writers": ["Kevin Burke", "Chris Wyatt"],
-            "cast": [
-                { "name": "Vincent Tong", "role": "Kai" },
-                { "name": "Fiona Hogan", "role": "Daidan" },
-                { "name": "Ian Hanlin", "role": "Mech/Old Fire Master" }
+            "cast": [{
+                    "name": "Vincent Tong",
+                    "role": "Kai"
+                },
+                {
+                    "name": "Fiona Hogan",
+                    "role": "Daidan"
+                }
             ]
         },
         {
             "number": 2,
+            "title": "Fallen Master",
+            "description": "Kai awakens an ancient mech and helps it face the monster that was once its master.",
+            "thumbnail": "https://image.tmdb.org/t/p/original/mrfbMR8Dbt1N341eJOYvsHJUwxY.jpg",
+            "embed": "https://videoprocessingpipeline.services.lego.com/assets/30f51b37-5261-48cd-90fb-e3faf14ed804/840ce883-066a-47ad-9455-b2a701469765/1080p.mp4",
+            "subtitles": [{
+                "url": "",
+                "lang": "en",
+                "label": "English",
+                "default": true
+            }],
+            "airDate": "June 12, 2025",
+            "sources": [],
+            "downloads": [],
+            "introStart": null,
+            "introEnd": null,
+            "recapStart": null,
+            "recapEnd": null,
+            "creditsStart": null,
+            "directors": ["Ben Marsaud"],
+            "writers": ["Kevin Burke", "Chris Wyatt"],
+            "cast": [{
+                    "name": "Vincent Tong",
+                    "role": "Kai"
+                },
+                {
+                    "name": "Ian Hanlin",
+                    "role": "Mech"
+                }
+            ]
+        },
+        {
+            "number": 3,
+            "title": "False Light",
+            "description": "A lake in the Land of Monsters tempts Kai and his companions with visions of what they long for, as they face a dangerous sea beast.",
+            "thumbnail": "https://image.tmdb.org/t/p/original/9fdL0iTEBv3O8emdxgycJjbt9hD.jpg",
+            "embed": "https://videoprocessingpipeline.services.lego.com/assets/627a2a67-9592-4daa-822c-982aa5dc0320/75f4a94c-df77-4dcd-a97e-b2a7014af5ca/1080p.mp4",
+            "subtitles": [{
+                "url": "",
+                "lang": "en",
+                "label": "English",
+                "default": true
+            }],
+            "airDate": "June 12, 2025",
+            "sources": [],
+            "downloads": [],
+            "introStart": null,
+            "introEnd": null,
+            "recapStart": null,
+            "recapEnd": null,
+            "creditsStart": null,
+            "directors": ["Ben Marsaud"],
+            "writers": ["Kevin Burke", "Chris Wyatt"],
+            "cast": [{
+                    "name": "Vincent Tong",
+                    "role": "Kai"
+                },
+                {
+                    "name": "Fiona Hogan",
+                    "role": "Daidan"
+                },
+                {
+                    "name": "Ian Hanlin",
+                    "role": "Mech/Old Fire Master"
+                }
+            ]
+        },
+        {
+            "number": 4,
             "title": "The Forest of Teeth",
             "description": "Kai recounts how a battle in the Land of Monsters led him and Daidan into the living Forest of Teeth, where a strange creature offers him unexpected help.",
             "thumbnail": "https://www.lego.com/cdn/cs/catalog/assets/blt852c464b78fc8296/1/01._Publishing_-_AID254GL0b21a944_Monstrous_Journey_Episode_01_Forest_of_Teeth_THUMBNAIL.png",
             "embed": "https://videoprocessingpipeline.services.lego.com/assets/1b3ff55e-47a6-4fdd-9e35-a7097647a374/2397634a-f7bd-4615-a8bd-b31c0087f07e/1080p.mp4",
-            "subtitles": [
-                {
-                    "url": "",
-                    "lang": "en",
-                    "label": "English",
-                    "default": true
-                }
-            ],
+            "subtitles": [{
+                "url": "",
+                "lang": "en",
+                "label": "English",
+                "default": true
+            }],
             "airDate": "July 31, 2025",
             "sources": [],
             "downloads": [],
@@ -55,25 +122,28 @@
             "creditsStart": null,
             "directors": [],
             "writers": ["Kevin Burke", "Chris Wyatt"],
-            "cast": [
-                { "name": "Vincent Tong", "role": "Kai/Fuzz" },
-                { "name": "Kazumi Evans", "role": "Wyldfyre/Daidan" }
+            "cast": [{
+                    "name": "Vincent Tong",
+                    "role": "Kai/Fuzz"
+                },
+                {
+                    "name": "Kazumi Evans",
+                    "role": "Wyldfyre/Daidan"
+                }
             ]
         },
         {
-            "number": 3,
+            "number": 5,
             "title": "The Ruins",
             "description": "As Kai recounts his adventures to Wyldfyre, a monster pig nearly brings his journey to an end. A mysterious bounty hunter offers help—but when Daidan is captured, Kai must decide whether he can trust him.",
             "thumbnail": "https://www.lego.com/cdn/cs/catalog/assets/blt12a1bc2192cea7d4/1/AID254GL92edceeb_Ninjago_KaiMonstrosity_HEROIMAGE-EP002_16x9.jpg",
             "embed": "https://videoprocessingpipeline.services.lego.com/assets/daf2743f-daed-47e7-a8a4-e2d57ee02ccc/f1ee0d80-04c4-44ca-9b2f-b324009a6e64/1080p.mp4",
-            "subtitles": [
-                {
-                    "url": "",
-                    "lang": "en",
-                    "label": "English",
-                    "default": true
-                }
-            ],
+            "subtitles": [{
+                "url": "",
+                "lang": "en",
+                "label": "English",
+                "default": true
+            }],
             "airDate": "August 7, 2025",
             "sources": [],
             "downloads": [],
@@ -84,25 +154,28 @@
             "creditsStart": null,
             "directors": [],
             "writers": ["Kevin Burke", "Chris Wyatt"],
-            "cast": [
-                { "name": "Vincent Tong", "role": "Kai/Bolsen/Fuzz" },
-                { "name": "Kazumi Evans", "role": "Wyldfyre/Daidan" }
+            "cast": [{
+                    "name": "Vincent Tong",
+                    "role": "Kai/Bolsen/Fuzz"
+                },
+                {
+                    "name": "Kazumi Evans",
+                    "role": "Wyldfyre/Daidan"
+                }
             ]
         },
         {
-            "number": 4,
+            "number": 6,
             "title": "Queen of Monsters",
             "description": "Kai and Bolsen race to save Daidan, only to face betrayal and the Queen of Monsters.",
             "thumbnail": "https://www.lego.com/cdn/cs/catalog/assets/blt3cccbbb1ce6d03ea/1/AID254GL1439b9d4_Monstrous_Journey_Episode_03_THUMBNAIL.jpg",
             "embed": "https://videoprocessingpipeline.services.lego.com/assets/91527aa0-3a77-44a9-a502-5838046d2556/41169f09-11b4-4a5d-952f-b32b008d9334/1080p.mp4",
-            "subtitles": [
-                {
-                    "url": "",
-                    "lang": "en",
-                    "label": "English",
-                    "default": true
-                }
-            ],
+            "subtitles": [{
+                "url": "",
+                "lang": "en",
+                "label": "English",
+                "default": true
+            }],
             "airDate": "August 15, 2025",
             "sources": [],
             "downloads": [],
@@ -113,25 +186,28 @@
             "creditsStart": null,
             "directors": [],
             "writers": ["Kevin Burke", "Chris Wyatt"],
-            "cast": [
-                { "name": "Vincent Tong", "role": "Kai/Bolsen/Fuzz" },
-                { "name": "Kazumi Evans", "role": "Wyldfyre/Daidan/Queen of Monsters" }
+            "cast": [{
+                    "name": "Vincent Tong",
+                    "role": "Kai/Bolsen/Fuzz"
+                },
+                {
+                    "name": "Kazumi Evans",
+                    "role": "Wyldfyre/Daidan/Queen of Monsters"
+                }
             ]
         },
         {
-            "number": 5,
+            "number": 7,
             "title": "Back At It",
             "description": "Kai films Wyldfyre’s training as she works to perfect her aim. Inspired by his posts, she challenges him to a friendly competition—and Kai’s ready to take the shot.",
             "thumbnail": "https://www.lego.com/cdn/cs/catalog/assets/bltf2bbe79345906923/1/AID254GLce8a441e_Monstrosity_NPC_Video_04_Wyldfyre_Training_THUMBNAIL.jpg",
             "embed": "https://videoprocessingpipeline.services.lego.com/assets/217c1be7-c215-42a5-bf1c-dfe65dce85be/10caff35-7f65-4834-a297-b32b008d4601/1080p.mp4",
-            "subtitles": [
-                {
-                    "url": "",
-                    "lang": "en",
-                    "label": "English",
-                    "default": true
-                }
-            ],
+            "subtitles": [{
+                "url": "",
+                "lang": "en",
+                "label": "English",
+                "default": true
+            }],
             "airDate": "August 25, 2025",
             "sources": [],
             "downloads": [],
@@ -142,9 +218,14 @@
             "creditsStart": null,
             "directors": [],
             "writers": [],
-            "cast": [
-                { "name": "Vincent Tong", "role": "Kai" },
-                { "name": "Kazumi Evans", "role": "Wyldfyre" }
+            "cast": [{
+                    "name": "Vincent Tong",
+                    "role": "Kai"
+                },
+                {
+                    "name": "Kazumi Evans",
+                    "role": "Wyldfyre"
+                }
             ]
         }
     ]
