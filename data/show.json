@@ -314,7 +314,7 @@
             "id": "ninjagoembersandashes",
             "title": "LEGO Ninjago Legends: Embers and Ashes",
             "type": "show",
-            "comingSoon": true,
+            "comingSoon": false,
             "genres": ["Action & Adventure", "Animation", "Fantasy"],
             "rating": "TV-Y7",
             "years": "2027",
