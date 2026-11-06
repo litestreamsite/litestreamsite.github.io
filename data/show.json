@@ -167,183 +167,183 @@
             "seasons": [{
                     "number": 1,
                     "file": "data/seasons/embersandashes_s1.json"
+                }
+            ]
+        },
+        {
+            "id": "ninjagoduskfall",
+            "title": "LEGO Ninjago Legends: Duskfall",
+            "type": "show",
+            "newEpisodes": true,
+            "genres": ["Action & Adventure", "Animation", "Fantasy"],
+            "rating": "TV-Y7",
+            "poster": "https://image.tmdb.org/t/p/original/fpQDQJJNtn8Vm6oPaokmK2tJWhA.jpg",
+            "banner": "https://image.tmdb.org/t/p/original/pf5LDPweGj3qrJ08O8E07x4T2Lq.jpg",
+            "logo": "https://image.tmdb.org/t/p/original/kiZPy5fL7wG424TuhQIuUKHbM0D.png",
+            "summary": "Journey through the history of Ninjago, from the ancient Oni era to the futuristic Mech Wars, as the Ninja's legacy lives on through legendary artefacts, powerful machines and new generations of heroes.",
+            "seasons": [{
+                "number": 1,
+                "file": "data/seasons/legends_s2.json"
+            }]
+        },
+        {
+            "id": "dreamzzz",
+            "title": "LEGO DREAMZzz",
+            "type": "show",
+            "genres": ["Animation", "Fantasy", "Kids"],
+            "rating": "TV-Y7",
+            "years": "2023 – 2026",
+            "poster": "https://image.tmdb.org/t/p/original/bksnhr6slfT2mIcCTglGYD3pI9A.jpg",
+            "banner": "https://image.tmdb.org/t/p/original/i9TAaBxTqbRMbY6gWuTdtX9fzCr.jpg",
+            "logo": "https://image.tmdb.org/t/p/original/pFRxWD5a3gDNtbMt0tytEh9OIFv.png",
+            "summary": "A group of kids joins a secret agency and enter the Dream World to combat nightmares and use the power of imagination to save dreamers in distress.",
+            "seasons": [{
+                    "number": 1,
+                    "file": "data/seasons/dz_s1.json"
                 },
                 {
-                    "id": "ninjagoduskfall",
-                    "title": "LEGO Ninjago Legends: Duskfall",
-                    "type": "show",
-                    "newEpisodes": true,
-                    "genres": ["Action & Adventure", "Animation", "Fantasy"],
-                    "rating": "TV-Y7",
-                    "poster": "https://image.tmdb.org/t/p/original/fpQDQJJNtn8Vm6oPaokmK2tJWhA.jpg",
-                    "banner": "https://image.tmdb.org/t/p/original/pf5LDPweGj3qrJ08O8E07x4T2Lq.jpg",
-                    "logo": "https://image.tmdb.org/t/p/original/kiZPy5fL7wG424TuhQIuUKHbM0D.png",
-                    "summary": "Journey through the history of Ninjago, from the ancient Oni era to the futuristic Mech Wars, as the Ninja's legacy lives on through legendary artefacts, powerful machines and new generations of heroes.",
-                    "seasons": [{
-                        "number": 1,
-                        "file": "data/seasons/legends_s2.json"
-                    }]
+                    "number": 2,
+                    "file": "data/seasons/dz_s2.json"
                 },
                 {
-                    "id": "dreamzzz",
-                    "title": "LEGO DREAMZzz",
-                    "type": "show",
-                    "genres": ["Animation", "Fantasy", "Kids"],
-                    "rating": "TV-Y7",
-                    "years": "2023 – 2026",
-                    "poster": "https://image.tmdb.org/t/p/original/bksnhr6slfT2mIcCTglGYD3pI9A.jpg",
-                    "banner": "https://image.tmdb.org/t/p/original/i9TAaBxTqbRMbY6gWuTdtX9fzCr.jpg",
-                    "logo": "https://image.tmdb.org/t/p/original/pFRxWD5a3gDNtbMt0tytEh9OIFv.png",
-                    "summary": "A group of kids joins a secret agency and enter the Dream World to combat nightmares and use the power of imagination to save dreamers in distress.",
-                    "seasons": [{
-                            "number": 1,
-                            "file": "data/seasons/dz_s1.json"
-                        },
-                        {
-                            "number": 2,
-                            "file": "data/seasons/dz_s2.json"
-                        },
-                        {
-                            "number": 3,
-                            "file": "data/seasons/dz_s3.json"
-                        },
-                        {
-                            "number": 4,
-                            "file": "data/seasons/dz_s4.json"
-                        }
-                    ]
+                    "number": 3,
+                    "file": "data/seasons/dz_s3.json"
                 },
                 {
-                    "id": "chima",
-                    "title": "LEGO LEGENDS OF CHIMA",
-                    "type": "show",
-                    "genres": ["Action & Adventure", "Animation", "Fantasy"],
-                    "rating": "TV-Y7",
-                    "years": "2013 – 2014",
-                    "poster": "https://image.tmdb.org/t/p/original/rn1Bnam0yBolJPMhR4VJAeCxM0Y.jpg",
-                    "banner": "https://cdn1.futuretodayinc.com/files/a8wn4hw/im/fd/f3/f48479a2142f68b8f625407e8af6ca28.jpg",
-                    "logo": "https://image.tmdb.org/t/p/original/xTXGm0PSCbtEsKG7KzAqXLBJMXQ.png",
-                    "summary": "Laval the Lion and Cragger the Crocodile are best friends who live in the mystical land of Chima. This all changes after an innocent escapade when Cragger gets his first experience with chi, a sacred resource important to Chima's delicate balance which gives its user awesome power.",
-                    "seasons": [{
-                            "number": 1,
-                            "file": "data/seasons/chima_s1.json"
-                        },
-                        {
-                            "number": 2,
-                            "file": "data/seasons/chima_s2.json"
-                        },
-                        {
-                            "number": 3,
-                            "file": "data/seasons/chima_s3.json"
-                        }
-                    ]
+                    "number": 4,
+                    "file": "data/seasons/dz_s4.json"
+                }
+            ]
+        },
+        {
+            "id": "chima",
+            "title": "LEGO LEGENDS OF CHIMA",
+            "type": "show",
+            "genres": ["Action & Adventure", "Animation", "Fantasy"],
+            "rating": "TV-Y7",
+            "years": "2013 – 2014",
+            "poster": "https://image.tmdb.org/t/p/original/rn1Bnam0yBolJPMhR4VJAeCxM0Y.jpg",
+            "banner": "https://cdn1.futuretodayinc.com/files/a8wn4hw/im/fd/f3/f48479a2142f68b8f625407e8af6ca28.jpg",
+            "logo": "https://image.tmdb.org/t/p/original/xTXGm0PSCbtEsKG7KzAqXLBJMXQ.png",
+            "summary": "Laval the Lion and Cragger the Crocodile are best friends who live in the mystical land of Chima. This all changes after an innocent escapade when Cragger gets his first experience with chi, a sacred resource important to Chima's delicate balance which gives its user awesome power.",
+            "seasons": [{
+                    "number": 1,
+                    "file": "data/seasons/chima_s1.json"
                 },
                 {
-                    "id": "nexo",
-                    "title": "LEGO NEXO Knights",
-                    "type": "show",
-                    "genres": ["Action & Adventure", "Animation", "Sci-Fi"],
-                    "rating": "TV-Y7",
-                    "years": "2015 – 2017",
-                    "poster": "https://image.tmdb.org/t/p/original/d0e5dJ2FQhlwEhFX4cB0ijp5SMd.jpg",
-                    "banner": "https://cdn1.futuretodayinc.com/files/a8wn4hw/im/cf/1b/41a37321c4e4a272ea2b6416776372b7.jpg",
-                    "logo": "https://occ-0-1500-1501.1.nflxso.net/dnm/api/v6/beuYL-MTCxPyt5oTOhVnWNGfZug/AAAABdIb8htG1RzUAKeNB5peevMi4_IFBFjCm_4wJ8hhYevIyp_i4ccKlqTUHOfOW2SrlCt1uebXaiJs0f-u7GY6l1annSd9FHz20gRT5amZKio.webp?r=d63",
-                    "summary": "The adventure takes place in the futuristic Kingdom of Knighton. It focuses on the Nexo Knights as they journey to defeat Jestro the evil jester, the Book of Monsters, and their lava monster army. Clay leads the Nexo Knights, which include Macy, Lance, Aaron, and Axl. Together, under their mentor Merlok 2.0, they band together to defeat Jestro.",
-                    "seasons": [{
-                            "number": 1,
-                            "file": "data/seasons/nexo_s1.json"
-                        },
-                        {
-                            "number": 2,
-                            "file": "data/seasons/nexo_s2.json"
-                        },
-                        {
-                            "number": 3,
-                            "file": "data/seasons/nexo_s3.json"
-                        },
-                        {
-                            "number": 4,
-                            "file": "data/seasons/nexo_s4.json"
-                        }
-                    ]
+                    "number": 2,
+                    "file": "data/seasons/chima_s2.json"
                 },
                 {
-                    "id": "dotd",
-                    "title": "LEGO Ninjago: Day of the Departed",
-                    "type": "movie",
-                    "genres": ["Action & Adventure", "Animation", "Fantasy"],
-                    "rating": "TV-Y7",
-                    "years": "2016",
-                    "runtime": "44m",
-                    "poster": "https://image.tmdb.org/t/p/original/dZM1tYuARngZdZMHSYPdU6zuA5N.jpg",
-                    "banner": "https://image.tmdb.org/t/p/original/5Mx9bOqNN1aXokwwzKam2qiw2cY.jpg",
-                    "logo": "https://image.tmdb.org/t/p/original/xiXPiWwAuI4JGUDFWiUzx73oaBW.png",
-                    "summary": "When Cole returns to Yang's haunted temple to seek revenge on a former Airjitzu Master, he accidentally uses a powerful Dark Magic blade that unleashes the spectral forms of Ninjago's greatest villains and traps himself in the temple. The Ninja must return the ghosts to the Departed Realm before it's too late.",
-                    "seasons": [{
-                        "number": 1,
-                        "file": "data/seasons/dotd.json"
-                    }]
+                    "number": 3,
+                    "file": "data/seasons/chima_s3.json"
+                }
+            ]
+        },
+        {
+            "id": "nexo",
+            "title": "LEGO NEXO Knights",
+            "type": "show",
+            "genres": ["Action & Adventure", "Animation", "Sci-Fi"],
+            "rating": "TV-Y7",
+            "years": "2015 – 2017",
+            "poster": "https://image.tmdb.org/t/p/original/d0e5dJ2FQhlwEhFX4cB0ijp5SMd.jpg",
+            "banner": "https://cdn1.futuretodayinc.com/files/a8wn4hw/im/cf/1b/41a37321c4e4a272ea2b6416776372b7.jpg",
+            "logo": "https://occ-0-1500-1501.1.nflxso.net/dnm/api/v6/beuYL-MTCxPyt5oTOhVnWNGfZug/AAAABdIb8htG1RzUAKeNB5peevMi4_IFBFjCm_4wJ8hhYevIyp_i4ccKlqTUHOfOW2SrlCt1uebXaiJs0f-u7GY6l1annSd9FHz20gRT5amZKio.webp?r=d63",
+            "summary": "The adventure takes place in the futuristic Kingdom of Knighton. It focuses on the Nexo Knights as they journey to defeat Jestro the evil jester, the Book of Monsters, and their lava monster army. Clay leads the Nexo Knights, which include Macy, Lance, Aaron, and Axl. Together, under their mentor Merlok 2.0, they band together to defeat Jestro.",
+            "seasons": [{
+                    "number": 1,
+                    "file": "data/seasons/nexo_s1.json"
                 },
                 {
-                    "id": "httydcollab",
-                    "title": "LEGO DREAMZzz: How To Fast Train Your Furious Dragon",
-                    "type": "movie",
-                    "new": true,
-                    "genres": ["Action & Adventure", "Animation", "Fantasy"],
-                    "rating": "TV-Y7",
-                    "years": "2026",
-                    "runtime": "39m",
-                    "poster": "https://image.tmdb.org/t/p/original/eS599ZhvoOm9GGNpENut5ChKLh4.jpg",
-                    "banner": "https://image.tmdb.org/t/p/original/yPFOaBsXLVeFHeUHRJCZVier9vm.jpg",
-                    "logo": "https://image.tmdb.org/t/p/original/20Ttw8OtLkACSoQdPCwsc7yHei7.png",
-                    "summary": "The dream chasers race nitro-injected street cars and join forces with dragon rider Hiccup when the Nightmare King hatches a plot to corrupt the friendly dragons of Berk.",
-                    "seasons": [{
-                        "number": 1,
-                        "file": "data/seasons/httydcollab.json"
-                    }]
+                    "number": 2,
+                    "file": "data/seasons/nexo_s2.json"
                 },
                 {
-                    "id": "dreamteam",
-                    "title": "LEGO Ninjago - Dream Team",
-                    "type": "movie",
-                    "new": true,
-                    "genres": ["Action & Adventure", "Animation", "Fantasy"],
-                    "rating": "TV-Y7",
-                    "years": "2023",
-                    "runtime": "22m",
-                    "poster": "https://image.tmdb.org/t/p/original/1WyNGZSpN43AmquRfwecrfcVEHK.jpg",
-                    "banner": "https://m.media-amazon.com/images/M/MV5BYzI5YzM3NDktMTYzNi00MjNmLTkwOTgtNjIxNzIzZTU4YWEyXkEyXkFqcGc@._V1_.jpg",
-                    "logo": "",
-                    "summary": "When the Ninja find a young boy, Jan, under attack by strange shadow creatures, they leap into action. But their fighting skills prove useless against their new enemies' powers and Jan is captured.",
-                    "seasons": [{
-                        "number": 1,
-                        "file": "data/seasons/dreamteam.json"
-                    }]
+                    "number": 3,
+                    "file": "data/seasons/nexo_s3.json"
                 },
                 {
-                    "id": "lmk",
-                    "title": "LEGO Monkie Kid",
-                    "type": "show",
-                    "genres": ["Action & Adventure", "Animation", "Comedy"],
-                    "rating": "TV-Y7",
-                    "years": "2020 – 2023",
-                    "poster": "https://cdn1.futuretodayinc.com/files/a8wn4hw/im/a0/96/f01ea63d0855f1d9b5b44d00ee634bac.jpg",
-                    "banner": "https://image.tmdb.org/t/p/original/9XdI3OWp1O5AYMV5e7J1mmNNNsp.jpg",
-                    "logo": "https://image.tmdb.org/t/p/original/6xrbLNUSisGPHYfpGMI2VNKuEhe.png",
-                    "summary": "Centuries ago, the beloved Chinese Monkey King used his magical staff to capture and trap the evil Demon Bull King deep inside a mountain. Flash-forward to modern-day China, when fate leads MK (aka Monkie Kid), a young noodle shop delivery boy, to find the long-lost staff. Soon, MK and his best friends find themselves entangled in adventures packed full of action, mystery, imagination and magic.",
-                    "seasons": [{
-                            "number": 3,
-                            "file": "data/seasons/lmk_s3.json"
-                        },
-                        {
-                            "number": 4,
-                            "file": "data/seasons/lmk_s4.json"
-                        },
-                        {
-                            "number": 5,
-                            "file": "data/seasons/lmk_s5.json"
-                        }
-                    ]
+                    "number": 4,
+                    "file": "data/seasons/nexo_s4.json"
+                }
+            ]
+        },
+        {
+            "id": "dotd",
+            "title": "LEGO Ninjago: Day of the Departed",
+            "type": "movie",
+            "genres": ["Action & Adventure", "Animation", "Fantasy"],
+            "rating": "TV-Y7",
+            "years": "2016",
+            "runtime": "44m",
+            "poster": "https://image.tmdb.org/t/p/original/dZM1tYuARngZdZMHSYPdU6zuA5N.jpg",
+            "banner": "https://image.tmdb.org/t/p/original/5Mx9bOqNN1aXokwwzKam2qiw2cY.jpg",
+            "logo": "https://image.tmdb.org/t/p/original/xiXPiWwAuI4JGUDFWiUzx73oaBW.png",
+            "summary": "When Cole returns to Yang's haunted temple to seek revenge on a former Airjitzu Master, he accidentally uses a powerful Dark Magic blade that unleashes the spectral forms of Ninjago's greatest villains and traps himself in the temple. The Ninja must return the ghosts to the Departed Realm before it's too late.",
+            "seasons": [{
+                "number": 1,
+                "file": "data/seasons/dotd.json"
+            }]
+        },
+        {
+            "id": "httydcollab",
+            "title": "LEGO DREAMZzz: How To Fast Train Your Furious Dragon",
+            "type": "movie",
+            "new": true,
+            "genres": ["Action & Adventure", "Animation", "Fantasy"],
+            "rating": "TV-Y7",
+            "years": "2026",
+            "runtime": "39m",
+            "poster": "https://image.tmdb.org/t/p/original/eS599ZhvoOm9GGNpENut5ChKLh4.jpg",
+            "banner": "https://image.tmdb.org/t/p/original/yPFOaBsXLVeFHeUHRJCZVier9vm.jpg",
+            "logo": "https://image.tmdb.org/t/p/original/20Ttw8OtLkACSoQdPCwsc7yHei7.png",
+            "summary": "The dream chasers race nitro-injected street cars and join forces with dragon rider Hiccup when the Nightmare King hatches a plot to corrupt the friendly dragons of Berk.",
+            "seasons": [{
+                "number": 1,
+                "file": "data/seasons/httydcollab.json"
+            }]
+        },
+        {
+            "id": "dreamteam",
+            "title": "LEGO Ninjago - Dream Team",
+            "type": "movie",
+            "new": true,
+            "genres": ["Action & Adventure", "Animation", "Fantasy"],
+            "rating": "TV-Y7",
+            "years": "2023",
+            "runtime": "22m",
+            "poster": "https://image.tmdb.org/t/p/original/1WyNGZSpN43AmquRfwecrfcVEHK.jpg",
+            "banner": "https://m.media-amazon.com/images/M/MV5BYzI5YzM3NDktMTYzNi00MjNmLTkwOTgtNjIxNzIzZTU4YWEyXkEyXkFqcGc@._V1_.jpg",
+            "logo": "",
+            "summary": "When the Ninja find a young boy, Jan, under attack by strange shadow creatures, they leap into action. But their fighting skills prove useless against their new enemies' powers and Jan is captured.",
+            "seasons": [{
+                "number": 1,
+                "file": "data/seasons/dreamteam.json"
+            }]
+        },
+        {
+            "id": "lmk",
+            "title": "LEGO Monkie Kid",
+            "type": "show",
+            "genres": ["Action & Adventure", "Animation", "Comedy"],
+            "rating": "TV-Y7",
+            "years": "2020 – 2023",
+            "poster": "https://cdn1.futuretodayinc.com/files/a8wn4hw/im/a0/96/f01ea63d0855f1d9b5b44d00ee634bac.jpg",
+            "banner": "https://image.tmdb.org/t/p/original/9XdI3OWp1O5AYMV5e7J1mmNNNsp.jpg",
+            "logo": "https://image.tmdb.org/t/p/original/6xrbLNUSisGPHYfpGMI2VNKuEhe.png",
+            "summary": "Centuries ago, the beloved Chinese Monkey King used his magical staff to capture and trap the evil Demon Bull King deep inside a mountain. Flash-forward to modern-day China, when fate leads MK (aka Monkie Kid), a young noodle shop delivery boy, to find the long-lost staff. Soon, MK and his best friends find themselves entangled in adventures packed full of action, mystery, imagination and magic.",
+            "seasons": [{
+                    "number": 3,
+                    "file": "data/seasons/lmk_s3.json"
+                },
+                {
+                    "number": 4,
+                    "file": "data/seasons/lmk_s4.json"
+                },
+                {
+                    "number": 5,
+                    "file": "data/seasons/lmk_s5.json"
                 }
             ]
         }
