@@ -40,7 +40,7 @@
     <link rel="preconnect" href="https://image.tmdb.org">
     <link rel="preconnect" href="https://cdn1.futuretodayinc.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css?v=20261016">
+    <link rel="stylesheet" href="css/styles.css?v=20261107">
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-7SL251FNB8"></script>
     <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date());gtag("config","G-7SL251FNB8");</script>
 </head>
@@ -57,6 +57,7 @@
             <a class="nav-link" data-route="home" href="#/">Home</a>
             <a class="nav-link" data-route="shows" href="#/shows">Shows</a>
             <a class="nav-link" data-route="movies" href="#/movies">Movies</a>
+            <a class="nav-link" data-route="collections" href="#/collections">Collections</a>
             <a class="nav-link" data-route="coming-soon" href="#/coming-soon">Coming Soon</a>
             <a class="nav-link" data-route="my-list" href="#/my-list">My List</a>
         </nav>
@@ -105,8 +106,10 @@
             <a href="#/">Home</a>
             <a href="#/shows">Shows</a>
             <a href="#/movies">Movies</a>
+            <a href="#/collections">Collections</a>
             <a href="#/coming-soon">Coming Soon</a>
             <a href="#/my-list">My List</a>
+            <a href="#/recap">Your recap</a>
         </nav>
         <nav class="footer-col" aria-label="Community">
             <h2>Community</h2>
@@ -153,6 +156,7 @@
     <div class="player-stage" id="pVideoArea">
         <video id="pVideo" playsinline x-webkit-airplay="allow" preload="auto"></video>
         <iframe id="pFrame" title="Video player" hidden allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
+        <div class="yt-host" id="pYT"></div>
         <div class="sub-overlay" id="subOverlay" aria-live="off"></div>
         <div class="player-loader" id="pLoader"><div class="spinner"></div></div>
         <div class="player-flash" id="pFlash" aria-hidden="true"></div>
@@ -266,6 +270,7 @@
         <div class="avatar-grid" id="avatarGrid"></div>
         <h3 class="sheet-section">Your stats</h3>
         <div class="stat-grid" id="statGrid"></div>
+        <a class="btn btn-sm btn-glass recap-link" href="#/recap">See your monthly recap</a>
         <h3 class="sheet-section">Move to another device</h3>
         <p class="sheet-hint transfer-hint">My List, watch progress and settings are saved in this browser only. Take them to another device or browser with a backup file or a transfer code.</p>
         <div class="transfer-actions">
@@ -419,6 +424,6 @@
 <div class="toasts" id="toastStack" aria-live="polite"></div>
 
 <script src="https://cdn.jsdelivr.net/npm/hls.js@1.5.20/dist/hls.min.js" defer></script>
-<script src="js/app.js?v=20261018" defer></script>
+<script src="js/app.js?v=20261107" defer></script>
 </body>
 </html>
