@@ -8,14 +8,12 @@ if ('serviceWorker' in navigator && /^https?:$/.test(location.protocol)) {
     window.addEventListener('load', () => navigator.serviceWorker.register('sw.js').catch(() => {}));
 }
 
-/* ---------- Config ---------- */
 
 const BRAND = 'litestreamsite';
 const DISCORD_URL = 'https://discord.gg/Rczuvm2S9A';
 const MUX_JS_URL = 'https://cdn.jsdelivr.net/npm/mux.js@7.0.3/dist/mux.min.js';
 const HERO_MS = 8000;
 
-// Avatar ids are stored in profiles — never renumber them.
 const PROFILE_PICS = [
     { id: 'avatar-1',  label: 'Lloyd',    url: 'images/avatars/lloyd.jpg' },
     { id: 'avatar-2',  label: 'Kai',      url: 'images/avatars/kai.jpg' },
@@ -89,7 +87,6 @@ const ICON = {
     user: svgIcon('<circle cx="12" cy="8.5" r="4"/><path d="M4.5 20.5c1.4-3.6 4.2-5.5 7.5-5.5s6.1 1.9 7.5 5.5"/>'),
 };
 
-/* ---------- Small helpers ---------- */
 
 const $ = (id) => document.getElementById(id);
 const $$ = (sel, scope) => Array.from((scope || document).querySelectorAll(sel));
@@ -115,7 +112,6 @@ const fmtMinutes = (sec) => {
 };
 const cssUrl = (u) => `url("${String(u).replace(/["\\\n]/g, encodeURIComponent)}")`;
 
-// TMDB serves resized renditions; the JSON points at "original" (often several MB).
 const BG_SIZE = ((window.screen && screen.width) || innerWidth) * (window.devicePixelRatio || 1) > 1800 ? 'original' : 'w1280';
 const tmdb = (url, size) => (url ? String(url).replace(/(\/\/image\.tmdb\.org\/t\/p\/)original\//, `$1${size}/`) : '');
 const IMG = {
@@ -130,7 +126,6 @@ const IMG = {
 const seasonLabel = (n) => (+n === 0 ? 'Specials' : `Season ${n}`);
 const epCode = (s, e) => (+s === 0 ? `Special ${e}` : `S${s} E${e}`);
 
-/* ---------- State ---------- */
 
 const cacheBust = '?v=' + Date.now();
 const state = {
@@ -152,8 +147,8 @@ const state = {
     durIO: null, lastTouch: 0, lastProgSave: 0,
     pendingScroll: null,
 };
-const seasonMemo = new Map();   // showId -> last season number viewed/played (this session)
-const browseMem = {};           // browse page filter + sort memory (this session)
+const seasonMemo = new Map();
+const browseMem = {};
 let tvActive = false;
 
 const getShow = (id) => state.shows.find(s => s.id === id);
@@ -161,7 +156,6 @@ const playableSeasons = (show) => (show && Array.isArray(show.seasons) ? show.se
 const isMovie = (show) => !!show && show.type === 'movie';
 const autoplayOn = () => lsGet('lsAutoplay') !== '0';
 const subsEnabled = () => lsGet('lsSubsOn') !== '0';
-// Spoiler settings: episode stills ('off' | 'unwatched' | 'all') and descriptions of unwatched episodes.
 const stillsMode = () => { const v = lsGet('lsHideStills', 'off'); return v === '1' || v === 'all' ? 'all' : (v === 'unwatched' ? 'unwatched' : 'off'); };
 const stillHidden = (showId, s, e) => { const m = stillsMode(); return m === 'all' || (m === 'unwatched' && !isWatched(getProgress(showId, s, e))); };
 const descHidden = (showId, s, e) => lsGet('lsHideDesc') === '1' && !isWatched(getProgress(showId, s, e));
@@ -172,14 +166,12 @@ function epStatus(ep) {
     const s = String(ep.status || '').toLowerCase().trim();
     if (s === 'upcoming' || s === 'soon' || s === 'coming-soon' || s === 'comingsoon' || (ep.upcoming && !s)) return { id: 'upcoming', label: ep.statusText || 'Coming soon' };
     if (s === 'unavailable') return { id: 'unavailable', label: ep.statusText || 'Unavailable' };
-    // A released episode with nothing to play counts as unavailable without needing a status.
     if (!hasAnySource(ep)) return { id: 'unavailable', label: ep.statusText || 'Unavailable' };
     return null;
 }
 const hasAnySource = (ep) => !!((ep.embed && String(ep.embed).trim()) ||
     (Array.isArray(ep.sources) && ep.sources.some(x => x && x.url && String(x.url).trim())));
 
-/* ---------- Toasts ---------- */
 
 function toast(msg, opts = {}) {
     const stack = $('toastStack');
@@ -208,7 +200,6 @@ function toast(msg, opts = {}) {
     setTimeout(dismiss, opts.duration || 3200);
 }
 
-/* ---------- Watch progress ---------- */
 
 const PROG_KEY = 'lsProgressV2';
 let progressMap = readJSON(PROG_KEY, {});
@@ -216,7 +207,6 @@ if (!progressMap || typeof progressMap !== 'object' || Array.isArray(progressMap
 const saveProgress = () => writeJSON(PROG_KEY, progressMap);
 const progKey = (showId, s, e) => `${showId}|${s}|${e}`;
 const getProgress = (showId, s, e) => progressMap[progKey(showId, s, e)] || null;
-// "w" is set when an episode is marked watched by hand.
 const isWatched = (p) => !!(p && (p.w || (p.d && p.t / p.d >= 0.95)));
 const isInProgress = (p) => !!(p && p.t > 5 && !isWatched(p));
 const isUpNext = (p) => !!(p && p.n && !(p.t > 5));
@@ -231,7 +221,6 @@ function setProgress(showId, s, e, t, d, meta) {
     };
     saveProgress();
 }
-// After finishing an episode, queue the next one so Continue Watching moves forward.
 function markUpNext(showId, s, ep) {
     if (!ep) return;
     const key = progKey(showId, s, ep.number);
@@ -240,7 +229,6 @@ function markUpNext(showId, s, ep) {
     progressMap[key] = { t: 0, d: (prev && prev.d) || null, u: Date.now(), title: ep.title || '', thumb: ep.thumbnail || '', n: 1 };
     saveProgress();
 }
-// Mark episodes watched/unwatched by hand. Returns the previous entries so the change can be undone.
 function setWatched(showId, s, eps, on) {
     const before = [];
     eps.forEach(ep => {
@@ -304,7 +292,6 @@ function migrateOldProgress() {
     lsDel('continueWatching');
 }
 
-/* ---------- Profile ---------- */
 
 let profile = readJSON('lsProfile', { name: '', avatar: '' });
 if (!profile || typeof profile !== 'object') profile = { name: '', avatar: '' };
@@ -324,7 +311,6 @@ function refreshAvatarUI() {
     if (btn) btn.title = profile.name ? `Profile: ${profile.name}` : 'Profile';
 }
 
-/* ---------- Theme: accent, appearance, TV mode ---------- */
 
 function hexToRgb(hex) { return [1, 3, 5].map(i => parseInt(hex.slice(i, i + 2), 16)); }
 function rgbToHsl(r, g, b) {
@@ -434,7 +420,6 @@ function initThemeUI() {
     syncSwitches();
 }
 
-/* ---------- My List ---------- */
 
 const getMyList = () => { const l = readJSON('myList', []); return Array.isArray(l) ? l.filter(x => typeof x === 'string') : []; };
 const isInMyList = (id) => getMyList().includes(id);
@@ -478,7 +463,6 @@ function updateListButtons(id) {
     });
 }
 
-/* ---------- Data ---------- */
 
 function fetchSeason(file) {
     if (state.seasonCache.has(file)) return state.seasonCache.get(file);
@@ -493,7 +477,6 @@ const seasonDataSync = (file) => state.seasonData.get(file) || null;
 const isEpisodeSeason = (data) => !!data && data.type !== 'external' && Array.isArray(data.episodes);
 const fetchText = (url) => fetch(url).then(r => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.text(); });
 
-/* ---------- Episode durations (probed lazily, cached) ---------- */
 
 let durCache = readJSON('lsDurCache', {});
 if (!durCache || typeof durCache !== 'object') durCache = {};
@@ -528,8 +511,6 @@ function pumpDurQueue() {
         });
     }
 }
-// HLS: read the playlists and add up segment lengths (two tiny text requests,
-// no video data). Progressive files: load metadata only.
 async function probeDuration(url) {
     if (!url || sourceKindOf(url) !== 'direct') return '';
     if (/\.m3u8(\?|#|$)/i.test(url)) {
@@ -564,7 +545,6 @@ async function probeDuration(url) {
 const fmtEpDuration = (val) => (val == null || val === '' ? '' : (typeof val === 'number' ? fmtMinutes(val) : String(val)));
 const knownDuration = (ep) => fmtEpDuration(ep.duration) || durCache[(ep.embed || '').trim()] || '';
 
-/* ---------- Video sources ---------- */
 
 function sourceKindOf(url, declared) {
     if (declared === 'tab' || declared === 'iframe' || declared === 'direct') return declared;
@@ -588,16 +568,11 @@ function allSources(ep) {
     });
     return list;
 }
-// Alternate sources are third-party players (embeds such as DoodStream, and "type": "tab" links),
-// which can show pop-up ads. They stay off until the viewer agrees in the first-visit prompt or
-// Settings; until then only direct video files play. YouTube embeds don't show pop-up ads, so
-// they always play. Remove a site from AD_FREE_EMBEDS to treat it as an alternate source.
 const AD_FREE_EMBEDS = /^https?:\/\/(?:www\.|m\.)?(?:youtube\.com|youtube-nocookie\.com|youtu\.be)\//i;
 const altSourcesOn = () => lsGet('lsAltSources') === '1';
 const isAltSource = (src) => src.type === 'tab' || (src.type === 'iframe' && !AD_FREE_EMBEDS.test(src.url));
 const episodeSources = (ep) => (altSourcesOn() ? allSources(ep) : allSources(ep).filter(s => !isAltSource(s)));
 const isPlayable = (ep) => episodeSources(ep).length > 0;
-// The episode exists but only plays from alternate sources, which are turned off.
 const needsAltSources = (ep) => !altSourcesOn() && !isPlayable(ep) && allSources(ep).length > 0;
 const ALT_LABEL = 'Alternate source';
 const youtubeId = (url) => (String(url).match(/(?:youtube(?:-nocookie)?\.com\/(?:watch\?(?:.*&)?v=|embed\/|shorts\/|live\/|v\/)|youtu\.be\/)([A-Za-z0-9_-]{6,})/i) || [])[1] || '';
@@ -611,7 +586,6 @@ function toEmbedUrl(url) {
     return u;
 }
 
-/* ---------- Router + scroll memory ---------- */
 
 try { history.scrollRestoration = 'manual'; } catch {}
 const scrollMem = new Map();
@@ -620,7 +594,6 @@ window.addEventListener('scroll', () => {
     if (curHistKey && !document.body.classList.contains('is-locked')) scrollMem.set(curHistKey, window.scrollY);
 }, { passive: true });
 
-// Each history entry gets a key so Back/Forward can restore where you were.
 function historyKey() {
     const st = history.state;
     if (st && st.lsKey) return { key: st.lsKey, traversal: true };
@@ -628,7 +601,6 @@ function historyKey() {
     try { history.replaceState(Object.assign({}, st || {}, { lsKey: key }), ''); } catch {}
     return { key, traversal: false };
 }
-// "?t=" accepts seconds (90), clock time (1:30) or 1m30s.
 function parseStartTime(v) {
     if (v == null || v === '') return null;
     const s = String(v).trim();
@@ -650,7 +622,6 @@ function parseHash() {
         h = nh;
     }
     if (!h.startsWith('#/')) return { name: 'home' };
-    // Episode links may carry "?t=" (start time); search terms keep any "?" they contain.
     const qi = h.startsWith('#/search') ? -1 : h.indexOf('?');
     const query = new URLSearchParams(qi >= 0 ? h.slice(qi + 1) : '');
     if (qi >= 0) h = h.slice(0, qi);
@@ -723,7 +694,6 @@ function route(opts = {}) {
     updateTopbar();
     if (!keep) tvInitialFocus();
 }
-// Content that renders asynchronously (episode lists) re-applies the saved position.
 function applyPendingScroll() {
     const ps = state.pendingScroll;
     if (!ps || ps.key !== curHistKey) return;
@@ -750,11 +720,7 @@ const topbar = $('topbar');
 function updateTopbar() { topbar.classList.toggle('is-solid', window.scrollY > 16); }
 window.addEventListener('scroll', updateTopbar, { passive: true });
 
-/* ==========================================================================
-   Templates
-   ========================================================================== */
 
-// "Specials" (season 0) is not counted as a season.
 const seasonCount = (show) => { const ps = playableSeasons(show); return ps.filter(s => +s.number !== 0).length || ps.length; };
 const kindLabel = (show) => (show.comingSoon ? 'Coming soon' : (isMovie(show) ? 'Movie' : 'Series'));
 
@@ -853,8 +819,6 @@ window.addEventListener('resize', () => $$('.rail').forEach(updateRail), { passi
 function emptyState({ icon = ICON.film, title, text = '', action = '' }) {
     return `<div class="empty"><div class="empty-icon">${icon}</div><h2>${esc(title)}</h2>${text ? `<p>${esc(text)}</p>` : ''}${action}</div>`;
 }
-// show.json: "newEpisodes": true labels a show "New episodes"; "new": true labels a show or
-// movie "New". Either can be text instead of true to say something else ("New season").
 function newBadgeText(show) {
     if (show.comingSoon) return '';
     const v = show.newEpisodes || show.new;
@@ -877,7 +841,7 @@ function findResumeTarget(show) {
     const latest = latestEntryForShow(show.id);
     if (latest) return { s: latest.s, e: latest.e, resume: isInProgress(latest.p), upNext: isUpNext(latest.p), p: latest.p };
     if (!playableSeasons(show).length) return null;
-    return { s: null, e: null, resume: false };   // s:null → first playable episode
+    return { s: null, e: null, resume: false };
 }
 function resumeLabel(show, target) {
     if (!target) return 'Play';
@@ -886,9 +850,6 @@ function resumeLabel(show, target) {
     return 'Play';
 }
 
-/* ==========================================================================
-   Home
-   ========================================================================== */
 
 const FAQ_ITEMS = [
     ['What is litestreamsite?', 'litestreamsite is a free, fan-made site for watching LEGO series, movies and specials in one place. There is no sign-up and nothing to install.'],
@@ -966,7 +927,6 @@ function renderMyListRow() {
     bindRails(slot);
 }
 
-/* ---------- Hero carousel ---------- */
 
 function heroHtml(items) {
     const n = items.length;
@@ -1070,7 +1030,7 @@ function heroGo(i) {
     });
     const dots = $$('.hero-dot', h.el);
     dots.forEach(d => d.classList.remove('is-active'));
-    void h.el.offsetWidth; // restart the progress animation
+    void h.el.offsetWidth;
     if (dots[h.idx]) dots[h.idx].classList.add('is-active');
     loadHeroBg(h.idx);
     loadHeroBg(h.idx + 1);
@@ -1082,9 +1042,6 @@ function stopHero() {
 }
 document.addEventListener('visibilitychange', () => heroHold('hidden', document.hidden));
 
-/* ==========================================================================
-   Browse pages
-   ========================================================================== */
 
 const BROWSE_META = {
     'shows': { title: 'Series', eyebrow: 'Browse', blurb: 'Every LEGO series you can stream right now.', empty: 'No series here yet.' },
@@ -1192,9 +1149,6 @@ function renderNotFound(msg) {
     })}</div></div>`;
 }
 
-/* ==========================================================================
-   Search (titles + every episode)
-   ========================================================================== */
 
 let epIndexP = null, searchRun = 0;
 function loadEpisodeIndex() {
@@ -1297,12 +1251,7 @@ function renderSearch(q0) {
     if (!tvActive) setTimeout(() => { if (input.isConnected) input.focus({ preventScroll: true }); }, 60);
 }
 
-/* ==========================================================================
-   People (cast, writers, directors)
-   ========================================================================== */
 
-// Episode JSON: "cast": [{ "name": "Vincent Tong", "role": "Kai" }] (plain name strings work too),
-// "writers": ["..."], "directors": ["..."]. A show's "starring" and "creator" count as credits too.
 const nameList = (v) => (Array.isArray(v) ? v : (v ? [v] : []))
     .map(x => String((x && typeof x === 'object' ? x.name : x) || '').trim()).filter(Boolean);
 function epCredits(ep) {
@@ -1315,7 +1264,6 @@ const personHref = (name) => '#/person/' + encodeURIComponent(name);
 const personLink = (name) => `<a class="person-link" href="${personHref(name)}">${esc(name)}</a>`;
 const creditCount = (p) => p.acted.length + p.wrote.length + p.directed.length + p.shows.length;
 
-// Every credit in the library, keyed by normalised name.
 let peopleP = null;
 function loadPeople() {
     if (peopleP) return peopleP;
@@ -1345,7 +1293,6 @@ function personChipHtml(p) {
     const sub = n ? plural(n, 'episode') : plural(p.shows.length, 'title');
     return `<a class="person-chip" href="${personHref(p.name)}"><span class="cast-avatar" aria-hidden="true">${esc(initials(p.name))}</span><span class="cast-text"><span class="cast-name">${esc(p.name)}</span><span class="cast-role">${esc(sub)}</span></span></a>`;
 }
-// Episodes grouped under each show, in library order.
 function creditGroupsHtml(list, note) {
     const groups = new Map();
     list.forEach(x => { const id = x.r.show.id; if (!groups.has(id)) groups.set(id, []); groups.get(id).push(x); });
@@ -1394,9 +1341,6 @@ function renderPersonPage(name) {
     });
 }
 
-/* ==========================================================================
-   Details page
-   ========================================================================== */
 
 const STOP = new Set(['lego', 'the', 'and', 'of', 'movie', 'part', 'second', 'legends', 'masters']);
 function similarTitles(show) {
@@ -1408,12 +1352,6 @@ function similarTitles(show) {
         return { s, score: gOverlap + wOverlap * 3 - (s.comingSoon ? 0.5 : 0), i };
     }).filter(x => x.score > 0.5).sort((a, b) => b.score - a.score || a.i - b.i).slice(0, 12).map(x => x.s);
 }
-/* ---------- Collections and watch orders ----------
-   data/collections.json: each collection has "sections", and each section has "items".
-   An item is { "show": "<id from show.json>" }, with an optional "seasons": [1, 2, 3] (all seasons
-   when left out) and "label" (replaces the title). Every season becomes its own numbered row.
-   Playing from a collection follows its order, so the last episode of one entry leads into the
-   first episode of the next, even across shows. "numbered": false hides a section's numbers. */
 const getCollection = (id) => state.collections.find(c => c.id === id);
 function collectionSections(c) {
     return (c.sections || []).map(sec => {
@@ -1471,7 +1409,7 @@ function colRowHtml(en, s, i, numbered) {
         </span>
     </button></li>`;
 }
-let colView = null;   // the collection on screen, with episode counts once its seasons load
+let colView = null;
 function renderCollection(id) {
     const c = getCollection(id);
     if (!c) { renderNotFound("That collection doesn't exist or was removed."); setTitle('Not found'); return; }
@@ -1538,8 +1476,6 @@ function fillCollectionProgress(view) {
         else if (watched) label.textContent = 'Continue watching';
     }
 }
-// Picks up from the furthest point reached in the first section, or the start when nothing
-// has been watched. Unwatched seasons before that point stay skippable by choosing them.
 function collectionResumePoint(view) {
     const entries = view.secs.length ? view.secs[0].entries : [];
     const left = (en) => en.file && !en.soon && en.watched < en.total;
@@ -1563,10 +1499,6 @@ async function playCollectionEntry(s, i) {
     openPlayer(en.show, en.seasonNumber, data, idx, { queue: { entries: sec.entries, idx: i } });
 }
 
-/* ---------- Watch log, streaks and the monthly recap ----------
-   lsWatchLog holds one entry per day: { s: seconds watched, t: { showId: seconds }, e: [finished
-   episodes as "show|season|episode"] }. Days from before the log existed are estimated from watch
-   progress, which keeps the last time each episode was watched. */
 const LOG_KEY = 'lsWatchLog';
 const STREAK_MIN_SECONDS = 60;
 let watchLog = readJSON(LOG_KEY, {});
@@ -1597,7 +1529,6 @@ function logFinished(showId, s, e) {
     if (!day.e.includes(key)) day.e.push(key);
     writeJSON(LOG_KEY, watchLog);
 }
-// Every day with something watched, from the log, or estimated for days before it began.
 function watchDays() {
     const days = {};
     Object.entries(watchLog).forEach(([k, d]) => { days[k] = { s: d.s || 0, t: d.t || {}, e: d.e || [], est: false }; });
@@ -1628,7 +1559,6 @@ function streakInfo() {
     const keys = Object.keys(days).filter(k => countsForStreak(days[k]));
     const has = new Set(keys);
     const d = new Date();
-    // Today not counting yet doesn't break the streak until today is over.
     if (!has.has(dayKey(d))) d.setDate(d.getDate() - 1);
     let current = 0;
     while (has.has(dayKey(d))) { current++; d.setDate(d.getDate() - 1); }
@@ -1673,7 +1603,7 @@ function renderHomeStrip() {
 function recapCalendarHtml(ym, days) {
     const first = parseDay(ym + '-01');
     const total = new Date(first.getFullYear(), first.getMonth() + 1, 0).getDate();
-    const lead = (first.getDay() + 6) % 7;   // weeks start on Monday
+    const lead = (first.getDay() + 6) % 7;
     const max = Math.max(1, ...Object.keys(days).filter(k => k.startsWith(ym + '-')).map(k => days[k].s));
     const cells = Array.from({ length: lead }, () => '<span class="cal-cell cal-blank"></span>');
     for (let i = 1; i <= total; i++) {
@@ -1738,12 +1668,6 @@ function renderRecap(ym) {
         catch { toast("Couldn't copy your recap", { icon: ICON.alert }); }
     });
 }
-/* ---------- Extras (trailers, clips, behind the scenes) ----------
-   show.json: "extras": [{ "title": "Season 2 Trailer", "url": "https://…/trailer.m3u8" }]
-   "url" is a video file (.m3u8, .mp4, .webm, .mov, .m4v, .mkv), a YouTube link, or any other embed.
-   Optional: "kind" ("Trailer", "Clip"…), "thumbnail" (YouTube links get one automatically),
-   "duration" (a label like "1:32", or seconds), "subtitles" (same format as episodes), and
-   "type": "direct" for a video link that doesn't end in a file extension. */
 const showExtras = (show) => (Array.isArray(show.extras) ? show.extras : []).filter(x => x && x.url && String(x.url).trim());
 const extraTitle = (x, i) => x.title || x.kind || `Extra ${i + 1}`;
 function extraThumb(show, x) {
@@ -1770,7 +1694,6 @@ function extraCard(show, x, i) {
         </button>
     </div>`;
 }
-// An extra plays in the normal player as a one-item "season" that has no progress or next episode.
 function playExtra(show, i) {
     const x = showExtras(show)[i];
     if (!x) return;
@@ -2034,8 +1957,6 @@ function renderEpisodeList(show, seasonNumber, data) {
     }));
     observeDurations(el);
 }
-// Marks episodes (by index in the season) watched or unwatched. Marking watched also
-// queues the following episode in Continue Watching, like finishing it would.
 async function toggleWatched(show, s, data, idxs, on) {
     const eps = idxs.map(i => data.episodes[i]).filter(Boolean);
     if (!eps.length) return;
@@ -2056,7 +1977,6 @@ async function toggleWatched(show, s, data, idxs, on) {
         action: { label: 'Undo', fn: () => { restoreProgress(before); refreshAfterWatch(); } },
     });
 }
-// Redraw the page in place, keeping scroll and keyboard focus on the button that was pressed.
 function refreshAfterWatch() {
     const a = document.activeElement;
     const sel = a && a.id ? '#' + a.id : (a && a.dataset && a.dataset.watchEp != null ? `[data-watch-ep="${a.dataset.watchEp}"]` : null);
@@ -2077,9 +1997,6 @@ function observeDurations(scope) {
     $$('.ep-dur', scope).forEach(r => state.durIO.observe(r));
 }
 
-/* ==========================================================================
-   Episode page
-   ========================================================================== */
 
 function renderEpisodePage(id, sNum, eNum, startAt) {
     const show = getShow(id);
@@ -2093,8 +2010,6 @@ function renderEpisodePage(id, sNum, eNum, startAt) {
         if (idx < 0) { location.replace('#/details/' + encodeURIComponent(id)); return; }
         renderEpisodePageContent(show, ref.number, data, idx);
         applyPendingScroll();
-        // A shared "?t=" link starts playback at that point. Drop it from the address first so
-        // closing the player (which redraws this page) doesn't start it again.
         if (startAt != null) {
             try { history.replaceState(history.state, '', location.pathname + location.search + location.hash.replace(/\?.*$/, '')); } catch {}
             state.route.t = null;
@@ -2233,11 +2148,7 @@ function renderEpisodePageContent(show, seasonNumber, data, idx) {
     tvInitialFocus();
 }
 
-/* ---------- Sharing ---------- */
 
-// Shared links point at the small pages under s/ (built by _tools/build-share-pages.js), which
-// carry the title, description and episode still for Discord/X/etc. previews and then forward
-// visitors into the app. 404.html forwards those links too if a page hasn't been built yet.
 const siteBase = () => location.origin + location.pathname.replace(/[^/]*$/, '');
 const sharePath = (showId, s, e) => `s/${encodeURIComponent(showId)}/` + (s != null && e != null ? `${s}/${e}/` : '');
 const shareCtx = { opts: null };
@@ -2256,7 +2167,7 @@ function openShare(opts) {
     $('shareTimeLabel').textContent = hasTime ? fmtClock(opts.time) : '';
     $('shareNative').hidden = !navigator.share;
     updateShareUrl();
-    if (playerOpen() && isFullscreen()) toggleFS();  // the dialog can't show over a fullscreen player
+    if (playerOpen() && isFullscreen()) toggleFS();
     openModal('shareModal');
 }
 function updateShareUrl() { if (shareCtx.opts) $('shareUrl').value = shareUrl(); }
@@ -2286,7 +2197,6 @@ $('shareTargets').addEventListener('click', (e) => {
     if (to) window.open(to, '_blank', 'noopener');
 });
 
-/* ---------- Starting playback from anywhere ---------- */
 
 async function playRandomEpisode(show, btn) {
     if (btn) btn.disabled = true;
@@ -2310,8 +2220,6 @@ async function playEpisodeByRef(showId, sNum, eNum) {
     const show = getShow(showId);
     if (!show) return;
     const playable = playableSeasons(show);
-    // An explicit season → just that one; otherwise walk seasons for the first
-    // playable episode (skips external-only and upcoming seasons).
     const tryList = sNum != null ? playable.filter(x => x.number === sNum) : playable;
     if (!tryList.length) { location.hash = '#/details/' + encodeURIComponent(showId); return; }
     let locked = false;
@@ -2339,7 +2247,6 @@ function toastNothingToPlay(locked) {
     if (locked) toast('This plays from alternate sources, which are turned off.', { icon: ICON.layers, duration: 6000, action: { label: 'Turn on', fn: openAltPrompt } });
     else toast('No streamable episodes available yet.', { icon: ICON.alert });
 }
-// In a collection, the next episode comes from the next entry in its watch order.
 async function findQueueNeighbor(queue, dir) {
     for (let k = queue.idx + dir; k >= 0 && k < queue.entries.length; k += dir) {
         const en = queue.entries[k];
@@ -2375,9 +2282,6 @@ async function findNeighbor(show, seasonNumber, seasonData, epIdx, dir, queue) {
     return null;
 }
 
-/* ==========================================================================
-   Player
-   ========================================================================== */
 
 const playerEl = $('player');
 const video = $('pVideo');
@@ -2393,8 +2297,6 @@ function revokeObjectUrls() {
 function detachCueTrack() {
     if (state.play.cueTrack) { try { state.play.cueTrack.removeEventListener('cuechange', renderActiveCues); } catch {} state.play.cueTrack = null; }
 }
-// Stop whatever is playing and drop every per-source handler. Bumping loadTok
-// invalidates late callbacks (resume seeks, subtitle fetches) from the old source.
 function stopMedia() {
     state.play.loadTok++;
     video.ontimeupdate = video.onplay = video.onpause = video.onended = video.onwaiting =
@@ -2408,7 +2310,6 @@ function stopMedia() {
     if (state.hls) { try { state.hls.destroy(); } catch {} state.hls = null; }
     try { video.removeAttribute('src'); while (video.firstChild) video.removeChild(video.firstChild); video.load(); } catch {}
     revokeObjectUrls();
-    // Removing the src attribute would leave the embed running; navigate it away instead.
     const fsrc = frame.getAttribute('src');
     if (fsrc && fsrc !== 'about:blank') frame.src = 'about:blank';
     frame.hidden = true;
@@ -2431,7 +2332,6 @@ function stopMedia() {
     updatePlayIcon(false);
     updateCCBtn();
 }
-// What to call the current video in player messages and menus.
 const playNoun = () => (state.play.extra ? 'video' : (isMovie(state.play.show) ? 'movie' : 'episode'));
 function saveCurrentPosition() {
     const { show, seasonNumber, kind, extra } = state.play;
@@ -2441,12 +2341,7 @@ function saveCurrentPosition() {
     if (t > 0 && isFinite(d) && d > 0) setProgress(show.id, seasonNumber, ep.number, t, d, { title: ep.title, thumb: ep.thumbnail });
 }
 
-/* ---------- YouTube, driven by the player's own controls ---------- */
 
-// Every YouTube link (episodes and extras) plays through the IFrame Player API with YouTube's
-// controls hidden. YouTube doesn't allow anything in front of its player, so ".is-yt" gives the
-// video its own space with the controls below it. The controls stay visible, because hiding
-// them would resize the video. If the API can't load, the plain embed is used instead.
 const yt = { player: null, ready: false, timer: null, tracks: [], cc: null, ccInit: false, apiP: null };
 const ytActive = () => state.play.kind === 'youtube' && yt.ready;
 const hasCustomControls = () => state.play.kind === 'direct' || state.play.kind === 'youtube';
@@ -2497,18 +2392,14 @@ function sizeYtLayout() {
     if (playerEl.classList.contains('is-yt')) playerEl.style.setProperty('--yt-ctrl', $('controlsBar').offsetHeight + 'px');
 }
 window.addEventListener('resize', sizeYtLayout);
-// Clicking the video moves focus into YouTube's frame; bring it back so shortcuts keep working.
 window.addEventListener('blur', () => setTimeout(() => {
     if (state.play.kind === 'youtube' && document.activeElement && document.activeElement.tagName === 'IFRAME') playerEl.focus({ preventScroll: true });
 }, 0));
 
-// YouTube's own caption tracks. These use the API's captions module, which YouTube doesn't
-// document, so everything here fails quietly and the menu simply lists fewer tracks.
 function ytReadTracks() {
     let list = [];
     try {
         list = (yt.player && yt.player.getOption('captions', 'tracklist')) || [];
-        // Auto-generated captions aren't in the track list; they only show up as the current track.
         const cur = yt.player && yt.player.getOption('captions', 'track');
         if (cur && cur.languageCode) list = [...list, cur];
     } catch {}
@@ -2541,7 +2432,6 @@ function ytDefaultCaptions(ep) {
     if (subsEnabled() && !own) ytSetCaptions(ytPickTrack().languageCode);
     else ytSetCaptions(null);
 }
-// Subtitles, Skip Intro and Up Next can't sit on the video, so they get a strip underneath it.
 function syncYtStrip() {
     playerEl.classList.toggle('yt-strip', !!(state.play.cueTrack || $('skipBtn').classList.contains('is-shown') || $('upNext').classList.contains('is-shown')));
 }
@@ -2609,7 +2499,6 @@ function setupYouTube(url, ep, ltok) {
     }).catch(() => { if (live()) startPlainEmbed(url); });
 }
 
-// Transport goes through these so the same controls drive the local video, YouTube or a Chromecast.
 const mediaTime = () => (ytActive() ? yt.player.getCurrentTime() : (castActive() ? castState.player.currentTime : video.currentTime)) || 0;
 const mediaDuration = () => (ytActive() ? (yt.player.getDuration() || NaN) : (castActive() ? castState.player.duration : video.duration));
 const mediaPaused = () => (ytActive() ? yt.player.getPlayerState() !== window.YT.PlayerState.PLAYING : (castActive() ? castState.player.isPaused : video.paused));
@@ -2655,7 +2544,7 @@ function openPlayer(show, seasonNumber, seasonData, epIdx, opts = {}) {
     stopMedia();
     const single = isMovie(show) || !!opts.extra;
     const queue = state.play.queue;
-    const standalone = !!opts.extra || (isMovie(show) && !queue);   // no previous or next episode
+    const standalone = !!opts.extra || (isMovie(show) && !queue);
     $('pShowName').textContent = show.title;
     $('pEpName').textContent = single
         ? (ep.title && ep.title !== show.title ? ep.title : '')
@@ -2737,12 +2626,10 @@ function startSource(i) {
     resetCtrlTimer();
 }
 
-// Progress, skip buttons and Up Next, shared by every kind of source that reports its time.
 function bindPlayback(ep, ltok) {
     const { show, seasonNumber: sNum } = state.play;
     const live = () => ltok === state.play.loadTok;
     const existing = getProgress(show.id, sNum, ep.number);
-    // A "?t=" link wins over the saved resume point; either way it is used once.
     const startTime = state.play.startAt != null ? state.play.startAt : (isInProgress(existing) ? existing.t : 0);
     state.play.startAt = null;
     const meta = { title: ep.title, thumb: ep.thumbnail };
@@ -2762,7 +2649,6 @@ function bindPlayback(ep, ltok) {
     video.playbackRate = state.playbackSpeed;
     updateSpeedLabel();
 
-    // Runs on every time update, whether the local video or a Chromecast is playing.
     state.play.tick = (ct, dur) => {
         if (ct > 0 && isFinite(dur) && Date.now() - state.lastProgSave > 3000) {
             state.lastProgSave = Date.now();
@@ -2783,8 +2669,6 @@ function bindPlayback(ep, ltok) {
         } else if (introS != null && introE != null && ct >= introS && ct < introE) {
             sb.textContent = 'Skip Intro'; state.currentSkipTarget = introE; sb.classList.add('is-shown');
         } else { sb.classList.remove('is-shown'); state.currentSkipTarget = null; }
-        // Up Next shows for the last 15 seconds, or from "creditsStart" when the episode has one;
-        // with credits marked, autoplay moves on 10 seconds into them rather than at the very end.
         const nx = state.play.next;
         if (!nx || !isFinite(dur) || dur <= 60) return;
         const credits = creditsS != null && creditsS > 0 && creditsS < dur - 5 ? creditsS : null;
@@ -2818,7 +2702,7 @@ function setupVideo(url, ep, ltok) {
     video.onended = () => { if (!castActive() && state.play.onEnded) state.play.onEnded(); };
     video.onplay = () => { updatePlayIcon(true); $('pLoader').classList.remove('is-shown'); resetCtrlTimer(); setPlaybackState('playing'); };
     video.onpause = () => {
-        if (castActive()) return;   // pausing the local copy while the TV plays isn't a user pause
+        if (castActive()) return;
         updatePlayIcon(false); playerEl.classList.remove('hide-ui'); saveCurrentPosition(); setPlaybackState('paused');
     };
     video.onwaiting = () => { if (!castActive()) $('pLoader').classList.add('is-shown'); };
@@ -2829,7 +2713,6 @@ function setupVideo(url, ep, ltok) {
     const onReady = () => {
         if (!live()) return;
         $('pLoader').classList.remove('is-shown');
-        // HLS duration is unknown at MANIFEST_PARSED, so the resume seek waits for metadata.
         let resumed = false;
         const applyResume = () => {
             if (!live() || resumed || !isFinite(video.duration) || !video.duration) return;
@@ -2869,7 +2752,6 @@ function setupVideo(url, ep, ltok) {
     }
 }
 
-/* ---------- Lock screen and headphone controls (Media Session) ---------- */
 
 const hasMediaSession = 'mediaSession' in navigator;
 function setMediaAction(action, fn) { if (hasMediaSession) { try { navigator.mediaSession.setActionHandler(action, fn); } catch {} } }
@@ -2905,10 +2787,9 @@ setMediaAction('seekforward', (d) => { if (playerOpen()) seekBy((d && d.seekOffs
 setMediaAction('seekto', (d) => { if (playerOpen() && d && d.seekTime != null) seekMedia(d.seekTime); });
 setMediaAction('stop', () => { if (playerOpen()) requestClosePlayer(); });
 
-/* ---------- Sleep timer ---------- */
 
 const SLEEP_MINUTES = [15, 30, 45, 60, 90];
-const sleep = { mode: null, at: 0, timer: null };   // mode: 'time' | 'episode'
+const sleep = { mode: null, at: 0, timer: null };
 const willAutoplay = () => autoplayOn() && sleep.mode !== 'episode';
 function setSleep(mode, minutes) {
     clearTimeout(sleep.timer);
@@ -2945,7 +2826,6 @@ function sleepNow() {
         });
     });
 }
-// Lower the volume over three seconds before pausing, so it doesn't cut off abruptly.
 function fadeOutAndPause(done) {
     if (castActive() || video.paused) { pauseMedia(); done(); return; }
     const start = video.volume, steps = 30;
@@ -2974,11 +2854,7 @@ function buildSleepMenu() {
     }));
 }
 
-/* ---------- Chromecast ---------- */
 
-// Google's Cast SDK works in Chrome and Edge (desktop and Android) on https or localhost. The cast
-// button only appears once a Cast device is found. The TV streams straight from the video host and
-// fetches the subtitle files itself, so it gets the original files rather than the tidied copies.
 const castState = { ctx: null, player: null, ctl: null, loaded: false };
 const castConnected = () => !!(castState.ctx && castState.ctx.getCurrentSession());
 const castActive = () => castState.loaded && castConnected();
@@ -3028,7 +2904,6 @@ function onCastConnection() {
     if (castState.player.isConnected) {
         if (playerOpen() && state.play.kind === 'direct') castLoad(video.currentTime);
     } else if (castState.loaded || playerEl.classList.contains('is-casting')) {
-        // Casting stopped: carry on here from where the TV got to.
         const saved = castState.player.savedPlayerState;
         castState.loaded = false;
         playerEl.classList.remove('is-casting');
@@ -3080,7 +2955,7 @@ function castLoad(startTime) {
     req.autoplay = true;
     const sub = castSubTrackId();
     if (sub) req.activeTrackIds = [sub];
-    castState.loaded = true;   // set first, so pausing the local copy isn't treated as a user pause
+    castState.loaded = true;
     video.pause();
     if (state.hls) state.hls.stopLoad();
     playerEl.classList.add('is-casting');
@@ -3160,7 +3035,6 @@ function buildSrcMenu() {
     if (hidden > 0) p.insertAdjacentHTML('beforeend', `<div class="popup-divider"></div><div class="popup-note">${plural(hidden, 'more source')} from third-party players, which may show pop-up ads.</div><button class="popup-item" type="button" data-alt-enable>Turn on alternate sources</button>`);
 }
 
-/* ---------- Up next ---------- */
 
 const RING_LEN = 2 * Math.PI * 16;
 function showUpNext(nx, remain, ended, span = 15) {
@@ -3188,7 +3062,6 @@ function hideUpNext() {
     el.classList.remove('is-shown');
 }
 
-/* ---------- Subtitles ---------- */
 
 const getSubStyle = () => { const s = readJSON('lsSubStyle', null); return s && typeof s === 'object' ? s : { size: 'md', bg: 'solid' }; };
 function applySubStyle() {
@@ -3201,7 +3074,6 @@ function applySubStyle() {
     ytApplyCaptionSize();
     playerEl.classList.toggle('sub-pos-top', st.pos === 'top');
 }
-// Subtitle timing: every cue keeps its original times (_s/_e) and is shown subDelay seconds later.
 function shiftTrackCues(track) {
     const cues = track && track.cues;
     if (!cues) return;
@@ -3219,14 +3091,10 @@ function setSubDelay(d) {
     renderActiveCues();
 }
 const fmtSubDelay = (d) => (!d ? 'In sync' : `${+Math.abs(d).toFixed(2)}s ${d > 0 ? 'later' : 'earlier'}`);
-// Subtitle files are read here rather than handed to the browser as-is: hosts serve .vtt as
-// application/octet-stream (Firefox refuses that MIME type), some use SRT-style commas, and
-// broadcast files start their timecode at 01:00:00. Every track is rebuilt as clean WebVTT.
 function parseSubTime(s) {
     const m = String(s).trim().match(/^(?:(\d+):)?(\d{1,2}):(\d{1,2})(?:[.,](\d{1,3}))?$/);
     return m ? (+m[1] || 0) * 3600 + +m[2] * 60 + +m[3] + (m[4] ? +('0.' + m[4]) : 0) : NaN;
 }
-// Reads WebVTT or SRT into [{ s, e, t }] (seconds + raw cue text), sorted by start time.
 function parseSubtitles(text) {
     const cues = [];
     String(text || '').replace(/^\uFEFF/, '').replace(/\r\n?/g, '\n').split(/\n[ \t]*\n/).forEach(block => {
@@ -3240,8 +3108,6 @@ function parseSubtitles(text) {
     });
     return cues.sort((x, y) => x.s - y.s);
 }
-// Pulls broadcast timecodes (first cue at 1h+) back to zero, then applies the track's own
-// "offset" (seconds, may be negative) from the season JSON.
 function shiftSubtitles(cues, offset) {
     const first = cues.length ? cues[0].s : 0;
     const shift = (first >= 3600 ? -Math.floor(first / 3600) * 3600 : 0) + (num(offset) || 0);
@@ -3257,7 +3123,6 @@ function addSubTrack(cues, label, lang) {
     const burl = URL.createObjectURL(new Blob([toVtt(cues)], { type: 'text/vtt' }));
     video._objectUrls.push(burl);
     t.src = burl;
-    // Cues arrive once the track loads; apply any timing offset the viewer has set.
     t.addEventListener('load', () => { if (state.play.subDelay) shiftTrackCues(t.track); });
     video.appendChild(t);
     try { t.track.mode = 'hidden'; } catch {}
@@ -3279,7 +3144,6 @@ function attachSubtitles(ep, ltok) {
         }).catch(err => console.warn('Subtitles failed to load (the host may block cross-origin requests)', trk.url, err));
     });
 }
-// A .vtt/.srt picked from the viewer's device; it lasts until the episode changes.
 $('subFileInput').addEventListener('change', (e) => {
     const input = e.target;
     const file = input.files && input.files[0];
@@ -3319,7 +3183,6 @@ function setActiveSubTrack(idx) {
 }
 const CUE_ENTITIES = { amp: '&', lt: '<', gt: '>', quot: '"', apos: "'", nbsp: '\u00A0', lrm: '\u200E', rlm: '\u200F' };
 function cueToHtml(text) {
-    // Keep only <i>/<b>/<u>: drop VTT voice/class/timestamp tags, SRT <font> tags and {\an8}-style overrides.
     let s = String(text || '').replace(/\{\\[^}]*\}/g, '').replace(/<([ibu])\.[^>]*>/gi, '<$1>').replace(/<(?!\/?[ibu]>)[^>]*>/gi, '')
         .replace(/&(amp|lt|gt|quot|apos|nbsp|lrm|rlm);/g, (_, n) => CUE_ENTITIES[n]);
     s = esc(s).replace(/&lt;(\/?)(i|b|u)&gt;/gi, '<$1$2>');
@@ -3331,7 +3194,6 @@ function renderActiveCues() {
     if (!t || !hasCustomControls()) { overlay.innerHTML = ''; return; }
     let html = '';
     if (state.play.kind === 'youtube') {
-        // The hidden video element isn't playing, so its tracks don't know the time. Match by hand.
         const now = mediaTime();
         for (let i = 0; t.cues && i < t.cues.length; i++) if (t.cues[i].startTime <= now && t.cues[i].endTime > now) html += cueToHtml(t.cues[i].text);
         if (overlay.dataset.html === html) return;
@@ -3405,7 +3267,6 @@ function buildSubMenu() {
     }
     const p = $('subPopup');
     p.innerHTML = h;
-    // Redraw in place, keeping the menu scrolled to the control that was used.
     const rebuild = () => { const top = p.scrollTop; buildSubMenu(); p.scrollTop = top; };
     const saveStyle = (k, v) => { const st2 = getSubStyle(); st2[k] = v; writeJSON('lsSubStyle', st2); applySubStyle(); rebuild(); };
     $$('[data-sub-color]', p).forEach(b => b.addEventListener('click', () => saveStyle('color', b.dataset.subColor)));
@@ -3481,7 +3342,6 @@ function fmtVTT(s) {
     return `${String(h).padStart(2, '0')}:${String(m).padStart(2, '0')}:${String(sec).padStart(2, '0')}.${String(ms).padStart(3, '0')}`;
 }
 
-/* ---------- Transport controls ---------- */
 
 function flashCenter(playing) {
     const f = $('pFlash');
@@ -3574,7 +3434,6 @@ function lockLandscape() {
     try { if (screen.orientation && screen.orientation.lock) screen.orientation.lock('landscape').catch(() => {}); } catch {}
 }
 function videoNativeFS() {
-    // iPhone Safari has no element fullscreen — use the video's own fullscreen.
     if (state.play.kind === 'direct' && video.webkitEnterFullscreen) { try { video.webkitEnterFullscreen(); } catch {} }
 }
 function toggleFS() {
@@ -3597,7 +3456,6 @@ function updateFsIcon() {
     $('fsBtn').setAttribute('aria-label', fs ? 'Exit fullscreen' : 'Fullscreen');
 }
 ['fullscreenchange', 'webkitfullscreenchange'].forEach(ev => document.addEventListener(ev, updateFsIcon));
-// In iOS native fullscreen our overlay is hidden, so hand the active track to the native renderer.
 video.addEventListener('webkitbeginfullscreen', () => { if (state.play.cueTrack) try { state.play.cueTrack.mode = 'showing'; } catch {} });
 video.addEventListener('webkitendfullscreen', () => { if (state.play.cueTrack) try { state.play.cueTrack.mode = 'hidden'; } catch {} });
 async function togglePiP() {
@@ -3650,13 +3508,11 @@ function closePlayerNow(skipRefresh) {
     const rf = state.play.returnFocus;
     state.play.returnFocus = null;
     if (skipRefresh) return;
-    // Refresh progress indicators in place, keeping the scroll position.
     if (state.route.name === 'home') renderContinueRow();
     else if (['details', 'episode', 'collection', 'recap'].includes(state.route.name)) route({ keepScroll: true });
     if (rf && rf.isConnected) { try { rf.focus({ preventScroll: true }); } catch {} }
 }
 
-/* ---------- Popups (speed, quality, subtitles, download, sources) ---------- */
 
 const POPUPS = ['speedPopup', 'qualPopup', 'subPopup', 'dlPopup', 'srcPopup', 'sleepPopup', 'morePopup'];
 const anyPopupOpen = () => POPUPS.some(id => $(id).classList.contains('is-open'));
@@ -3683,10 +3539,8 @@ function closeAllPopups() {
     $$('[data-popup]').forEach(b => b.setAttribute('aria-expanded', 'false'));
 }
 $$('[data-popup]').forEach(btn => btn.addEventListener('click', (e) => { e.stopPropagation(); togglePopup(btn.dataset.popup); resetCtrlTimer(); }));
-// A button that redrew its own menu is no longer in the page by now, so it can't be an outside click.
 document.addEventListener('click', (e) => { if (e.target.isConnected && !e.target.closest('[data-popup]') && !e.target.closest('.popup')) closeAllPopups(); });
 
-// Phones get one "More" menu for the controls that don't fit in the bar.
 function buildMoreMenu() {
     const src = state.play.sources[state.play.srcIdx];
     const items = [['speedPopup', 'Playback speed', state.playbackSpeed === 1 ? 'Normal' : state.playbackSpeed + '×']];
@@ -3734,7 +3588,6 @@ function buildQualMenu() {
     }));
 }
 
-/* ---------- Downloads ---------- */
 
 const scriptLoads = {};
 function loadScript(src, ready) {
@@ -3861,17 +3714,15 @@ async function downloadHls(url, name) {
     };
     await Promise.all(Array.from({ length: Math.min(6, segs.length) }, worker));
     if (initMatch) {
-        // fMP4 stream: init segment + fragments is already a valid MP4.
         const init = await fetchBuf(new URL(initMatch[1], mediaUrl).href);
         saveBlob(new Blob([init, ...parts], { type: 'video/mp4' }), name + '.mp4');
         return true;
     }
-    // MPEG-TS stream: remux to MP4 so it plays everywhere; fall back to .ts.
     setDlProgress('Converting to MP4…', 92);
     let blob = null;
     try {
         await loadScript(MUX_JS_URL, () => !!(window.muxjs && window.muxjs.mp4 && window.muxjs.mp4.Transmuxer));
-        await new Promise(r => setTimeout(r, 50)); // let the progress text paint before the synchronous remux
+        await new Promise(r => setTimeout(r, 50));
         blob = remuxTsToMp4(parts);
     } catch (e) { console.warn('MP4 conversion failed, saving MPEG-TS instead', e); }
     setDlProgress('Saving…', 98);
@@ -3895,7 +3746,6 @@ async function downloadDirect(url, name) {
     let r = null;
     try { r = await fetch(url); } catch {}
     if (!r || !r.ok || !r.body) {
-        // The host doesn't allow in-page downloads; let the browser handle it.
         window.open(url, '_blank', 'noopener');
         toast('Opened in a new tab. Use your browser\'s save option.', { icon: ICON.external });
         return false;
@@ -3923,11 +3773,9 @@ function saveBlob(blob, fn) {
     document.body.appendChild(a);
     a.click();
     a.remove();
-    // Revoking immediately can cancel the download in Firefox/Safari.
     setTimeout(() => URL.revokeObjectURL(url), 60000);
 }
 
-/* ---------- Player input ---------- */
 
 $('playBtn').addEventListener('click', togglePlay);
 $('prevEpBtn').addEventListener('click', playPrev);
@@ -3941,7 +3789,6 @@ $('pShareBtn').addEventListener('click', () => {
     const { show, seasonNumber, extra } = state.play;
     const ep = curEp();
     if (!show || !ep) return;
-    // Extras have no page of their own, so sharing one shares the show.
     if (extra) { openShare({ title: ep.title, sub: show.title, image: ep.thumbnail || show.banner, path: sharePath(show.id) }); return; }
     const t = hasCustomControls() ? mediaTime() : null;
     openShare({
@@ -3959,7 +3806,6 @@ $('volSlider').addEventListener('input', (e) => setVolume(parseFloat(e.target.va
 video.addEventListener('enterpictureinpicture', () => $('pipBtn').classList.add('is-on'));
 video.addEventListener('leavepictureinpicture', () => $('pipBtn').classList.remove('is-on'));
 
-// Pointer seeking: tap or drag anywhere on the bar, with a hover time preview.
 (() => {
     const wrap = $('progressWrap'), tip = $('pTip');
     let dragging = false;
@@ -4012,7 +3858,6 @@ stage.addEventListener('touchend', (e) => {
         resetCtrlTimer();
     } else {
         lastTapTime = now; lastTapX = x;
-        // A single tap toggles the controls rather than pausing.
         if (state.play.kind === 'direct' && !playerEl.classList.contains('hide-ui') && !video.paused) {
             playerEl.classList.add('hide-ui');
             closeAllPopups();
@@ -4096,9 +3941,6 @@ function onPlayerKey(e) {
     }
 }
 
-/* ==========================================================================
-   Modals
-   ========================================================================== */
 
 const MODALS = ['profileModal', 'settingsModal', 'shortcutsModal', 'shareModal', 'sourcesModal'];
 const modalReturn = {};
@@ -4135,7 +3977,6 @@ document.addEventListener('click', (e) => {
     const opener = e.target.closest('[data-open-modal]');
     if (opener) { e.preventDefault(); openModal(opener.dataset.openModal); }
 });
-// Keep Tab focus inside the open dialog.
 document.addEventListener('keydown', (e) => {
     if (e.key !== 'Tab') return;
     const id = topModal();
@@ -4148,7 +3989,6 @@ document.addEventListener('keydown', (e) => {
     else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
 });
 
-/* ---------- Profile ---------- */
 
 function renderAvatarPreview() { $('avatarPreview').innerHTML = avatarInner(); }
 function renderAvatarGrid() {
@@ -4215,17 +4055,13 @@ $('clearHistoryBtn').addEventListener('click', () => {
 });
 $('profileBtn').addEventListener('click', () => openModal('profileModal'));
 
-/* ---------- Backup and transfer between devices ---------- */
 
-// Settings that travel with a backup (the profile, My List, progress and subtitle style always do).
 const BACKUP_KEYS = ['lsAutoplay', 'lsSubsOn', 'lsAltSources', 'lsHideStills', 'lsHideDesc', 'lsAppearance', 'lsTheme', 'lsTvMode', 'lsSpeed', 'lsVolume', 'lsMuted'];
 function makeBackup() {
     const settings = {};
     BACKUP_KEYS.forEach(k => { const v = lsGet(k); if (v != null) settings[k] = v; });
     return { app: BRAND, v: 1, at: new Date().toISOString(), profile, myList: getMyList(), progress: progressMap, watchLog, subStyle: getSubStyle(), settings };
 }
-// Merges a backup into this browser: My List gains any missing titles, and for each episode
-// the more recently watched copy of the progress wins. Settings are taken from the backup.
 function applyBackup(data) {
     if (!data || typeof data !== 'object' || data.app !== BRAND) throw userErr(`That isn't a ${BRAND} backup.`);
     const list = getMyList();
@@ -4238,7 +4074,6 @@ function applyBackup(data) {
         if (!cur || (p.u || 0) > (cur.u || 0)) { progressMap[k] = p; episodes++; }
     });
     saveProgress();
-    // For each day, keep whichever device watched more.
     Object.entries(data.watchLog && typeof data.watchLog === 'object' ? data.watchLog : {}).forEach(([k, d]) => {
         if (/^\d{4}-\d{2}-\d{2}$/.test(k) && d && typeof d.s === 'number' && (!watchLog[k] || d.s > watchLog[k].s)) watchLog[k] = d;
     });
@@ -4259,8 +4094,6 @@ function applyBackup(data) {
     else refreshEpisodeViews();
     toast(`Imported ${plural(titles, 'title')} and progress for ${plural(episodes, 'episode')}`);
 }
-// Transfer codes are the backup as gzip + base64url ("LS1."), or plain base64url ("LS0.")
-// where the browser can't compress.
 async function encodeTransferCode(obj) {
     let bytes = new TextEncoder().encode(JSON.stringify(obj)), prefix = 'LS0.';
     if (window.CompressionStream) {
@@ -4327,7 +4160,6 @@ $('codeApplyBtn').addEventListener('click', async () => {
     } catch (err) { toast(err && err.userMessage ? err.userMessage : "Couldn't read that code", { icon: ICON.alert }); }
 });
 
-/* ---------- Settings ---------- */
 
 function prepareSettings() {
     buildThemeSwatches();
@@ -4352,14 +4184,12 @@ function openAltPrompt() { closeAllPopups(); openModal('sourcesModal'); }
 function setAltSources(on) {
     lsSet('lsAltSources', on ? '1' : '0');
     syncSwitches();
-    // Re-open whatever was waiting on this choice: the player, or the page behind the dialog.
     if (playerOpen() && state.play.show && curEp()) openPlayer(state.play.show, state.play.seasonNumber, state.play.seasonData, state.play.epIdx, { extra: state.play.extra, queue: state.play.queue });
     else refreshEpisodeViews();
 }
 $('altAcceptBtn').addEventListener('click', () => { closeModal('sourcesModal'); setAltSources(true); toast('Alternate sources turned on'); });
 $('altDeclineBtn').addEventListener('click', () => { closeModal('sourcesModal'); setAltSources(false); });
 $('descSwitch').addEventListener('click', () => { lsSet('lsHideDesc', lsGet('lsHideDesc') === '1' ? '0' : '1'); syncSwitches(); refreshEpisodeViews(); });
-// Redraw whatever on the current page shows episode stills or descriptions, without leaving the open settings sheet.
 function refreshEpisodeViews() {
     const r = state.route;
     if (r.name === 'home') renderContinueRow();
@@ -4369,9 +4199,6 @@ function refreshEpisodeViews() {
     else if (r.name === 'search' && $('searchInput')) $('searchInput').dispatchEvent(new Event('input'));
 }
 
-/* ==========================================================================
-   Global interactions
-   ========================================================================== */
 
 document.addEventListener('click', (e) => {
     const listBtn = e.target.closest('[data-toggle-list]');
@@ -4396,7 +4223,6 @@ document.addEventListener('click', (e) => {
 });
 document.querySelector('.skip-link').addEventListener('click', (e) => { e.preventDefault(); $('view').focus(); });
 
-// Images fade in once loaded; broken artwork falls back to a titled placeholder.
 document.addEventListener('load', (e) => { const t = e.target; if (t && t.tagName === 'IMG') t.classList.add('is-loaded'); }, true);
 document.addEventListener('error', (e) => {
     const t = e.target;
@@ -4425,7 +4251,6 @@ document.addEventListener('error', (e) => {
 window.addEventListener('offline', () => toast("You're offline. Some videos may not load.", { icon: ICON.alert, duration: 5000 }));
 window.addEventListener('online', () => toast('Back online'));
 
-/* ---------- Keyboard: global shortcuts + TV spatial navigation ---------- */
 
 function modalScope() { const id = topModal(); return id ? $(id).querySelector('.sheet') : null; }
 function visibleFocusables(scope) {
@@ -4506,9 +4331,6 @@ document.addEventListener('keydown', (e) => {
     spatialMove(e.key.replace('Arrow', '').toLowerCase());
 });
 
-/* ==========================================================================
-   Boot
-   ========================================================================== */
 
 initThemeUI();
 refreshAvatarUI();
@@ -4524,7 +4346,6 @@ function boot() {
         state.shows = (showData && Array.isArray(showData.shows) ? showData.shows : []).filter(s => s && s.id && s.title);
         state.hero = heroJson && Array.isArray(heroJson.featured) ? heroJson.featured : [];
         state.collections = (colJson && Array.isArray(colJson.collections) ? colJson.collections : []).filter(c => c && c.id && c.title);
-        // Featured entries must point at a show or movie id from show.json; others are skipped.
         state.hero.forEach(h => { if (h && !getShow(h.showId)) console.warn(`hero.json: no show or movie with id "${h.showId}" in show.json, so it isn't featured`); });
         migrateOldProgress();
         route();
