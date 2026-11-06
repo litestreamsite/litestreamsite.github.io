@@ -151,7 +151,7 @@
             "type": "show",
             "comingSoon": true,
             "genres": ["Action & Adventure", "Animation", "Fantasy"],
-            "rating": "",
+            "rating": "TV-Y7",
             "years": "2027",
             "poster": "https://image.tmdb.org/t/p/original/5oQRtIm3h05bU8i5bWTWOa7LgqV.jpg",
             "banner": "https://image.tmdb.org/t/p/original/A3hAoF7lmfGbuOljbqfwAGzehV1.jpg",
@@ -184,6 +184,51 @@
             "seasons": [{
                 "number": 1,
                 "file": "data/seasons/legends_s2.json"
+            }]
+        },
+        {
+            "id": "ninjagopilotshorts",
+            "title": "LEGO Ninjago: Pilot Shorts",
+            "type": "movie",
+            "genres": ["Action & Adventure", "Animation", "Fantasy"],
+            "rating": "TV-Y7",
+            "years": "2011",
+            "poster": "https://cdn1.futuretodayinc.com/files/a8wn4hw/im/2d/56/5273a99749a4269b1ad23253dd0f7543.jpg",
+            "banner": "https://cdn1.futuretodayinc.com/files/a8wn4hw/im/2d/56/5273a99749a4269b1ad23253dd0f7543.jpg",
+            "summary": "The classic 2011 mini movies, together in one video: Secrets of the Blacksmith, Flight of the Dragon Ninja, The New Masters of Spinjitzu, An Underworldly Takeover, Return to the Fire Temple and Battle Between Brothers.",
+            "seasons": [{
+                "number": 1,
+                "file": "data/seasons/pilot_shorts.json"
+            }]
+        },
+        {
+            "id": "ninjagotales",
+            "title": "LEGO Ninjago: Tales from the Monastery of Spinjitzu",
+            "type": "show",
+            "genres": ["Action & Adventure", "Animation", "Fantasy"],
+            "rating": "TV-Y7",
+            "years": "2016",
+            "poster": "https://cdn1.futuretodayinc.com/files/a8wn4hw/im/a7/9b/2231e7a6a4c3c6eddf768a1137e49f2f.jpg",
+            "banner": "https://cdn1.futuretodayinc.com/files/a8wn4hw/im/a7/9b/2231e7a6a4c3c6eddf768a1137e49f2f.jpg",
+            "summary": "A set of short adventures with the ninja, set around the Monastery of Spinjitzu.",
+            "seasons": [{
+                "number": 1,
+                "file": "data/seasons/tales_s1.json"
+            }]
+        },
+        {
+            "id": "ninjagoreimagined",
+            "title": "LEGO Ninjago: Reimagined",
+            "type": "show",
+            "genres": ["Action & Adventure", "Animation", "Fantasy"],
+            "rating": "TV-Y7",
+            "years": "2021",
+            "poster": "https://cdn1.futuretodayinc.com/files/a8wn4hw/im/c9/73/de2dd2f061f8ad2006c89d051d3ff282.jpg",
+            "banner": "https://cdn1.futuretodayinc.com/files/a8wn4hw/im/c9/73/de2dd2f061f8ad2006c89d051d3ff282.jpg",
+            "summary": "Five short films that reimagine the legend of the Golden Ninja, made for Ninjago's tenth anniversary.",
+            "seasons": [{
+                "number": 1,
+                "file": "data/seasons/reimagined_s1.json"
             }]
         },
         {
