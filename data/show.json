@@ -321,7 +321,7 @@
             "poster": "https://image.tmdb.org/t/p/original/5oQRtIm3h05bU8i5bWTWOa7LgqV.jpg",
             "banner": "https://image.tmdb.org/t/p/original/A3hAoF7lmfGbuOljbqfwAGzehV1.jpg",
             "logo": "https://image.tmdb.org/t/p/original/6ZQIoDSi71AV0uMfX0ydy81DmI4.png",
-            "summary": "A new generation of ninja rises to face the Oni and defend Ninjago from a growing darkness.",
+            "summary": "A new generation of ninja rises to defend Ninjago from a growing darkness.",
             "seasons": [{
                 "number": 1,
                 "file": "data/seasons/embersandashes_s1.json"
