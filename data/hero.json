@@ -1,5 +1,12 @@
 {
-    "featured": [{
+    "featured": [
+        {
+            "showId": "ninjagoembersandashes",
+            "heroBanner": "https://image.tmdb.org/t/p/original/36LVPyeC8c0xI5A4Wm8zvdqFET.jpg",
+            "title": "LEGO Ninjago Legends: Embers and Ashes",
+            "description": "A new generation of ninja rises to defend Ninjago from a growing darkness."
+        },
+        {
             "showId": "ninjagodr",
             "heroBanner": "https://m.media-amazon.com/images/S/pv-target-images/41e464a56541351a70c6c67c0f8b58fbec43829ec36e218be5295293399f987d.jpg",
             "title": "LEGO Ninjago: Dragons Rising",
