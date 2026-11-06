@@ -208,8 +208,8 @@
             "genres": ["Action & Adventure", "Animation", "Fantasy"],
             "rating": "TV-Y7",
             "years": "2016",
-            "poster": "https://cdn1.futuretodayinc.com/files/a8wn4hw/im/a7/9b/2231e7a6a4c3c6eddf768a1137e49f2f.jpg",
-            "banner": "https://cdn1.futuretodayinc.com/files/a8wn4hw/im/a7/9b/2231e7a6a4c3c6eddf768a1137e49f2f.jpg",
+            "poster": "https://litestreamsite.github.io/images/tales.jpg",
+            "banner": "https://litestreamsite.github.io/images/BANNERTALES.webp",
             "summary": "A set of short adventures with the ninja, set around the Monastery of Spinjitzu.",
             "seasons": [{
                 "number": 1,
@@ -223,9 +223,9 @@
             "genres": ["Action & Adventure", "Animation", "Fantasy"],
             "rating": "TV-Y7",
             "years": "2021",
-            "poster": "https://cdn1.futuretodayinc.com/files/a8wn4hw/im/c9/73/de2dd2f061f8ad2006c89d051d3ff282.jpg",
+            "poster": "https://m.media-amazon.com/images/M/MV5BMTllODE4MTctMDc3NC00YjMyLTg1ZjMtZGNkYzZhZWUxZmYxXkEyXkFqcGc@._UY281_CR155,0,190,281_.jpg",
             "banner": "https://cdn1.futuretodayinc.com/files/a8wn4hw/im/c9/73/de2dd2f061f8ad2006c89d051d3ff282.jpg",
-            "summary": "Five short films that reimagine the legend of the Golden Ninja, made for Ninjago's tenth anniversary.",
+            "summary": "Five short films, made for Ninjago's tenth anniversary.",
             "seasons": [{
                 "number": 1,
                 "file": "data/seasons/reimagined_s1.json"
