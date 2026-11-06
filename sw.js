@@ -1,7 +1,3 @@
-// litestreamsite service worker
-// - App shell + data: network-first, falling back to cache when offline.
-// - Other same-origin assets (images/icons): cache-first.
-// - Video/subtitle streams and third-party requests are never intercepted.
 const CACHE_NAME = 'litestreamsite-v1';
 const STATIC_ASSETS = [
   './',
@@ -41,7 +37,6 @@ self.addEventListener('fetch', e => {
 
   const isAppShell = e.request.mode === 'navigate' || /\.(css|js|html|json)$/i.test(url.pathname);
   if (isAppShell) {
-    // Ignore the ?v= cache-buster when keying the offline copy.
     const cacheKey = url.origin + url.pathname;
     e.respondWith(
       fetch(e.request).then(r => {

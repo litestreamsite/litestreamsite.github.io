@@ -7,9 +7,6 @@
     <meta name="robots" content="noindex">
     <meta name="theme-color" content="#07090F">
     <script>
-        // Send links the site can handle into the app instead of showing this page:
-        // share links whose page hasn't been built yet (/s/<show>/<season>/<episode>/), and
-        // app pages typed without the "#" (e.g. /shows or /details/ninjago).
         (function () {
             var p = location.pathname, q = new URLSearchParams(location.search), t = q.get('t');
             var share = p.match(/^(.*?\/)s\/([^\/]+)\/?(?:(\d+)\/(\d+)\/?)?$/);
