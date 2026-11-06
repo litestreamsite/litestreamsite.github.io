@@ -1,18 +1,32 @@
 {
-    "shows": [{
+    "shows": [
+        {
             "id": "ninjago",
             "title": "LEGO Ninjago: Masters of Spinjitzu",
             "type": "show",
-            "genres": ["Action & Adventure", "Animation", "Fantasy"],
+            "genres": [
+                "Action & Adventure",
+                "Animation",
+                "Fantasy"
+            ],
             "rating": "TV-Y7",
             "years": "2011 – 2022",
             "creator": "Dan & Kevin Hageman",
-            "starring": ["Vincent Tong", "Michael Adamthwaite", "Kirby Morrow", "Brent Miller", "Kelly Metzger", "Jillian Michaels", "Paul Dobson"],
+            "starring": [
+                "Vincent Tong",
+                "Michael Adamthwaite",
+                "Kirby Morrow",
+                "Brent Miller",
+                "Kelly Metzger",
+                "Jillian Michaels",
+                "Paul Dobson"
+            ],
             "poster": "https://image.tmdb.org/t/p/original/beKgqwruOGmVAvRwRvfuOcXwl2Z.jpg",
             "banner": "https://image.tmdb.org/t/p/original/RUBG86JQ81CV6DMm0RKdGln2Kr.jpg",
             "logo": "https://image.tmdb.org/t/p/original/8W6yO0MAh4Pl7OFIoLoKfwQWIBz.png",
             "summary": "When young warriors are chosen to become ninja, they must master Spinjitzu, protect Ninjago from rising threats, and learn what it means to fight as a team.",
-            "seasons": [{
+            "seasons": [
+                {
                     "number": 0,
                     "file": "data/seasons/ninjago_s0.json"
                 },
@@ -76,13 +90,115 @@
                     "number": 15,
                     "file": "data/seasons/ninjago_s15.json"
                 }
+            ],
+            "extras": [
+                {
+                    "title": "Pilots Trailer",
+                    "url": "https://www.youtube.com/watch?v=6Qz4Z_54UbE",
+                    "kind": "Trailer"
+                },
+                {
+                    "title": "Season 1 Trailer",
+                    "url": "https://youtu.be/viimPorual8",
+                    "kind": "Trailer"
+                },
+                {
+                    "kind": "Trailer",
+                    "title": "Season 2 Trailer",
+                    "url": "https://youtu.be/NF5fQWgvb0E"
+                },
+                {
+                    "title": "Season 3 Trailer",
+                    "kind": "Trailer",
+                    "url": "https://www.youtube.com/watch?v=tIuGSfSKZPE"
+                },
+                {
+                    "title": "Season 4 Trailer",
+                    "kind": "Trailer",
+                    "url": "https://youtu.be/Gsi8DW9O76k",
+                    "subtitles": []
+                },
+                {
+                    "title": "Season 5 Trailer",
+                    "kind": "Trailer",
+                    "url": "https://youtu.be/CarAARMeORs"
+                },
+                {
+                    "title": "Season 6 Trailer",
+                    "url": "https://youtu.be/K0HYsO6GWtc",
+                    "kind": "Trailer"
+                },
+                {
+                    "title": "Season 7 Trailer",
+                    "kind": "Trailer",
+                    "url": "https://youtu.be/j8jDKn-RrFs"
+                },
+                {
+                    "title": "Season 8 Trailer",
+                    "url": "https://www.youtube.com/watch?v=ZnUrGRLhHMQ",
+                    "kind": "Trailer"
+                },
+                {
+                    "title": "Season 9 Trailer",
+                    "kind": "Trailer",
+                    "url": "https://www.youtube.com/watch?v=2dNOtcJvka0"
+                },
+                {
+                    "title": "Season 10 Trailer",
+                    "url": "https://youtu.be/KtlLYV6DoQE",
+                    "kind": "Trailer"
+                },
+                {
+                    "title": "Season 11 Part 1 Trailer",
+                    "kind": "Trailer",
+                    "url": "https://www.youtube.com/watch?v=TTQiAYxlTAs"
+                },
+                {
+                    "title": "Season 11 Part 2 Trailer",
+                    "kind": "Trailer",
+                    "url": "https://www.youtube.com/watch?v=CEvYq2DDzlA"
+                },
+                {
+                    "title": "Season 12 Trailer",
+                    "url": "https://www.youtube.com/watch?v=kNZPEsIrsbs",
+                    "kind": "Trailer"
+                },
+                {
+                    "title": "Season 13 Trailer",
+                    "url": "https://www.youtube.com/watch?v=Vsj0IkKYjJo",
+                    "kind": "Trailer"
+                },
+                {
+                    "title": "'The Island' Trailer",
+                    "url": "https://www.youtube.com/watch?v=t4SmS8zKOZQ",
+                    "kind": "Trailer"
+                },
+                {
+                    "title": "Season 14 Trailer",
+                    "url": "https://www.youtube.com/watch?v=0o7v1mOpmnI",
+                    "kind": "Trailer"
+                },
+                {
+                    "title": "Season 15 Part 1 Trailer",
+                    "url": "https://www.youtube.com/watch?v=6DOKihMZ0YI",
+                    "kind": "Trailer"
+                },
+                {
+                    "title": "Season 15 Part 2 Trailer",
+                    "kind": "Trailer",
+                    "url": "https://www.youtube.com/watch?v=K_YnSAYs7h4"
+                }
             ]
         },
         {
             "id": "ninjagodr",
             "title": "LEGO Ninjago: Dragons Rising",
             "type": "show",
-            "genres": ["Action & Adventure", "Animation", "Fantasy"],
+            "genres": [
+                "Action & Adventure",
+                "Animation",
+                "Fantasy"
+            ],
             "rating": "TV-Y7",
             "years": "2023 – 2027",
             "newEpisodes": false,
@@ -90,7 +206,8 @@
             "banner": "https://m.media-amazon.com/images/S/pv-target-images/41e464a56541351a70c6c67c0f8b58fbec43829ec36e218be5295293399f987d.jpg",
             "logo": "https://image.tmdb.org/t/p/original/syIS6UQl4UhELTtu1ZWQcMSgR91.png",
             "summary": "After the Merge brings the realms together, new heroes Arin and Sora join the original Ninja to protect their changed world. Ras pursues a plan to reverse the Merge—with consequences for every realm.",
-            "seasons": [{
+            "seasons": [
+                {
                     "number": 1,
                     "file": "data/seasons/dr_s1new.json"
                 },
@@ -110,61 +227,134 @@
                     "number": 5,
                     "file": "data/seasons/dr_s5.json"
                 }
+            ],
+            "extras": [
+                {
+                    "title": "Season 1 Part 1 Trailer",
+                    "url": "https://www.youtube.com/watch?v=f_2_3rPKtSE",
+                    "kind": "Trailer",
+                    "subtitles": []
+                },
+                {
+                    "title": "Season 1 Part 2 Trailer",
+                    "kind": "Trailer",
+                    "url": "https://www.youtube.com/watch?v=7rH-42X4qds"
+                },
+                {
+                    "title": "Season 2 Part 1 Trailer",
+                    "url": "https://www.youtube.com/watch?v=wd053dtwBOI",
+                    "kind": "Trailer"
+                },
+                {
+                    "kind": "Trailer",
+                    "title": "Season 2 Part 2 Trailer",
+                    "url": "https://www.youtube.com/watch?v=5tmq1e4IJ98"
+                },
+                {
+                    "title": "Season 3 Part 1 Trailer",
+                    "kind": "Trailer",
+                    "url": "https://www.youtube.com/watch?v=4tBIPt17CjY"
+                },
+                {
+                    "title": "Season 3 Part 2 Trailer",
+                    "kind": "Trailer",
+                    "url": "https://www.youtube.com/watch?v=_4Hb8RizRn8"
+                },
+                {
+                    "title": "Season 4 Part 1 Trailer",
+                    "url": "https://youtu.be/PQuEPw9Z71U",
+                    "kind": "Trailer"
+                },
+                {
+                    "title": "Season 4 Part 2 Trailer",
+                    "kind": "Trailer",
+                    "url": "https://youtu.be/PFuFNaBCVlQ"
+                }
             ]
         },
         {
             "id": "ninjagomonstrosity",
             "title": "LEGO Ninjago Legends: Monstrosity",
             "type": "show",
-            "newEpisodes": true,
-            "genres": ["Action & Adventure", "Animation", "Fantasy"],
+            "genres": [
+                "Action & Adventure",
+                "Animation",
+                "Fantasy"
+            ],
             "rating": "TV-Y7",
             "poster": "https://m.media-amazon.com/images/M/MV5BMDZjNzEyYTQtZWZlYS00MWUyLTg1MjEtZmUzMmNlMDYwZGRkXkEyXkFqcGc@._V1_.jpg",
             "banner": "https://cdn1.futuretodayinc.com/files/a8wn4hw/im/fe/fd/869a4ea8be974e6094f9a1df0396de7a.jpg",
             "logo": "https://beam-images.warnermediacdn.com/BEAM_LWM_DELIVERABLES/4660cfec-ee29-4ef2-b15e-9966aa101eac/4c39771b-aa52-11f0-abb1-0afffd029469?host=wbd-images.prod-vod.h264.io&partner=beamcom",
             "summary": "Lost in a mysterious Land of Monsters, Kai, the Ninja of Fire, must battle a host of bizarre and terrifying creatures in a desperate quest to find his way home.",
-            "seasons": [{
-                "number": 1,
-                "file": "data/seasons/legends_s1.json"
-            }]
+            "seasons": [
+                {
+                    "number": 1,
+                    "file": "data/seasons/legends_s1.json"
+                }
+            ],
+            "extras": [
+                {
+                    "url": "https://youtu.be/wPaTy5Y8co0",
+                    "title": "Full Trailer",
+                    "kind": "Trailer"
+                }
+            ]
         },
-
         {
             "id": "ninjagodecoded",
             "title": "LEGO Ninjago: Decoded",
             "type": "show",
-            "genres": ["Action & Adventure", "Animation", "Comedy"],
+            "genres": [
+                "Action & Adventure",
+                "Animation",
+                "Comedy"
+            ],
             "rating": "TV-Y7",
             "years": "2017",
             "poster": "https://m.media-amazon.com/images/M/MV5BY2RkZmNjMjQtYWQ0Zi00YTM3LWIzZjItNThlZDA4YTFjNTdiXkEyXkFqcGc@.jpg",
             "banner": "https://m.media-amazon.com/images/S/pv-target-images/2c83190d3a8363a069b415a72e7f13df2d99a9256ae7ab206100f0cfbf5031dd.jpg",
             "logo": "https://ovp.itv.com/v2/images/programme/vc9ktbw/itv_hub/09_TitleLogo/default?distributionPartner=&fallback=none&treatment=none",
             "summary": "Nya helps Zane backup memories of their adventures to the Samurai X Cave computer, but Zane encounters a mysterious puzzle buried deep within his code.",
-            "seasons": [{
-                "number": 1,
-                "file": "data/seasons/decoded_reals1.json"
-            }]
+            "seasons": [
+                {
+                    "number": 1,
+                    "file": "data/seasons/decoded_reals1.json"
+                }
+            ],
+            "extras": [
+                {
+                    "title": "Full Trailer",
+                    "url": "https://youtu.be/7FcAs0eVGhQ",
+                    "kind": "Trailer"
+                }
+            ]
         },
         {
             "id": "ninjagoembersandashes",
             "title": "LEGO Ninjago Legends: Embers and Ashes",
             "type": "show",
             "comingSoon": false,
-            "genres": ["Action & Adventure", "Animation", "Fantasy"],
+            "genres": [
+                "Action & Adventure",
+                "Animation",
+                "Fantasy"
+            ],
             "rating": "TV-Y7",
             "years": "2027",
             "poster": "https://image.tmdb.org/t/p/original/5oQRtIm3h05bU8i5bWTWOa7LgqV.jpg",
             "banner": "https://image.tmdb.org/t/p/original/A3hAoF7lmfGbuOljbqfwAGzehV1.jpg",
             "logo": "https://image.tmdb.org/t/p/original/6ZQIoDSi71AV0uMfX0ydy81DmI4.png",
             "summary": "A new generation of ninja rises to face the Oni and defend Ninjago from a growing darkness.",
-            "extras": [{
+            "extras": [
+                {
                     "title": "Season 1 Teaser",
                     "kind": "Trailer",
                     "duration": "1:17",
                     "url": "https://youtu.be/9izcokE_v0k"
                 }
             ],
-            "seasons": [{
+            "seasons": [
+                {
                     "number": 1,
                     "file": "data/seasons/embersandashes_s1.json"
                 }
@@ -175,74 +365,117 @@
             "title": "LEGO Ninjago Legends: Duskfall",
             "type": "show",
             "newEpisodes": true,
-            "genres": ["Action & Adventure", "Animation", "Fantasy"],
+            "genres": [
+                "Action & Adventure",
+                "Animation",
+                "Fantasy"
+            ],
             "rating": "TV-Y7",
             "poster": "https://image.tmdb.org/t/p/original/fpQDQJJNtn8Vm6oPaokmK2tJWhA.jpg",
             "banner": "https://image.tmdb.org/t/p/original/pf5LDPweGj3qrJ08O8E07x4T2Lq.jpg",
             "logo": "https://image.tmdb.org/t/p/original/kiZPy5fL7wG424TuhQIuUKHbM0D.png",
             "summary": "Journey through the history of Ninjago, from the ancient Oni era to the futuristic Mech Wars, as the Ninja's legacy lives on through legendary artefacts, powerful machines and new generations of heroes.",
-            "seasons": [{
-                "number": 1,
-                "file": "data/seasons/legends_s2.json"
-            }]
+            "seasons": [
+                {
+                    "number": 1,
+                    "file": "data/seasons/legends_s2.json"
+                }
+            ],
+            "extras": [
+                {
+                    "title": "Full Trailer",
+                    "url": "https://www.youtube.com/watch?v=hiV12LqLFTI",
+                    "kind": "Trailer"
+                }
+            ]
         },
         {
             "id": "ninjagopilotshorts",
             "title": "LEGO Ninjago: Pilot Shorts",
             "type": "movie",
-            "genres": ["Action & Adventure", "Animation", "Fantasy"],
+            "genres": [
+                "Action & Adventure",
+                "Animation",
+                "Fantasy"
+            ],
             "rating": "TV-Y7",
             "years": "2011",
             "poster": "https://cdn1.futuretodayinc.com/files/a8wn4hw/im/2d/56/5273a99749a4269b1ad23253dd0f7543.jpg",
             "banner": "https://cdn1.futuretodayinc.com/files/a8wn4hw/im/2d/56/5273a99749a4269b1ad23253dd0f7543.jpg",
             "summary": "The classic 2011 mini movies, together in one video: Secrets of the Blacksmith, Flight of the Dragon Ninja, The New Masters of Spinjitzu, An Underworldly Takeover, Return to the Fire Temple and Battle Between Brothers.",
-            "seasons": [{
-                "number": 1,
-                "file": "data/seasons/pilot_shorts.json"
-            }]
+            "seasons": [
+                {
+                    "number": 1,
+                    "file": "data/seasons/pilot_shorts.json"
+                }
+            ]
         },
         {
             "id": "ninjagotales",
             "title": "LEGO Ninjago: Tales from the Monastery of Spinjitzu",
             "type": "show",
-            "genres": ["Action & Adventure", "Animation", "Fantasy"],
+            "genres": [
+                "Action & Adventure",
+                "Animation",
+                "Fantasy"
+            ],
             "rating": "TV-Y7",
             "years": "2016",
             "poster": "https://litestreamsite.github.io/images/tales.jpg",
             "banner": "https://litestreamsite.github.io/images/BANNERTALES.webp",
             "summary": "A set of short adventures with the ninja, set around the Monastery of Spinjitzu.",
-            "seasons": [{
-                "number": 1,
-                "file": "data/seasons/tales_s1.json"
-            }]
+            "seasons": [
+                {
+                    "number": 1,
+                    "file": "data/seasons/tales_s1.json"
+                }
+            ]
         },
         {
             "id": "ninjagoreimagined",
             "title": "LEGO Ninjago: Reimagined",
             "type": "show",
-            "genres": ["Action & Adventure", "Animation", "Fantasy"],
+            "genres": [
+                "Action & Adventure",
+                "Animation",
+                "Fantasy"
+            ],
             "rating": "TV-Y7",
             "years": "2021",
             "poster": "https://m.media-amazon.com/images/M/MV5BMTllODE4MTctMDc3NC00YjMyLTg1ZjMtZGNkYzZhZWUxZmYxXkEyXkFqcGc@._UY281_CR155,0,190,281_.jpg",
             "banner": "https://cdn1.futuretodayinc.com/files/a8wn4hw/im/c9/73/de2dd2f061f8ad2006c89d051d3ff282.jpg",
             "summary": "Five short films, made for Ninjago's tenth anniversary.",
-            "seasons": [{
-                "number": 1,
-                "file": "data/seasons/reimagined_s1.json"
-            }]
+            "seasons": [
+                {
+                    "number": 1,
+                    "file": "data/seasons/reimagined_s1.json"
+                }
+            ],
+            "extras": [
+                {
+                    "title": "Trailer",
+                    "kind": "Trailer",
+                    "url": "https://www.youtube.com/watch?v=hieydszEmvg"
+                }
+            ]
         },
         {
             "id": "dreamzzz",
             "title": "LEGO DREAMZzz",
             "type": "show",
-            "genres": ["Animation", "Fantasy", "Kids"],
+            "genres": [
+                "Animation",
+                "Fantasy",
+                "Kids"
+            ],
             "rating": "TV-Y7",
             "years": "2023 – 2026",
             "poster": "https://image.tmdb.org/t/p/original/bksnhr6slfT2mIcCTglGYD3pI9A.jpg",
             "banner": "https://image.tmdb.org/t/p/original/i9TAaBxTqbRMbY6gWuTdtX9fzCr.jpg",
             "logo": "https://image.tmdb.org/t/p/original/pFRxWD5a3gDNtbMt0tytEh9OIFv.png",
             "summary": "A group of kids joins a secret agency and enter the Dream World to combat nightmares and use the power of imagination to save dreamers in distress.",
-            "seasons": [{
+            "seasons": [
+                {
                     "number": 1,
                     "file": "data/seasons/dz_s1.json"
                 },
@@ -258,20 +491,56 @@
                     "number": 4,
                     "file": "data/seasons/dz_s4.json"
                 }
+            ],
+            "extras": [
+                {
+                    "title": "Season 1 Part 1 Trailer",
+                    "url": "https://youtu.be/4HsMEh8WFVk",
+                    "kind": "Trailer"
+                },
+                {
+                    "title": "Season 1 Part 2 Trailer",
+                    "url": "https://youtu.be/x2q_UnVdndM",
+                    "kind": "Trailer"
+                },
+                {
+                    "title": "Season 2 Part 1 Trailer",
+                    "url": "https://youtu.be/Epk5H80RZco",
+                    "kind": "Trailer"
+                },
+                {
+                    "title": "Season 2 Part 2 Trailer",
+                    "url": "https://youtu.be/PGakguy5t_Y"
+                },
+                {
+                    "kind": "Trailer",
+                    "title": "Season 3 Part 1 Trailer",
+                    "url": "https://www.youtube.com/watch?v=0uKU2P7iJOo"
+                },
+                {
+                    "title": "Season 3 Part 2 Trailer",
+                    "kind": "Trailer",
+                    "url": "https://youtu.be/xh-fv-L2Wf0"
+                }
             ]
         },
         {
             "id": "chima",
             "title": "LEGO LEGENDS OF CHIMA",
             "type": "show",
-            "genres": ["Action & Adventure", "Animation", "Fantasy"],
+            "genres": [
+                "Action & Adventure",
+                "Animation",
+                "Fantasy"
+            ],
             "rating": "TV-Y7",
             "years": "2013 – 2014",
             "poster": "https://image.tmdb.org/t/p/original/rn1Bnam0yBolJPMhR4VJAeCxM0Y.jpg",
             "banner": "https://cdn1.futuretodayinc.com/files/a8wn4hw/im/fd/f3/f48479a2142f68b8f625407e8af6ca28.jpg",
             "logo": "https://image.tmdb.org/t/p/original/xTXGm0PSCbtEsKG7KzAqXLBJMXQ.png",
             "summary": "Laval the Lion and Cragger the Crocodile are best friends who live in the mystical land of Chima. This all changes after an innocent escapade when Cragger gets his first experience with chi, a sacred resource important to Chima's delicate balance which gives its user awesome power.",
-            "seasons": [{
+            "seasons": [
+                {
                     "number": 1,
                     "file": "data/seasons/chima_s1.json"
                 },
@@ -283,20 +552,42 @@
                     "number": 3,
                     "file": "data/seasons/chima_s3.json"
                 }
+            ],
+            "extras": [
+                {
+                    "title": "Season 1 Trailer",
+                    "url": "https://www.youtube.com/watch?v=5lMFUjf18E8",
+                    "kind": "Trailer"
+                },
+                {
+                    "url": "https://www.youtube.com/watch?v=4MiW3o1EBG4",
+                    "title": "Season 2 Trailer",
+                    "kind": "Trailer"
+                },
+                {
+                    "title": "Season 3 Trailer",
+                    "url": "https://www.youtube.com/watch?v=hiohi3WMf5I",
+                    "kind": "Trailer"
+                }
             ]
         },
         {
             "id": "nexo",
             "title": "LEGO NEXO Knights",
             "type": "show",
-            "genres": ["Action & Adventure", "Animation", "Sci-Fi"],
+            "genres": [
+                "Action & Adventure",
+                "Animation",
+                "Sci-Fi"
+            ],
             "rating": "TV-Y7",
             "years": "2015 – 2017",
             "poster": "https://image.tmdb.org/t/p/original/d0e5dJ2FQhlwEhFX4cB0ijp5SMd.jpg",
             "banner": "https://cdn1.futuretodayinc.com/files/a8wn4hw/im/cf/1b/41a37321c4e4a272ea2b6416776372b7.jpg",
             "logo": "https://occ-0-1500-1501.1.nflxso.net/dnm/api/v6/beuYL-MTCxPyt5oTOhVnWNGfZug/AAAABdIb8htG1RzUAKeNB5peevMi4_IFBFjCm_4wJ8hhYevIyp_i4ccKlqTUHOfOW2SrlCt1uebXaiJs0f-u7GY6l1annSd9FHz20gRT5amZKio.webp?r=d63",
             "summary": "The adventure takes place in the futuristic Kingdom of Knighton. It focuses on the Nexo Knights as they journey to defeat Jestro the evil jester, the Book of Monsters, and their lava monster army. Clay leads the Nexo Knights, which include Macy, Lance, Aaron, and Axl. Together, under their mentor Merlok 2.0, they band together to defeat Jestro.",
-            "seasons": [{
+            "seasons": [
+                {
                     "number": 1,
                     "file": "data/seasons/nexo_s1.json"
                 },
@@ -312,13 +603,30 @@
                     "number": 4,
                     "file": "data/seasons/nexo_s4.json"
                 }
+            ],
+            "extras": [
+                {
+                    "title": "Season 1 Trailer",
+                    "url": "https://youtu.be/HssGtaUKLws",
+                    "kind": "Trailer",
+                    "duration": "1:03"
+                },
+                {
+                    "title": "Season 2 Trailer",
+                    "url": "https://www.youtube.com/watch?v=Ji0euq8VXbQ",
+                    "kind": "Trailer"
+                }
             ]
         },
         {
             "id": "dotd",
             "title": "LEGO Ninjago: Day of the Departed",
             "type": "movie",
-            "genres": ["Action & Adventure", "Animation", "Fantasy"],
+            "genres": [
+                "Action & Adventure",
+                "Animation",
+                "Fantasy"
+            ],
             "rating": "TV-Y7",
             "years": "2016",
             "runtime": "44m",
@@ -326,17 +634,30 @@
             "banner": "https://image.tmdb.org/t/p/original/5Mx9bOqNN1aXokwwzKam2qiw2cY.jpg",
             "logo": "https://image.tmdb.org/t/p/original/xiXPiWwAuI4JGUDFWiUzx73oaBW.png",
             "summary": "When Cole returns to Yang's haunted temple to seek revenge on a former Airjitzu Master, he accidentally uses a powerful Dark Magic blade that unleashes the spectral forms of Ninjago's greatest villains and traps himself in the temple. The Ninja must return the ghosts to the Departed Realm before it's too late.",
-            "seasons": [{
-                "number": 1,
-                "file": "data/seasons/dotd.json"
-            }]
+            "seasons": [
+                {
+                    "number": 1,
+                    "file": "data/seasons/dotd.json"
+                }
+            ],
+            "extras": [
+                {
+                    "title": "Full Trailer",
+                    "url": "https://youtu.be/VzSHHQ6hiws",
+                    "kind": "Trailer"
+                }
+            ]
         },
         {
             "id": "httydcollab",
             "title": "LEGO DREAMZzz: How To Fast Train Your Furious Dragon",
             "type": "movie",
             "new": true,
-            "genres": ["Action & Adventure", "Animation", "Fantasy"],
+            "genres": [
+                "Action & Adventure",
+                "Animation",
+                "Fantasy"
+            ],
             "rating": "TV-Y7",
             "years": "2026",
             "runtime": "39m",
@@ -344,17 +665,31 @@
             "banner": "https://image.tmdb.org/t/p/original/yPFOaBsXLVeFHeUHRJCZVier9vm.jpg",
             "logo": "https://image.tmdb.org/t/p/original/20Ttw8OtLkACSoQdPCwsc7yHei7.png",
             "summary": "The dream chasers race nitro-injected street cars and join forces with dragon rider Hiccup when the Nightmare King hatches a plot to corrupt the friendly dragons of Berk.",
-            "seasons": [{
-                "number": 1,
-                "file": "data/seasons/httydcollab.json"
-            }]
+            "seasons": [
+                {
+                    "number": 1,
+                    "file": "data/seasons/httydcollab.json"
+                }
+            ],
+            "extras": [
+                {
+                    "title": "Trailer",
+                    "kind": "Trailer",
+                    "url": "https://youtu.be/yZiJJCYdRPM",
+                    "duration": "2:14"
+                }
+            ]
         },
         {
             "id": "dreamteam",
             "title": "LEGO Ninjago - Dream Team",
             "type": "movie",
             "new": true,
-            "genres": ["Action & Adventure", "Animation", "Fantasy"],
+            "genres": [
+                "Action & Adventure",
+                "Animation",
+                "Fantasy"
+            ],
             "rating": "TV-Y7",
             "years": "2023",
             "runtime": "22m",
@@ -362,23 +697,30 @@
             "banner": "https://m.media-amazon.com/images/M/MV5BYzI5YzM3NDktMTYzNi00MjNmLTkwOTgtNjIxNzIzZTU4YWEyXkEyXkFqcGc@._V1_.jpg",
             "logo": "",
             "summary": "When the Ninja find a young boy, Jan, under attack by strange shadow creatures, they leap into action. But their fighting skills prove useless against their new enemies' powers and Jan is captured.",
-            "seasons": [{
-                "number": 1,
-                "file": "data/seasons/dreamteam.json"
-            }]
+            "seasons": [
+                {
+                    "number": 1,
+                    "file": "data/seasons/dreamteam.json"
+                }
+            ]
         },
         {
             "id": "lmk",
             "title": "LEGO Monkie Kid",
             "type": "show",
-            "genres": ["Action & Adventure", "Animation", "Comedy"],
+            "genres": [
+                "Action & Adventure",
+                "Animation",
+                "Comedy"
+            ],
             "rating": "TV-Y7",
             "years": "2020 – 2023",
             "poster": "https://cdn1.futuretodayinc.com/files/a8wn4hw/im/a0/96/f01ea63d0855f1d9b5b44d00ee634bac.jpg",
             "banner": "https://image.tmdb.org/t/p/original/9XdI3OWp1O5AYMV5e7J1mmNNNsp.jpg",
             "logo": "https://image.tmdb.org/t/p/original/6xrbLNUSisGPHYfpGMI2VNKuEhe.png",
             "summary": "Centuries ago, the beloved Chinese Monkey King used his magical staff to capture and trap the evil Demon Bull King deep inside a mountain. Flash-forward to modern-day China, when fate leads MK (aka Monkie Kid), a young noodle shop delivery boy, to find the long-lost staff. Soon, MK and his best friends find themselves entangled in adventures packed full of action, mystery, imagination and magic.",
-            "seasons": [{
+            "seasons": [
+                {
                     "number": 3,
                     "file": "data/seasons/lmk_s3.json"
                 },
