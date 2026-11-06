@@ -1,0 +1,31 @@
+{
+    "season": 1,
+    "episodes": [
+        {
+            "number": 1,
+            "title": "",
+            "description": "",
+            "thumbnail": "https://image.tmdb.org/t/p/original/uBe1f7vJu6a5iRxzJTQDz5eWzq5.jpg",
+            "embed": "",
+            "subtitles": [
+                {
+                    "url": "",
+                    "lang": "",
+                    "label": "",
+                    "default": null
+                }
+            ],
+            "airDate": "2027",
+            "sources": [],
+            "downloads": [],
+            "introStart": null,
+            "introEnd": null,
+            "recapStart": null,
+            "recapEnd": null,
+            "creditsStart": null,
+            "directors": [],
+            "writers": ["Glen Lakin"],
+            "cast": []
+        }
+    ]
+}
